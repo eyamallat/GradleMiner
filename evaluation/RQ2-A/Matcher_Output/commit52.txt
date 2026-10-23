@@ -1,0 +1,162 @@
+
+=== COMMIT ===
+http://github.com/adrianromero/fonticon/commit/36d89e59fe98e1aa175fa55d3296e4c63c1e3a88
+
+=== CHANGED GRADLE FILES ===
+build.gradle -> build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: java (line 18)
+    PLUGIN_DECL : apply plugin: maven (line 19)
+    PLUGIN_DECL : apply plugin: application (line 20)
+    ASSIGNMENT : name: group, operator: =, value: "com.github.adrianromero" (line 22)
+    ASSIGNMENT : name: version, operator: =, value: "2.0.100" (line 23)
+    ASSIGNMENT : name: mainClassName, operator: =, value: "com.adr.fonticon.Demo" (line 25)
+    ASSIGNMENT : name: description, operator: =, value: "" (line 27)
+    ASSIGNMENT : name: sourceCompatibility, operator: =, value: "1.8" (line 29)
+    ASSIGNMENT : name: targetCompatibility, operator: =, value: "1.8" (line 30)
+    ASSIGNMENT : name: [compileJava, compileTestJava]*?.options*?.encoding, operator: =, value: "UTF-8" (line 31)
+    REPOSITORIES_BLOCK : repositories (line 33)
+      REPOSITORIES_DECL : mavenCentral (line 34)
+      REPOSITORIES_DECL : jcenter (line 35)
+    TASK_DECLARATION : taskName=sourcesJar, type=Jar, style=task (line 38)
+      ASSIGNMENT : name: classifier, operator: =, value: "sources" (line 39)
+      METHOD_CALL : from(sourceSets."main"."allSource") (line 40)
+    BLOCK : artifacts (line 43)
+      METHOD_CALL : archives(sourcesJar) (line 44)
+    BLOCK : install (line 47)
+      BLOCK : repositories.mavenInstaller (line 48)
+        BLOCK : pom.project (line 49)
+          BLOCK : licenses (line 50)
+            BLOCK : license (line 51)
+              METHOD_CALL : name("The Apache Software License, Version 2.0") (line 52)
+              METHOD_CALL : url("http://www.apache.org/licenses/LICENSE-2.0.txt") (line 53)
+              METHOD_CALL : distribution("repo") (line 54)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    PLUGINS_BLOCK : plugins (line 18)
+      PLUGIN_DECL : id 'application' (line 19)
+      PLUGIN_DECL : id 'org.openjfx.javafxplugin' version '0.0.8' (line 20)
+    ASSIGNMENT : name: group, operator: =, value: "com.github.adrianromero" (line 23)
+    ASSIGNMENT : name: version, operator: =, value: "2.0.100" (line 24)
+    ASSIGNMENT : name: mainClassName, operator: =, value: "com.adr.fonticon.Demo" (line 26)
+    ASSIGNMENT : name: description, operator: =, value: "" (line 28)
+    ASSIGNMENT : name: sourceCompatibility, operator: =, value: "1.8" (line 30)
+    ASSIGNMENT : name: targetCompatibility, operator: =, value: "1.8" (line 31)
+    ASSIGNMENT : name: [compileJava, compileTestJava]*?.options*?.encoding, operator: =, value: "UTF-8" (line 32)
+    BLOCK : compileJava (line 33)
+      ASSIGNMENT : name: (options.compilerArgs << -Xlint:unchecked), operator: <<, value: "-Xlint:deprecation" (line 34)
+    REPOSITORIES_BLOCK : repositories (line 37)
+      REPOSITORIES_DECL : mavenCentral (line 38)
+    BLOCK : javafx (line 41)
+      ASSIGNMENT : name: version, operator: =, value: "11.0.2" (line 42)
+      ASSIGNMENT : name: modules, operator: =, value: ["javafx.controls", "javafx.fxml"] (line 43)
+    TASK_DECLARATION : taskName=sourcesJar, type=Jar, style=task (line 46)
+      ASSIGNMENT : name: classifier, operator: =, value: "sources" (line 47)
+      METHOD_CALL : from(sourceSets."main"."allSource") (line 48)
+    BLOCK : artifacts (line 51)
+      METHOD_CALL : archives(sourcesJar) (line 52)
+
+=== DELETED COMPOSITE NODES ===
+BLOCK:install (line 47, parent=BUILD_GRADLE:build.gradle)
+BLOCK:license (line 51, parent=BLOCK:licenses)
+BLOCK:licenses (line 50, parent=BLOCK:project)
+BLOCK:mavenInstaller (line 48, parent=BLOCK:install)
+BLOCK:project (line 49, parent=BLOCK:mavenInstaller)
+
+=== DELETED LEAF NODES ===
+METHOD_CALL:distribution (line 54, parent=BLOCK:license)
+METHOD_CALL:name (line 52, parent=BLOCK:license)
+METHOD_CALL:url (line 53, parent=BLOCK:license)
+PLUGIN_DECL:apply (line 18, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 19, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_DECL:jcenter (line 35, parent=REPOSITORIES_BLOCK:repositories)
+
+=== ADDED COMPOSITE NODES ===
+BLOCK:compileJava (line 33, parent=BUILD_GRADLE:build.gradle)
+BLOCK:javafx (line 41, parent=BUILD_GRADLE:build.gradle)
+PLUGINS_BLOCK:plugins (line 18, parent=BUILD_GRADLE:build.gradle)
+
+=== ADDED LEAF NODES ===
+ASSIGNMENT:(options.compilerArgs << -Xlint:unchecked) = -Xlint:deprecation (line 34, parent=BLOCK:compileJava)
+ASSIGNMENT:modules = [javafx.controls, javafx.fxml] (line 43, parent=BLOCK:javafx)
+ASSIGNMENT:version = 11.0.2 (line 42, parent=BLOCK:javafx)
+PLUGIN_DECL:version (line 20, parent=PLUGINS_BLOCK:plugins)
+
+=== ALL LEAF MATCHES ===
+ASSIGNMENT:[compileJava, compileTestJava]*?.options*?.encoding = UTF-8 (line 31, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:[compileJava, compileTestJava]*?.options*?.encoding = UTF-8 (line 32, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:classifier = sources (line 39, parent=TASK_DECLARATION:sourcesJar) -> ASSIGNMENT:classifier = sources (line 47, parent=TASK_DECLARATION:sourcesJar)
+ASSIGNMENT:description =  (line 27, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:description =  (line 28, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:group = com.github.adrianromero (line 22, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:group = com.github.adrianromero (line 23, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:mainClassName = com.adr.fonticon.Demo (line 25, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:mainClassName = com.adr.fonticon.Demo (line 26, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:sourceCompatibility = 1.8 (line 29, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:sourceCompatibility = 1.8 (line 30, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:targetCompatibility = 1.8 (line 30, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:targetCompatibility = 1.8 (line 31, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:version = 2.0.100 (line 23, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:version = 2.0.100 (line 24, parent=BUILD_GRADLE:build.gradle)
+METHOD_CALL:archives (line 44, parent=BLOCK:artifacts) -> METHOD_CALL:archives (line 52, parent=BLOCK:artifacts)
+METHOD_CALL:from (line 40, parent=TASK_DECLARATION:sourcesJar) -> METHOD_CALL:from (line 48, parent=TASK_DECLARATION:sourcesJar)
+PLUGIN_DECL:apply (line 20, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:id (line 19, parent=PLUGINS_BLOCK:plugins)
+REPOSITORIES_DECL:mavenCentral (line 34, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 38, parent=REPOSITORIES_BLOCK:repositories)
+
+=== LEAF ROUND 1 MATCHES ===
+ASSIGNMENT:[compileJava, compileTestJava]*?.options*?.encoding = UTF-8 (line 31, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:[compileJava, compileTestJava]*?.options*?.encoding = UTF-8 (line 32, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:classifier = sources (line 39, parent=TASK_DECLARATION:sourcesJar) -> ASSIGNMENT:classifier = sources (line 47, parent=TASK_DECLARATION:sourcesJar)
+ASSIGNMENT:description =  (line 27, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:description =  (line 28, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:group = com.github.adrianromero (line 22, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:group = com.github.adrianromero (line 23, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:mainClassName = com.adr.fonticon.Demo (line 25, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:mainClassName = com.adr.fonticon.Demo (line 26, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:sourceCompatibility = 1.8 (line 29, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:sourceCompatibility = 1.8 (line 30, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:targetCompatibility = 1.8 (line 30, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:targetCompatibility = 1.8 (line 31, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:version = 2.0.100 (line 23, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:version = 2.0.100 (line 24, parent=BUILD_GRADLE:build.gradle)
+METHOD_CALL:archives (line 44, parent=BLOCK:artifacts) -> METHOD_CALL:archives (line 52, parent=BLOCK:artifacts)
+METHOD_CALL:from (line 40, parent=TASK_DECLARATION:sourcesJar) -> METHOD_CALL:from (line 48, parent=TASK_DECLARATION:sourcesJar)
+REPOSITORIES_DECL:mavenCentral (line 34, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 38, parent=REPOSITORIES_BLOCK:repositories)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+PLUGIN_DECL:apply (line 20, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:id (line 19, parent=PLUGINS_BLOCK:plugins)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:artifacts (line 43, parent=BUILD_GRADLE:build.gradle) -> BLOCK:artifacts (line 51, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_BLOCK:repositories (line 33, parent=BUILD_GRADLE:build.gradle) -> REPOSITORIES_BLOCK:repositories (line 37, parent=BUILD_GRADLE:build.gradle)
+TASK_DECLARATION:sourcesJar (line 38, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:sourcesJar (line 46, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:artifacts (line 43, parent=BUILD_GRADLE:build.gradle) -> BLOCK:artifacts (line 51, parent=BUILD_GRADLE:build.gradle)
+TASK_DECLARATION:sourcesJar (line 38, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:sourcesJar (line 46, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+REPOSITORIES_BLOCK:repositories (line 33, parent=BUILD_GRADLE:build.gradle) -> REPOSITORIES_BLOCK:repositories (line 37, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+REFORMAT_CODE: Reformat code (no semantic change)
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:install (47)'
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:jcenter (35)'
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:apply (19)'
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:apply (18)'
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 12; 12, 0, 0
+Matched composites: 3; 3, 0, 0
+Deleted leaves: 6; 6, 0, 0
+Deleted composites: 5; 5, 0, 0
+Added leaves: 4; 4, 0, 0
+Added composites: 3; 3, 0, 0
+Total expected events: 33
+Total predicted events: 33
+
+TP=33 FP=0 FN=0
+TP=33, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT57 MISSED ===
+(none)
+
+

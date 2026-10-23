@@ -1,0 +1,229 @@
+
+=== COMMIT ===
+http://github.com/LTT-Gatech/CarCareAndroid/commit/16437ca0bf5becaf1b544b9a3b1a012b881eb493
+
+=== CHANGED GRADLE FILES ===
+app/build.gradle -> app/build.gradle
+build.gradle -> build.gradle
+gradle/wrapper/gradle-wrapper.properties -> gradle/wrapper/gradle-wrapper.properties
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : app/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: com.android.application (line 1)
+    BLOCK : android (line 3)
+      METHOD_CALL : compileSdkVersion(23) (line 4)
+      METHOD_CALL : buildToolsVersion("23.0.3") (line 5)
+      BLOCK : defaultConfig (line 7)
+        METHOD_CALL : applicationId("com.teamltt.carcaredemo") (line 8)
+        METHOD_CALL : minSdkVersion(15) (line 9)
+        METHOD_CALL : targetSdkVersion(23) (line 10)
+        METHOD_CALL : versionCode(1) (line 11)
+        METHOD_CALL : versionName("1.0") (line 12)
+      BLOCK : buildTypes (line 14)
+        BLOCK : release (line 15)
+          METHOD_CALL : minifyEnabled(false) (line 16)
+          METHOD_CALL : proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro") (line 17)
+    DEPENDENCIES_BLOCK : dependencies (line 22)
+      DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 23)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='appcompat-v7', version='23.4.0' (line 24)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='support-v4', version='23.4.0' (line 25)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='recyclerview-v7', version='23.4.0' (line 26)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.12' (line 27)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='cardview-v7', version='23.1.0' (line 28)
+      DEPENDENCY_DECL : configuration='compile', group='com.github.pires', name='obd-java-api', version='1.0' (line 29)
+  BUILD_GRADLE : build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 3)
+      REPOSITORIES_BLOCK : repositories (line 4)
+        REPOSITORIES_DECL : jcenter (line 5)
+      DEPENDENCIES_BLOCK : dependencies (line 7)
+        DEPENDENCY_DECL : configuration='classpath', group='com.android.tools.build', name='gradle', version='2.2.3' (line 8)
+    ALLPROJECTS : allprojects (line 15)
+      REPOSITORIES_BLOCK : repositories (line 16)
+        REPOSITORIES_DECL : jcenter (line 17)
+    TASK_DECLARATION : taskName=clean, type=Delete, style=task (line 21)
+      METHOD_CALL : delete(rootProject."buildDir") (line 22)
+  PROPERTIES_FILE : gradle/wrapper/gradle-wrapper.properties (line 0)
+    ASSIGNMENT : name: distributionBase, value: "GRADLE_USER_HOME" (line 2)
+    ASSIGNMENT : name: distributionPath, value: "wrapper/dists" (line 3)
+    ASSIGNMENT : name: zipStoreBase, value: "GRADLE_USER_HOME" (line 4)
+    ASSIGNMENT : name: zipStorePath, value: "wrapper/dists" (line 5)
+    ASSIGNMENT : name: distributionUrl, value: "https\\://services.gradle.org/distributions/gradle-2.14.1-all.zip" (line 6)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : app/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: com.android.application (line 17)
+    BLOCK : android (line 19)
+      METHOD_CALL : compileSdkVersion(23) (line 20)
+      METHOD_CALL : buildToolsVersion("25.0.0") (line 21)
+      BLOCK : defaultConfig (line 23)
+        METHOD_CALL : applicationId("com.teamltt.carcare") (line 24)
+        METHOD_CALL : minSdkVersion(15) (line 25)
+        METHOD_CALL : targetSdkVersion(23) (line 27)
+        METHOD_CALL : versionCode(1) (line 28)
+        METHOD_CALL : versionName("1.0") (line 29)
+      BLOCK : buildTypes (line 31)
+        BLOCK : release (line 32)
+          METHOD_CALL : minifyEnabled(false) (line 33)
+          METHOD_CALL : proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro") (line 34)
+    DEPENDENCIES_BLOCK : dependencies (line 39)
+      DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 40)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='appcompat-v7', version='23.4.0' (line 42)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='support-v4', version='23.4.0' (line 43)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='recyclerview-v7', version='23.4.0' (line 44)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='cardview-v7', version='23.4.0' (line 45)
+      DEPENDENCY_DECL : configuration='compile', group='com.github.pires', name='obd-java-api', version='1.0' (line 46)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='design', version='23.4.0' (line 47)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.volley', name='volley', version='1.0.0' (line 48)
+      DEPENDENCY_DECL : configuration='compile', group='com.google.android.gms', name='play-services-auth', version='10.2.0' (line 49)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.12' (line 50)
+    PLUGIN_DECL : apply plugin: com.google.gms.google-services (line 53)
+  BUILD_GRADLE : build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 19)
+      REPOSITORIES_BLOCK : repositories (line 20)
+        REPOSITORIES_DECL : jcenter (line 21)
+      DEPENDENCIES_BLOCK : dependencies (line 23)
+        DEPENDENCY_DECL : configuration='classpath', group='com.android.tools.build', name='gradle', version='2.3.0' (line 24)
+        DEPENDENCY_DECL : configuration='classpath', group='com.google.gms', name='google-services', version='3.0.0' (line 27)
+    ALLPROJECTS : allprojects (line 35)
+      REPOSITORIES_BLOCK : repositories (line 36)
+        REPOSITORIES_DECL : jcenter (line 37)
+    TASK_DECLARATION : taskName=clean, type=Delete, style=task (line 41)
+      METHOD_CALL : delete(rootProject."buildDir") (line 42)
+  PROPERTIES_FILE : gradle/wrapper/gradle-wrapper.properties (line 0)
+    ASSIGNMENT : name: distributionBase, value: "GRADLE_USER_HOME" (line 18)
+    ASSIGNMENT : name: distributionPath, value: "wrapper/dists" (line 19)
+    ASSIGNMENT : name: zipStoreBase, value: "GRADLE_USER_HOME" (line 20)
+    ASSIGNMENT : name: zipStorePath, value: "wrapper/dists" (line 21)
+    ASSIGNMENT : name: distributionUrl, value: "https\\://services.gradle.org/distributions/gradle-3.3-all.zip" (line 22)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+(none)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+DEPENDENCY_DECL:classpath (line 27, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 47, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 48, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 49, parent=DEPENDENCIES_BLOCK:dependencies)
+PLUGIN_DECL:apply (line 53, parent=BUILD_GRADLE:app/build.gradle)
+
+=== ALL LEAF MATCHES ===
+ASSIGNMENT:distributionBase = GRADLE_USER_HOME (line 2, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties) -> ASSIGNMENT:distributionBase = GRADLE_USER_HOME (line 18, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties)
+ASSIGNMENT:distributionPath = wrapper/dists (line 3, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties) -> ASSIGNMENT:distributionPath = wrapper/dists (line 19, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties)
+ASSIGNMENT:distributionUrl = https\://services.gradle.org/distributions/gradle-2.14.1-all.zip (line 6, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties) -> ASSIGNMENT:distributionUrl = https\://services.gradle.org/distributions/gradle-3.3-all.zip (line 22, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties)
+ASSIGNMENT:zipStoreBase = GRADLE_USER_HOME (line 4, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties) -> ASSIGNMENT:zipStoreBase = GRADLE_USER_HOME (line 20, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties)
+ASSIGNMENT:zipStorePath = wrapper/dists (line 5, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties) -> ASSIGNMENT:zipStorePath = wrapper/dists (line 21, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties)
+DEPENDENCY_DECL:classpath (line 8, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 24, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 23, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 40, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 24, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 42, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 25, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 43, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 26, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 44, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 28, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 45, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 29, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 46, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 27, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 50, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:applicationId (line 8, parent=BLOCK:defaultConfig) -> METHOD_CALL:applicationId (line 24, parent=BLOCK:defaultConfig)
+METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 21, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 20, parent=BLOCK:android)
+METHOD_CALL:delete (line 22, parent=TASK_DECLARATION:clean) -> METHOD_CALL:delete (line 42, parent=TASK_DECLARATION:clean)
+METHOD_CALL:minSdkVersion (line 9, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 25, parent=BLOCK:defaultConfig)
+METHOD_CALL:minifyEnabled (line 16, parent=BLOCK:release) -> METHOD_CALL:minifyEnabled (line 33, parent=BLOCK:release)
+METHOD_CALL:proguardFiles (line 17, parent=BLOCK:release) -> METHOD_CALL:proguardFiles (line 34, parent=BLOCK:release)
+METHOD_CALL:targetSdkVersion (line 10, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 27, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 11, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 28, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 12, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 29, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:app/build.gradle) -> PLUGIN_DECL:apply (line 17, parent=BUILD_GRADLE:app/build.gradle)
+REPOSITORIES_DECL:jcenter (line 17, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 37, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:jcenter (line 5, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 21, parent=REPOSITORIES_BLOCK:repositories)
+
+=== LEAF ROUND 1 MATCHES ===
+ASSIGNMENT:distributionBase = GRADLE_USER_HOME (line 2, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties) -> ASSIGNMENT:distributionBase = GRADLE_USER_HOME (line 18, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties)
+ASSIGNMENT:distributionPath = wrapper/dists (line 3, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties) -> ASSIGNMENT:distributionPath = wrapper/dists (line 19, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties)
+ASSIGNMENT:distributionUrl = https\://services.gradle.org/distributions/gradle-2.14.1-all.zip (line 6, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties) -> ASSIGNMENT:distributionUrl = https\://services.gradle.org/distributions/gradle-3.3-all.zip (line 22, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties)
+ASSIGNMENT:zipStoreBase = GRADLE_USER_HOME (line 4, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties) -> ASSIGNMENT:zipStoreBase = GRADLE_USER_HOME (line 20, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties)
+ASSIGNMENT:zipStorePath = wrapper/dists (line 5, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties) -> ASSIGNMENT:zipStorePath = wrapper/dists (line 21, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties)
+DEPENDENCY_DECL:compile (line 23, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 40, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 24, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 42, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 25, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 43, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 26, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 44, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 29, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 46, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 27, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 50, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 20, parent=BLOCK:android)
+METHOD_CALL:delete (line 22, parent=TASK_DECLARATION:clean) -> METHOD_CALL:delete (line 42, parent=TASK_DECLARATION:clean)
+METHOD_CALL:minSdkVersion (line 9, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 25, parent=BLOCK:defaultConfig)
+METHOD_CALL:minifyEnabled (line 16, parent=BLOCK:release) -> METHOD_CALL:minifyEnabled (line 33, parent=BLOCK:release)
+METHOD_CALL:proguardFiles (line 17, parent=BLOCK:release) -> METHOD_CALL:proguardFiles (line 34, parent=BLOCK:release)
+METHOD_CALL:targetSdkVersion (line 10, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 27, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 11, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 28, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 12, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 29, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:app/build.gradle) -> PLUGIN_DECL:apply (line 17, parent=BUILD_GRADLE:app/build.gradle)
+REPOSITORIES_DECL:jcenter (line 17, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 37, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:jcenter (line 5, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 21, parent=REPOSITORIES_BLOCK:repositories)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+DEPENDENCY_DECL:classpath (line 8, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 24, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 28, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 45, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:applicationId (line 8, parent=BLOCK:defaultConfig) -> METHOD_CALL:applicationId (line 24, parent=BLOCK:defaultConfig)
+METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 21, parent=BLOCK:android)
+
+=== ALL COMPOSITE MATCHES ===
+ALLPROJECTS:allprojects (line 15, parent=BUILD_GRADLE:build.gradle) -> ALLPROJECTS:allprojects (line 35, parent=BUILD_GRADLE:build.gradle)
+BLOCK:android (line 3, parent=BUILD_GRADLE:app/build.gradle) -> BLOCK:android (line 19, parent=BUILD_GRADLE:app/build.gradle)
+BLOCK:buildTypes (line 14, parent=BLOCK:android) -> BLOCK:buildTypes (line 31, parent=BLOCK:android)
+BLOCK:defaultConfig (line 7, parent=BLOCK:android) -> BLOCK:defaultConfig (line 23, parent=BLOCK:android)
+BLOCK:release (line 15, parent=BLOCK:buildTypes) -> BLOCK:release (line 32, parent=BLOCK:buildTypes)
+BUILDSCRIPT:buildscript (line 3, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 19, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 22, parent=BUILD_GRADLE:app/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 39, parent=BUILD_GRADLE:app/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 7, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 23, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 16, parent=ALLPROJECTS:allprojects) -> REPOSITORIES_BLOCK:repositories (line 36, parent=ALLPROJECTS:allprojects)
+REPOSITORIES_BLOCK:repositories (line 4, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 20, parent=BUILDSCRIPT:buildscript)
+TASK_DECLARATION:clean (line 21, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:clean (line 41, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+ALLPROJECTS:allprojects (line 15, parent=BUILD_GRADLE:build.gradle) -> ALLPROJECTS:allprojects (line 35, parent=BUILD_GRADLE:build.gradle)
+BLOCK:buildTypes (line 14, parent=BLOCK:android) -> BLOCK:buildTypes (line 31, parent=BLOCK:android)
+BLOCK:release (line 15, parent=BLOCK:buildTypes) -> BLOCK:release (line 32, parent=BLOCK:buildTypes)
+REPOSITORIES_BLOCK:repositories (line 16, parent=ALLPROJECTS:allprojects) -> REPOSITORIES_BLOCK:repositories (line 36, parent=ALLPROJECTS:allprojects)
+REPOSITORIES_BLOCK:repositories (line 4, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 20, parent=BUILDSCRIPT:buildscript)
+TASK_DECLARATION:clean (line 21, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:clean (line 41, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+BLOCK:android (line 3, parent=BUILD_GRADLE:app/build.gradle) -> BLOCK:android (line 19, parent=BUILD_GRADLE:app/build.gradle)
+BLOCK:defaultConfig (line 7, parent=BLOCK:android) -> BLOCK:defaultConfig (line 23, parent=BLOCK:android)
+BUILDSCRIPT:buildscript (line 3, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 19, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 22, parent=BUILD_GRADLE:app/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 39, parent=BUILD_GRADLE:app/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 7, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 23, parent=BUILDSCRIPT:buildscript)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+REFORMAT_CODE: Reformat code (no semantic change)
+
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 26; 26, 0, 0
+Matched composites: 11; 11, 0, 0
+Deleted leaves: 0; 0, 0, 0
+Deleted composites: 0; 0, 0, 0
+Added leaves: 5; 5, 0, 0
+Added composites: 0; 0, 0, 0
+Total expected events: 42
+Total predicted events: 42
+
+TP=42 FP=0 FN=0
+TP=42, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT108 MISSED ===
+FP: (none)
+FN: (none)

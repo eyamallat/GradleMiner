@@ -1,0 +1,259 @@
+
+=== COMMIT ===
+http://github.com/martido/genny/commit/08e5a061bd24c95fdc6adc8e7451aa80737b2ea4
+
+=== CHANGED GRADLE FILES ===
+build.gradle -> build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: java (line 1)
+    PLUGIN_DECL : apply plugin: eclipse (line 2)
+    PLUGIN_DECL : apply plugin: maven (line 3)
+    ASSIGNMENT : name: group, operator: =, value: "de.martido" (line 5)
+    ASSIGNMENT : name: version, operator: =, value: "0.2-SNAPSHOT" (line 6)
+    ASSIGNMENT : name: sourceCompatibility, operator: =, value: 1.6 (line 8)
+    ASSIGNMENT : name: targetCompatibility, operator: =, value: 1.6 (line 9)
+    REPOSITORIES_BLOCK : repositories (line 11)
+      REPOSITORIES_DECL : mavenCentral (line 12)
+    DEPENDENCIES_BLOCK : dependencies (line 15)
+      DEPENDENCY_DECL : configuration='compile', group='org.apache.ant', name='ant', version='1.8.2' (line 16)
+        METHOD_CALL : exclude([group: "org.apache.ant", module: "ant-launcher"]) (line 17)
+      DEPENDENCY_DECL : configuration='compile', group='com.sun.codemodel', name='codemodel', version='2.4' (line 19)
+      DEPENDENCY_DECL : configuration='compile', group='org.antlr', name='stringtemplate', version='3.2.1' (line 20)
+      DEPENDENCY_DECL : configuration='compile', group='org.apache.velocity', name='velocity', version='1.7' (line 21)
+        METHOD_CALL : exclude([group: "oro", module: "oro"]) (line 22)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.8.2' (line 24)
+    TASK_DECLARATION : taskName=createWrapper, type=Wrapper, style=task (line 27)
+      ASSIGNMENT : name: gradleVersion, operator: =, value: "1.0-milestone-5" (line 28)
+    TASK_DECLARATION : taskName=testPrepare, style=task (line 31)
+      ASSIGNMENT : name: dir, operator: =, value: File("src/test/generated") (line 34)
+      CONDITION : if(dir.exists()) (line 35)
+        BLOCK : dir.eachDir (line 36)
+          METHOD_CALL : println("Deleting directory '${it.path}'") (line 37)
+          METHOD_CALL : delete(it) (line 38)
+        METHOD_CALL : dir.mkdirs (line 42)
+      ASSIGNMENT : name: dir, operator: =, value: File("src/test/generated") (line 34)
+      CONDITION : if(dir.exists()) (line 35)
+        BLOCK : dir.eachDir (line 36)
+          METHOD_CALL : println("Deleting directory '${it.path}'") (line 37)
+          METHOD_CALL : delete(it) (line 38)
+        METHOD_CALL : dir.mkdirs (line 42)
+    BLOCK : test (line 46)
+      TASK_RELATION : relation=dependsOn, targets=testPrepare (line 47)
+    TASK_DECLARATION : taskName=sourcesJar, type=Jar, style=task (line 50)
+      ASSIGNMENT : name: description, operator: =, value: "Creates a JAR containing all main sources." (line 51)
+      ASSIGNMENT : name: classifier, operator: =, value: "sources" (line 52)
+      METHOD_CALL : from(sourceSets."main"."allSource") (line 53)
+    TASK_DECLARATION : taskName=release, style=task (line 56)
+      METHOD_CALL : println("Releasing ...") (line 59)
+      METHOD_CALL : println("Releasing ...") (line 59)
+    BLOCK : artifacts (line 63)
+      METHOD_CALL : archives(sourcesJar) (line 64)
+    BLOCK : install (line 69)
+      REPOSITORIES_BLOCK : repositories (line 70)
+        REPOSITORIES_DECL : mavenInstaller (line 71)
+          REPOSITORIES_DECL : pom."scopeMappings"."mappings".remove(configurations."compile") (line 72)
+    BLOCK : eclipseClasspath (line 77)
+      TASK_RELATION : relation=dependsOn, targets=cleanEclipseClasspath (line 78)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: java (line 1)
+    PLUGIN_DECL : apply plugin: eclipse (line 2)
+    PLUGIN_DECL : apply plugin: maven (line 3)
+    ASSIGNMENT : name: group, operator: =, value: "de.martido" (line 5)
+    ASSIGNMENT : name: version, operator: =, value: "0.2-SNAPSHOT" (line 6)
+    ASSIGNMENT : name: sourceCompatibility, operator: =, value: 1.6 (line 8)
+    ASSIGNMENT : name: targetCompatibility, operator: =, value: 1.6 (line 9)
+    REPOSITORIES_BLOCK : repositories (line 11)
+      REPOSITORIES_DECL : mavenCentral (line 12)
+    DEPENDENCIES_BLOCK : dependencies (line 15)
+      DEPENDENCY_DECL : configuration='compile', group='org.apache.ant', name='ant', version='1.8.2' (line 16)
+        METHOD_CALL : exclude([group: "org.apache.ant", module: "ant-launcher"]) (line 17)
+      DEPENDENCY_DECL : configuration='compile', group='com.sun.codemodel', name='codemodel', version='2.4' (line 19)
+      DEPENDENCY_DECL : configuration='compile', group='org.antlr', name='stringtemplate', version='3.2.1' (line 20)
+      DEPENDENCY_DECL : configuration='compile', group='org.apache.velocity', name='velocity', version='1.7' (line 21)
+        METHOD_CALL : exclude([group: "oro", module: "oro"]) (line 22)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.8.2' (line 24)
+    TASK_DECLARATION : taskName=createWrapper, type=Wrapper, style=task (line 27)
+      ASSIGNMENT : name: gradleVersion, operator: =, value: "1.0-milestone-5" (line 28)
+    TASK_DECLARATION : taskName=testPrepare, style=task (line 31)
+      TASK_ACTION : action=doLast (line 32)
+        DECLARATION : name: dir, value: File("src/test/generated") (line 33)
+        CONDITION : if(dir.exists()) (line 34)
+          METHOD_CALL : dir.mkdirs (line 35)
+          BLOCK : dir.eachDir (line 37)
+            METHOD_CALL : delete(it) (line 37)
+    TASK_DECLARATION : taskName=sourcesJar, type=Jar, style=task (line 42)
+      ASSIGNMENT : name: description, operator: =, value: "Creates a JAR containing all main sources." (line 43)
+      ASSIGNMENT : name: classifier, operator: =, value: "sources" (line 44)
+      METHOD_CALL : from(sourceSets."main"."allSource") (line 45)
+    BLOCK : artifacts (line 49)
+      METHOD_CALL : archives(sourcesJar) (line 50)
+    BLOCK : install (line 55)
+      REPOSITORIES_BLOCK : repositories (line 56)
+        REPOSITORIES_DECL : mavenInstaller (line 57)
+          REPOSITORIES_DECL : pom."scopeMappings"."mappings".remove(configurations."compile") (line 58)
+    TASK_RELATION : relation=dependsOn, owner=eclipseClasspath, targets=cleanEclipseClasspath (line 63)
+    TASK_RELATION : relation=dependsOn, owner=test, targets=testPrepare (line 64)
+    TASK_RELATION : relation=dependsOn, owner=install, targets=sourcesJar (line 65)
+
+=== DELETED COMPOSITE NODES ===
+BLOCK:eachDir (line 36, parent=CONDITION:if)
+BLOCK:eclipseClasspath (line 77, parent=BUILD_GRADLE:build.gradle)
+BLOCK:test (line 46, parent=BUILD_GRADLE:build.gradle)
+CONDITION:if (line 35, parent=TASK_DECLARATION:testPrepare)
+TASK_DECLARATION:release (line 56, parent=BUILD_GRADLE:build.gradle)
+
+=== DELETED LEAF NODES ===
+ASSIGNMENT:dir = new File(src/test/generated) (line 34, parent=TASK_DECLARATION:testPrepare)
+ASSIGNMENT:dir = new File(src/test/generated) (line 34, parent=TASK_DECLARATION:testPrepare)
+METHOD_CALL:delete (line 38, parent=BLOCK:eachDir)
+METHOD_CALL:mkdirs (line 42, parent=CONDITION:if)
+METHOD_CALL:println (line 37, parent=BLOCK:eachDir)
+METHOD_CALL:println (line 37, parent=BLOCK:eachDir)
+METHOD_CALL:println (line 59, parent=TASK_DECLARATION:release)
+METHOD_CALL:println (line 59, parent=TASK_DECLARATION:release)
+TASK_RELATION:dependsOn (line 47, parent=BLOCK:test)
+TASK_RELATION:dependsOn (line 78, parent=BLOCK:eclipseClasspath)
+
+=== ADDED COMPOSITE NODES ===
+TASK_ACTION:doLast (line 32, parent=TASK_DECLARATION:testPrepare)
+
+=== ADDED LEAF NODES ===
+DECLARATION:dir = new File(src/test/generated) (line 33, parent=TASK_ACTION:doLast)
+TASK_RELATION:dependsOn (line 63, parent=BUILD_GRADLE:build.gradle)
+TASK_RELATION:dependsOn (line 64, parent=BUILD_GRADLE:build.gradle)
+TASK_RELATION:dependsOn (line 65, parent=BUILD_GRADLE:build.gradle)
+
+=== ALL LEAF MATCHES ===
+ASSIGNMENT:classifier = sources (line 52, parent=TASK_DECLARATION:sourcesJar) -> ASSIGNMENT:classifier = sources (line 44, parent=TASK_DECLARATION:sourcesJar)
+ASSIGNMENT:description = Creates a JAR containing all main sources. (line 51, parent=TASK_DECLARATION:sourcesJar) -> ASSIGNMENT:description = Creates a JAR containing all main sources. (line 43, parent=TASK_DECLARATION:sourcesJar)
+ASSIGNMENT:gradleVersion = 1.0-milestone-5 (line 28, parent=TASK_DECLARATION:createWrapper) -> ASSIGNMENT:gradleVersion = 1.0-milestone-5 (line 28, parent=TASK_DECLARATION:createWrapper)
+ASSIGNMENT:group = de.martido (line 5, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:group = de.martido (line 5, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:sourceCompatibility = 1.6 (line 8, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:sourceCompatibility = 1.6 (line 8, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:targetCompatibility = 1.6 (line 9, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:targetCompatibility = 1.6 (line 9, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:version = 0.2-SNAPSHOT (line 6, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:version = 0.2-SNAPSHOT (line 6, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCY_DECL:compile (line 19, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 19, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 20, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 20, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 24, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 24, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:archives (line 64, parent=BLOCK:artifacts) -> METHOD_CALL:archives (line 50, parent=BLOCK:artifacts)
+METHOD_CALL:delete (line 38, parent=BLOCK:eachDir) -> METHOD_CALL:delete (line 37, parent=BLOCK:eachDir)
+METHOD_CALL:exclude (line 17, parent=DEPENDENCY_DECL:compile) -> METHOD_CALL:exclude (line 17, parent=DEPENDENCY_DECL:compile)
+METHOD_CALL:exclude (line 22, parent=DEPENDENCY_DECL:compile) -> METHOD_CALL:exclude (line 22, parent=DEPENDENCY_DECL:compile)
+METHOD_CALL:from (line 53, parent=TASK_DECLARATION:sourcesJar) -> METHOD_CALL:from (line 45, parent=TASK_DECLARATION:sourcesJar)
+METHOD_CALL:mkdirs (line 42, parent=CONDITION:if) -> METHOD_CALL:mkdirs (line 35, parent=CONDITION:if)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 3, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 3, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_DECL:mavenCentral (line 12, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 12, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:remove (line 72, parent=REPOSITORIES_DECL:mavenInstaller) -> REPOSITORIES_DECL:remove (line 58, parent=REPOSITORIES_DECL:mavenInstaller)
+
+=== LEAF ROUND 1 MATCHES ===
+ASSIGNMENT:classifier = sources (line 52, parent=TASK_DECLARATION:sourcesJar) -> ASSIGNMENT:classifier = sources (line 44, parent=TASK_DECLARATION:sourcesJar)
+ASSIGNMENT:description = Creates a JAR containing all main sources. (line 51, parent=TASK_DECLARATION:sourcesJar) -> ASSIGNMENT:description = Creates a JAR containing all main sources. (line 43, parent=TASK_DECLARATION:sourcesJar)
+ASSIGNMENT:gradleVersion = 1.0-milestone-5 (line 28, parent=TASK_DECLARATION:createWrapper) -> ASSIGNMENT:gradleVersion = 1.0-milestone-5 (line 28, parent=TASK_DECLARATION:createWrapper)
+ASSIGNMENT:group = de.martido (line 5, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:group = de.martido (line 5, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:sourceCompatibility = 1.6 (line 8, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:sourceCompatibility = 1.6 (line 8, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:targetCompatibility = 1.6 (line 9, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:targetCompatibility = 1.6 (line 9, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:version = 0.2-SNAPSHOT (line 6, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:version = 0.2-SNAPSHOT (line 6, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCY_DECL:compile (line 19, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 19, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 20, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 20, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 24, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 24, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:archives (line 64, parent=BLOCK:artifacts) -> METHOD_CALL:archives (line 50, parent=BLOCK:artifacts)
+METHOD_CALL:exclude (line 17, parent=DEPENDENCY_DECL:compile) -> METHOD_CALL:exclude (line 17, parent=DEPENDENCY_DECL:compile)
+METHOD_CALL:exclude (line 22, parent=DEPENDENCY_DECL:compile) -> METHOD_CALL:exclude (line 22, parent=DEPENDENCY_DECL:compile)
+METHOD_CALL:from (line 53, parent=TASK_DECLARATION:sourcesJar) -> METHOD_CALL:from (line 45, parent=TASK_DECLARATION:sourcesJar)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 3, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 3, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_DECL:mavenCentral (line 12, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 12, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:remove (line 72, parent=REPOSITORIES_DECL:mavenInstaller) -> REPOSITORIES_DECL:remove (line 58, parent=REPOSITORIES_DECL:mavenInstaller)
+
+=== LEAF ROUND 2 MATCHES ===
+METHOD_CALL:delete (line 38, parent=BLOCK:eachDir) -> METHOD_CALL:delete (line 37, parent=BLOCK:eachDir)
+METHOD_CALL:mkdirs (line 42, parent=CONDITION:if) -> METHOD_CALL:mkdirs (line 35, parent=CONDITION:if)
+
+=== LEAF ROUND 3 MATCHES ===
+(none)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:artifacts (line 63, parent=BUILD_GRADLE:build.gradle) -> BLOCK:artifacts (line 49, parent=BUILD_GRADLE:build.gradle)
+BLOCK:eachDir (line 36, parent=CONDITION:if) -> BLOCK:eachDir (line 37, parent=CONDITION:if)
+BLOCK:install (line 69, parent=BUILD_GRADLE:build.gradle) -> BLOCK:install (line 55, parent=BUILD_GRADLE:build.gradle)
+CONDITION:if (line 35, parent=TASK_DECLARATION:testPrepare) -> CONDITION:if (line 34, parent=TASK_ACTION:doLast)
+DEPENDENCIES_BLOCK:dependencies (line 15, parent=BUILD_GRADLE:build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 15, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCY_DECL:compile (line 16, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 16, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 21, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 21, parent=DEPENDENCIES_BLOCK:dependencies)
+REPOSITORIES_BLOCK:repositories (line 11, parent=BUILD_GRADLE:build.gradle) -> REPOSITORIES_BLOCK:repositories (line 11, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_BLOCK:repositories (line 70, parent=BLOCK:install) -> REPOSITORIES_BLOCK:repositories (line 56, parent=BLOCK:install)
+REPOSITORIES_DECL:mavenInstaller (line 71, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenInstaller (line 57, parent=REPOSITORIES_BLOCK:repositories)
+TASK_DECLARATION:createWrapper (line 27, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:createWrapper (line 27, parent=BUILD_GRADLE:build.gradle)
+TASK_DECLARATION:sourcesJar (line 50, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:sourcesJar (line 42, parent=BUILD_GRADLE:build.gradle)
+TASK_DECLARATION:testPrepare (line 31, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:testPrepare (line 31, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:artifacts (line 63, parent=BUILD_GRADLE:build.gradle) -> BLOCK:artifacts (line 49, parent=BUILD_GRADLE:build.gradle)
+BLOCK:install (line 69, parent=BUILD_GRADLE:build.gradle) -> BLOCK:install (line 55, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 15, parent=BUILD_GRADLE:build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 15, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCY_DECL:compile (line 16, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 16, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 21, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 21, parent=DEPENDENCIES_BLOCK:dependencies)
+REPOSITORIES_BLOCK:repositories (line 11, parent=BUILD_GRADLE:build.gradle) -> REPOSITORIES_BLOCK:repositories (line 11, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_BLOCK:repositories (line 70, parent=BLOCK:install) -> REPOSITORIES_BLOCK:repositories (line 56, parent=BLOCK:install)
+REPOSITORIES_DECL:mavenInstaller (line 71, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenInstaller (line 57, parent=REPOSITORIES_BLOCK:repositories)
+TASK_DECLARATION:createWrapper (line 27, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:createWrapper (line 27, parent=BUILD_GRADLE:build.gradle)
+TASK_DECLARATION:sourcesJar (line 50, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:sourcesJar (line 42, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+BLOCK:eachDir (line 36, parent=CONDITION:if) -> BLOCK:eachDir (line 37, parent=CONDITION:if)
+CONDITION:if (line 35, parent=TASK_DECLARATION:testPrepare) -> CONDITION:if (line 34, parent=TASK_ACTION:doLast)
+TASK_DECLARATION:testPrepare (line 31, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:testPrepare (line 31, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+SCHEDULING_TASKS: Introduce task relation 'dependson' from 'install' to 'sourcesjar' in 'build.gradle:dependsOn (65)'
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:release (56)'
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:println (37)'
+
+
+=== COUNTS AND EVALUATION ===
+Counting basis: one occurrence per source node; duplicate extraction removed.
+Category: expected events; TP, FP, FN
+Matched leaves: 24; 21, 0, 3
+Matched composites: 13; 13, 0, 0
+Deleted leaves: 2; 2, 8, 0
+Deleted composites: 3; 3, 2, 0
+Added leaves: 1; 1, 3, 0
+Added composites: 1; 1, 0, 0
+Total expected events: 44
+Total predicted events: 54
+
+TP=41 FP=13 FN=3
+TP=41, precision=75.93%, recall=93.18%, F1=83.67%
+
+=== WHERE COMMIT80 MISSED ===
+FP:
+1. Two deletions of dir at before line 34.
+2. Addition of dir at after line 33.
+3. Deletion of test.dependsOn(testPrepare).
+4. Addition of the continuing test.dependsOn(testPrepare).
+5. Deletion of eclipseClasspath.dependsOn(cleanEclipseClasspath).
+6. Addition of the continuing eclipseClasspath dependency.
+7. Deletion of delete(it) at before line 38.
+8. Deletion of dir.mkdirs at before line 42.
+9. Deletion of the eachDir block at before line 36.
+10. Deletion of the if condition at before line 35.
+11. One extra deletion of println at before line 37.
+12. One extra deletion of println at before line 59.
+FN:
+1. ASSIGNMENT:dir 34 -> DECLARATION:dir 33
+2. test.dependsOn(testPrepare), before line 47 -> after line 64.
+3. eclipseClasspath.dependsOn(cleanEclipseClasspath),
+   before line 78 -> after line 63.
+
+

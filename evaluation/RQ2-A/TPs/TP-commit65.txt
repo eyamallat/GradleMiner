@@ -1,0 +1,148 @@
+=== COMMIT ===
+http://github.com/cesardeazevedo/react-native-bottom-sheet-behavior/commit/e8a0bb875cad851c9e1e109647cce0582a5dc2a9
+
+=== CHANGED GRADLE FILES ===
+android/build.gradle -> android/build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : android/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: com.android.library (line 1)
+    BLOCK : android (line 3)
+      METHOD_CALL : compileSdkVersion(26) (line 4)
+      METHOD_CALL : buildToolsVersion("26.0.2") (line 5)
+      BLOCK : defaultConfig (line 7)
+        METHOD_CALL : minSdkVersion(16) (line 8)
+        METHOD_CALL : targetSdkVersion(26) (line 9)
+    BUILDSCRIPT : buildscript (line 13)
+      REPOSITORIES_BLOCK : repositories (line 14)
+        REPOSITORIES_DECL : jcenter (line 15)
+      DEPENDENCIES_BLOCK : dependencies (line 17)
+        DEPENDENCY_DECL : configuration='classpath', group='com.android.tools.build', name='gradle', version='2.1.0' (line 18)
+    ALLPROJECTS : allprojects (line 22)
+      REPOSITORIES_BLOCK : repositories (line 23)
+        REPOSITORIES_DECL : mavenLocal (line 24)
+        REPOSITORIES_DECL : jcenter (line 25)
+        REPOSITORIES_DECL : maven (line 26)
+          REPOSITORIES_DECL : url("$projectDir/../node_modules/react-native/android") (line 29)
+    DEPENDENCIES_BLOCK : dependencies (line 34)
+      DEPENDENCY_DECL : configuration='compile', group='com.facebook.react', name='react-native', version='+' (line 35)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='appcompat-v7', version='26.1.0' (line 36)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='design', version='26.1.0' (line 37)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : android/build.gradle (line 0)
+    METHOD_DECL : safeExtGet(prop, fallback) (line 13)
+      METHOD_CALL : rootProject."ext".has(prop) (line 14)
+      METHOD_CALL : rootProject."ext".get(prop) (line 14)
+    BUILDSCRIPT : buildscript (line 1)
+      REPOSITORIES_BLOCK : repositories (line 2)
+        REPOSITORIES_DECL : jcenter (line 3)
+        REPOSITORIES_DECL : google (line 4)
+      DEPENDENCIES_BLOCK : dependencies (line 6)
+        DEPENDENCY_DECL : configuration='classpath', group='com.android.tools.build', name='gradle', version='3.3.1' (line 7)
+    PLUGIN_DECL : apply plugin: com.android.library (line 11)
+    DECLARATION : name: DEFAULT_COMPILE_SDK_VERSION, value: 27 (line 17)
+    DECLARATION : name: DEFAULT_BUILD_TOOLS_VERSION, value: "27.0.3" (line 18)
+    DECLARATION : name: DEFAULT_MIN_SDK_VERSION, value: 16 (line 19)
+    DECLARATION : name: DEFAULT_TARGET_SDK_VERSION, value: 27 (line 20)
+    DECLARATION : name: DEFAULT_SUPPORT_LIB_VERSION, value: "28.0.0" (line 21)
+    BLOCK : android (line 23)
+      METHOD_CALL : compileSdkVersion(safeExtGet("compileSdkVersion", DEFAULT_COMPILE_SDK_VERSION)) (line 24)
+      METHOD_CALL : buildToolsVersion(safeExtGet("buildToolsVersion", DEFAULT_BUILD_TOOLS_VERSION)) (line 25)
+      BLOCK : defaultConfig (line 27)
+        METHOD_CALL : minSdkVersion(safeExtGet("minSdkVersion", DEFAULT_MIN_SDK_VERSION)) (line 28)
+        METHOD_CALL : targetSdkVersion(safeExtGet("targetSdkVersion", DEFAULT_TARGET_SDK_VERSION)) (line 29)
+        METHOD_CALL : versionCode(1) (line 30)
+        METHOD_CALL : versionName("1.0") (line 31)
+    REPOSITORIES_BLOCK : repositories (line 36)
+      REPOSITORIES_DECL : mavenLocal (line 37)
+      REPOSITORIES_DECL : jcenter (line 38)
+      REPOSITORIES_DECL : maven (line 39)
+        REPOSITORIES_DECL : url("$projectDir/../node_modules/react-native/android") (line 42)
+    DEPENDENCIES_BLOCK : dependencies (line 46)
+      DEPENDENCY_DECL : configuration='implementation', group='com.facebook.react', name='react-native', version='${this.safeExtGet(reactNativeVersion, +)}' (line 47)
+      DEPENDENCY_DECL : configuration='implementation', group='com.android.support', name='design', version='${this.safeExtGet(supportLibVersion, DEFAULT_SUPPORT_LIB_VERSION)}' (line 48)
+
+=== DELETED COMPOSITE NODES ===
+ALLPROJECTS:allprojects (line 22, parent=BUILD_GRADLE:android/build.gradle)
+
+=== DELETED LEAF NODES ===
+DEPENDENCY_DECL:compile (line 36, parent=DEPENDENCIES_BLOCK:dependencies)
+
+=== ADDED COMPOSITE NODES ===
+METHOD_DECL:safeExtGet (line 13, parent=BUILD_GRADLE:android/build.gradle)
+
+=== ADDED LEAF NODES ===
+DECLARATION:DEFAULT_BUILD_TOOLS_VERSION = 27.0.3 (line 18, parent=BUILD_GRADLE:android/build.gradle)
+DECLARATION:DEFAULT_COMPILE_SDK_VERSION = 27 (line 17, parent=BUILD_GRADLE:android/build.gradle)
+DECLARATION:DEFAULT_MIN_SDK_VERSION = 16 (line 19, parent=BUILD_GRADLE:android/build.gradle)
+DECLARATION:DEFAULT_SUPPORT_LIB_VERSION = 28.0.0 (line 21, parent=BUILD_GRADLE:android/build.gradle)
+DECLARATION:DEFAULT_TARGET_SDK_VERSION = 27 (line 20, parent=BUILD_GRADLE:android/build.gradle)
+METHOD_CALL:get (line 14, parent=METHOD_DECL:safeExtGet)
+METHOD_CALL:has (line 14, parent=METHOD_DECL:safeExtGet)
+METHOD_CALL:versionCode (line 30, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 31, parent=BLOCK:defaultConfig)
+REPOSITORIES_DECL:google (line 4, parent=REPOSITORIES_BLOCK:repositories)
+
+=== ALL LEAF MATCHES ===
+DEPENDENCY_DECL:classpath (line 18, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 7, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 35, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 47, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 37, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 48, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 25, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 24, parent=BLOCK:android)
+METHOD_CALL:minSdkVersion (line 8, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 28, parent=BLOCK:defaultConfig)
+METHOD_CALL:targetSdkVersion (line 9, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 29, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:android/build.gradle) -> PLUGIN_DECL:apply (line 11, parent=BUILD_GRADLE:android/build.gradle)
+REPOSITORIES_DECL:jcenter (line 15, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 3, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:jcenter (line 25, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 38, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenLocal (line 24, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenLocal (line 37, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:url (line 29, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 42, parent=REPOSITORIES_DECL:maven)
+
+=== LEAF ROUND 1 MATCHES ===
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:android/build.gradle) -> PLUGIN_DECL:apply (line 11, parent=BUILD_GRADLE:android/build.gradle)
+REPOSITORIES_DECL:jcenter (line 15, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 3, parent=REPOSITORIES_BLOCK:repositories)
+
+=== LEAF ROUND 2 MATCHES ===
+REPOSITORIES_DECL:jcenter (line 25, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 38, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenLocal (line 24, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenLocal (line 37, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:url (line 29, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 42, parent=REPOSITORIES_DECL:maven)
+
+=== LEAF ROUND 3 MATCHES ===
+DEPENDENCY_DECL:classpath (line 18, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 7, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 35, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 47, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 37, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 48, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 25, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 24, parent=BLOCK:android)
+METHOD_CALL:minSdkVersion (line 8, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 28, parent=BLOCK:defaultConfig)
+METHOD_CALL:targetSdkVersion (line 9, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 29, parent=BLOCK:defaultConfig)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:android (line 3, parent=BUILD_GRADLE:android/build.gradle) -> BLOCK:android (line 23, parent=BUILD_GRADLE:android/build.gradle)
+BLOCK:defaultConfig (line 7, parent=BLOCK:android) -> BLOCK:defaultConfig (line 27, parent=BLOCK:android)
+BUILDSCRIPT:buildscript (line 13, parent=BUILD_GRADLE:android/build.gradle) -> BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:android/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 17, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 6, parent=BUILDSCRIPT:buildscript)
+DEPENDENCIES_BLOCK:dependencies (line 34, parent=BUILD_GRADLE:android/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 46, parent=BUILD_GRADLE:android/build.gradle)
+REPOSITORIES_BLOCK:repositories (line 14, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 2, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 23, parent=ALLPROJECTS:allprojects) -> REPOSITORIES_BLOCK:repositories (line 36, parent=BUILD_GRADLE:android/build.gradle)
+REPOSITORIES_DECL:maven (line 26, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 39, parent=REPOSITORIES_BLOCK:repositories)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+(none)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+BLOCK:android (line 3, parent=BUILD_GRADLE:android/build.gradle) -> BLOCK:android (line 23, parent=BUILD_GRADLE:android/build.gradle)
+BLOCK:defaultConfig (line 7, parent=BLOCK:android) -> BLOCK:defaultConfig (line 27, parent=BLOCK:android)
+BUILDSCRIPT:buildscript (line 13, parent=BUILD_GRADLE:android/build.gradle) -> BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:android/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 17, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 6, parent=BUILDSCRIPT:buildscript)
+DEPENDENCIES_BLOCK:dependencies (line 34, parent=BUILD_GRADLE:android/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 46, parent=BUILD_GRADLE:android/build.gradle)
+REPOSITORIES_BLOCK:repositories (line 14, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 2, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 23, parent=ALLPROJECTS:allprojects) -> REPOSITORIES_BLOCK:repositories (line 36, parent=BUILD_GRADLE:android/build.gradle)
+REPOSITORIES_DECL:maven (line 26, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 39, parent=REPOSITORIES_BLOCK:repositories)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+(not scored in this matching-phase reference)

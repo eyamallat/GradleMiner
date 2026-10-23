@@ -1,0 +1,226 @@
+
+=== COMMIT ===
+http://github.com/kimkevin/AndroidStarterKit/commit/81b768b105fa867be285380a4375f1dff2745324
+
+=== CHANGED GRADLE FILES ===
+AndroidModule/app/build.gradle -> AndroidModule/app/build.gradle
+AndroidSample/app/build.gradle -> AndroidSample/app/build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : AndroidModule/app/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: com.android.application (line 1)
+    BLOCK : android (line 3)
+      METHOD_CALL : compileSdkVersion(23) (line 4)
+      METHOD_CALL : buildToolsVersion("23.0.2") (line 5)
+      BLOCK : defaultConfig (line 7)
+        METHOD_CALL : applicationId("com.kimkevin.module") (line 8)
+        METHOD_CALL : minSdkVersion(14) (line 9)
+        METHOD_CALL : targetSdkVersion(23) (line 10)
+        METHOD_CALL : versionCode(1) (line 11)
+        METHOD_CALL : versionName("1.0") (line 12)
+      BLOCK : buildTypes (line 14)
+        BLOCK : release (line 15)
+          METHOD_CALL : minifyEnabled(false) (line 16)
+          METHOD_CALL : proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro") (line 17)
+    DEPENDENCIES_BLOCK : dependencies (line 22)
+      DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 23)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.12' (line 24)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='appcompat-v7', version='23.3.0' (line 25)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='recyclerview-v7', version='23.3.0' (line 26)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='cardview-v7', version='23.3.0' (line 27)
+  BUILD_GRADLE : AndroidSample/app/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: com.android.application (line 1)
+    BLOCK : android (line 3)
+      METHOD_CALL : compileSdkVersion(23) (line 4)
+      METHOD_CALL : buildToolsVersion("23.0.2") (line 5)
+      BLOCK : defaultConfig (line 7)
+        METHOD_CALL : applicationId("com.kimkevin.sample") (line 8)
+        METHOD_CALL : minSdkVersion(14) (line 9)
+        METHOD_CALL : targetSdkVersion(23) (line 10)
+        METHOD_CALL : versionCode(1) (line 11)
+        METHOD_CALL : versionName("1.0") (line 12)
+      BLOCK : buildTypes (line 14)
+        BLOCK : release (line 15)
+          METHOD_CALL : minifyEnabled(false) (line 16)
+          METHOD_CALL : proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro") (line 17)
+    DEPENDENCIES_BLOCK : dependencies (line 22)
+      DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 23)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.12' (line 24)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='appcompat-v7', version='23.3.0' (line 25)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='recyclerview-v7', version='23.3.0' (line 26)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='cardview-v7', version='23.3.0' (line 27)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : AndroidModule/app/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: com.android.application (line 1)
+    BLOCK : android (line 3)
+      METHOD_CALL : compileSdkVersion(23) (line 4)
+      METHOD_CALL : buildToolsVersion("23.0.2") (line 5)
+      BLOCK : defaultConfig (line 7)
+        METHOD_CALL : applicationId("com.kimkevin.module") (line 8)
+        METHOD_CALL : minSdkVersion(14) (line 9)
+        METHOD_CALL : targetSdkVersion(23) (line 10)
+        METHOD_CALL : versionCode(1) (line 11)
+        METHOD_CALL : versionName("1.0") (line 12)
+      BLOCK : buildTypes (line 14)
+        BLOCK : release (line 15)
+          METHOD_CALL : minifyEnabled(false) (line 16)
+          METHOD_CALL : proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro") (line 17)
+    DEPENDENCIES_BLOCK : dependencies (line 22)
+      DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 23)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.12' (line 24)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='appcompat-v7', version='23.3.0' (line 25)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='recyclerview-v7', version='23.3.0' (line 26)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='cardview-v7', version='23.3.0' (line 27)
+  BUILD_GRADLE : AndroidSample/app/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: com.android.application (line 1)
+    BLOCK : android (line 3)
+      METHOD_CALL : compileSdkVersion(23) (line 4)
+      METHOD_CALL : buildToolsVersion("23.0.2") (line 5)
+      BLOCK : defaultConfig (line 7)
+        METHOD_CALL : applicationId("com.kimkevin.sample") (line 8)
+        METHOD_CALL : minSdkVersion(14) (line 9)
+        METHOD_CALL : targetSdkVersion(23) (line 10)
+        METHOD_CALL : versionCode(1) (line 11)
+        METHOD_CALL : versionName("1.0") (line 12)
+      BLOCK : buildTypes (line 14)
+        BLOCK : release (line 15)
+          METHOD_CALL : minifyEnabled(false) (line 16)
+          METHOD_CALL : proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro") (line 17)
+    DEPENDENCIES_BLOCK : dependencies (line 22)
+      DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 23)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.12' (line 24)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='appcompat-v7', version='23.3.0' (line 25)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+DEPENDENCY_DECL:compile (line 26, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 27, parent=DEPENDENCIES_BLOCK:dependencies)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+(none)
+
+=== ALL LEAF MATCHES ===
+DEPENDENCY_DECL:compile (line 23, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 23, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 23, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 23, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 25, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 25, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 25, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 25, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 26, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 26, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 27, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 27, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 24, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 24, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 24, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 24, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:applicationId (line 8, parent=BLOCK:defaultConfig) -> METHOD_CALL:applicationId (line 8, parent=BLOCK:defaultConfig)
+METHOD_CALL:applicationId (line 8, parent=BLOCK:defaultConfig) -> METHOD_CALL:applicationId (line 8, parent=BLOCK:defaultConfig)
+METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android)
+METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android)
+METHOD_CALL:minSdkVersion (line 9, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 9, parent=BLOCK:defaultConfig)
+METHOD_CALL:minSdkVersion (line 9, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 9, parent=BLOCK:defaultConfig)
+METHOD_CALL:minifyEnabled (line 16, parent=BLOCK:release) -> METHOD_CALL:minifyEnabled (line 16, parent=BLOCK:release)
+METHOD_CALL:minifyEnabled (line 16, parent=BLOCK:release) -> METHOD_CALL:minifyEnabled (line 16, parent=BLOCK:release)
+METHOD_CALL:proguardFiles (line 17, parent=BLOCK:release) -> METHOD_CALL:proguardFiles (line 17, parent=BLOCK:release)
+METHOD_CALL:proguardFiles (line 17, parent=BLOCK:release) -> METHOD_CALL:proguardFiles (line 17, parent=BLOCK:release)
+METHOD_CALL:targetSdkVersion (line 10, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 10, parent=BLOCK:defaultConfig)
+METHOD_CALL:targetSdkVersion (line 10, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 10, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 11, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 11, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 11, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 11, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 12, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 12, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 12, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 12, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:AndroidModule/app/build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:AndroidModule/app/build.gradle)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:AndroidSample/app/build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:AndroidSample/app/build.gradle)
+
+=== LEAF ROUND 1 MATCHES ===
+DEPENDENCY_DECL:compile (line 23, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 23, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 23, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 23, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 25, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 25, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 25, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 25, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 26, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 26, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 27, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 27, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 24, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 24, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 24, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 24, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:applicationId (line 8, parent=BLOCK:defaultConfig) -> METHOD_CALL:applicationId (line 8, parent=BLOCK:defaultConfig)
+METHOD_CALL:applicationId (line 8, parent=BLOCK:defaultConfig) -> METHOD_CALL:applicationId (line 8, parent=BLOCK:defaultConfig)
+METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android)
+METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android)
+METHOD_CALL:minSdkVersion (line 9, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 9, parent=BLOCK:defaultConfig)
+METHOD_CALL:minSdkVersion (line 9, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 9, parent=BLOCK:defaultConfig)
+METHOD_CALL:minifyEnabled (line 16, parent=BLOCK:release) -> METHOD_CALL:minifyEnabled (line 16, parent=BLOCK:release)
+METHOD_CALL:minifyEnabled (line 16, parent=BLOCK:release) -> METHOD_CALL:minifyEnabled (line 16, parent=BLOCK:release)
+METHOD_CALL:proguardFiles (line 17, parent=BLOCK:release) -> METHOD_CALL:proguardFiles (line 17, parent=BLOCK:release)
+METHOD_CALL:proguardFiles (line 17, parent=BLOCK:release) -> METHOD_CALL:proguardFiles (line 17, parent=BLOCK:release)
+METHOD_CALL:targetSdkVersion (line 10, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 10, parent=BLOCK:defaultConfig)
+METHOD_CALL:targetSdkVersion (line 10, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 10, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 11, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 11, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 11, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 11, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 12, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 12, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 12, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 12, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:AndroidModule/app/build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:AndroidModule/app/build.gradle)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:AndroidSample/app/build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:AndroidSample/app/build.gradle)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+(none)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:android (line 3, parent=BUILD_GRADLE:AndroidModule/app/build.gradle) -> BLOCK:android (line 3, parent=BUILD_GRADLE:AndroidModule/app/build.gradle)
+BLOCK:android (line 3, parent=BUILD_GRADLE:AndroidSample/app/build.gradle) -> BLOCK:android (line 3, parent=BUILD_GRADLE:AndroidSample/app/build.gradle)
+BLOCK:buildTypes (line 14, parent=BLOCK:android) -> BLOCK:buildTypes (line 14, parent=BLOCK:android)
+BLOCK:buildTypes (line 14, parent=BLOCK:android) -> BLOCK:buildTypes (line 14, parent=BLOCK:android)
+BLOCK:defaultConfig (line 7, parent=BLOCK:android) -> BLOCK:defaultConfig (line 7, parent=BLOCK:android)
+BLOCK:defaultConfig (line 7, parent=BLOCK:android) -> BLOCK:defaultConfig (line 7, parent=BLOCK:android)
+BLOCK:release (line 15, parent=BLOCK:buildTypes) -> BLOCK:release (line 15, parent=BLOCK:buildTypes)
+BLOCK:release (line 15, parent=BLOCK:buildTypes) -> BLOCK:release (line 15, parent=BLOCK:buildTypes)
+DEPENDENCIES_BLOCK:dependencies (line 22, parent=BUILD_GRADLE:AndroidModule/app/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 22, parent=BUILD_GRADLE:AndroidModule/app/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 22, parent=BUILD_GRADLE:AndroidSample/app/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 22, parent=BUILD_GRADLE:AndroidSample/app/build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:android (line 3, parent=BUILD_GRADLE:AndroidModule/app/build.gradle) -> BLOCK:android (line 3, parent=BUILD_GRADLE:AndroidModule/app/build.gradle)
+BLOCK:android (line 3, parent=BUILD_GRADLE:AndroidSample/app/build.gradle) -> BLOCK:android (line 3, parent=BUILD_GRADLE:AndroidSample/app/build.gradle)
+BLOCK:buildTypes (line 14, parent=BLOCK:android) -> BLOCK:buildTypes (line 14, parent=BLOCK:android)
+BLOCK:buildTypes (line 14, parent=BLOCK:android) -> BLOCK:buildTypes (line 14, parent=BLOCK:android)
+BLOCK:defaultConfig (line 7, parent=BLOCK:android) -> BLOCK:defaultConfig (line 7, parent=BLOCK:android)
+BLOCK:defaultConfig (line 7, parent=BLOCK:android) -> BLOCK:defaultConfig (line 7, parent=BLOCK:android)
+BLOCK:release (line 15, parent=BLOCK:buildTypes) -> BLOCK:release (line 15, parent=BLOCK:buildTypes)
+BLOCK:release (line 15, parent=BLOCK:buildTypes) -> BLOCK:release (line 15, parent=BLOCK:buildTypes)
+DEPENDENCIES_BLOCK:dependencies (line 22, parent=BUILD_GRADLE:AndroidModule/app/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 22, parent=BUILD_GRADLE:AndroidModule/app/build.gradle)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+DEPENDENCIES_BLOCK:dependencies (line 22, parent=BUILD_GRADLE:AndroidSample/app/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 22, parent=BUILD_GRADLE:AndroidSample/app/build.gradle)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+REMOVE_UNUSED_CODE: Remove unused element 'AndroidSample/app/build.gradle:compile (27)'
+REMOVE_UNUSED_CODE: Remove unused element 'AndroidSample/app/build.gradle:compile (26)'
+
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 28; 28, 0, 0
+Matched composites: 10; 10, 0, 0
+Deleted leaves: 2; 2, 0, 0
+Deleted composites: 0; 0, 0, 0
+Added leaves: 0; 0, 0, 0
+Added composites: 0; 0, 0, 0
+Total expected events: 40
+Total predicted events: 40
+
+TP=40 FP=0 FN=0
+TP=40, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT97 MISSED ===
+(none)
+

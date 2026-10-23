@@ -1,0 +1,177 @@
+
+=== COMMIT ===
+http://github.com/FarbodSalamat-Zadeh/UsefulViews/commit/5970e681b382ac8d748bff66686bd6067615d356
+
+=== CHANGED GRADLE FILES ===
+labelledspinner/build.gradle -> library/build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : labelledspinner/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: com.android.library (line 17)
+    PLUGIN_DECL : apply plugin: com.novoda.bintray-release (line 18)
+    BLOCK : android (line 20)
+      METHOD_CALL : compileSdkVersion(23) (line 21)
+      METHOD_CALL : buildToolsVersion("23.0.2") (line 22)
+      BLOCK : defaultConfig (line 24)
+        METHOD_CALL : minSdkVersion(14) (line 25)
+        METHOD_CALL : targetSdkVersion(23) (line 26)
+        METHOD_CALL : versionCode(120) (line 27)
+        METHOD_CALL : versionName("1.2.0") (line 28)
+      BLOCK : buildTypes (line 30)
+        BLOCK : release (line 31)
+          METHOD_CALL : minifyEnabled(false) (line 32)
+          METHOD_CALL : proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro") (line 33)
+    DEPENDENCIES_BLOCK : dependencies (line 38)
+      DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 39)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.12' (line 40)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='appcompat-v7', version='23.2.1' (line 41)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='support-annotations', version='23.2.1', extension='jar' (line 42)
+    BLOCK : publish (line 45)
+      ASSIGNMENT : name: userOrg, operator: =, value: "farbodsalamat-zadeh" (line 48)
+      ASSIGNMENT : name: groupId, operator: =, value: "com.farbod.labelledspinner" (line 49)
+      ASSIGNMENT : name: artifactId, operator: =, value: "labelledspinner" (line 50)
+      ASSIGNMENT : name: publishVersion, operator: =, value: "1.2.0" (line 51)
+      ASSIGNMENT : name: desc, operator: =, value: "A Spinner component with a floating label for Android" + " (similar to EditText components wrapped in a TextInputLayout)." (line 52)
+      ASSIGNMENT : name: website, operator: =, value: "https://github.com/FarbodSalamat-Zadeh/LabelledSpinner" (line 54)
+      ASSIGNMENT : name: issueTracker, operator: =, value: "$website/issues" (line 55)
+      ASSIGNMENT : name: repository, operator: =, value: "$website.git" (line 56)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : library/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: com.android.library (line 17)
+    PLUGIN_DECL : apply plugin: com.novoda.bintray-release (line 18)
+    BLOCK : android (line 20)
+      METHOD_CALL : compileSdkVersion(23) (line 21)
+      METHOD_CALL : buildToolsVersion("23.0.2") (line 22)
+      BLOCK : defaultConfig (line 24)
+        METHOD_CALL : minSdkVersion(14) (line 25)
+        METHOD_CALL : targetSdkVersion(23) (line 26)
+        METHOD_CALL : versionCode(200) (line 27)
+        METHOD_CALL : versionName("2.0.0") (line 28)
+      BLOCK : buildTypes (line 30)
+        BLOCK : release (line 31)
+          METHOD_CALL : minifyEnabled(false) (line 32)
+          METHOD_CALL : proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro") (line 33)
+    DEPENDENCIES_BLOCK : dependencies (line 38)
+      DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 39)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.12' (line 40)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='appcompat-v7', version='23.2.1' (line 41)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='support-annotations', version='23.2.1', extension='jar' (line 42)
+    BLOCK : publish (line 45)
+      ASSIGNMENT : name: userOrg, operator: =, value: "farbodsalamat-zadeh" (line 48)
+      ASSIGNMENT : name: groupId, operator: =, value: "com.satsuware.lib" (line 49)
+      ASSIGNMENT : name: artifactId, operator: =, value: "usefulviews" (line 50)
+      ASSIGNMENT : name: publishVersion, operator: =, value: "2.0.0" (line 51)
+      ASSIGNMENT : name: desc, operator: =, value: "A collection of useful widgets for Android." (line 52)
+      ASSIGNMENT : name: website, operator: =, value: "https://github.com/FarbodSalamat-Zadeh/UsefulViews" (line 53)
+      ASSIGNMENT : name: issueTracker, operator: =, value: "$website/issues" (line 54)
+      ASSIGNMENT : name: repository, operator: =, value: "$website.git" (line 55)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+(none)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+(none)
+
+=== ALL LEAF MATCHES ===
+ASSIGNMENT:artifactId = labelledspinner (line 50, parent=BLOCK:publish) -> ASSIGNMENT:artifactId = usefulviews (line 50, parent=BLOCK:publish)
+ASSIGNMENT:desc = A Spinner component with a floating label for Android +  (similar to EditText components wrapped in a TextInputLayout). (line 52, parent=BLOCK:publish) -> ASSIGNMENT:desc = A collection of useful widgets for Android. (line 52, parent=BLOCK:publish)
+ASSIGNMENT:groupId = com.farbod.labelledspinner (line 49, parent=BLOCK:publish) -> ASSIGNMENT:groupId = com.satsuware.lib (line 49, parent=BLOCK:publish)
+ASSIGNMENT:issueTracker = $website/issues (line 55, parent=BLOCK:publish) -> ASSIGNMENT:issueTracker = $website/issues (line 54, parent=BLOCK:publish)
+ASSIGNMENT:publishVersion = 1.2.0 (line 51, parent=BLOCK:publish) -> ASSIGNMENT:publishVersion = 2.0.0 (line 51, parent=BLOCK:publish)
+ASSIGNMENT:repository = $website.git (line 56, parent=BLOCK:publish) -> ASSIGNMENT:repository = $website.git (line 55, parent=BLOCK:publish)
+ASSIGNMENT:userOrg = farbodsalamat-zadeh (line 48, parent=BLOCK:publish) -> ASSIGNMENT:userOrg = farbodsalamat-zadeh (line 48, parent=BLOCK:publish)
+ASSIGNMENT:website = https://github.com/FarbodSalamat-Zadeh/LabelledSpinner (line 54, parent=BLOCK:publish) -> ASSIGNMENT:website = https://github.com/FarbodSalamat-Zadeh/UsefulViews (line 53, parent=BLOCK:publish)
+DEPENDENCY_DECL:compile (line 39, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 39, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 41, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 41, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 42, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 42, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 40, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 40, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:buildToolsVersion (line 22, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 22, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 21, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 21, parent=BLOCK:android)
+METHOD_CALL:minSdkVersion (line 25, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 25, parent=BLOCK:defaultConfig)
+METHOD_CALL:minifyEnabled (line 32, parent=BLOCK:release) -> METHOD_CALL:minifyEnabled (line 32, parent=BLOCK:release)
+METHOD_CALL:proguardFiles (line 33, parent=BLOCK:release) -> METHOD_CALL:proguardFiles (line 33, parent=BLOCK:release)
+METHOD_CALL:targetSdkVersion (line 26, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 26, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 27, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 27, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 28, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 28, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 17, parent=BUILD_GRADLE:labelledspinner/build.gradle) -> PLUGIN_DECL:apply (line 17, parent=BUILD_GRADLE:library/build.gradle)
+PLUGIN_DECL:apply (line 18, parent=BUILD_GRADLE:labelledspinner/build.gradle) -> PLUGIN_DECL:apply (line 18, parent=BUILD_GRADLE:library/build.gradle)
+
+=== LEAF ROUND 1 MATCHES ===
+ASSIGNMENT:issueTracker = $website/issues (line 55, parent=BLOCK:publish) -> ASSIGNMENT:issueTracker = $website/issues (line 54, parent=BLOCK:publish)
+ASSIGNMENT:repository = $website.git (line 56, parent=BLOCK:publish) -> ASSIGNMENT:repository = $website.git (line 55, parent=BLOCK:publish)
+ASSIGNMENT:userOrg = farbodsalamat-zadeh (line 48, parent=BLOCK:publish) -> ASSIGNMENT:userOrg = farbodsalamat-zadeh (line 48, parent=BLOCK:publish)
+DEPENDENCY_DECL:compile (line 39, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 39, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 41, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 41, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 42, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 42, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 40, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 40, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:buildToolsVersion (line 22, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 22, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 21, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 21, parent=BLOCK:android)
+METHOD_CALL:minSdkVersion (line 25, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 25, parent=BLOCK:defaultConfig)
+METHOD_CALL:minifyEnabled (line 32, parent=BLOCK:release) -> METHOD_CALL:minifyEnabled (line 32, parent=BLOCK:release)
+METHOD_CALL:proguardFiles (line 33, parent=BLOCK:release) -> METHOD_CALL:proguardFiles (line 33, parent=BLOCK:release)
+METHOD_CALL:targetSdkVersion (line 26, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 26, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 17, parent=BUILD_GRADLE:labelledspinner/build.gradle) -> PLUGIN_DECL:apply (line 17, parent=BUILD_GRADLE:library/build.gradle)
+PLUGIN_DECL:apply (line 18, parent=BUILD_GRADLE:labelledspinner/build.gradle) -> PLUGIN_DECL:apply (line 18, parent=BUILD_GRADLE:library/build.gradle)
+
+=== LEAF ROUND 2 MATCHES ===
+ASSIGNMENT:artifactId = labelledspinner (line 50, parent=BLOCK:publish) -> ASSIGNMENT:artifactId = usefulviews (line 50, parent=BLOCK:publish)
+ASSIGNMENT:desc = A Spinner component with a floating label for Android +  (similar to EditText components wrapped in a TextInputLayout). (line 52, parent=BLOCK:publish) -> ASSIGNMENT:desc = A collection of useful widgets for Android. (line 52, parent=BLOCK:publish)
+ASSIGNMENT:groupId = com.farbod.labelledspinner (line 49, parent=BLOCK:publish) -> ASSIGNMENT:groupId = com.satsuware.lib (line 49, parent=BLOCK:publish)
+ASSIGNMENT:publishVersion = 1.2.0 (line 51, parent=BLOCK:publish) -> ASSIGNMENT:publishVersion = 2.0.0 (line 51, parent=BLOCK:publish)
+ASSIGNMENT:website = https://github.com/FarbodSalamat-Zadeh/LabelledSpinner (line 54, parent=BLOCK:publish) -> ASSIGNMENT:website = https://github.com/FarbodSalamat-Zadeh/UsefulViews (line 53, parent=BLOCK:publish)
+
+=== LEAF ROUND 3 MATCHES ===
+METHOD_CALL:versionCode (line 27, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 27, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 28, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 28, parent=BLOCK:defaultConfig)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:android (line 20, parent=BUILD_GRADLE:labelledspinner/build.gradle) -> BLOCK:android (line 20, parent=BUILD_GRADLE:library/build.gradle)
+BLOCK:buildTypes (line 30, parent=BLOCK:android) -> BLOCK:buildTypes (line 30, parent=BLOCK:android)
+BLOCK:defaultConfig (line 24, parent=BLOCK:android) -> BLOCK:defaultConfig (line 24, parent=BLOCK:android)
+BLOCK:publish (line 45, parent=BUILD_GRADLE:labelledspinner/build.gradle) -> BLOCK:publish (line 45, parent=BUILD_GRADLE:library/build.gradle)
+BLOCK:release (line 31, parent=BLOCK:buildTypes) -> BLOCK:release (line 31, parent=BLOCK:buildTypes)
+DEPENDENCIES_BLOCK:dependencies (line 38, parent=BUILD_GRADLE:labelledspinner/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 38, parent=BUILD_GRADLE:library/build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:buildTypes (line 30, parent=BLOCK:android) -> BLOCK:buildTypes (line 30, parent=BLOCK:android)
+BLOCK:release (line 31, parent=BLOCK:buildTypes) -> BLOCK:release (line 31, parent=BLOCK:buildTypes)
+DEPENDENCIES_BLOCK:dependencies (line 38, parent=BUILD_GRADLE:labelledspinner/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 38, parent=BUILD_GRADLE:library/build.gradle)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+BLOCK:android (line 20, parent=BUILD_GRADLE:labelledspinner/build.gradle) -> BLOCK:android (line 20, parent=BUILD_GRADLE:library/build.gradle)
+BLOCK:defaultConfig (line 24, parent=BLOCK:android) -> BLOCK:defaultConfig (line 24, parent=BLOCK:android)
+BLOCK:publish (line 45, parent=BUILD_GRADLE:labelledspinner/build.gradle) -> BLOCK:publish (line 45, parent=BUILD_GRADLE:library/build.gradle)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+RENAME_FIELD: Rename file 'labelledspinner/build.gradle' to 'library/build.gradle'
+
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 22; 22, 0, 0
+Matched composites: 6; 6, 0, 0
+Deleted leaves: 0; 0, 0, 0
+Deleted composites: 0; 0, 0, 0
+Added leaves: 0; 0, 0, 0
+Added composites: 0; 0, 0, 0
+Total expected events: 28
+Total predicted events: 28
+
+TP=28 FP=0 FN=0
+TP=28, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT98 MISSED ===
+(none)
+

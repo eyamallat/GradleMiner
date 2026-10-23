@@ -1,0 +1,259 @@
+
+=== COMMIT ===
+http://github.com/milos85vasic/Groot/commit/8953d46353c2e064027f994af1fed8a25ac8775d
+
+=== CHANGED GRADLE FILES ===
+Tryout/build.gradle -> Tryout/build.gradle
+build.gradle -> build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : Tryout/build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 1)
+      REPOSITORIES_BLOCK : repositories (line 2)
+        REPOSITORIES_DECL : maven (line 3)
+          REPOSITORIES_DECL : url(uri(File("${System.getProperty(user.home)}${File.separator}Groot${File.separator}Repository")."absolutePath")) (line 4)
+      DEPENDENCIES_BLOCK : dependencies (line 8)
+        DEPENDENCY_DECL : configuration='classpath', group='net.milosvasic.groot', name='Groot', version='1.0.0-Alpha-4-SNAPSHOT' (line 9)
+    PLUGIN_DECL : apply plugin: groot (line 14)
+    PLUGIN_DECL : apply plugin: groot-kotlin (line 15)
+    PLUGIN_DECL : apply plugin: groot-credentials (line 16)
+    METHOD_CALL : groot.registerRepository("http://repo.milosvasic.net/releases") (line 18)
+    METHOD_CALL : groot.registerRepository("http://repo.milosvasic.net/development") (line 19)
+    METHOD_CALL : groot.depend("net.milosvasic.logger", "Logger", "1.2.0") (line 21)
+    METHOD_CALL : groot.depend("net.milosvasic.factory", "ProjectFactory", "1.0.0_Alpha_1_DEV_+") (line 22)
+    DECLARATION : name: alpha, value: 1 (line 24)
+    DECLARATION : name: beta, value: 0 (line 25)
+    DECLARATION : name: version, value: 1 (line 26)
+    DECLARATION : name: secondaryVersion, value: 0 (line 27)
+    DECLARATION : name: tertiaryVersion, value: 0 (line 28)
+    DECLARATION : name: projectPackage, value: "kotlin" (line 29)
+    DECLARATION : name: projectGroup, value: "net.milosvasic.tryout.groot" (line 30)
+    METHOD_CALL : groot."kotlin"."project".setup(alpha, beta, version, secondaryVersion, tertiaryVersion, projectGroup, projectPackage) (line 32)
+    DECLARATION : name: fullPackage, value: groot."kotlin"."project"."projectPackage" (line 42)
+    DECLARATION : name: fullVersion, value: groot."kotlin"."project"."projectVersion" (line 43)
+    METHOD_CALL : groot."kotlin"."application".setup(fullPackage) (line 45)
+    ASSIGNMENT : name: groot.deployment.ftp.host, operator: =, value: ftpServer (line 47)
+    ASSIGNMENT : name: groot.deployment.ftp.username, operator: =, value: ftpUsername (line 48)
+    ASSIGNMENT : name: groot.deployment.ftp.password, operator: =, value: ftpPassword (line 49)
+    METHOD_CALL : groot."deployment".setup(fullPackage, fullVersion) (line 50)
+  BUILD_GRADLE : build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: java (line 1)
+    BUILDSCRIPT : buildscript (line 3)
+      ASSIGNMENT : name: ext.kotlinVersion, operator: =, value: "1.0.6" (line 4)
+      REPOSITORIES_BLOCK : repositories (line 5)
+        REPOSITORIES_DECL : jcenter (line 6)
+        REPOSITORIES_DECL : mavenCentral (line 7)
+      METHOD_CALL : dependencies.classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion") (line 9)
+      METHOD_CALL : dependencies.classpath("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion") (line 10)
+    PLUGIN_DECL : apply plugin: kotlin (line 13)
+    PLUGIN_DECL : apply plugin: groovy (line 14)
+    REPOSITORIES_BLOCK : repositories (line 16)
+      REPOSITORIES_DECL : jcenter (line 17)
+      REPOSITORIES_DECL : mavenCentral (line 18)
+    DEPENDENCIES_BLOCK : dependencies (line 21)
+      DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 22)
+      DEPENDENCY_DECL : configuration='compile', group='junit', name='junit', version='4.12' (line 24)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.12' (line 25)
+      DEPENDENCY_DECL : configuration='compile', group='org.jetbrains.kotlin', name='kotlin-stdlib', version='$kotlinVersion' (line 27)
+      DEPENDENCY_DECL : configuration='compile', group='org.jetbrains.kotlin', name='kotlin-reflect', version='$kotlinVersion' (line 28)
+      DEPENDENCY_DECL : configuration='testCompile', group='org.jetbrains.kotlin', name='kotlin-test', version='$kotlinVersion' (line 30)
+      DEPENDENCY_DECL : configuration='testCompile', group='org.jetbrains.kotlin', name='kotlin-test-junit', version='$kotlinVersion' (line 31)
+    ASSIGNMENT : name: sourceSets.main.java.srcDirs, operator: +=, value: "src/main/java" (line 34)
+    ASSIGNMENT : name: sourceSets.main.kotlin.srcDirs, operator: +=, value: "src/main/kotlin" (line 35)
+    ASSIGNMENT : name: sourceSets.main.kotlin.srcDirs, operator: +=, value: "build/generated-src/java" (line 36)
+    ASSIGNMENT : name: sourceSets.main.kotlin.srcDirs, operator: +=, value: "build/generated-src/kotlin" (line 37)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : Tryout/build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 1)
+      REPOSITORIES_BLOCK : repositories (line 2)
+        REPOSITORIES_DECL : jcenter (line 3)
+        REPOSITORIES_DECL : mavenCentral (line 4)
+        REPOSITORIES_DECL : maven (line 5)
+          REPOSITORIES_DECL : url(uri(File("${System.getProperty(user.home)}${File.separator}Groot${File.separator}Repository")."absolutePath")) (line 6)
+      DEPENDENCIES_BLOCK : dependencies (line 10)
+        DEPENDENCY_DECL : configuration='classpath', group='net.milosvasic.groot', name='Groot', version='1.0.0-Alpha-4-SNAPSHOT' (line 11)
+        DEPENDENCY_DECL : configuration='classpath', group='org.jetbrains.kotlin', name='kotlin-gradle-plugin', version='1.1.0' (line 13)
+        DEPENDENCY_DECL : configuration='classpath', group='org.jetbrains.kotlin', name='kotlin-reflect', version='1.1.0' (line 14)
+    PLUGIN_DECL : apply plugin: groot (line 18)
+    PLUGIN_DECL : apply plugin: groot-kotlin (line 19)
+    PLUGIN_DECL : apply plugin: groot-credentials (line 20)
+    METHOD_CALL : groot.registerRepository("http://repo.milosvasic.net/releases") (line 22)
+    METHOD_CALL : groot.registerRepository("http://repo.milosvasic.net/development") (line 23)
+    METHOD_CALL : groot.depend("net.milosvasic.logger", "Logger", "1.2.0") (line 25)
+    METHOD_CALL : groot.depend("net.milosvasic.factory", "ProjectFactory", "1.0.0_Alpha_1_DEV_+") (line 26)
+    DECLARATION : name: alpha, value: 1 (line 28)
+    DECLARATION : name: beta, value: 0 (line 29)
+    DECLARATION : name: version, value: 1 (line 30)
+    DECLARATION : name: secondaryVersion, value: 0 (line 31)
+    DECLARATION : name: tertiaryVersion, value: 0 (line 32)
+    DECLARATION : name: projectPackage, value: "kotlin" (line 33)
+    DECLARATION : name: projectGroup, value: "net.milosvasic.tryout.groot" (line 34)
+    METHOD_CALL : groot."kotlin"."project".setup(alpha, beta, version, secondaryVersion, tertiaryVersion, projectGroup, projectPackage) (line 36)
+    DECLARATION : name: fullPackage, value: groot."kotlin"."project"."projectPackage" (line 46)
+    DECLARATION : name: fullVersion, value: groot."kotlin"."project"."projectVersion" (line 47)
+    METHOD_CALL : groot."kotlin"."application".setup(fullPackage) (line 49)
+    ASSIGNMENT : name: groot.deployment.ftp.host, operator: =, value: ftpServer (line 51)
+    ASSIGNMENT : name: groot.deployment.ftp.username, operator: =, value: ftpUsername (line 52)
+    ASSIGNMENT : name: groot.deployment.ftp.password, operator: =, value: ftpPassword (line 53)
+    METHOD_CALL : groot."deployment".setup(fullPackage, fullVersion) (line 54)
+  BUILD_GRADLE : build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 1)
+      REPOSITORIES_BLOCK : repositories (line 2)
+        REPOSITORIES_DECL : jcenter (line 3)
+        REPOSITORIES_DECL : mavenCentral (line 4)
+    REPOSITORIES_BLOCK : repositories (line 8)
+      REPOSITORIES_DECL : jcenter (line 9)
+      REPOSITORIES_DECL : mavenCentral (line 10)
+
+=== DELETED COMPOSITE NODES ===
+DEPENDENCIES_BLOCK:dependencies (line 21, parent=BUILD_GRADLE:build.gradle)
+
+=== DELETED LEAF NODES ===
+ASSIGNMENT:ext.kotlinVersion = 1.0.6 (line 4, parent=BUILDSCRIPT:buildscript)
+ASSIGNMENT:sourceSets.main.java.srcDirs = src/main/java (line 34, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:sourceSets.main.kotlin.srcDirs = build/generated-src/java (line 36, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:sourceSets.main.kotlin.srcDirs = build/generated-src/kotlin (line 37, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:sourceSets.main.kotlin.srcDirs = src/main/kotlin (line 35, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCY_DECL:compile (line 22, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 24, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 27, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 28, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 25, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 30, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 31, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:classpath (line 10, parent=BUILDSCRIPT:buildscript)
+METHOD_CALL:classpath (line 9, parent=BUILDSCRIPT:buildscript)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 13, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 14, parent=BUILD_GRADLE:build.gradle)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+DEPENDENCY_DECL:classpath (line 13, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:classpath (line 14, parent=DEPENDENCIES_BLOCK:dependencies)
+REPOSITORIES_DECL:jcenter (line 3, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 4, parent=REPOSITORIES_BLOCK:repositories)
+
+=== ALL LEAF MATCHES ===
+ASSIGNMENT:groot.deployment.ftp.host = ftpServer (line 47, parent=BUILD_GRADLE:Tryout/build.gradle) -> ASSIGNMENT:groot.deployment.ftp.host = ftpServer (line 51, parent=BUILD_GRADLE:Tryout/build.gradle)
+ASSIGNMENT:groot.deployment.ftp.password = ftpPassword (line 49, parent=BUILD_GRADLE:Tryout/build.gradle) -> ASSIGNMENT:groot.deployment.ftp.password = ftpPassword (line 53, parent=BUILD_GRADLE:Tryout/build.gradle)
+ASSIGNMENT:groot.deployment.ftp.username = ftpUsername (line 48, parent=BUILD_GRADLE:Tryout/build.gradle) -> ASSIGNMENT:groot.deployment.ftp.username = ftpUsername (line 52, parent=BUILD_GRADLE:Tryout/build.gradle)
+DECLARATION:alpha = 1 (line 24, parent=BUILD_GRADLE:Tryout/build.gradle) -> DECLARATION:alpha = 1 (line 28, parent=BUILD_GRADLE:Tryout/build.gradle)
+DECLARATION:beta = 0 (line 25, parent=BUILD_GRADLE:Tryout/build.gradle) -> DECLARATION:beta = 0 (line 29, parent=BUILD_GRADLE:Tryout/build.gradle)
+DECLARATION:fullPackage = groot.kotlin.project.projectPackage (line 42, parent=BUILD_GRADLE:Tryout/build.gradle) -> DECLARATION:fullPackage = groot.kotlin.project.projectPackage (line 46, parent=BUILD_GRADLE:Tryout/build.gradle)
+DECLARATION:fullVersion = groot.kotlin.project.projectVersion (line 43, parent=BUILD_GRADLE:Tryout/build.gradle) -> DECLARATION:fullVersion = groot.kotlin.project.projectVersion (line 47, parent=BUILD_GRADLE:Tryout/build.gradle)
+DECLARATION:projectGroup = net.milosvasic.tryout.groot (line 30, parent=BUILD_GRADLE:Tryout/build.gradle) -> DECLARATION:projectGroup = net.milosvasic.tryout.groot (line 34, parent=BUILD_GRADLE:Tryout/build.gradle)
+DECLARATION:projectPackage = kotlin (line 29, parent=BUILD_GRADLE:Tryout/build.gradle) -> DECLARATION:projectPackage = kotlin (line 33, parent=BUILD_GRADLE:Tryout/build.gradle)
+DECLARATION:secondaryVersion = 0 (line 27, parent=BUILD_GRADLE:Tryout/build.gradle) -> DECLARATION:secondaryVersion = 0 (line 31, parent=BUILD_GRADLE:Tryout/build.gradle)
+DECLARATION:tertiaryVersion = 0 (line 28, parent=BUILD_GRADLE:Tryout/build.gradle) -> DECLARATION:tertiaryVersion = 0 (line 32, parent=BUILD_GRADLE:Tryout/build.gradle)
+DECLARATION:version = 1 (line 26, parent=BUILD_GRADLE:Tryout/build.gradle) -> DECLARATION:version = 1 (line 30, parent=BUILD_GRADLE:Tryout/build.gradle)
+DEPENDENCY_DECL:classpath (line 9, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 11, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:depend (line 21, parent=BUILD_GRADLE:Tryout/build.gradle) -> METHOD_CALL:depend (line 25, parent=BUILD_GRADLE:Tryout/build.gradle)
+METHOD_CALL:depend (line 22, parent=BUILD_GRADLE:Tryout/build.gradle) -> METHOD_CALL:depend (line 26, parent=BUILD_GRADLE:Tryout/build.gradle)
+METHOD_CALL:registerRepository (line 18, parent=BUILD_GRADLE:Tryout/build.gradle) -> METHOD_CALL:registerRepository (line 22, parent=BUILD_GRADLE:Tryout/build.gradle)
+METHOD_CALL:registerRepository (line 19, parent=BUILD_GRADLE:Tryout/build.gradle) -> METHOD_CALL:registerRepository (line 23, parent=BUILD_GRADLE:Tryout/build.gradle)
+METHOD_CALL:setup (line 32, parent=BUILD_GRADLE:Tryout/build.gradle) -> METHOD_CALL:setup (line 36, parent=BUILD_GRADLE:Tryout/build.gradle)
+METHOD_CALL:setup (line 45, parent=BUILD_GRADLE:Tryout/build.gradle) -> METHOD_CALL:setup (line 49, parent=BUILD_GRADLE:Tryout/build.gradle)
+METHOD_CALL:setup (line 50, parent=BUILD_GRADLE:Tryout/build.gradle) -> METHOD_CALL:setup (line 54, parent=BUILD_GRADLE:Tryout/build.gradle)
+PLUGIN_DECL:apply (line 14, parent=BUILD_GRADLE:Tryout/build.gradle) -> PLUGIN_DECL:apply (line 18, parent=BUILD_GRADLE:Tryout/build.gradle)
+PLUGIN_DECL:apply (line 15, parent=BUILD_GRADLE:Tryout/build.gradle) -> PLUGIN_DECL:apply (line 19, parent=BUILD_GRADLE:Tryout/build.gradle)
+PLUGIN_DECL:apply (line 16, parent=BUILD_GRADLE:Tryout/build.gradle) -> PLUGIN_DECL:apply (line 20, parent=BUILD_GRADLE:Tryout/build.gradle)
+REPOSITORIES_DECL:jcenter (line 17, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 9, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:jcenter (line 6, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 3, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 18, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 10, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 7, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 4, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:url (line 4, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 6, parent=REPOSITORIES_DECL:maven)
+
+=== LEAF ROUND 1 MATCHES ===
+ASSIGNMENT:groot.deployment.ftp.host = ftpServer (line 47, parent=BUILD_GRADLE:Tryout/build.gradle) -> ASSIGNMENT:groot.deployment.ftp.host = ftpServer (line 51, parent=BUILD_GRADLE:Tryout/build.gradle)
+ASSIGNMENT:groot.deployment.ftp.password = ftpPassword (line 49, parent=BUILD_GRADLE:Tryout/build.gradle) -> ASSIGNMENT:groot.deployment.ftp.password = ftpPassword (line 53, parent=BUILD_GRADLE:Tryout/build.gradle)
+ASSIGNMENT:groot.deployment.ftp.username = ftpUsername (line 48, parent=BUILD_GRADLE:Tryout/build.gradle) -> ASSIGNMENT:groot.deployment.ftp.username = ftpUsername (line 52, parent=BUILD_GRADLE:Tryout/build.gradle)
+DECLARATION:alpha = 1 (line 24, parent=BUILD_GRADLE:Tryout/build.gradle) -> DECLARATION:alpha = 1 (line 28, parent=BUILD_GRADLE:Tryout/build.gradle)
+DECLARATION:beta = 0 (line 25, parent=BUILD_GRADLE:Tryout/build.gradle) -> DECLARATION:beta = 0 (line 29, parent=BUILD_GRADLE:Tryout/build.gradle)
+DECLARATION:fullPackage = groot.kotlin.project.projectPackage (line 42, parent=BUILD_GRADLE:Tryout/build.gradle) -> DECLARATION:fullPackage = groot.kotlin.project.projectPackage (line 46, parent=BUILD_GRADLE:Tryout/build.gradle)
+DECLARATION:fullVersion = groot.kotlin.project.projectVersion (line 43, parent=BUILD_GRADLE:Tryout/build.gradle) -> DECLARATION:fullVersion = groot.kotlin.project.projectVersion (line 47, parent=BUILD_GRADLE:Tryout/build.gradle)
+DECLARATION:projectGroup = net.milosvasic.tryout.groot (line 30, parent=BUILD_GRADLE:Tryout/build.gradle) -> DECLARATION:projectGroup = net.milosvasic.tryout.groot (line 34, parent=BUILD_GRADLE:Tryout/build.gradle)
+DECLARATION:projectPackage = kotlin (line 29, parent=BUILD_GRADLE:Tryout/build.gradle) -> DECLARATION:projectPackage = kotlin (line 33, parent=BUILD_GRADLE:Tryout/build.gradle)
+DECLARATION:secondaryVersion = 0 (line 27, parent=BUILD_GRADLE:Tryout/build.gradle) -> DECLARATION:secondaryVersion = 0 (line 31, parent=BUILD_GRADLE:Tryout/build.gradle)
+DECLARATION:tertiaryVersion = 0 (line 28, parent=BUILD_GRADLE:Tryout/build.gradle) -> DECLARATION:tertiaryVersion = 0 (line 32, parent=BUILD_GRADLE:Tryout/build.gradle)
+DECLARATION:version = 1 (line 26, parent=BUILD_GRADLE:Tryout/build.gradle) -> DECLARATION:version = 1 (line 30, parent=BUILD_GRADLE:Tryout/build.gradle)
+DEPENDENCY_DECL:classpath (line 9, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 11, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:depend (line 21, parent=BUILD_GRADLE:Tryout/build.gradle) -> METHOD_CALL:depend (line 25, parent=BUILD_GRADLE:Tryout/build.gradle)
+METHOD_CALL:depend (line 22, parent=BUILD_GRADLE:Tryout/build.gradle) -> METHOD_CALL:depend (line 26, parent=BUILD_GRADLE:Tryout/build.gradle)
+METHOD_CALL:registerRepository (line 18, parent=BUILD_GRADLE:Tryout/build.gradle) -> METHOD_CALL:registerRepository (line 22, parent=BUILD_GRADLE:Tryout/build.gradle)
+METHOD_CALL:registerRepository (line 19, parent=BUILD_GRADLE:Tryout/build.gradle) -> METHOD_CALL:registerRepository (line 23, parent=BUILD_GRADLE:Tryout/build.gradle)
+METHOD_CALL:setup (line 32, parent=BUILD_GRADLE:Tryout/build.gradle) -> METHOD_CALL:setup (line 36, parent=BUILD_GRADLE:Tryout/build.gradle)
+METHOD_CALL:setup (line 45, parent=BUILD_GRADLE:Tryout/build.gradle) -> METHOD_CALL:setup (line 49, parent=BUILD_GRADLE:Tryout/build.gradle)
+METHOD_CALL:setup (line 50, parent=BUILD_GRADLE:Tryout/build.gradle) -> METHOD_CALL:setup (line 54, parent=BUILD_GRADLE:Tryout/build.gradle)
+PLUGIN_DECL:apply (line 14, parent=BUILD_GRADLE:Tryout/build.gradle) -> PLUGIN_DECL:apply (line 18, parent=BUILD_GRADLE:Tryout/build.gradle)
+PLUGIN_DECL:apply (line 15, parent=BUILD_GRADLE:Tryout/build.gradle) -> PLUGIN_DECL:apply (line 19, parent=BUILD_GRADLE:Tryout/build.gradle)
+PLUGIN_DECL:apply (line 16, parent=BUILD_GRADLE:Tryout/build.gradle) -> PLUGIN_DECL:apply (line 20, parent=BUILD_GRADLE:Tryout/build.gradle)
+REPOSITORIES_DECL:jcenter (line 17, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 9, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:jcenter (line 6, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 3, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 18, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 10, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 7, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 4, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:url (line 4, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 6, parent=REPOSITORIES_DECL:maven)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+(none)
+
+=== ALL COMPOSITE MATCHES ===
+BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:Tryout/build.gradle) -> BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:Tryout/build.gradle)
+BUILDSCRIPT:buildscript (line 3, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 8, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 10, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 16, parent=BUILD_GRADLE:build.gradle) -> REPOSITORIES_BLOCK:repositories (line 8, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_BLOCK:repositories (line 2, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 2, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 5, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 2, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_DECL:maven (line 3, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 5, parent=REPOSITORIES_BLOCK:repositories)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+REPOSITORIES_BLOCK:repositories (line 16, parent=BUILD_GRADLE:build.gradle) -> REPOSITORIES_BLOCK:repositories (line 8, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_BLOCK:repositories (line 5, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 2, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_DECL:maven (line 3, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 5, parent=REPOSITORIES_BLOCK:repositories)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:Tryout/build.gradle) -> BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:Tryout/build.gradle)
+BUILDSCRIPT:buildscript (line 3, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 8, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 10, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 2, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 2, parent=BUILDSCRIPT:buildscript)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:apply (1)'
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:sourceSets.main.kotlin.srcDirs (36)'
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:compile (22)'
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:ext.kotlinVersion (4)'
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:apply (14)'
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:classpath (9)'
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:classpath (10)'
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:sourceSets.main.java.srcDirs (34)'
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:sourceSets.main.kotlin.srcDirs (37)'
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:sourceSets.main.kotlin.srcDirs (35)'
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:apply (13)'
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 28; 28, 0, 0
+Matched composites: 7; 7, 0, 0
+Deleted leaves: 17; 17, 0, 0
+Deleted composites: 1; 1, 0, 0
+Added leaves: 4; 4, 0, 0
+Added composites: 0; 0, 0, 0
+Total expected events: 57
+Total predicted events: 57
+
+TP=57 FP=0 FN=0
+TP=57, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT42 MISSED ===
+(none)

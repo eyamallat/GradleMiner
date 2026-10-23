@@ -1,0 +1,180 @@
+=== COMMIT ===
+http://github.com/snowch/biginsight-examples/commit/f51247a7310bfdf59a1f8342c9049e569a00ed63
+
+=== CHANGED GRADLE FILES ===
+examples/Ambari/build.gradle -> examples/Ambari/build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : examples/Ambari/build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 2)
+      REPOSITORIES_BLOCK : repositories (line 3)
+        REPOSITORIES_DECL : mavenCentral (line 4)
+      DEPENDENCIES_BLOCK : dependencies (line 6)
+        DEPENDENCY_DECL : configuration='classpath', group='org.codehaus.groovy', name='groovy-all', version='2.0.5' (line 7)
+        DEPENDENCY_DECL : configuration='classpath', group='org.codehaus.groovy.modules.http-builder', name='http-builder', version='0.7.1' (line 8)
+    PLUGINS_BLOCK : plugins (line 12)
+      PLUGIN_DECL : id 'groovy' (line 13)
+    DECLARATION : name: props, value: Properties() (line 17)
+    METHOD_CALL : props.load(FileInputStream("$projectDir/../../connection.properties")) (line 18)
+    REPOSITORIES_BLOCK : repositories (line 22)
+      REPOSITORIES_DECL : mavenCentral (line 23)
+    DEPENDENCIES_BLOCK : dependencies (line 26)
+      DEPENDENCY_DECL : configuration='compile', group='org.codehaus.groovy', name='groovy-all', version='2.0.5' (line 27)
+      DEPENDENCY_DECL : configuration='compile', group='org.codehaus.groovy.modules.http-builder', name='http-builder', version='0.7.1' (line 28)
+    BLOCK : sourceSets (line 32)
+      BLOCK : main (line 33)
+        BLOCK : groovy (line 34)
+          ASSIGNMENT : name: srcDirs, operator: =, value: ["."] (line 35)
+    TASK_DECLARATION : taskName=Example, type=JavaExec, style=task (line 41)
+      TASK_RELATION : relation=mustRunAfter, owner=Example, targets=clean (line 44)
+      METHOD_CALL : environment("ambariUrl", props."ambariUrl") (line 46)
+      METHOD_CALL : environment("ambariUsername", props."ambariUsername") (line 47)
+      METHOD_CALL : environment("ambariPassword", props."ambariPassword") (line 48)
+      ASSIGNMENT : name: main, operator: =, value: "Example" (line 50)
+      ASSIGNMENT : name: classpath, operator: =, value: sourceSets."main"."runtimeClasspath" (line 51)
+    TASK_DECLARATION : taskName=ExampleServiceCheck, type=JavaExec, style=task (line 54)
+      TASK_RELATION : relation=mustRunAfter, owner=ExampleServiceCheck, targets=clean (line 57)
+      METHOD_CALL : environment("ambariUrl", props."ambariUrl") (line 59)
+      METHOD_CALL : environment("ambariUsername", props."ambariUsername") (line 60)
+      METHOD_CALL : environment("ambariPassword", props."ambariPassword") (line 61)
+      ASSIGNMENT : name: main, operator: =, value: "ExampleServiceCheck" (line 63)
+      ASSIGNMENT : name: classpath, operator: =, value: sourceSets."main"."runtimeClasspath" (line 64)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : examples/Ambari/build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 2)
+      REPOSITORIES_BLOCK : repositories (line 3)
+        REPOSITORIES_DECL : mavenCentral (line 4)
+      DEPENDENCIES_BLOCK : dependencies (line 6)
+        DEPENDENCY_DECL : configuration='classpath', group='org.codehaus.groovy', name='groovy-all', version='2.0.5' (line 7)
+        DEPENDENCY_DECL : configuration='classpath', group='org.codehaus.groovy.modules.http-builder', name='http-builder', version='0.7.1' (line 8)
+    PLUGINS_BLOCK : plugins (line 12)
+      PLUGIN_DECL : id 'groovy' (line 13)
+    DECLARATION : name: props, value: Properties() (line 17)
+    METHOD_CALL : props.load(FileInputStream("$projectDir/../../connection.properties")) (line 18)
+    REPOSITORIES_BLOCK : repositories (line 22)
+      REPOSITORIES_DECL : mavenCentral (line 23)
+    DEPENDENCIES_BLOCK : dependencies (line 26)
+      DEPENDENCY_DECL : configuration='compile', group='org.codehaus.groovy', name='groovy-all', version='2.0.5' (line 27)
+      DEPENDENCY_DECL : configuration='compile', group='org.codehaus.groovy.modules.http-builder', name='http-builder', version='0.7.1' (line 28)
+    BLOCK : sourceSets (line 32)
+      BLOCK : main (line 33)
+        BLOCK : groovy (line 34)
+          ASSIGNMENT : name: srcDirs, operator: =, value: ["."] (line 35)
+    TASK_DECLARATION : taskName=ListServices, type=JavaExec, style=task (line 41)
+      TASK_RELATION : relation=mustRunAfter, owner=ListServices, targets=clean (line 44)
+      METHOD_CALL : environment("ambariUrl", props."ambariUrl") (line 46)
+      METHOD_CALL : environment("ambariUsername", props."ambariUsername") (line 47)
+      METHOD_CALL : environment("ambariPassword", props."ambariPassword") (line 48)
+      ASSIGNMENT : name: main, operator: =, value: "ListServices" (line 50)
+      ASSIGNMENT : name: classpath, operator: =, value: sourceSets."main"."runtimeClasspath" (line 51)
+    TASK_DECLARATION : taskName=HdfsServiceCheck, type=JavaExec, style=task (line 54)
+      TASK_RELATION : relation=mustRunAfter, owner=HdfsServiceCheck, targets=clean (line 57)
+      METHOD_CALL : environment("ambariUrl", props."ambariUrl") (line 59)
+      METHOD_CALL : environment("ambariUsername", props."ambariUsername") (line 60)
+      METHOD_CALL : environment("ambariPassword", props."ambariPassword") (line 61)
+      ASSIGNMENT : name: main, operator: =, value: "HdfsServiceCheck" (line 63)
+      ASSIGNMENT : name: classpath, operator: =, value: sourceSets."main"."runtimeClasspath" (line 64)
+    TASK_DECLARATION : taskName=Example, style=task (line 67)
+      TASK_RELATION : relation=dependsOn, owner=Example, targets=ListServices, HdfsServiceCheck (line 69)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+(none)
+
+=== ADDED COMPOSITE NODES ===
+TASK_DECLARATION:Example (line 67, parent=BUILD_GRADLE:examples/Ambari/build.gradle)
+
+=== ADDED LEAF NODES ===
+TASK_RELATION:dependsOn (line 69, parent=TASK_DECLARATION:Example)
+
+=== ALL LEAF MATCHES ===
+ASSIGNMENT:classpath = sourceSets.main.runtimeClasspath (line 51, parent=TASK_DECLARATION:Example) -> ASSIGNMENT:classpath = sourceSets.main.runtimeClasspath (line 51, parent=TASK_DECLARATION:ListServices)
+ASSIGNMENT:classpath = sourceSets.main.runtimeClasspath (line 64, parent=TASK_DECLARATION:ExampleServiceCheck) -> ASSIGNMENT:classpath = sourceSets.main.runtimeClasspath (line 64, parent=TASK_DECLARATION:HdfsServiceCheck)
+ASSIGNMENT:main = Example (line 50, parent=TASK_DECLARATION:Example) -> ASSIGNMENT:main = ListServices (line 50, parent=TASK_DECLARATION:ListServices)
+ASSIGNMENT:main = ExampleServiceCheck (line 63, parent=TASK_DECLARATION:ExampleServiceCheck) -> ASSIGNMENT:main = HdfsServiceCheck (line 63, parent=TASK_DECLARATION:HdfsServiceCheck)
+ASSIGNMENT:srcDirs = [.] (line 35, parent=BLOCK:groovy) -> ASSIGNMENT:srcDirs = [.] (line 35, parent=BLOCK:groovy)
+DECLARATION:props = new Properties() (line 17, parent=BUILD_GRADLE:examples/Ambari/build.gradle) -> DECLARATION:props = new Properties() (line 17, parent=BUILD_GRADLE:examples/Ambari/build.gradle)
+DEPENDENCY_DECL:classpath (line 7, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 7, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:classpath (line 8, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 8, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 27, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 27, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 28, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 28, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:environment (line 46, parent=TASK_DECLARATION:Example) -> METHOD_CALL:environment (line 46, parent=TASK_DECLARATION:ListServices)
+METHOD_CALL:environment (line 47, parent=TASK_DECLARATION:Example) -> METHOD_CALL:environment (line 47, parent=TASK_DECLARATION:ListServices)
+METHOD_CALL:environment (line 48, parent=TASK_DECLARATION:Example) -> METHOD_CALL:environment (line 48, parent=TASK_DECLARATION:ListServices)
+METHOD_CALL:environment (line 59, parent=TASK_DECLARATION:ExampleServiceCheck) -> METHOD_CALL:environment (line 59, parent=TASK_DECLARATION:HdfsServiceCheck)
+METHOD_CALL:environment (line 60, parent=TASK_DECLARATION:ExampleServiceCheck) -> METHOD_CALL:environment (line 60, parent=TASK_DECLARATION:HdfsServiceCheck)
+METHOD_CALL:environment (line 61, parent=TASK_DECLARATION:ExampleServiceCheck) -> METHOD_CALL:environment (line 61, parent=TASK_DECLARATION:HdfsServiceCheck)
+METHOD_CALL:load (line 18, parent=BUILD_GRADLE:examples/Ambari/build.gradle) -> METHOD_CALL:load (line 18, parent=BUILD_GRADLE:examples/Ambari/build.gradle)
+PLUGIN_DECL:id (line 13, parent=PLUGINS_BLOCK:plugins) -> PLUGIN_DECL:id (line 13, parent=PLUGINS_BLOCK:plugins)
+REPOSITORIES_DECL:mavenCentral (line 23, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 23, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 4, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 4, parent=REPOSITORIES_BLOCK:repositories)
+TASK_RELATION:mustRunAfter (line 44, parent=TASK_DECLARATION:Example) -> TASK_RELATION:mustRunAfter (line 44, parent=TASK_DECLARATION:ListServices)
+TASK_RELATION:mustRunAfter (line 57, parent=TASK_DECLARATION:ExampleServiceCheck) -> TASK_RELATION:mustRunAfter (line 57, parent=TASK_DECLARATION:HdfsServiceCheck)
+
+=== LEAF ROUND 1 MATCHES ===
+ASSIGNMENT:classpath = sourceSets.main.runtimeClasspath (line 51, parent=TASK_DECLARATION:Example) -> ASSIGNMENT:classpath = sourceSets.main.runtimeClasspath (line 51, parent=TASK_DECLARATION:ListServices)
+ASSIGNMENT:classpath = sourceSets.main.runtimeClasspath (line 64, parent=TASK_DECLARATION:ExampleServiceCheck) -> ASSIGNMENT:classpath = sourceSets.main.runtimeClasspath (line 64, parent=TASK_DECLARATION:HdfsServiceCheck)
+ASSIGNMENT:srcDirs = [.] (line 35, parent=BLOCK:groovy) -> ASSIGNMENT:srcDirs = [.] (line 35, parent=BLOCK:groovy)
+DECLARATION:props = new Properties() (line 17, parent=BUILD_GRADLE:examples/Ambari/build.gradle) -> DECLARATION:props = new Properties() (line 17, parent=BUILD_GRADLE:examples/Ambari/build.gradle)
+DEPENDENCY_DECL:classpath (line 7, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 7, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:classpath (line 8, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 8, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 27, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 27, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 28, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 28, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:environment (line 46, parent=TASK_DECLARATION:Example) -> METHOD_CALL:environment (line 46, parent=TASK_DECLARATION:ListServices)
+METHOD_CALL:environment (line 47, parent=TASK_DECLARATION:Example) -> METHOD_CALL:environment (line 47, parent=TASK_DECLARATION:ListServices)
+METHOD_CALL:environment (line 48, parent=TASK_DECLARATION:Example) -> METHOD_CALL:environment (line 48, parent=TASK_DECLARATION:ListServices)
+METHOD_CALL:environment (line 59, parent=TASK_DECLARATION:ExampleServiceCheck) -> METHOD_CALL:environment (line 59, parent=TASK_DECLARATION:HdfsServiceCheck)
+METHOD_CALL:environment (line 60, parent=TASK_DECLARATION:ExampleServiceCheck) -> METHOD_CALL:environment (line 60, parent=TASK_DECLARATION:HdfsServiceCheck)
+METHOD_CALL:environment (line 61, parent=TASK_DECLARATION:ExampleServiceCheck) -> METHOD_CALL:environment (line 61, parent=TASK_DECLARATION:HdfsServiceCheck)
+METHOD_CALL:load (line 18, parent=BUILD_GRADLE:examples/Ambari/build.gradle) -> METHOD_CALL:load (line 18, parent=BUILD_GRADLE:examples/Ambari/build.gradle)
+PLUGIN_DECL:id (line 13, parent=PLUGINS_BLOCK:plugins) -> PLUGIN_DECL:id (line 13, parent=PLUGINS_BLOCK:plugins)
+REPOSITORIES_DECL:mavenCentral (line 23, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 23, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 4, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 4, parent=REPOSITORIES_BLOCK:repositories)
+
+=== LEAF ROUND 2 MATCHES ===
+ASSIGNMENT:main = Example (line 50, parent=TASK_DECLARATION:Example) -> ASSIGNMENT:main = ListServices (line 50, parent=TASK_DECLARATION:ListServices)
+ASSIGNMENT:main = ExampleServiceCheck (line 63, parent=TASK_DECLARATION:ExampleServiceCheck) -> ASSIGNMENT:main = HdfsServiceCheck (line 63, parent=TASK_DECLARATION:HdfsServiceCheck)
+TASK_RELATION:mustRunAfter (line 44, parent=TASK_DECLARATION:Example) -> TASK_RELATION:mustRunAfter (line 44, parent=TASK_DECLARATION:ListServices)
+TASK_RELATION:mustRunAfter (line 57, parent=TASK_DECLARATION:ExampleServiceCheck) -> TASK_RELATION:mustRunAfter (line 57, parent=TASK_DECLARATION:HdfsServiceCheck)
+
+=== LEAF ROUND 3 MATCHES ===
+(none)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:groovy (line 34, parent=BLOCK:main) -> BLOCK:groovy (line 34, parent=BLOCK:main)
+BLOCK:main (line 33, parent=BLOCK:sourceSets) -> BLOCK:main (line 33, parent=BLOCK:sourceSets)
+BLOCK:sourceSets (line 32, parent=BUILD_GRADLE:examples/Ambari/build.gradle) -> BLOCK:sourceSets (line 32, parent=BUILD_GRADLE:examples/Ambari/build.gradle)
+BUILDSCRIPT:buildscript (line 2, parent=BUILD_GRADLE:examples/Ambari/build.gradle) -> BUILDSCRIPT:buildscript (line 2, parent=BUILD_GRADLE:examples/Ambari/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 26, parent=BUILD_GRADLE:examples/Ambari/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 26, parent=BUILD_GRADLE:examples/Ambari/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 6, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 6, parent=BUILDSCRIPT:buildscript)
+PLUGINS_BLOCK:plugins (line 12, parent=BUILD_GRADLE:examples/Ambari/build.gradle) -> PLUGINS_BLOCK:plugins (line 12, parent=BUILD_GRADLE:examples/Ambari/build.gradle)
+REPOSITORIES_BLOCK:repositories (line 22, parent=BUILD_GRADLE:examples/Ambari/build.gradle) -> REPOSITORIES_BLOCK:repositories (line 22, parent=BUILD_GRADLE:examples/Ambari/build.gradle)
+REPOSITORIES_BLOCK:repositories (line 3, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 3, parent=BUILDSCRIPT:buildscript)
+TASK_DECLARATION:Example (line 41, parent=BUILD_GRADLE:examples/Ambari/build.gradle) -> TASK_DECLARATION:ListServices (line 41, parent=BUILD_GRADLE:examples/Ambari/build.gradle)
+TASK_DECLARATION:ExampleServiceCheck (line 54, parent=BUILD_GRADLE:examples/Ambari/build.gradle) -> TASK_DECLARATION:HdfsServiceCheck (line 54, parent=BUILD_GRADLE:examples/Ambari/build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:groovy (line 34, parent=BLOCK:main) -> BLOCK:groovy (line 34, parent=BLOCK:main)
+BLOCK:main (line 33, parent=BLOCK:sourceSets) -> BLOCK:main (line 33, parent=BLOCK:sourceSets)
+BLOCK:sourceSets (line 32, parent=BUILD_GRADLE:examples/Ambari/build.gradle) -> BLOCK:sourceSets (line 32, parent=BUILD_GRADLE:examples/Ambari/build.gradle)
+BUILDSCRIPT:buildscript (line 2, parent=BUILD_GRADLE:examples/Ambari/build.gradle) -> BUILDSCRIPT:buildscript (line 2, parent=BUILD_GRADLE:examples/Ambari/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 26, parent=BUILD_GRADLE:examples/Ambari/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 26, parent=BUILD_GRADLE:examples/Ambari/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 6, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 6, parent=BUILDSCRIPT:buildscript)
+PLUGINS_BLOCK:plugins (line 12, parent=BUILD_GRADLE:examples/Ambari/build.gradle) -> PLUGINS_BLOCK:plugins (line 12, parent=BUILD_GRADLE:examples/Ambari/build.gradle)
+REPOSITORIES_BLOCK:repositories (line 22, parent=BUILD_GRADLE:examples/Ambari/build.gradle) -> REPOSITORIES_BLOCK:repositories (line 22, parent=BUILD_GRADLE:examples/Ambari/build.gradle)
+REPOSITORIES_BLOCK:repositories (line 3, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 3, parent=BUILDSCRIPT:buildscript)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+TASK_DECLARATION:Example (line 41, parent=BUILD_GRADLE:examples/Ambari/build.gradle) -> TASK_DECLARATION:ListServices (line 41, parent=BUILD_GRADLE:examples/Ambari/build.gradle)
+TASK_DECLARATION:ExampleServiceCheck (line 54, parent=BUILD_GRADLE:examples/Ambari/build.gradle) -> TASK_DECLARATION:HdfsServiceCheck (line 54, parent=BUILD_GRADLE:examples/Ambari/build.gradle)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+(not scored in this matching-phase reference)

@@ -1,0 +1,285 @@
+
+=== COMMIT ===
+http://github.com/byoutline/OttoCachedField/commit/353e41c7f69d5ac50d520eb8545a6e6e11519a10
+
+=== CHANGED GRADLE FILES ===
+build.gradle -> build.gradle
+checkGenerics.gradle -> checkGenerics.gradle
+codeCoverage.gradle -> codeCoverage.gradle
+forceJava6.gradle -> forceJava6.gradle
+javaLib.gradle -> javaLib.gradle
+spockTests.gradle -> spockTests.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: java (line 1)
+    PLUGIN_DECL : apply plugin: groovy (line 3)
+    PLUGIN_DECL : apply plugin: jacoco (line 4)
+    PLUGIN_DECL : apply plugin: com.github.kt3k.coveralls (line 5)
+    ASSIGNMENT : name: [compileJava, compileTestJava]*?.options*?.encoding, operator: =, value: "UTF-8" (line 7)
+    BLOCK : compileJava (line 9)
+      ASSIGNMENT : name: sourceCompatibility, operator: =, value: 1.6 (line 10)
+      ASSIGNMENT : name: targetCompatibility, operator: =, value: 1.6 (line 11)
+      DECLARATION : name: jdk6Home, value: System.getenv() [ "JAVA6_HOME" (line 12)
+      ASSIGNMENT : name: options.bootClasspath, operator: =, value: File(jdk6Home, "/jre/lib/rt.jar")."canonicalPath" (line 13)
+    BUILDSCRIPT : buildscript (line 16)
+      REPOSITORIES_BLOCK : repositories (line 17)
+        REPOSITORIES_DECL : mavenCentral (line 18)
+      DEPENDENCIES_BLOCK : dependencies (line 21)
+        DEPENDENCY_DECL : configuration='classpath', group='net.saliman', name='gradle-cobertura-plugin', version='2.0.0' (line 22)
+        DEPENDENCY_DECL : configuration='classpath', group='org.kt3k.gradle.plugin', name='coveralls-gradle-plugin', version='2.3.1' (line 23)
+    REPOSITORIES_BLOCK : repositories (line 27)
+      REPOSITORIES_DECL : mavenCentral (line 28)
+      REPOSITORIES_DECL : maven (line 30)
+        REPOSITORIES_DECL : url("http://oss.sonatype.org/content/repositories/snapshots/") (line 30)
+    DEPENDENCIES_BLOCK : dependencies (line 33)
+      DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 34)
+      DEPENDENCY_DECL : configuration='compile', group='com.byoutline.ottoeventcallback', name='ottoeventcallback', version='1.2.5' (line 35)
+      DEPENDENCY_DECL : configuration='compile', group='javax.inject', name='javax.inject', version='1' (line 36)
+      DEPENDENCY_DECL : configuration='compile', group='com.google.code.findbugs', name='jsr305', version='3.0.0' (line 37)
+      DEPENDENCY_DECL : configuration='compile', group='com.squareup.retrofit', name='retrofit', version='1.8.0' (line 38)
+      DEPENDENCY_DECL : configuration='compile', group='com.squareup', name='otto', version='1.3.5' (line 39)
+      DEPENDENCY_DECL : configuration='compile', group='com.byoutline.cachedfield', name='cachedfield', version='1.3.3' (line 40)
+      DEPENDENCY_DECL : configuration='testCompile', group='org.codehaus.groovy', name='groovy-all', version='2.4.1' (line 43)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.10' (line 44)
+      DEPENDENCY_DECL : configuration='testCompile', group='org.spockframework', name='spock-core', version='1.0-groovy-2.4' (line 45)
+      DEPENDENCY_DECL : configuration='testRuntime', group='cglib', name='cglib-nodep', version='2.2.2' (line 46)
+      DEPENDENCY_DECL : configuration='testRuntime', group='org.objenesis', name='objenesis', version='1.2' (line 48)
+    ALLPROJECTS : allprojects (line 52)
+      BLOCK : gradle.projectsEvaluated (line 53)
+        TASK_CONFIGURATION : , type=JavaCompile, style=tasks.withType (line 54)
+          ASSIGNMENT : name: options.compilerArgs, operator: <<, value: "-Xlint:unchecked" (line 55)
+    BLOCK : jacocoTestReport (line 60)
+      BLOCK : reports (line 61)
+        METHOD_CALL : xml.enabled(true) (line 62)
+        ASSIGNMENT : name: html.enabled, operator: =, value: true (line 63)
+        METHOD_CALL : csv.enabled(false) (line 64)
+        METHOD_CALL : html.destination("$buildDir/jacocoHtml") (line 65)
+    APPLY_SCRIPT : apply from: maven-push.gradle (line 69)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: java (line 1)
+    PLUGIN_DECL : apply plugin: groovy (line 3)
+    ASSIGNMENT : name: [compileJava, compileTestJava]*?.options*?.encoding, operator: =, value: "UTF-8" (line 5)
+    BUILDSCRIPT : buildscript (line 7)
+      REPOSITORIES_BLOCK : repositories (line 8)
+        REPOSITORIES_DECL : maven (line 9)
+          REPOSITORIES_DECL : url("https://plugins.gradle.org/m2/") (line 10)
+      DEPENDENCIES_BLOCK : dependencies (line 14)
+        DEPENDENCY_DECL : configuration='classpath', group='net.saliman', name='gradle-cobertura-plugin', version='2.0.0' (line 15)
+        DEPENDENCY_DECL : configuration='classpath', group='org.kt3k.gradle.plugin', name='coveralls-gradle-plugin', version='2.3.1' (line 16)
+    APPLY_SCRIPT : apply from: javaLib.gradle (line 20)
+    REPOSITORIES_BLOCK : repositories (line 22)
+      REPOSITORIES_DECL : mavenCentral (line 23)
+      REPOSITORIES_DECL : maven (line 25)
+        REPOSITORIES_DECL : url("http://oss.sonatype.org/content/repositories/snapshots/") (line 25)
+    DEPENDENCIES_BLOCK : dependencies (line 28)
+      DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 29)
+      DEPENDENCY_DECL : configuration='compile', group='com.byoutline.ottoeventcallback', name='ottoeventcallback', version='1.2.5' (line 30)
+      DEPENDENCY_DECL : configuration='compile', group='javax.inject', name='javax.inject', version='1' (line 31)
+      DEPENDENCY_DECL : configuration='compile', group='com.google.code.findbugs', name='jsr305', version='3.0.0' (line 32)
+      DEPENDENCY_DECL : configuration='compile', group='com.squareup.retrofit', name='retrofit', version='1.8.0' (line 33)
+      DEPENDENCY_DECL : configuration='compile', group='com.squareup', name='otto', version='1.3.5' (line 34)
+      DEPENDENCY_DECL : configuration='compile', group='com.byoutline.cachedfield', name='cachedfield', version='1.3.3' (line 35)
+    APPLY_SCRIPT : apply from: maven-push.gradle (line 38)
+  BUILD_LOGIC_GRADLE : checkGenerics.gradle (line 0)
+    ALLPROJECTS : allprojects (line 1)
+      BLOCK : gradle.projectsEvaluated (line 2)
+        TASK_CONFIGURATION : , type=JavaCompile, style=tasks.withType (line 3)
+          ASSIGNMENT : name: options.compilerArgs, operator: <<, value: "-Xlint:unchecked" (line 4)
+  BUILD_LOGIC_GRADLE : codeCoverage.gradle (line 0)
+    PLUGIN_DECL : apply plugin: jacoco (line 1)
+    PLUGIN_DECL : apply plugin: com.github.kt3k.coveralls (line 2)
+    BLOCK : jacocoTestReport (line 4)
+      BLOCK : reports (line 5)
+        METHOD_CALL : xml.enabled(true) (line 6)
+        ASSIGNMENT : name: html.enabled, operator: =, value: true (line 7)
+        METHOD_CALL : csv.enabled(false) (line 8)
+        METHOD_CALL : html.destination("$buildDir/jacocoHtml") (line 9)
+  BUILD_LOGIC_GRADLE : forceJava6.gradle (line 0)
+    BLOCK : compileJava (line 1)
+      ASSIGNMENT : name: sourceCompatibility, operator: =, value: 1.6 (line 2)
+      ASSIGNMENT : name: targetCompatibility, operator: =, value: 1.6 (line 3)
+      DECLARATION : name: jdk6Home, value: System.getenv() [ "JAVA6_HOME" (line 4)
+      ASSIGNMENT : name: options.bootClasspath, operator: =, value: File(jdk6Home, "/jre/lib/rt.jar")."canonicalPath" (line 5)
+  BUILD_LOGIC_GRADLE : javaLib.gradle (line 0)
+    APPLY_SCRIPT : apply from: forceJava6.gradle (line 1)
+    APPLY_SCRIPT : apply from: codeCoverage.gradle (line 2)
+    APPLY_SCRIPT : apply from: checkGenerics.gradle (line 3)
+    APPLY_SCRIPT : apply from: spockTests.gradle (line 4)
+  BUILD_LOGIC_GRADLE : spockTests.gradle (line 0)
+    CLASS_DECL : SpockTests (line 3)
+      METHOD_DECL : apply(project: Project) (line 5)
+        METHOD_CALL : addDependencies(project) (line 7)
+        METHOD_CALL : applyPlugins(project) (line 8)
+      METHOD_DECL : addDependencies(project: Project) (line 11)
+        BLOCK : project.afterEvaluate (line 12)
+          DECLARATION : name: pd, value: project."dependencies" (line 13)
+          METHOD_CALL : pd.add("testCompile", "org.codehaus.groovy:groovy-all:2.4.1") (line 14)
+          METHOD_CALL : pd.add("testCompile", "junit:junit:4.12") (line 15)
+          METHOD_CALL : pd.add("testCompile", "org.spockframework:spock-core:1.0-groovy-2.4") (line 16)
+          METHOD_CALL : pd.add("testRuntime", "cglib:cglib-nodep:2.2.2") (line 18)
+          METHOD_CALL : pd.add("testRuntime", "org.objenesis:objenesis:1.2") (line 20)
+      METHOD_DECL : applyPlugins(project: Project) (line 24)
+        BLOCK : project.configure(project) (line 25)
+          PLUGIN_DECL : apply plugin: groovy (line 26)
+    PLUGIN_DECL : apply plugin: SpockTests (line 1)
+
+=== DELETED COMPOSITE NODES ===
+ALLPROJECTS:allprojects (line 52, parent=BUILD_GRADLE:build.gradle)
+BLOCK:compileJava (line 9, parent=BUILD_GRADLE:build.gradle)
+BLOCK:jacocoTestReport (line 60, parent=BUILD_GRADLE:build.gradle)
+BLOCK:projectsEvaluated (line 53, parent=ALLPROJECTS:allprojects)
+BLOCK:reports (line 61, parent=BLOCK:jacocoTestReport)
+TASK_CONFIGURATION:withType (line 54, parent=BLOCK:projectsEvaluated)
+
+=== DELETED LEAF NODES ===
+ASSIGNMENT:html.enabled = true (line 63, parent=BLOCK:reports)
+ASSIGNMENT:options.bootClasspath = new File(jdk6Home, /jre/lib/rt.jar).canonicalPath (line 13, parent=BLOCK:compileJava)
+ASSIGNMENT:options.compilerArgs = -Xlint:unchecked (line 55, parent=TASK_CONFIGURATION:withType)
+ASSIGNMENT:sourceCompatibility = 1.6 (line 10, parent=BLOCK:compileJava)
+ASSIGNMENT:targetCompatibility = 1.6 (line 11, parent=BLOCK:compileJava)
+DECLARATION:jdk6Home = System.getenv() [ JAVA6_HOME (line 12, parent=BLOCK:compileJava)
+DEPENDENCY_DECL:testCompile (line 43, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 44, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 45, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testRuntime (line 46, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testRuntime (line 48, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:destination (line 65, parent=BLOCK:reports)
+METHOD_CALL:enabled (line 62, parent=BLOCK:reports)
+METHOD_CALL:enabled (line 64, parent=BLOCK:reports)
+PLUGIN_DECL:apply (line 4, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 5, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_DECL:mavenCentral (line 18, parent=REPOSITORIES_BLOCK:repositories)
+
+=== ADDED COMPOSITE NODES ===
+ALLPROJECTS:allprojects (line 1, parent=BUILD_LOGIC_GRADLE:checkGenerics.gradle)
+BLOCK:afterEvaluate (line 12, parent=METHOD_DECL:addDependencies)
+BLOCK:compileJava (line 1, parent=BUILD_LOGIC_GRADLE:forceJava6.gradle)
+BLOCK:configure (line 25, parent=METHOD_DECL:applyPlugins)
+BLOCK:jacocoTestReport (line 4, parent=BUILD_LOGIC_GRADLE:codeCoverage.gradle)
+BLOCK:projectsEvaluated (line 2, parent=ALLPROJECTS:allprojects)
+BLOCK:reports (line 5, parent=BLOCK:jacocoTestReport)
+CLASS_DECL:SpockTests (line 3, parent=BUILD_LOGIC_GRADLE:spockTests.gradle)
+METHOD_DECL:addDependencies (line 11, parent=CLASS_DECL:SpockTests)
+METHOD_DECL:apply (line 5, parent=CLASS_DECL:SpockTests)
+METHOD_DECL:applyPlugins (line 24, parent=CLASS_DECL:SpockTests)
+REPOSITORIES_DECL:maven (line 9, parent=REPOSITORIES_BLOCK:repositories)
+TASK_CONFIGURATION:withType (line 3, parent=BLOCK:projectsEvaluated)
+
+=== ADDED LEAF NODES ===
+APPLY_SCRIPT:apply (line 1, parent=BUILD_LOGIC_GRADLE:javaLib.gradle)
+APPLY_SCRIPT:apply (line 2, parent=BUILD_LOGIC_GRADLE:javaLib.gradle)
+APPLY_SCRIPT:apply (line 20, parent=BUILD_GRADLE:build.gradle)
+APPLY_SCRIPT:apply (line 3, parent=BUILD_LOGIC_GRADLE:javaLib.gradle)
+APPLY_SCRIPT:apply (line 4, parent=BUILD_LOGIC_GRADLE:javaLib.gradle)
+ASSIGNMENT:html.enabled = true (line 7, parent=BLOCK:reports)
+ASSIGNMENT:options.bootClasspath = new File(jdk6Home, /jre/lib/rt.jar).canonicalPath (line 5, parent=BLOCK:compileJava)
+ASSIGNMENT:options.compilerArgs = -Xlint:unchecked (line 4, parent=TASK_CONFIGURATION:withType)
+ASSIGNMENT:sourceCompatibility = 1.6 (line 2, parent=BLOCK:compileJava)
+ASSIGNMENT:targetCompatibility = 1.6 (line 3, parent=BLOCK:compileJava)
+DECLARATION:jdk6Home = System.getenv() [ JAVA6_HOME (line 4, parent=BLOCK:compileJava)
+DECLARATION:pd = project.dependencies (line 13, parent=BLOCK:afterEvaluate)
+METHOD_CALL:add (line 14, parent=BLOCK:afterEvaluate)
+METHOD_CALL:add (line 15, parent=BLOCK:afterEvaluate)
+METHOD_CALL:add (line 16, parent=BLOCK:afterEvaluate)
+METHOD_CALL:add (line 18, parent=BLOCK:afterEvaluate)
+METHOD_CALL:add (line 20, parent=BLOCK:afterEvaluate)
+METHOD_CALL:addDependencies (line 7, parent=METHOD_DECL:apply)
+METHOD_CALL:applyPlugins (line 8, parent=METHOD_DECL:apply)
+METHOD_CALL:destination (line 9, parent=BLOCK:reports)
+METHOD_CALL:enabled (line 6, parent=BLOCK:reports)
+METHOD_CALL:enabled (line 8, parent=BLOCK:reports)
+PLUGIN_DECL:apply (line 1, parent=BUILD_LOGIC_GRADLE:codeCoverage.gradle)
+PLUGIN_DECL:apply (line 1, parent=BUILD_LOGIC_GRADLE:spockTests.gradle)
+PLUGIN_DECL:apply (line 2, parent=BUILD_LOGIC_GRADLE:codeCoverage.gradle)
+PLUGIN_DECL:apply (line 26, parent=BLOCK:configure)
+REPOSITORIES_DECL:url (line 10, parent=REPOSITORIES_DECL:maven)
+
+=== ALL LEAF MATCHES ===
+APPLY_SCRIPT:apply (line 69, parent=BUILD_GRADLE:build.gradle) -> APPLY_SCRIPT:apply (line 38, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:[compileJava, compileTestJava]*?.options*?.encoding = UTF-8 (line 7, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:[compileJava, compileTestJava]*?.options*?.encoding = UTF-8 (line 5, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCY_DECL:classpath (line 22, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 15, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:classpath (line 23, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 16, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 34, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 29, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 35, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 30, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 36, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 31, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 37, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 32, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 38, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 33, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 39, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 34, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 40, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 35, parent=DEPENDENCIES_BLOCK:dependencies)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 3, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 3, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_DECL:mavenCentral (line 28, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 23, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:url (line 30, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 25, parent=REPOSITORIES_DECL:maven)
+
+=== LEAF ROUND 1 MATCHES ===
+APPLY_SCRIPT:apply (line 69, parent=BUILD_GRADLE:build.gradle) -> APPLY_SCRIPT:apply (line 38, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:[compileJava, compileTestJava]*?.options*?.encoding = UTF-8 (line 7, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:[compileJava, compileTestJava]*?.options*?.encoding = UTF-8 (line 5, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCY_DECL:classpath (line 22, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 15, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:classpath (line 23, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 16, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 34, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 29, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 35, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 30, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 36, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 31, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 37, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 32, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 38, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 33, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 39, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 34, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 40, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 35, parent=DEPENDENCIES_BLOCK:dependencies)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 3, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 3, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_DECL:mavenCentral (line 28, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 23, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:url (line 30, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 25, parent=REPOSITORIES_DECL:maven)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+(none)
+
+=== ALL COMPOSITE MATCHES ===
+BUILDSCRIPT:buildscript (line 16, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 7, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 21, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 14, parent=BUILDSCRIPT:buildscript)
+DEPENDENCIES_BLOCK:dependencies (line 33, parent=BUILD_GRADLE:build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 28, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_BLOCK:repositories (line 17, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 8, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 27, parent=BUILD_GRADLE:build.gradle) -> REPOSITORIES_BLOCK:repositories (line 22, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_DECL:maven (line 30, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 25, parent=REPOSITORIES_BLOCK:repositories)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+DEPENDENCIES_BLOCK:dependencies (line 21, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 14, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 27, parent=BUILD_GRADLE:build.gradle) -> REPOSITORIES_BLOCK:repositories (line 22, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_DECL:maven (line 30, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 25, parent=REPOSITORIES_BLOCK:repositories)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+BUILDSCRIPT:buildscript (line 16, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 7, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 33, parent=BUILD_GRADLE:build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 28, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_BLOCK:repositories (line 17, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 8, parent=BUILDSCRIPT:buildscript)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+EXTRACT_MODULE: Extract module logic from 'build.gradle' to 'codeCoverage.gradle'
+EXTRACT_MODULE: Extract module logic from 'build.gradle' to 'checkGenerics.gradle'
+EXTRACT_MODULE: Extract module logic from 'build.gradle' to 'forceJava6.gradle'
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 15; 15, 0, 0
+Matched composites: 6; 6, 0, 0
+Deleted leaves: 17; 17, 0, 0
+Deleted composites: 6; 6, 0, 0
+Added leaves: 27; 27, 0, 0
+Added composites: 13; 13, 0, 0
+Total expected events: 84
+Total predicted events: 84
+
+TP=84 FP=0 FN=0
+TP=84, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT56 MISSED ===
+(none)
+
+

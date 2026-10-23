@@ -1,0 +1,176 @@
+=== COMMIT ===
+http://github.com/nectec-wisru/android-ThaiWidget/commit/de6936a54b06d57f0261f47d2799cae8f1339db7
+
+=== CHANGED GRADLE FILES ===
+thai-widget-domain/build.gradle -> thai-widget-domain/build.gradle
+thai-widget-domain/maven.gradle -> thai-widget-domain/maven.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : thai-widget-domain/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: java (line 20)
+    PLUGIN_DECL : apply plugin: maven (line 21)
+    PLUGIN_DECL : apply plugin: maven-publish (line 22)
+    ASSIGNMENT : name: sourceCompatibility, operator: =, value: rootProject."ext"."javaSourceCompatibility" (line 26)
+    ASSIGNMENT : name: targetCompatibility, operator: =, value: rootProject."ext"."javaTargetCompatibility" (line 28)
+    DEPENDENCIES_BLOCK : dependencies (line 30)
+      DEPENDENCY_DECL : configuration='compile', notation='com.google.code.gson:gson: + rootProject.ext.gsonVersion' (line 31)
+      DEPENDENCY_DECL : configuration='testCompile', notation='junit:junit: + rootProject.ext.junitVersion' (line 33)
+      DEPENDENCY_DECL : configuration='testCompile', notation='org.jmock:jmock-junit4: + rootProject.ext.jMockVersion' (line 34)
+    TASK_DECLARATION : taskName=sourcesJar, type=Jar, style=task (line 38)
+      ASSIGNMENT : name: classifier, operator: =, value: "sources" (line 39)
+      METHOD_CALL : from(sourceSets."main"."allSource") (line 40)
+    TASK_DECLARATION : taskName=javadocJar, type=Jar, style=task (line 43)
+      ASSIGNMENT : name: classifier, operator: =, value: "javadoc" (line 45)
+      METHOD_CALL : from(javadoc."destinationDir") (line 46)
+    BLOCK : javadoc (line 50)
+      BLOCK : options (line 51)
+        METHOD_CALL : encoding("UTF-8") (line 52)
+        METHOD_CALL : charSet("UTF-8") (line 53)
+    BLOCK : artifacts (line 57)
+      METHOD_CALL : archives(sourcesJar, javadocJar) (line 58)
+    ASSIGNMENT : name: group, operator: =, value: publishedGroupId (line 61)
+    BLOCK : publishing (line 63)
+      BLOCK : publications (line 64)
+        BLOCK : MyPublication(MavenPublication) (line 65)
+          METHOD_CALL : from(components."java") (line 66)
+          METHOD_CALL : groupId("th.or.nectec.android") (line 67)
+          METHOD_CALL : artifactId(project."name") (line 68)
+          METHOD_CALL : version(libraryVersion) (line 69)
+          METHOD_CALL : artifact(sourcesJar) (line 71)
+          METHOD_CALL : artifact(javadocJar) (line 72)
+    APPLY_SCRIPT : apply from: ../gradle/bintray.gradle (line 77)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : thai-widget-domain/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: java (line 19)
+    ASSIGNMENT : name: sourceCompatibility, operator: =, value: rootProject."ext"."javaSourceCompatibility" (line 22)
+    ASSIGNMENT : name: targetCompatibility, operator: =, value: rootProject."ext"."javaTargetCompatibility" (line 24)
+    DEPENDENCIES_BLOCK : dependencies (line 26)
+      DEPENDENCY_DECL : configuration='compile', notation='com.google.code.gson:gson: + rootProject.ext.gsonVersion' (line 27)
+      DEPENDENCY_DECL : configuration='testCompile', notation='junit:junit: + rootProject.ext.junitVersion' (line 29)
+      DEPENDENCY_DECL : configuration='testCompile', notation='org.jmock:jmock-junit4: + rootProject.ext.jMockVersion' (line 30)
+    APPLY_SCRIPT : apply from: maven.gradle (line 33)
+    APPLY_SCRIPT : apply from: ../gradle/bintray.gradle (line 34)
+  BUILD_LOGIC_GRADLE : thai-widget-domain/maven.gradle (line 0)
+    PLUGIN_DECL : apply plugin: maven (line 19)
+    PLUGIN_DECL : apply plugin: maven-publish (line 20)
+    TASK_DECLARATION : taskName=sourcesJar, type=Jar, style=task (line 23)
+      ASSIGNMENT : name: classifier, operator: =, value: "sources" (line 24)
+      METHOD_CALL : from(sourceSets."main"."allSource") (line 25)
+    TASK_DECLARATION : taskName=javadocJar, type=Jar, style=task (line 28)
+      ASSIGNMENT : name: classifier, operator: =, value: "javadoc" (line 30)
+      METHOD_CALL : from(javadoc."destinationDir") (line 31)
+    BLOCK : javadoc (line 34)
+      BLOCK : options (line 35)
+        METHOD_CALL : encoding("UTF-8") (line 36)
+        METHOD_CALL : charSet("UTF-8") (line 37)
+    BLOCK : artifacts (line 42)
+      METHOD_CALL : archives(sourcesJar, javadocJar) (line 43)
+    ASSIGNMENT : name: group, operator: =, value: publishedGroupId (line 46)
+    BLOCK : publishing (line 48)
+      BLOCK : publications (line 49)
+        BLOCK : MyPublication(MavenPublication) (line 50)
+          METHOD_CALL : from(components."java") (line 51)
+          METHOD_CALL : groupId("th.or.nectec.android") (line 52)
+          METHOD_CALL : artifactId(project."name") (line 53)
+          METHOD_CALL : version(libraryVersion) (line 54)
+          METHOD_CALL : artifact(sourcesJar) (line 56)
+          METHOD_CALL : artifact(javadocJar) (line 57)
+
+=== DELETED COMPOSITE NODES ===
+BLOCK:MyPublication (line 65, parent=BLOCK:publications)
+BLOCK:artifacts (line 57, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+BLOCK:javadoc (line 50, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+BLOCK:options (line 51, parent=BLOCK:javadoc)
+BLOCK:publications (line 64, parent=BLOCK:publishing)
+BLOCK:publishing (line 63, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+TASK_DECLARATION:javadocJar (line 43, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+TASK_DECLARATION:sourcesJar (line 38, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+
+=== DELETED LEAF NODES ===
+ASSIGNMENT:classifier = javadoc (line 45, parent=TASK_DECLARATION:javadocJar)
+ASSIGNMENT:classifier = sources (line 39, parent=TASK_DECLARATION:sourcesJar)
+ASSIGNMENT:group = publishedGroupId (line 61, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+METHOD_CALL:archives (line 58, parent=BLOCK:artifacts)
+METHOD_CALL:artifact (line 71, parent=BLOCK:MyPublication)
+METHOD_CALL:artifact (line 72, parent=BLOCK:MyPublication)
+METHOD_CALL:artifactId (line 68, parent=BLOCK:MyPublication)
+METHOD_CALL:charSet (line 53, parent=BLOCK:options)
+METHOD_CALL:encoding (line 52, parent=BLOCK:options)
+METHOD_CALL:from (line 40, parent=TASK_DECLARATION:sourcesJar)
+METHOD_CALL:from (line 46, parent=TASK_DECLARATION:javadocJar)
+METHOD_CALL:from (line 66, parent=BLOCK:MyPublication)
+METHOD_CALL:groupId (line 67, parent=BLOCK:MyPublication)
+METHOD_CALL:version (line 69, parent=BLOCK:MyPublication)
+PLUGIN_DECL:apply (line 21, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+PLUGIN_DECL:apply (line 22, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+
+=== ADDED COMPOSITE NODES ===
+BLOCK:MyPublication (line 50, parent=BLOCK:publications)
+BLOCK:artifacts (line 42, parent=BUILD_LOGIC_GRADLE:thai-widget-domain/maven.gradle)
+BLOCK:javadoc (line 34, parent=BUILD_LOGIC_GRADLE:thai-widget-domain/maven.gradle)
+BLOCK:options (line 35, parent=BLOCK:javadoc)
+BLOCK:publications (line 49, parent=BLOCK:publishing)
+BLOCK:publishing (line 48, parent=BUILD_LOGIC_GRADLE:thai-widget-domain/maven.gradle)
+TASK_DECLARATION:javadocJar (line 28, parent=BUILD_LOGIC_GRADLE:thai-widget-domain/maven.gradle)
+TASK_DECLARATION:sourcesJar (line 23, parent=BUILD_LOGIC_GRADLE:thai-widget-domain/maven.gradle)
+
+=== ADDED LEAF NODES ===
+APPLY_SCRIPT:apply (line 33, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+ASSIGNMENT:classifier = javadoc (line 30, parent=TASK_DECLARATION:javadocJar)
+ASSIGNMENT:classifier = sources (line 24, parent=TASK_DECLARATION:sourcesJar)
+ASSIGNMENT:group = publishedGroupId (line 46, parent=BUILD_LOGIC_GRADLE:thai-widget-domain/maven.gradle)
+METHOD_CALL:archives (line 43, parent=BLOCK:artifacts)
+METHOD_CALL:artifact (line 56, parent=BLOCK:MyPublication)
+METHOD_CALL:artifact (line 57, parent=BLOCK:MyPublication)
+METHOD_CALL:artifactId (line 53, parent=BLOCK:MyPublication)
+METHOD_CALL:charSet (line 37, parent=BLOCK:options)
+METHOD_CALL:encoding (line 36, parent=BLOCK:options)
+METHOD_CALL:from (line 25, parent=TASK_DECLARATION:sourcesJar)
+METHOD_CALL:from (line 31, parent=TASK_DECLARATION:javadocJar)
+METHOD_CALL:from (line 51, parent=BLOCK:MyPublication)
+METHOD_CALL:groupId (line 52, parent=BLOCK:MyPublication)
+METHOD_CALL:version (line 54, parent=BLOCK:MyPublication)
+PLUGIN_DECL:apply (line 19, parent=BUILD_LOGIC_GRADLE:thai-widget-domain/maven.gradle)
+PLUGIN_DECL:apply (line 20, parent=BUILD_LOGIC_GRADLE:thai-widget-domain/maven.gradle)
+
+=== ALL LEAF MATCHES ===
+APPLY_SCRIPT:apply (line 77, parent=BUILD_GRADLE:thai-widget-domain/build.gradle) -> APPLY_SCRIPT:apply (line 34, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+ASSIGNMENT:sourceCompatibility = rootProject.ext.javaSourceCompatibility (line 26, parent=BUILD_GRADLE:thai-widget-domain/build.gradle) -> ASSIGNMENT:sourceCompatibility = rootProject.ext.javaSourceCompatibility (line 22, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+ASSIGNMENT:targetCompatibility = rootProject.ext.javaTargetCompatibility (line 28, parent=BUILD_GRADLE:thai-widget-domain/build.gradle) -> ASSIGNMENT:targetCompatibility = rootProject.ext.javaTargetCompatibility (line 24, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+DEPENDENCY_DECL:compile (line 31, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 27, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 33, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 29, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 34, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 30, parent=DEPENDENCIES_BLOCK:dependencies)
+PLUGIN_DECL:apply (line 20, parent=BUILD_GRADLE:thai-widget-domain/build.gradle) -> PLUGIN_DECL:apply (line 19, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+
+=== LEAF ROUND 1 MATCHES ===
+APPLY_SCRIPT:apply (line 77, parent=BUILD_GRADLE:thai-widget-domain/build.gradle) -> APPLY_SCRIPT:apply (line 34, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+ASSIGNMENT:sourceCompatibility = rootProject.ext.javaSourceCompatibility (line 26, parent=BUILD_GRADLE:thai-widget-domain/build.gradle) -> ASSIGNMENT:sourceCompatibility = rootProject.ext.javaSourceCompatibility (line 22, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+ASSIGNMENT:targetCompatibility = rootProject.ext.javaTargetCompatibility (line 28, parent=BUILD_GRADLE:thai-widget-domain/build.gradle) -> ASSIGNMENT:targetCompatibility = rootProject.ext.javaTargetCompatibility (line 24, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+DEPENDENCY_DECL:compile (line 31, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 27, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 33, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 29, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 34, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 30, parent=DEPENDENCIES_BLOCK:dependencies)
+PLUGIN_DECL:apply (line 20, parent=BUILD_GRADLE:thai-widget-domain/build.gradle) -> PLUGIN_DECL:apply (line 19, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+(none)
+
+=== ALL COMPOSITE MATCHES ===
+DEPENDENCIES_BLOCK:dependencies (line 30, parent=BUILD_GRADLE:thai-widget-domain/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 26, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+DEPENDENCIES_BLOCK:dependencies (line 30, parent=BUILD_GRADLE:thai-widget-domain/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 26, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+(none)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+(not scored in this matching-phase reference)

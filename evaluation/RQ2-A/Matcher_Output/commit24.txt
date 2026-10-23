@@ -1,0 +1,300 @@
+
+=== COMMIT ===
+https://github.com/snowplow/snowplow-android-tracker/commit/6e0f2de2728d37a27391ed6b32955d5d3f4e5933
+
+=== CHANGED GRADLE FILES ===
+snowplow-android-tracker/build.gradle -> snowplow-android-tracker/build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : snowplow-android-tracker/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: android-sdk-manager (line 1)
+    PLUGIN_DECL : apply plugin: com.android.library (line 2)
+    BUILDSCRIPT : buildscript (line 4)
+      REPOSITORIES_BLOCK : repositories (line 5)
+        REPOSITORIES_DECL : mavenCentral (line 6)
+      DEPENDENCIES_BLOCK : dependencies (line 8)
+        DEPENDENCY_DECL : configuration='classpath', group='com.android.tools.build', name='gradle', version='1.0.0' (line 9)
+        DEPENDENCY_DECL : configuration='classpath', group='com.jakewharton.sdkmanager', name='gradle-plugin', version='0.12.0' (line 10)
+    PLUGIN_DECL : apply plugin: maven-publish (line 14)
+    BLOCK : android (line 16)
+      METHOD_CALL : compileSdkVersion(21) (line 17)
+      METHOD_CALL : buildToolsVersion("21.1.1") (line 18)
+      BLOCK : defaultConfig (line 20)
+        METHOD_CALL : minSdkVersion(11) (line 21)
+        METHOD_CALL : targetSdkVersion(21) (line 22)
+        METHOD_CALL : versionCode(2) (line 23)
+        METHOD_CALL : versionName("${project.version}") (line 24)
+      BLOCK : buildTypes (line 27)
+        BLOCK : release (line 28)
+          METHOD_CALL : minifyEnabled(false) (line 29)
+          METHOD_CALL : proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro") (line 30)
+      BLOCK : sourceSets (line 34)
+        BLOCK : main (line 35)
+          BLOCK : java (line 36)
+            METHOD_CALL : srcDir("src/main/java") (line 37)
+      BLOCK : packagingOptions (line 42)
+        METHOD_CALL : exclude("META-INF/LICENSE") (line 43)
+        METHOD_CALL : exclude("META-INF/NOTICE") (line 44)
+        METHOD_CALL : exclude("META-INF/LICENSE.txt") (line 45)
+        METHOD_CALL : exclude("META-INF/NOTICE.txt") (line 46)
+        METHOD_CALL : exclude("META-INF/DEPENDENCIES") (line 47)
+    DEPENDENCIES_BLOCK : dependencies (line 51)
+      DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 52)
+      DEPENDENCY_DECL : configuration='compile', group='com.snowplowanalytics', name='snowplow-java-tracker-core', version='0.2.0' (line 53)
+      DEPENDENCY_DECL : configuration='compile', group='com.google.android.gms', name='play-services', version='6.5.87' (line 54)
+    TASK_DECLARATION : taskName=androidReleaseJar, type=Jar, style=task (line 58)
+      METHOD_CALL : from("$buildDir/intermediates/classes/release/") (line 59)
+    TASK_DECLARATION : taskName=androidSourcesJar, type=Jar, style=task (line 62)
+      METHOD_CALL : from("$projectDir/src/main/java") (line 63)
+    BLOCK : publishing (line 66)
+      BLOCK : publications (line 67)
+        BLOCK : maven(MavenPublication) (line 68)
+          METHOD_CALL : groupId("${project.group}") (line 70)
+          METHOD_CALL : version("${project.version}") (line 71)
+          METHOD_CALL : artifact(androidReleaseJar) (line 73)
+          METHOD_CALL : artifact(androidSourcesJar({ classifier(sources) })) (line 75)
+      REPOSITORIES_BLOCK : repositories (line 81)
+        REPOSITORIES_DECL : maven (line 82)
+          REPOSITORIES_DECL : url("$buildDir/repo") (line 83)
+    BLOCK : build (line 88)
+      METHOD_CALL : project."ext".set("outputDir", "$projectDir/src/main/java/com/snowplowanalytics/snowplow/tracker/android") (line 89)
+      BLOCK : doFirst (line 90)
+        METHOD_CALL : println(outputDir) (line 91)
+        DECLARATION : name: srcFile, value: File(outputDir as String, "Version.java") (line 92)
+        METHOD_CALL : srcFile."parentFile".mkdirs (line 93)
+        METHOD_CALL : srcFile.write("/*\n * Copyright (c) 2014 Snowplow Analytics Ltd. All rights reserved.\n *\n * This program is licensed to you under the Apache License Version 2.0,\n * and you may not use this file except in compliance with the Apache License Version 2.0.\n * You may obtain a copy of the Apache License Version 2.0 at http://www.apache.org/licenses/LICENSE-2.0.\n *\n * Unless required by applicable law or agreed to in writing,\n * software distributed under the Apache License Version 2.0 is distributed on an\n * \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the Apache License Version 2.0 for the specific language governing permissions and limitations there under.\n */\n\npackage com.snowplowanalytics.snowplow.tracker.android;\n\n// DO NOT EDIT. AUTO-GENERATED.\npublic class Version {\n    static final String TRACKER = \"andr-${project.version}\";\n    static final String VERSION = \"${project.version}\";\n}\n") (line 94)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : snowplow-android-tracker/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: android-sdk-manager (line 1)
+    PLUGIN_DECL : apply plugin: com.android.library (line 2)
+    BUILDSCRIPT : buildscript (line 4)
+      REPOSITORIES_BLOCK : repositories (line 5)
+        REPOSITORIES_DECL : mavenCentral (line 6)
+      DEPENDENCIES_BLOCK : dependencies (line 8)
+        DEPENDENCY_DECL : configuration='classpath', group='com.android.tools.build', name='gradle', version='1.0.0' (line 9)
+        DEPENDENCY_DECL : configuration='classpath', group='com.jakewharton.sdkmanager', name='gradle-plugin', version='0.12.0' (line 10)
+    PLUGIN_DECL : apply plugin: maven-publish (line 14)
+    BLOCK : android (line 16)
+      METHOD_CALL : compileSdkVersion(21) (line 17)
+      METHOD_CALL : buildToolsVersion("21.1.1") (line 18)
+      BLOCK : defaultConfig (line 20)
+        METHOD_CALL : minSdkVersion(11) (line 21)
+        METHOD_CALL : targetSdkVersion(21) (line 22)
+        METHOD_CALL : versionCode(2) (line 23)
+        METHOD_CALL : versionName("${project.version}") (line 24)
+      BLOCK : buildTypes (line 27)
+        BLOCK : release (line 28)
+          METHOD_CALL : minifyEnabled(false) (line 29)
+          METHOD_CALL : proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro") (line 30)
+      BLOCK : sourceSets (line 34)
+        BLOCK : main (line 35)
+          BLOCK : java (line 36)
+            METHOD_CALL : srcDir("src/main/java") (line 37)
+      BLOCK : packagingOptions (line 42)
+        METHOD_CALL : exclude("META-INF/LICENSE") (line 43)
+        METHOD_CALL : exclude("META-INF/NOTICE") (line 44)
+        METHOD_CALL : exclude("META-INF/LICENSE.txt") (line 45)
+        METHOD_CALL : exclude("META-INF/NOTICE.txt") (line 46)
+        METHOD_CALL : exclude("META-INF/DEPENDENCIES") (line 47)
+    DEPENDENCIES_BLOCK : dependencies (line 51)
+      DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 52)
+      DEPENDENCY_DECL : configuration='compile', group='com.google.android.gms', name='play-services', version='6.5.87' (line 53)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='support-v4', version='21.0.3' (line 54)
+      DEPENDENCY_DECL : configuration='compile', group='org.apache.httpcomponents', name='httpclient-android', version='4.3.3' (line 57)
+      DEPENDENCY_DECL : configuration='compile', group='org.slf4j', name='slf4j-simple', version='1.7.7' (line 60)
+      DEPENDENCY_DECL : configuration='compile', group='com.fasterxml.jackson.core', name='jackson-databind', version='2.4.1.1' (line 63)
+    TASK_DECLARATION : taskName=androidReleaseJar, type=Jar, style=task (line 67)
+      METHOD_CALL : from("$buildDir/intermediates/classes/release/") (line 68)
+    TASK_DECLARATION : taskName=androidSourcesJar, type=Jar, style=task (line 71)
+      METHOD_CALL : from("$projectDir/src/main/java") (line 72)
+    BLOCK : publishing (line 75)
+      BLOCK : publications (line 76)
+        BLOCK : maven(MavenPublication) (line 77)
+          METHOD_CALL : groupId("${project.group}") (line 79)
+          METHOD_CALL : version("${project.version}") (line 80)
+          METHOD_CALL : artifact(androidReleaseJar) (line 82)
+          METHOD_CALL : artifact(androidSourcesJar({ classifier(sources) })) (line 84)
+      REPOSITORIES_BLOCK : repositories (line 90)
+        REPOSITORIES_DECL : maven (line 91)
+          REPOSITORIES_DECL : url("$buildDir/repo") (line 92)
+    BLOCK : build (line 97)
+      METHOD_CALL : project."ext".set("outputDir", "$projectDir/src/main/java/com/snowplowanalytics/snowplow/tracker/android") (line 98)
+      BLOCK : doFirst (line 99)
+        METHOD_CALL : println(outputDir) (line 100)
+        DECLARATION : name: srcFile, value: File(outputDir as String, "Version.java") (line 101)
+        METHOD_CALL : srcFile."parentFile".mkdirs (line 102)
+        METHOD_CALL : srcFile.write("/*\n * Copyright (c) 2014 Snowplow Analytics Ltd. All rights reserved.\n *\n * This program is licensed to you under the Apache License Version 2.0,\n * and you may not use this file except in compliance with the Apache License Version 2.0.\n * You may obtain a copy of the Apache License Version 2.0 at http://www.apache.org/licenses/LICENSE-2.0.\n *\n * Unless required by applicable law or agreed to in writing,\n * software distributed under the Apache License Version 2.0 is distributed on an\n * \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the Apache License Version 2.0 for the specific language governing permissions and limitations there under.\n */\n\npackage com.snowplowanalytics.snowplow.tracker.android;\n\n// DO NOT EDIT. AUTO-GENERATED.\npublic class Version {\n    static final String TRACKER = \"andr-${project.version}\";\n    static final String VERSION = \"${project.version}\";\n}\n") (line 103)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+(none)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+DEPENDENCY_DECL:compile (line 57, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 60, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 63, parent=DEPENDENCIES_BLOCK:dependencies)
+
+=== ALL LEAF MATCHES ===
+DECLARATION:srcFile = new File(outputDir as String, Version.java) (line 92, parent=BLOCK:doFirst) -> DECLARATION:srcFile = new File(outputDir as String, Version.java) (line 101, parent=BLOCK:doFirst)
+DEPENDENCY_DECL:classpath (line 10, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 10, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:classpath (line 9, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 9, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 52, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 52, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 53, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 54, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 54, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 53, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:artifact (line 73, parent=BLOCK:maven) -> METHOD_CALL:artifact (line 82, parent=BLOCK:maven)
+METHOD_CALL:artifact (line 75, parent=BLOCK:maven) -> METHOD_CALL:artifact (line 84, parent=BLOCK:maven)
+METHOD_CALL:buildToolsVersion (line 18, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 18, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 17, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 17, parent=BLOCK:android)
+METHOD_CALL:exclude (line 43, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 43, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 44, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 44, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 45, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 45, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 46, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 46, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 47, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 47, parent=BLOCK:packagingOptions)
+METHOD_CALL:from (line 59, parent=TASK_DECLARATION:androidReleaseJar) -> METHOD_CALL:from (line 68, parent=TASK_DECLARATION:androidReleaseJar)
+METHOD_CALL:from (line 63, parent=TASK_DECLARATION:androidSourcesJar) -> METHOD_CALL:from (line 72, parent=TASK_DECLARATION:androidSourcesJar)
+METHOD_CALL:groupId (line 70, parent=BLOCK:maven) -> METHOD_CALL:groupId (line 79, parent=BLOCK:maven)
+METHOD_CALL:minSdkVersion (line 21, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 21, parent=BLOCK:defaultConfig)
+METHOD_CALL:minifyEnabled (line 29, parent=BLOCK:release) -> METHOD_CALL:minifyEnabled (line 29, parent=BLOCK:release)
+METHOD_CALL:mkdirs (line 93, parent=BLOCK:doFirst) -> METHOD_CALL:mkdirs (line 102, parent=BLOCK:doFirst)
+METHOD_CALL:println (line 91, parent=BLOCK:doFirst) -> METHOD_CALL:println (line 100, parent=BLOCK:doFirst)
+METHOD_CALL:proguardFiles (line 30, parent=BLOCK:release) -> METHOD_CALL:proguardFiles (line 30, parent=BLOCK:release)
+METHOD_CALL:set (line 89, parent=BLOCK:build) -> METHOD_CALL:set (line 98, parent=BLOCK:build)
+METHOD_CALL:srcDir (line 37, parent=BLOCK:java) -> METHOD_CALL:srcDir (line 37, parent=BLOCK:java)
+METHOD_CALL:targetSdkVersion (line 22, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 22, parent=BLOCK:defaultConfig)
+METHOD_CALL:version (line 71, parent=BLOCK:maven) -> METHOD_CALL:version (line 80, parent=BLOCK:maven)
+METHOD_CALL:versionCode (line 23, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 23, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 24, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 24, parent=BLOCK:defaultConfig)
+METHOD_CALL:write (line 94, parent=BLOCK:doFirst) -> METHOD_CALL:write (line 103, parent=BLOCK:doFirst)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle)
+PLUGIN_DECL:apply (line 14, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle) -> PLUGIN_DECL:apply (line 14, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle)
+PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle) -> PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle)
+REPOSITORIES_DECL:mavenCentral (line 6, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 6, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:url (line 83, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 92, parent=REPOSITORIES_DECL:maven)
+
+=== LEAF ROUND 1 MATCHES ===
+DECLARATION:srcFile = new File(outputDir as String, Version.java) (line 92, parent=BLOCK:doFirst) -> DECLARATION:srcFile = new File(outputDir as String, Version.java) (line 101, parent=BLOCK:doFirst)
+DEPENDENCY_DECL:classpath (line 10, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 10, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:classpath (line 9, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 9, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 52, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 52, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 54, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 53, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:artifact (line 73, parent=BLOCK:maven) -> METHOD_CALL:artifact (line 82, parent=BLOCK:maven)
+METHOD_CALL:artifact (line 75, parent=BLOCK:maven) -> METHOD_CALL:artifact (line 84, parent=BLOCK:maven)
+METHOD_CALL:buildToolsVersion (line 18, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 18, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 17, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 17, parent=BLOCK:android)
+METHOD_CALL:exclude (line 43, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 43, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 44, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 44, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 45, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 45, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 46, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 46, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 47, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 47, parent=BLOCK:packagingOptions)
+METHOD_CALL:from (line 59, parent=TASK_DECLARATION:androidReleaseJar) -> METHOD_CALL:from (line 68, parent=TASK_DECLARATION:androidReleaseJar)
+METHOD_CALL:from (line 63, parent=TASK_DECLARATION:androidSourcesJar) -> METHOD_CALL:from (line 72, parent=TASK_DECLARATION:androidSourcesJar)
+METHOD_CALL:groupId (line 70, parent=BLOCK:maven) -> METHOD_CALL:groupId (line 79, parent=BLOCK:maven)
+METHOD_CALL:minSdkVersion (line 21, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 21, parent=BLOCK:defaultConfig)
+METHOD_CALL:minifyEnabled (line 29, parent=BLOCK:release) -> METHOD_CALL:minifyEnabled (line 29, parent=BLOCK:release)
+METHOD_CALL:mkdirs (line 93, parent=BLOCK:doFirst) -> METHOD_CALL:mkdirs (line 102, parent=BLOCK:doFirst)
+METHOD_CALL:println (line 91, parent=BLOCK:doFirst) -> METHOD_CALL:println (line 100, parent=BLOCK:doFirst)
+METHOD_CALL:proguardFiles (line 30, parent=BLOCK:release) -> METHOD_CALL:proguardFiles (line 30, parent=BLOCK:release)
+METHOD_CALL:set (line 89, parent=BLOCK:build) -> METHOD_CALL:set (line 98, parent=BLOCK:build)
+METHOD_CALL:srcDir (line 37, parent=BLOCK:java) -> METHOD_CALL:srcDir (line 37, parent=BLOCK:java)
+METHOD_CALL:targetSdkVersion (line 22, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 22, parent=BLOCK:defaultConfig)
+METHOD_CALL:version (line 71, parent=BLOCK:maven) -> METHOD_CALL:version (line 80, parent=BLOCK:maven)
+METHOD_CALL:versionCode (line 23, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 23, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 24, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 24, parent=BLOCK:defaultConfig)
+METHOD_CALL:write (line 94, parent=BLOCK:doFirst) -> METHOD_CALL:write (line 103, parent=BLOCK:doFirst)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle)
+PLUGIN_DECL:apply (line 14, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle) -> PLUGIN_DECL:apply (line 14, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle)
+PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle) -> PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle)
+REPOSITORIES_DECL:mavenCentral (line 6, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 6, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:url (line 83, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 92, parent=REPOSITORIES_DECL:maven)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+DEPENDENCY_DECL:compile (line 53, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 54, parent=DEPENDENCIES_BLOCK:dependencies)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:android (line 16, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle) -> BLOCK:android (line 16, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle)
+BLOCK:build (line 88, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle) -> BLOCK:build (line 97, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle)
+BLOCK:buildTypes (line 27, parent=BLOCK:android) -> BLOCK:buildTypes (line 27, parent=BLOCK:android)
+BLOCK:defaultConfig (line 20, parent=BLOCK:android) -> BLOCK:defaultConfig (line 20, parent=BLOCK:android)
+BLOCK:doFirst (line 90, parent=BLOCK:build) -> BLOCK:doFirst (line 99, parent=BLOCK:build)
+BLOCK:java (line 36, parent=BLOCK:main) -> BLOCK:java (line 36, parent=BLOCK:main)
+BLOCK:main (line 35, parent=BLOCK:sourceSets) -> BLOCK:main (line 35, parent=BLOCK:sourceSets)
+BLOCK:maven (line 68, parent=BLOCK:publications) -> BLOCK:maven (line 77, parent=BLOCK:publications)
+BLOCK:packagingOptions (line 42, parent=BLOCK:android) -> BLOCK:packagingOptions (line 42, parent=BLOCK:android)
+BLOCK:publications (line 67, parent=BLOCK:publishing) -> BLOCK:publications (line 76, parent=BLOCK:publishing)
+BLOCK:publishing (line 66, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle) -> BLOCK:publishing (line 75, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle)
+BLOCK:release (line 28, parent=BLOCK:buildTypes) -> BLOCK:release (line 28, parent=BLOCK:buildTypes)
+BLOCK:sourceSets (line 34, parent=BLOCK:android) -> BLOCK:sourceSets (line 34, parent=BLOCK:android)
+BUILDSCRIPT:buildscript (line 4, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle) -> BUILDSCRIPT:buildscript (line 4, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 51, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 51, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 8, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 8, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 5, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 5, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 81, parent=BLOCK:publishing) -> REPOSITORIES_BLOCK:repositories (line 90, parent=BLOCK:publishing)
+REPOSITORIES_DECL:maven (line 82, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 91, parent=REPOSITORIES_BLOCK:repositories)
+TASK_DECLARATION:androidReleaseJar (line 58, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle) -> TASK_DECLARATION:androidReleaseJar (line 67, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle)
+TASK_DECLARATION:androidSourcesJar (line 62, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle) -> TASK_DECLARATION:androidSourcesJar (line 71, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:android (line 16, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle) -> BLOCK:android (line 16, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle)
+BLOCK:build (line 88, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle) -> BLOCK:build (line 97, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle)
+BLOCK:buildTypes (line 27, parent=BLOCK:android) -> BLOCK:buildTypes (line 27, parent=BLOCK:android)
+BLOCK:defaultConfig (line 20, parent=BLOCK:android) -> BLOCK:defaultConfig (line 20, parent=BLOCK:android)
+BLOCK:doFirst (line 90, parent=BLOCK:build) -> BLOCK:doFirst (line 99, parent=BLOCK:build)
+BLOCK:java (line 36, parent=BLOCK:main) -> BLOCK:java (line 36, parent=BLOCK:main)
+BLOCK:main (line 35, parent=BLOCK:sourceSets) -> BLOCK:main (line 35, parent=BLOCK:sourceSets)
+BLOCK:maven (line 68, parent=BLOCK:publications) -> BLOCK:maven (line 77, parent=BLOCK:publications)
+BLOCK:packagingOptions (line 42, parent=BLOCK:android) -> BLOCK:packagingOptions (line 42, parent=BLOCK:android)
+BLOCK:publications (line 67, parent=BLOCK:publishing) -> BLOCK:publications (line 76, parent=BLOCK:publishing)
+BLOCK:publishing (line 66, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle) -> BLOCK:publishing (line 75, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle)
+BLOCK:release (line 28, parent=BLOCK:buildTypes) -> BLOCK:release (line 28, parent=BLOCK:buildTypes)
+BLOCK:sourceSets (line 34, parent=BLOCK:android) -> BLOCK:sourceSets (line 34, parent=BLOCK:android)
+BUILDSCRIPT:buildscript (line 4, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle) -> BUILDSCRIPT:buildscript (line 4, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 8, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 8, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 5, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 5, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 81, parent=BLOCK:publishing) -> REPOSITORIES_BLOCK:repositories (line 90, parent=BLOCK:publishing)
+REPOSITORIES_DECL:maven (line 82, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 91, parent=REPOSITORIES_BLOCK:repositories)
+TASK_DECLARATION:androidReleaseJar (line 58, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle) -> TASK_DECLARATION:androidReleaseJar (line 67, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle)
+TASK_DECLARATION:androidSourcesJar (line 62, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle) -> TASK_DECLARATION:androidSourcesJar (line 71, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+DEPENDENCIES_BLOCK:dependencies (line 51, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 51, parent=BUILD_GRADLE:snowplow-android-tracker/build.gradle)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+(none)
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 34; 34, 1, 0
+Matched composites: 21; 21, 0, 0
+Deleted leaves: 1; 0, 0, 1
+Deleted composites: 0; 0, 0, 0
+Added leaves: 4; 3, 0, 1
+Added composites: 0; 0, 0, 0
+Total expected events: 60
+Total predicted events: 59
+TP=58 FP=1 FN=2
+TP=58, precision=98.31%, recall=96.67%, F1=97.48%
+
+=== WHERE COMMIT26 MISSED ===
+All errors are in snowplow-android-tracker/build.gradle.
+
+FP:
+1. Match compile 'com.snowplowanalytics:snowplow-java-tracker-core:0.2.0'
+   to compile 'com.android.support:support-v4:21.0.3'
+FN:
+1. Deletion of snowplow-java-tracker-core at before line 53.
+2. Addition of support-v4 at after line 54.
+

@@ -1,0 +1,47 @@
+=== COMMIT ===
+https://github.com/yuyakaido/CardStackView/commit/2db614bf4ea19572e49994d9d18e90acaf882147
+
+=== ALL LEAF MATCHES ===
+DEPENDENCY_DECL:classpath (line 8, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 8, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 27, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 31, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 28, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 32, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 29, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 33, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:applicationId (line 17, parent=BLOCK:defaultConfig) -> METHOD_CALL:applicationId (line 17, parent=BLOCK:defaultConfig)
+METHOD_CALL:buildToolsVersion (line 14, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 14, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 13, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 13, parent=BLOCK:android)
+METHOD_CALL:minSdkVersion (line 18, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 18, parent=BLOCK:defaultConfig)
+METHOD_CALL:targetSdkVersion (line 19, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 19, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 20, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 20, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 21, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 21, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:sample/build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:sample/build.gradle)
+REPOSITORIES_DECL:jcenter (line 5, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 5, parent=REPOSITORIES_BLOCK:repositories)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:android (line 12, parent=BUILD_GRADLE:sample/build.gradle) -> BLOCK:android (line 12, parent=BUILD_GRADLE:sample/build.gradle)
+BLOCK:defaultConfig (line 16, parent=BLOCK:android) -> BLOCK:defaultConfig (line 16, parent=BLOCK:android)
+BUILDSCRIPT:buildscript (line 3, parent=BUILD_GRADLE:sample/build.gradle) -> BUILDSCRIPT:buildscript (line 3, parent=BUILD_GRADLE:sample/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 26, parent=BUILD_GRADLE:sample/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 30, parent=BUILD_GRADLE:sample/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 7, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 7, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 4, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 4, parent=BUILDSCRIPT:buildscript)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+(none)
+
+=== ADDED COMPOSITE NODES ===
+BLOCK:ext (line 26, parent=BUILD_GRADLE:sample/build.gradle)
+
+=== ADDED LEAF NODES ===
+ASSIGNMENT:supportLibVersion = 25.0.0 (line 27, parent=BLOCK:ext)
+
+=== EXPECTED COUNTS ===
+Leaf pairs: 13
+Composite pairs: 6
+Total pairs: 19
+Deleted leaves: 0
+Deleted composites: 0
+Added leaves: 1
+Added composites: 1
+

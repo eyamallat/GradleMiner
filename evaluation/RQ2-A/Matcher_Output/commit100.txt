@@ -1,0 +1,277 @@
+
+=== COMMIT ===
+http://github.com/SofiaRosetti/S3-16-d-rescue/commit/608543afcb9d9322328b4928b817e5ac59cd0bb9
+
+=== CHANGED GRADLE FILES ===
+build.gradle -> build.gradle
+gradle.properties -> gradle.properties
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    METHOD_CALL : group(projectGroup) (line 1)
+    METHOD_CALL : version(version) (line 2)
+    SUBPROJECTS : subprojects (line 4)
+      REPOSITORIES_BLOCK : repositories (line 6)
+        REPOSITORIES_DECL : mavenCentral (line 7)
+        REPOSITORIES_DECL : jcenter (line 8)
+    BLOCK : configure(subprojects.findAll()) (line 13)
+      CONDITION : if((it.name != mobileuser)) (line 14)
+        CONDITION : if((it.name != utils-java)) (line 16)
+          PLUGIN_DECL : apply plugin: scala (line 17)
+          ASSIGNMENT : name: scaladoc.destinationDir, operator: =, value: file("docs/scala/") (line 19)
+          DEPENDENCIES_BLOCK : dependencies (line 21)
+            DEPENDENCY_DECL : configuration='compile', group='org.scala-lang', name='scala-library', version='$scalaVersion' (line 22)
+            DEPENDENCY_DECL : configuration='testCompile', group='org.scalatest', name='scalatest_2.12', version='$scalaTestVersion' (line 23)
+        PLUGIN_DECL : apply plugin: java (line 27)
+        ASSIGNMENT : name: javadoc.destinationDir, operator: =, value: file("docs/java/") (line 29)
+        ASSIGNMENT : name: sourceCompatibility, operator: =, value: "$jdk8Version" (line 31)
+        DEPENDENCIES_BLOCK : dependencies (line 33)
+          DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='$junitVersion' (line 34)
+    METHOD_CALL : defaultTasks("clean", "build", "javadoc", "scaladoc") (line 40)
+  PROPERTIES_FILE : gradle.properties (line 0)
+    ASSIGNMENT : name: projectGroup, value: "it.unibo.S3.drescue" (line 1)
+    ASSIGNMENT : name: artifactId, value: "drescue" (line 2)
+    ASSIGNMENT : name: version, value: "0.1" (line 3)
+    ASSIGNMENT : name: longName, value: "DRescue" (line 4)
+    ASSIGNMENT : name: projectDescription, value: "DRescue: a distributed system for manage natural distasters" (line 5)
+    ASSIGNMENT : name: androidArtifactId, value: "it.unibo.mobileuser" (line 6)
+    ASSIGNMENT : name: androidBuildToolsVersion, value: "26.0.1" (line 7)
+    ASSIGNMENT : name: androidCompileSdkVersion, value: "26" (line 8)
+    ASSIGNMENT : name: androidMinSdkVersion, value: "19" (line 9)
+    ASSIGNMENT : name: androidTargetSdkVerision, value: "26" (line 10)
+    ASSIGNMENT : name: androidVersionCode, value: "1" (line 11)
+    ASSIGNMENT : name: androidVersionName, value: "1.0" (line 12)
+    ASSIGNMENT : name: appCompatV7Version, value: "26.1.0" (line 13)
+    ASSIGNMENT : name: cardviewV7Version, value: "26.1.0" (line 14)
+    ASSIGNMENT : name: constraintLayoutVersion, value: "1.0.2" (line 15)
+    ASSIGNMENT : name: espressoVersion, value: "2.2.2" (line 16)
+    ASSIGNMENT : name: googleMapsServicesVersion, value: "0.2.2" (line 17)
+    ASSIGNMENT : name: gradleVersion, value: "2.3.3" (line 18)
+    ASSIGNMENT : name: gsonVersion, value: "2.8.0" (line 19)
+    ASSIGNMENT : name: jdk8Version, value: "1.8" (line 20)
+    ASSIGNMENT : name: junitVersion, value: "4.12" (line 21)
+    ASSIGNMENT : name: logbackVersion, value: "1.2.3" (line 22)
+    ASSIGNMENT : name: materialedittextVersion, value: "2.1.4" (line 23)
+    ASSIGNMENT : name: mySqlVersion, value: "5.1.42" (line 24)
+    ASSIGNMENT : name: rabbitMqVersion, value: "4.0.2" (line 25)
+    ASSIGNMENT : name: recyclerviewV7Version, value: "26.1.0" (line 26)
+    ASSIGNMENT : name: scalaVersion, value: "2.12.2" (line 27)
+    ASSIGNMENT : name: scalaFxVersion, value: "8.0.102-R11" (line 28)
+    ASSIGNMENT : name: scalaTestVersion, value: "3.0.1" (line 29)
+    ASSIGNMENT : name: slf4jVersion, value: "1.7.21" (line 30)
+    ASSIGNMENT : name: jarFolder, value: "releases" (line 31)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    METHOD_CALL : group(projectGroup) (line 1)
+    METHOD_CALL : version(version) (line 2)
+    SUBPROJECTS : subprojects (line 4)
+      REPOSITORIES_BLOCK : repositories (line 6)
+        REPOSITORIES_DECL : mavenCentral (line 7)
+        REPOSITORIES_DECL : jcenter (line 8)
+    BLOCK : configure(subprojects.findAll()) (line 13)
+      CONDITION : if((it.name != mobileuser)) (line 14)
+        CONDITION : if((it.name != utils-java)) (line 16)
+          PLUGIN_DECL : apply plugin: scala (line 17)
+          ASSIGNMENT : name: scaladoc.destinationDir, operator: =, value: file("$docFolderScala") (line 19)
+          DEPENDENCIES_BLOCK : dependencies (line 21)
+            DEPENDENCY_DECL : configuration='compile', group='org.scala-lang', name='scala-library', version='$scalaVersion' (line 22)
+            DEPENDENCY_DECL : configuration='testCompile', group='org.scalatest', name='scalatest_2.12', version='$scalaTestVersion' (line 23)
+        PLUGIN_DECL : apply plugin: java (line 27)
+        ASSIGNMENT : name: javadoc.destinationDir, operator: =, value: file("$docFolderJava") (line 29)
+        ASSIGNMENT : name: sourceCompatibility, operator: =, value: "$jdk8Version" (line 31)
+        DEPENDENCIES_BLOCK : dependencies (line 33)
+          DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='$junitVersion' (line 34)
+    METHOD_CALL : defaultTasks("clean", "build", "javadoc", "scaladoc") (line 40)
+  PROPERTIES_FILE : gradle.properties (line 0)
+    ASSIGNMENT : name: projectGroup, value: "it.unibo.S3.drescue" (line 1)
+    ASSIGNMENT : name: artifactId, value: "drescue" (line 2)
+    ASSIGNMENT : name: version, value: "0.1" (line 3)
+    ASSIGNMENT : name: longName, value: "DRescue" (line 4)
+    ASSIGNMENT : name: projectDescription, value: "DRescue: a distributed system for manage natural distasters" (line 5)
+    ASSIGNMENT : name: androidArtifactId, value: "it.unibo.mobileuser" (line 6)
+    ASSIGNMENT : name: androidBuildToolsVersion, value: "26.0.1" (line 7)
+    ASSIGNMENT : name: androidCompileSdkVersion, value: "26" (line 8)
+    ASSIGNMENT : name: androidMinSdkVersion, value: "19" (line 9)
+    ASSIGNMENT : name: androidTargetSdkVerision, value: "26" (line 10)
+    ASSIGNMENT : name: androidVersionCode, value: "1" (line 11)
+    ASSIGNMENT : name: androidVersionName, value: "1.0" (line 12)
+    ASSIGNMENT : name: appCompatV7Version, value: "26.1.0" (line 13)
+    ASSIGNMENT : name: cardviewV7Version, value: "26.1.0" (line 14)
+    ASSIGNMENT : name: constraintLayoutVersion, value: "1.0.2" (line 15)
+    ASSIGNMENT : name: espressoVersion, value: "2.2.2" (line 16)
+    ASSIGNMENT : name: googleMapsServicesVersion, value: "0.2.2" (line 17)
+    ASSIGNMENT : name: gradleVersion, value: "2.3.3" (line 18)
+    ASSIGNMENT : name: gsonVersion, value: "2.8.0" (line 19)
+    ASSIGNMENT : name: jdk8Version, value: "1.8" (line 20)
+    ASSIGNMENT : name: junitVersion, value: "4.12" (line 21)
+    ASSIGNMENT : name: logbackVersion, value: "1.2.3" (line 22)
+    ASSIGNMENT : name: materialedittextVersion, value: "2.1.4" (line 23)
+    ASSIGNMENT : name: mySqlVersion, value: "5.1.42" (line 24)
+    ASSIGNMENT : name: rabbitMqVersion, value: "4.0.2" (line 25)
+    ASSIGNMENT : name: recyclerviewV7Version, value: "26.1.0" (line 26)
+    ASSIGNMENT : name: scalaVersion, value: "2.12.2" (line 27)
+    ASSIGNMENT : name: scalaFxVersion, value: "8.0.102-R11" (line 28)
+    ASSIGNMENT : name: scalaTestVersion, value: "3.0.1" (line 29)
+    ASSIGNMENT : name: slf4jVersion, value: "1.7.21" (line 30)
+    ASSIGNMENT : name: docFolderJava, value: "docs/java/" (line 31)
+    ASSIGNMENT : name: docFolderScala, value: "docs/scala/" (line 32)
+    ASSIGNMENT : name: jarFolder, value: "releases" (line 33)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+(none)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+ASSIGNMENT:docFolderJava = docs/java/ (line 31, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:docFolderScala = docs/scala/ (line 32, parent=PROPERTIES_FILE:gradle.properties)
+
+=== ALL LEAF MATCHES ===
+ASSIGNMENT:androidArtifactId = it.unibo.mobileuser (line 6, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:androidArtifactId = it.unibo.mobileuser (line 6, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:androidBuildToolsVersion = 26.0.1 (line 7, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:androidBuildToolsVersion = 26.0.1 (line 7, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:androidCompileSdkVersion = 26 (line 8, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:androidCompileSdkVersion = 26 (line 8, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:androidMinSdkVersion = 19 (line 9, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:androidMinSdkVersion = 19 (line 9, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:androidTargetSdkVerision = 26 (line 10, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:androidTargetSdkVerision = 26 (line 10, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:androidVersionCode = 1 (line 11, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:androidVersionCode = 1 (line 11, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:androidVersionName = 1.0 (line 12, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:androidVersionName = 1.0 (line 12, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:appCompatV7Version = 26.1.0 (line 13, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:appCompatV7Version = 26.1.0 (line 13, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:artifactId = drescue (line 2, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:artifactId = drescue (line 2, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:cardviewV7Version = 26.1.0 (line 14, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:cardviewV7Version = 26.1.0 (line 14, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:constraintLayoutVersion = 1.0.2 (line 15, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:constraintLayoutVersion = 1.0.2 (line 15, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:espressoVersion = 2.2.2 (line 16, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:espressoVersion = 2.2.2 (line 16, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:googleMapsServicesVersion = 0.2.2 (line 17, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:googleMapsServicesVersion = 0.2.2 (line 17, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:gradleVersion = 2.3.3 (line 18, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:gradleVersion = 2.3.3 (line 18, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:gsonVersion = 2.8.0 (line 19, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:gsonVersion = 2.8.0 (line 19, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:jarFolder = releases (line 31, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:jarFolder = releases (line 33, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:javadoc.destinationDir = file(docs/java/) (line 29, parent=CONDITION:if) -> ASSIGNMENT:javadoc.destinationDir = file($docFolderJava) (line 29, parent=CONDITION:if)
+ASSIGNMENT:jdk8Version = 1.8 (line 20, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:jdk8Version = 1.8 (line 20, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:junitVersion = 4.12 (line 21, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:junitVersion = 4.12 (line 21, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:logbackVersion = 1.2.3 (line 22, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:logbackVersion = 1.2.3 (line 22, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:longName = DRescue (line 4, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:longName = DRescue (line 4, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:materialedittextVersion = 2.1.4 (line 23, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:materialedittextVersion = 2.1.4 (line 23, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:mySqlVersion = 5.1.42 (line 24, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:mySqlVersion = 5.1.42 (line 24, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:projectDescription = DRescue: a distributed system for manage natural distasters (line 5, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:projectDescription = DRescue: a distributed system for manage natural distasters (line 5, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:projectGroup = it.unibo.S3.drescue (line 1, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:projectGroup = it.unibo.S3.drescue (line 1, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:rabbitMqVersion = 4.0.2 (line 25, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:rabbitMqVersion = 4.0.2 (line 25, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:recyclerviewV7Version = 26.1.0 (line 26, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:recyclerviewV7Version = 26.1.0 (line 26, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:scalaFxVersion = 8.0.102-R11 (line 28, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:scalaFxVersion = 8.0.102-R11 (line 28, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:scalaTestVersion = 3.0.1 (line 29, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:scalaTestVersion = 3.0.1 (line 29, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:scalaVersion = 2.12.2 (line 27, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:scalaVersion = 2.12.2 (line 27, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:scaladoc.destinationDir = file(docs/scala/) (line 19, parent=CONDITION:if) -> ASSIGNMENT:scaladoc.destinationDir = file($docFolderScala) (line 19, parent=CONDITION:if)
+ASSIGNMENT:slf4jVersion = 1.7.21 (line 30, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:slf4jVersion = 1.7.21 (line 30, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:sourceCompatibility = $jdk8Version (line 31, parent=CONDITION:if) -> ASSIGNMENT:sourceCompatibility = $jdk8Version (line 31, parent=CONDITION:if)
+ASSIGNMENT:version = 0.1 (line 3, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:version = 0.1 (line 3, parent=PROPERTIES_FILE:gradle.properties)
+DEPENDENCY_DECL:compile (line 22, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 22, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 23, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 23, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 34, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 34, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:defaultTasks (line 40, parent=BUILD_GRADLE:build.gradle) -> METHOD_CALL:defaultTasks (line 40, parent=BUILD_GRADLE:build.gradle)
+METHOD_CALL:group (line 1, parent=BUILD_GRADLE:build.gradle) -> METHOD_CALL:group (line 1, parent=BUILD_GRADLE:build.gradle)
+METHOD_CALL:version (line 2, parent=BUILD_GRADLE:build.gradle) -> METHOD_CALL:version (line 2, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 17, parent=CONDITION:if) -> PLUGIN_DECL:apply (line 17, parent=CONDITION:if)
+PLUGIN_DECL:apply (line 27, parent=CONDITION:if) -> PLUGIN_DECL:apply (line 27, parent=CONDITION:if)
+REPOSITORIES_DECL:jcenter (line 8, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 8, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 7, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 7, parent=REPOSITORIES_BLOCK:repositories)
+
+=== LEAF ROUND 1 MATCHES ===
+ASSIGNMENT:androidArtifactId = it.unibo.mobileuser (line 6, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:androidArtifactId = it.unibo.mobileuser (line 6, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:androidBuildToolsVersion = 26.0.1 (line 7, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:androidBuildToolsVersion = 26.0.1 (line 7, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:androidCompileSdkVersion = 26 (line 8, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:androidCompileSdkVersion = 26 (line 8, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:androidMinSdkVersion = 19 (line 9, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:androidMinSdkVersion = 19 (line 9, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:androidTargetSdkVerision = 26 (line 10, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:androidTargetSdkVerision = 26 (line 10, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:androidVersionCode = 1 (line 11, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:androidVersionCode = 1 (line 11, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:androidVersionName = 1.0 (line 12, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:androidVersionName = 1.0 (line 12, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:appCompatV7Version = 26.1.0 (line 13, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:appCompatV7Version = 26.1.0 (line 13, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:artifactId = drescue (line 2, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:artifactId = drescue (line 2, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:cardviewV7Version = 26.1.0 (line 14, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:cardviewV7Version = 26.1.0 (line 14, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:constraintLayoutVersion = 1.0.2 (line 15, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:constraintLayoutVersion = 1.0.2 (line 15, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:espressoVersion = 2.2.2 (line 16, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:espressoVersion = 2.2.2 (line 16, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:googleMapsServicesVersion = 0.2.2 (line 17, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:googleMapsServicesVersion = 0.2.2 (line 17, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:gradleVersion = 2.3.3 (line 18, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:gradleVersion = 2.3.3 (line 18, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:gsonVersion = 2.8.0 (line 19, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:gsonVersion = 2.8.0 (line 19, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:jarFolder = releases (line 31, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:jarFolder = releases (line 33, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:jdk8Version = 1.8 (line 20, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:jdk8Version = 1.8 (line 20, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:junitVersion = 4.12 (line 21, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:junitVersion = 4.12 (line 21, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:logbackVersion = 1.2.3 (line 22, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:logbackVersion = 1.2.3 (line 22, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:longName = DRescue (line 4, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:longName = DRescue (line 4, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:materialedittextVersion = 2.1.4 (line 23, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:materialedittextVersion = 2.1.4 (line 23, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:mySqlVersion = 5.1.42 (line 24, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:mySqlVersion = 5.1.42 (line 24, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:projectDescription = DRescue: a distributed system for manage natural distasters (line 5, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:projectDescription = DRescue: a distributed system for manage natural distasters (line 5, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:projectGroup = it.unibo.S3.drescue (line 1, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:projectGroup = it.unibo.S3.drescue (line 1, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:rabbitMqVersion = 4.0.2 (line 25, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:rabbitMqVersion = 4.0.2 (line 25, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:recyclerviewV7Version = 26.1.0 (line 26, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:recyclerviewV7Version = 26.1.0 (line 26, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:scalaFxVersion = 8.0.102-R11 (line 28, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:scalaFxVersion = 8.0.102-R11 (line 28, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:scalaTestVersion = 3.0.1 (line 29, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:scalaTestVersion = 3.0.1 (line 29, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:scalaVersion = 2.12.2 (line 27, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:scalaVersion = 2.12.2 (line 27, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:slf4jVersion = 1.7.21 (line 30, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:slf4jVersion = 1.7.21 (line 30, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:sourceCompatibility = $jdk8Version (line 31, parent=CONDITION:if) -> ASSIGNMENT:sourceCompatibility = $jdk8Version (line 31, parent=CONDITION:if)
+ASSIGNMENT:version = 0.1 (line 3, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:version = 0.1 (line 3, parent=PROPERTIES_FILE:gradle.properties)
+DEPENDENCY_DECL:compile (line 22, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 22, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 23, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 23, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 34, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 34, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:defaultTasks (line 40, parent=BUILD_GRADLE:build.gradle) -> METHOD_CALL:defaultTasks (line 40, parent=BUILD_GRADLE:build.gradle)
+METHOD_CALL:group (line 1, parent=BUILD_GRADLE:build.gradle) -> METHOD_CALL:group (line 1, parent=BUILD_GRADLE:build.gradle)
+METHOD_CALL:version (line 2, parent=BUILD_GRADLE:build.gradle) -> METHOD_CALL:version (line 2, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 17, parent=CONDITION:if) -> PLUGIN_DECL:apply (line 17, parent=CONDITION:if)
+PLUGIN_DECL:apply (line 27, parent=CONDITION:if) -> PLUGIN_DECL:apply (line 27, parent=CONDITION:if)
+REPOSITORIES_DECL:jcenter (line 8, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 8, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 7, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 7, parent=REPOSITORIES_BLOCK:repositories)
+
+=== LEAF ROUND 2 MATCHES ===
+ASSIGNMENT:javadoc.destinationDir = file(docs/java/) (line 29, parent=CONDITION:if) -> ASSIGNMENT:javadoc.destinationDir = file($docFolderJava) (line 29, parent=CONDITION:if)
+ASSIGNMENT:scaladoc.destinationDir = file(docs/scala/) (line 19, parent=CONDITION:if) -> ASSIGNMENT:scaladoc.destinationDir = file($docFolderScala) (line 19, parent=CONDITION:if)
+
+=== LEAF ROUND 3 MATCHES ===
+(none)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:configure (line 13, parent=BUILD_GRADLE:build.gradle) -> BLOCK:configure (line 13, parent=BUILD_GRADLE:build.gradle)
+CONDITION:if (line 14, parent=BLOCK:configure) -> CONDITION:if (line 14, parent=BLOCK:configure)
+CONDITION:if (line 16, parent=CONDITION:if) -> CONDITION:if (line 16, parent=CONDITION:if)
+DEPENDENCIES_BLOCK:dependencies (line 21, parent=CONDITION:if) -> DEPENDENCIES_BLOCK:dependencies (line 21, parent=CONDITION:if)
+DEPENDENCIES_BLOCK:dependencies (line 33, parent=CONDITION:if) -> DEPENDENCIES_BLOCK:dependencies (line 33, parent=CONDITION:if)
+REPOSITORIES_BLOCK:repositories (line 6, parent=SUBPROJECTS:subprojects) -> REPOSITORIES_BLOCK:repositories (line 6, parent=SUBPROJECTS:subprojects)
+SUBPROJECTS:subprojects (line 4, parent=BUILD_GRADLE:build.gradle) -> SUBPROJECTS:subprojects (line 4, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+DEPENDENCIES_BLOCK:dependencies (line 21, parent=CONDITION:if) -> DEPENDENCIES_BLOCK:dependencies (line 21, parent=CONDITION:if)
+DEPENDENCIES_BLOCK:dependencies (line 33, parent=CONDITION:if) -> DEPENDENCIES_BLOCK:dependencies (line 33, parent=CONDITION:if)
+REPOSITORIES_BLOCK:repositories (line 6, parent=SUBPROJECTS:subprojects) -> REPOSITORIES_BLOCK:repositories (line 6, parent=SUBPROJECTS:subprojects)
+SUBPROJECTS:subprojects (line 4, parent=BUILD_GRADLE:build.gradle) -> SUBPROJECTS:subprojects (line 4, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+BLOCK:configure (line 13, parent=BUILD_GRADLE:build.gradle) -> BLOCK:configure (line 13, parent=BUILD_GRADLE:build.gradle)
+CONDITION:if (line 14, parent=BLOCK:configure) -> CONDITION:if (line 14, parent=BLOCK:configure)
+CONDITION:if (line 16, parent=CONDITION:if) -> CONDITION:if (line 16, parent=CONDITION:if)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+EXTERNALIZE_PROPERTIES: Externalize property 'docFolderScala'
+EXTERNALIZE_PROPERTIES: Externalize property 'docFolderJava'
+
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 44; 44, 0, 0
+Matched composites: 7; 7, 0, 0
+Deleted leaves: 0; 0, 0, 0
+Deleted composites: 0; 0, 0, 0
+Added leaves: 2; 2, 0, 0
+Added composites: 0; 0, 0, 0
+Total expected events: 53
+Total predicted events: 53
+
+TP=53 FP=0 FN=0
+TP=53, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT106 MISSED ===
+FP: (none)
+FN: (none)

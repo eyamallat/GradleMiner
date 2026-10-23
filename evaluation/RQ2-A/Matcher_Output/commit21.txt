@@ -1,0 +1,282 @@
+
+=== COMMIT ===
+https://github.com/mpouttuclarke/cdap/commit/355fb03020e344f0f9981fb09ff9bb48cb7df6a7
+
+=== CHANGED GRADLE FILES ===
+build.gradle -> build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: java (line 1)
+    APPLY_SCRIPT : apply from: ${rootProject.projectDir}/gradle/packaging.gradle (line 2)
+    BLOCK : smartyFacts (line 7)
+      BLOCK : api (line 8)
+        METHOD_CALL : enableJavadoc (line 9)
+        METHOD_CALL : enableSourceJar (line 10)
+    BLOCK : testrunner (line 18)
+      BLOCK : integration (line 19)
+        BLOCK : setup (line 20)
+          METHOD_CALL : environment([os: "mac os x"]) (line 21)
+    DEPENDENCIES_BLOCK : dependencies (line 29)
+      DEPENDENCY_DECL : configuration='apiCompile', notation='elastic([group: com.continuuity, name: data-fabric, classifier: api, version: $version, changing: true], data-fabric)' (line 31)
+      DEPENDENCY_DECL : configuration='compile', notation='elastic([group: com.continuuity, name: data-fabric, classifier: api, version: $version, changing: true], data-fabric)' (line 32)
+      DEPENDENCY_DECL : configuration='compile', notation='elastic([group: com.continuuity, name: overlord, classifier: thrift, version: $version, changing: true], overlord)' (line 33)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.slf4j_api' (line 38)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.apache_commons_cli' (line 39)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.google_gson' (line 40)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.google_guice' (line 41)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.google_guice_assistedinject' (line 42)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.google_guice_multibindings' (line 43)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.google_guava' (line 44)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.jsr_305' (line 45)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.netty' (line 46)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.hadoop_minicluster' (line 47)
+      DEPENDENCY_DECL : configuration='thriftCompile', catalogAlias='libraries.thrift' (line 51)
+      DEPENDENCY_DECL : configuration='thriftCompile', catalogAlias='libraries.slf4j_api' (line 52)
+      DEPENDENCY_DECL : configuration='testCompile', catalogAlias='libraries.junit' (line 55)
+    BLOCK : sourceSets (line 61)
+      BLOCK : main (line 62)
+        ASSIGNMENT : name: compileClasspath, operator: +=, value: api."output" (line 63)
+        ASSIGNMENT : name: compileClasspath, operator: +=, value: thrift."output" (line 64)
+        ASSIGNMENT : name: runtimeClasspath, operator: +=, value: api."output" (line 65)
+        ASSIGNMENT : name: runtimeClasspath, operator: +=, value: thrift."output" (line 66)
+      BLOCK : test (line 68)
+        ASSIGNMENT : name: compileClasspath, operator: +=, value: api."output" (line 69)
+        ASSIGNMENT : name: compileClasspath, operator: +=, value: thrift."output" (line 70)
+        ASSIGNMENT : name: runtimeClasspath, operator: +=, value: api."output" (line 71)
+        ASSIGNMENT : name: runtimeClasspath, operator: +=, value: thrift."output" (line 72)
+    BLOCK : test (line 76)
+      METHOD_CALL : jvmArgs("-Xmx1024m") (line 77)
+    BLOCK : javadoc (line 84)
+      ASSIGNMENT : name: classpath, operator: +=, value: sourceSets."api"."output" + sourceSets."thrift"."output" (line 85)
+    BLOCK : clover (line 91)
+      ASSIGNMENT : name: excludes, operator: <<, value: "**/manager/stubs/*" (line 92)
+    BLOCK : sonar (line 98)
+      BLOCK : project (line 99)
+        ASSIGNMENT : name: sourceExclusions, operator: =, value: "**/manager/stubs/*" (line 100)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: java (line 1)
+    APPLY_SCRIPT : apply from: ${rootProject.projectDir}/gradle/packaging.gradle (line 2)
+    BLOCK : smartyFacts (line 7)
+      BLOCK : api (line 8)
+        METHOD_CALL : enableJavadoc (line 9)
+        METHOD_CALL : enableSourceJar (line 10)
+    BLOCK : testrunner (line 18)
+      BLOCK : integration (line 19)
+        BLOCK : setup (line 20)
+          METHOD_CALL : environment([os: "mac os x"]) (line 21)
+    DEPENDENCIES_BLOCK : dependencies (line 29)
+      DEPENDENCY_DECL : configuration='apiCompile', notation='elastic([group: com.continuuity, name: data-fabric, classifier: api, version: $version, changing: true], data-fabric)' (line 31)
+      DEPENDENCY_DECL : configuration='compile', notation='elastic([group: com.continuuity, name: data-fabric, classifier: api, version: $version, changing: true], data-fabric)' (line 33)
+      DEPENDENCY_DECL : configuration='compile', notation='elastic([group: com.continuuity, name: overlord, classifier: thrift, version: $version, changing: true], overlord)' (line 34)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.slf4j_api' (line 39)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.apache_commons_cli' (line 40)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.google_gson' (line 41)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.google_guice' (line 42)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.google_guice_assistedinject' (line 43)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.google_guice_multibindings' (line 44)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.google_guava' (line 45)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.jcl_over_slf4j' (line 46)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.jsr_305' (line 47)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.netty' (line 48)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.hadoop_minicluster' (line 49)
+        METHOD_CALL : exclude([group: "commons-logging"]) (line 50)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.weave_api' (line 52)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.weave_common' (line 53)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.weave_yarn' (line 54)
+        METHOD_CALL : exclude([group: "org.apache.hadoop"]) (line 55)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.hadoop_annotations' (line 58)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.hadoop_auth' (line 59)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.hadoop_common' (line 60)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.hadoop_yarn' (line 61)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.hadoop_yarn_api' (line 62)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.hadoop_yarn_client' (line 63)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='libraries.hadoop_yarn_common' (line 64)
+      DEPENDENCY_DECL : configuration='thriftCompile', catalogAlias='libraries.thrift' (line 67)
+      DEPENDENCY_DECL : configuration='thriftCompile', catalogAlias='libraries.slf4j_api' (line 68)
+      DEPENDENCY_DECL : configuration='testCompile', catalogAlias='libraries.junit' (line 71)
+    BLOCK : sourceSets (line 77)
+      BLOCK : main (line 78)
+        ASSIGNMENT : name: compileClasspath, operator: +=, value: api."output" (line 79)
+        ASSIGNMENT : name: compileClasspath, operator: +=, value: thrift."output" (line 80)
+        ASSIGNMENT : name: runtimeClasspath, operator: +=, value: api."output" (line 81)
+        ASSIGNMENT : name: runtimeClasspath, operator: +=, value: thrift."output" (line 82)
+      BLOCK : test (line 84)
+        ASSIGNMENT : name: compileClasspath, operator: +=, value: api."output" (line 85)
+        ASSIGNMENT : name: compileClasspath, operator: +=, value: thrift."output" (line 86)
+        ASSIGNMENT : name: runtimeClasspath, operator: +=, value: api."output" (line 87)
+        ASSIGNMENT : name: runtimeClasspath, operator: +=, value: thrift."output" (line 88)
+    BLOCK : test (line 92)
+      METHOD_CALL : jvmArgs("-Xmx1024m") (line 93)
+    BLOCK : javadoc (line 100)
+      ASSIGNMENT : name: classpath, operator: +=, value: sourceSets."api"."output" + sourceSets."thrift"."output" (line 101)
+    BLOCK : clover (line 107)
+      ASSIGNMENT : name: excludes, operator: <<, value: "**/manager/stubs/*" (line 108)
+    BLOCK : sonar (line 114)
+      BLOCK : project (line 115)
+        ASSIGNMENT : name: sourceExclusions, operator: =, value: "**/manager/stubs/*" (line 116)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+(none)
+
+=== ADDED COMPOSITE NODES ===
+DEPENDENCY_DECL:compile (line 49, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 54, parent=DEPENDENCIES_BLOCK:dependencies)
+
+=== ADDED LEAF NODES ===
+DEPENDENCY_DECL:compile (line 52, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 53, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 58, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 59, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 60, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 61, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 62, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 63, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 64, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:exclude (line 50, parent=DEPENDENCY_DECL:compile)
+METHOD_CALL:exclude (line 55, parent=DEPENDENCY_DECL:compile)
+
+=== ALL LEAF MATCHES ===
+APPLY_SCRIPT:apply (line 2, parent=BUILD_GRADLE:build.gradle) -> APPLY_SCRIPT:apply (line 2, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:classpath = sourceSets.api.output + sourceSets.thrift.output (line 85, parent=BLOCK:javadoc) -> ASSIGNMENT:classpath = sourceSets.api.output + sourceSets.thrift.output (line 101, parent=BLOCK:javadoc)
+ASSIGNMENT:compileClasspath = api.output (line 63, parent=BLOCK:main) -> ASSIGNMENT:compileClasspath = api.output (line 79, parent=BLOCK:main)
+ASSIGNMENT:compileClasspath = api.output (line 69, parent=BLOCK:test) -> ASSIGNMENT:compileClasspath = api.output (line 85, parent=BLOCK:test)
+ASSIGNMENT:compileClasspath = thrift.output (line 64, parent=BLOCK:main) -> ASSIGNMENT:compileClasspath = thrift.output (line 80, parent=BLOCK:main)
+ASSIGNMENT:compileClasspath = thrift.output (line 70, parent=BLOCK:test) -> ASSIGNMENT:compileClasspath = thrift.output (line 86, parent=BLOCK:test)
+ASSIGNMENT:excludes = **/manager/stubs/* (line 92, parent=BLOCK:clover) -> ASSIGNMENT:excludes = **/manager/stubs/* (line 108, parent=BLOCK:clover)
+ASSIGNMENT:runtimeClasspath = api.output (line 65, parent=BLOCK:main) -> ASSIGNMENT:runtimeClasspath = api.output (line 81, parent=BLOCK:main)
+ASSIGNMENT:runtimeClasspath = api.output (line 71, parent=BLOCK:test) -> ASSIGNMENT:runtimeClasspath = api.output (line 87, parent=BLOCK:test)
+ASSIGNMENT:runtimeClasspath = thrift.output (line 66, parent=BLOCK:main) -> ASSIGNMENT:runtimeClasspath = thrift.output (line 82, parent=BLOCK:main)
+ASSIGNMENT:runtimeClasspath = thrift.output (line 72, parent=BLOCK:test) -> ASSIGNMENT:runtimeClasspath = thrift.output (line 88, parent=BLOCK:test)
+ASSIGNMENT:sourceExclusions = **/manager/stubs/* (line 100, parent=BLOCK:project) -> ASSIGNMENT:sourceExclusions = **/manager/stubs/* (line 116, parent=BLOCK:project)
+DEPENDENCY_DECL:apiCompile (line 31, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:apiCompile (line 31, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 32, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 33, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 33, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 34, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 38, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 39, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 39, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 40, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 40, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 41, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 41, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 42, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 42, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 43, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 43, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 44, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 44, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 45, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 45, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 47, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 46, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 48, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 47, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 46, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 55, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 71, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:thriftCompile (line 51, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:thriftCompile (line 67, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:thriftCompile (line 52, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:thriftCompile (line 68, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:enableJavadoc (line 9, parent=BLOCK:api) -> METHOD_CALL:enableJavadoc (line 9, parent=BLOCK:api)
+METHOD_CALL:enableSourceJar (line 10, parent=BLOCK:api) -> METHOD_CALL:enableSourceJar (line 10, parent=BLOCK:api)
+METHOD_CALL:environment (line 21, parent=BLOCK:setup) -> METHOD_CALL:environment (line 21, parent=BLOCK:setup)
+METHOD_CALL:jvmArgs (line 77, parent=BLOCK:test) -> METHOD_CALL:jvmArgs (line 93, parent=BLOCK:test)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:build.gradle)
+
+=== LEAF ROUND 1 MATCHES ===
+APPLY_SCRIPT:apply (line 2, parent=BUILD_GRADLE:build.gradle) -> APPLY_SCRIPT:apply (line 2, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:classpath = sourceSets.api.output + sourceSets.thrift.output (line 85, parent=BLOCK:javadoc) -> ASSIGNMENT:classpath = sourceSets.api.output + sourceSets.thrift.output (line 101, parent=BLOCK:javadoc)
+ASSIGNMENT:compileClasspath = api.output (line 63, parent=BLOCK:main) -> ASSIGNMENT:compileClasspath = api.output (line 79, parent=BLOCK:main)
+ASSIGNMENT:compileClasspath = api.output (line 69, parent=BLOCK:test) -> ASSIGNMENT:compileClasspath = api.output (line 85, parent=BLOCK:test)
+ASSIGNMENT:compileClasspath = thrift.output (line 64, parent=BLOCK:main) -> ASSIGNMENT:compileClasspath = thrift.output (line 80, parent=BLOCK:main)
+ASSIGNMENT:compileClasspath = thrift.output (line 70, parent=BLOCK:test) -> ASSIGNMENT:compileClasspath = thrift.output (line 86, parent=BLOCK:test)
+ASSIGNMENT:excludes = **/manager/stubs/* (line 92, parent=BLOCK:clover) -> ASSIGNMENT:excludes = **/manager/stubs/* (line 108, parent=BLOCK:clover)
+ASSIGNMENT:runtimeClasspath = api.output (line 65, parent=BLOCK:main) -> ASSIGNMENT:runtimeClasspath = api.output (line 81, parent=BLOCK:main)
+ASSIGNMENT:runtimeClasspath = api.output (line 71, parent=BLOCK:test) -> ASSIGNMENT:runtimeClasspath = api.output (line 87, parent=BLOCK:test)
+ASSIGNMENT:runtimeClasspath = thrift.output (line 66, parent=BLOCK:main) -> ASSIGNMENT:runtimeClasspath = thrift.output (line 82, parent=BLOCK:main)
+ASSIGNMENT:runtimeClasspath = thrift.output (line 72, parent=BLOCK:test) -> ASSIGNMENT:runtimeClasspath = thrift.output (line 88, parent=BLOCK:test)
+ASSIGNMENT:sourceExclusions = **/manager/stubs/* (line 100, parent=BLOCK:project) -> ASSIGNMENT:sourceExclusions = **/manager/stubs/* (line 116, parent=BLOCK:project)
+DEPENDENCY_DECL:apiCompile (line 31, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:apiCompile (line 31, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 32, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 33, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 33, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 34, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 38, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 39, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 39, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 40, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 40, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 41, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 41, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 42, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 42, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 43, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 43, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 44, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 44, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 45, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 45, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 47, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 46, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 48, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 55, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 71, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:thriftCompile (line 51, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:thriftCompile (line 67, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:thriftCompile (line 52, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:thriftCompile (line 68, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:enableJavadoc (line 9, parent=BLOCK:api) -> METHOD_CALL:enableJavadoc (line 9, parent=BLOCK:api)
+METHOD_CALL:enableSourceJar (line 10, parent=BLOCK:api) -> METHOD_CALL:enableSourceJar (line 10, parent=BLOCK:api)
+METHOD_CALL:environment (line 21, parent=BLOCK:setup) -> METHOD_CALL:environment (line 21, parent=BLOCK:setup)
+METHOD_CALL:jvmArgs (line 77, parent=BLOCK:test) -> METHOD_CALL:jvmArgs (line 93, parent=BLOCK:test)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:build.gradle)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+DEPENDENCY_DECL:compile (line 47, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 46, parent=DEPENDENCIES_BLOCK:dependencies)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:api (line 8, parent=BLOCK:smartyFacts) -> BLOCK:api (line 8, parent=BLOCK:smartyFacts)
+BLOCK:clover (line 91, parent=BUILD_GRADLE:build.gradle) -> BLOCK:clover (line 107, parent=BUILD_GRADLE:build.gradle)
+BLOCK:integration (line 19, parent=BLOCK:testrunner) -> BLOCK:integration (line 19, parent=BLOCK:testrunner)
+BLOCK:javadoc (line 84, parent=BUILD_GRADLE:build.gradle) -> BLOCK:javadoc (line 100, parent=BUILD_GRADLE:build.gradle)
+BLOCK:main (line 62, parent=BLOCK:sourceSets) -> BLOCK:main (line 78, parent=BLOCK:sourceSets)
+BLOCK:project (line 99, parent=BLOCK:sonar) -> BLOCK:project (line 115, parent=BLOCK:sonar)
+BLOCK:setup (line 20, parent=BLOCK:integration) -> BLOCK:setup (line 20, parent=BLOCK:integration)
+BLOCK:smartyFacts (line 7, parent=BUILD_GRADLE:build.gradle) -> BLOCK:smartyFacts (line 7, parent=BUILD_GRADLE:build.gradle)
+BLOCK:sonar (line 98, parent=BUILD_GRADLE:build.gradle) -> BLOCK:sonar (line 114, parent=BUILD_GRADLE:build.gradle)
+BLOCK:sourceSets (line 61, parent=BUILD_GRADLE:build.gradle) -> BLOCK:sourceSets (line 77, parent=BUILD_GRADLE:build.gradle)
+BLOCK:test (line 68, parent=BLOCK:sourceSets) -> BLOCK:test (line 84, parent=BLOCK:sourceSets)
+BLOCK:test (line 76, parent=BUILD_GRADLE:build.gradle) -> BLOCK:test (line 92, parent=BUILD_GRADLE:build.gradle)
+BLOCK:testrunner (line 18, parent=BUILD_GRADLE:build.gradle) -> BLOCK:testrunner (line 18, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 29, parent=BUILD_GRADLE:build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 29, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:api (line 8, parent=BLOCK:smartyFacts) -> BLOCK:api (line 8, parent=BLOCK:smartyFacts)
+BLOCK:clover (line 91, parent=BUILD_GRADLE:build.gradle) -> BLOCK:clover (line 107, parent=BUILD_GRADLE:build.gradle)
+BLOCK:integration (line 19, parent=BLOCK:testrunner) -> BLOCK:integration (line 19, parent=BLOCK:testrunner)
+BLOCK:javadoc (line 84, parent=BUILD_GRADLE:build.gradle) -> BLOCK:javadoc (line 100, parent=BUILD_GRADLE:build.gradle)
+BLOCK:main (line 62, parent=BLOCK:sourceSets) -> BLOCK:main (line 78, parent=BLOCK:sourceSets)
+BLOCK:project (line 99, parent=BLOCK:sonar) -> BLOCK:project (line 115, parent=BLOCK:sonar)
+BLOCK:setup (line 20, parent=BLOCK:integration) -> BLOCK:setup (line 20, parent=BLOCK:integration)
+BLOCK:smartyFacts (line 7, parent=BUILD_GRADLE:build.gradle) -> BLOCK:smartyFacts (line 7, parent=BUILD_GRADLE:build.gradle)
+BLOCK:sonar (line 98, parent=BUILD_GRADLE:build.gradle) -> BLOCK:sonar (line 114, parent=BUILD_GRADLE:build.gradle)
+BLOCK:sourceSets (line 61, parent=BUILD_GRADLE:build.gradle) -> BLOCK:sourceSets (line 77, parent=BUILD_GRADLE:build.gradle)
+BLOCK:test (line 68, parent=BLOCK:sourceSets) -> BLOCK:test (line 84, parent=BLOCK:sourceSets)
+BLOCK:test (line 76, parent=BUILD_GRADLE:build.gradle) -> BLOCK:test (line 92, parent=BUILD_GRADLE:build.gradle)
+BLOCK:testrunner (line 18, parent=BUILD_GRADLE:build.gradle) -> BLOCK:testrunner (line 18, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+DEPENDENCIES_BLOCK:dependencies (line 29, parent=BUILD_GRADLE:build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 29, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+(none)
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 33; 32, 1, 1
+Matched composites: 14; 14, 0, 0
+Deleted leaves: 0; 0, 0, 0
+Deleted composites: 0; 0, 0, 0
+Added leaves: 12; 11, 0, 1
+Added composites: 1; 1, 1, 0
+Total expected events: 60
+Total predicted events: 60
+
+TP=58 FP=2 FN=2
+TP=58, precision=96.67%, recall=96.67%, F1=96.67%
+
+=== WHERE COMMIT22 MISSED ===
+   FP: Match hadoop_minicluster 47 -> jcl_over_slf4j 46.
+   FP: Addition of hadoop_minicluster at after line 49; it already existed.
+   FN: Match hadoop_minicluster 47 -> hadoop_minicluster 49.
+   FN: Addition of jcl_over_slf4j at after line 46.
+   FP=2 FN=2.
+
+

@@ -1,0 +1,238 @@
+
+=== COMMIT ===
+http://github.com/arturbosch/detekt/commit/3fa8f37faa67cd71772a43350f99c49ae74fe974
+
+=== CHANGED GRADLE FILES ===
+detekt-gradle-plugin/build.gradle.kts -> detekt-gradle-plugin/build.gradle.kts
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : detekt-gradle-plugin/build.gradle.kts (line 0)
+    PLUGINS_BLOCK : plugins (line 1)
+      PLUGIN_DECL : id 'java-gradle-plugin' (line 2)
+      PLUGIN_DECL : id 'com.gradle.plugin-publish' version '0.12.0' (line 3)
+    REPOSITORIES_BLOCK : repositories (line 6)
+      REPOSITORIES_DECL : google (line 7)
+    DEPENDENCIES_BLOCK : dependencies (line 10)
+      DECLARATION : name: androidGradlePlugin, value: "com.android.tools.build:gradle:4.1.1" (line 11)
+      DEPENDENCY_DECL : configuration='implementation', notation='kotlin(gradle-plugin-api)' (line 12)
+      DEPENDENCY_DECL : configuration='compileOnly', notation='androidGradlePlugin' (line 13)
+      DEPENDENCY_DECL : configuration='testImplementation', projectPath=':detekt-test-utils' (line 15)
+      DEPENDENCY_DECL : configuration='testImplementation', notation='kotlin(gradle-plugin)' (line 16)
+      DEPENDENCY_DECL : configuration='testImplementation', notation='androidGradlePlugin' (line 17)
+      BLOCK : constraints (line 19)
+        BLOCK : implementation("org.jetbrains.kotlin:kotlin-reflect:1.4.0") (line 20)
+          METHOD_CALL : because("com.android.tools.build:gradle:4.0.1 depends on Kotlin 1.3.72 and we should not mix 1.3 and 1.4") (line 21)
+    BLOCK : gradlePlugin (line 26)
+      ASSIGNMENT : name: isAutomatedPublishing, operator: =, value: System.getProperty("automatePublishing")?.toBoolean() ?: false (line 29)
+      PLUGINS_BLOCK : plugins (line 30)
+        BLOCK : register("detektPlugin") (line 31)
+          ASSIGNMENT : name: id, operator: =, value: "io.gitlab.arturbosch.detekt" (line 32)
+          ASSIGNMENT : name: implementationClass, operator: =, value: "io.gitlab.arturbosch.detekt.DetektPlugin" (line 33)
+    TASK_CONFIGURATION : taskName=validatePlugins, style=tasks.validatePlugins (line 38)
+      METHOD_CALL : enableStricterValidation.set(true) (line 39)
+    BLOCK : pluginBundle (line 42)
+      ASSIGNMENT : name: website, operator: =, value: "https://detekt.github.io/detekt" (line 43)
+      ASSIGNMENT : name: vcsUrl, operator: =, value: "https://github.com/detekt/detekt" (line 44)
+      ASSIGNMENT : name: description, operator: =, value: "Static code analysis for Kotlin" (line 45)
+      ASSIGNMENT : name: tags, operator: =, value: listOf("kotlin", "detekt", "code-analysis", "linter", "codesmells", "android") (line 46)
+      BLOCK : (plugins) (line 48)
+        BLOCK : detektPlugin (line 49)
+          ASSIGNMENT : name: id, operator: =, value: "io.gitlab.arturbosch.detekt" (line 50)
+          ASSIGNMENT : name: displayName, operator: =, value: "Static code analysis for Kotlin" (line 51)
+    TASK_DECLARATION : taskName=generateDefaultDetektVersionFile, bindingName=generateDefaultDetektVersionFile, style=tasks.registering (line 56)
+      DECLARATION : name: name, value: "PluginVersion.kt" (line 57)
+      DECLARATION : name: defaultDetektVersionFile, value: File("$buildDir/generated/src/io/gitlab/arturbosch/detekt", name) (line 58)
+      METHOD_CALL : inputs.property(name, project.version) (line 60)
+      METHOD_CALL : outputs.file(defaultDetektVersionFile) (line 61)
+      TASK_ACTION : action=doFirst, owner=generateDefaultDetektVersionFile (line 63)
+        METHOD_CALL : defaultDetektVersionFile.parentFile.mkdirs (line 64)
+        METHOD_CALL : defaultDetektVersionFile.writeText("\n            package io.gitlab.arturbosch.detekt\n\n            internal const val DEFAULT_DETEKT_VERSION = \"$version\"\n\n            ".trimIndent()) (line 65)
+    METHOD_CALL : sourceSets.main.get().java.srcDir("$buildDir/generated/src") (line 75)
+    TASK_CONFIGURATION : taskName=compileKotlin, style=tasks.compileKotlin (line 77)
+      TASK_RELATION : relation=dependsOn, owner=compileKotlin, targets=generateDefaultDetektVersionFile (line 78)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : detekt-gradle-plugin/build.gradle.kts (line 0)
+    PLUGINS_BLOCK : plugins (line 1)
+      PLUGIN_DECL : id 'java-gradle-plugin' (line 2)
+      PLUGIN_DECL : id 'com.gradle.plugin-publish' version '0.12.0' (line 3)
+    REPOSITORIES_BLOCK : repositories (line 6)
+      REPOSITORIES_DECL : google (line 7)
+    DEPENDENCIES_BLOCK : dependencies (line 10)
+      DECLARATION : name: androidGradlePlugin, value: "com.android.tools.build:gradle:4.1.1" (line 11)
+      DEPENDENCY_DECL : configuration='implementation', notation='kotlin(gradle-plugin-api)' (line 12)
+      DEPENDENCY_DECL : configuration='compileOnly', notation='androidGradlePlugin' (line 13)
+      DEPENDENCY_DECL : configuration='testImplementation', projectPath=':detekt-test-utils' (line 15)
+      DEPENDENCY_DECL : configuration='testImplementation', notation='kotlin(gradle-plugin)' (line 16)
+      DEPENDENCY_DECL : configuration='testImplementation', notation='androidGradlePlugin' (line 17)
+      BLOCK : constraints (line 19)
+        BLOCK : implementation("org.jetbrains.kotlin:kotlin-reflect:1.4.0") (line 20)
+          METHOD_CALL : because("Android Gradle Plugin 4.1.1 depends on Kotlin 1.3.72 but we should not mix 1.3 and 1.4.\n                This constraint should be lifted on Android Gradle Plugin 4.2.0. See\n                https://dl.google.com/android/maven2/com/android/tools/build/gradle/4.2.0-beta02/gradle-4.2.0-beta02.pom\n            ") (line 21)
+    BLOCK : gradlePlugin (line 29)
+      ASSIGNMENT : name: isAutomatedPublishing, operator: =, value: System.getProperty("automatePublishing")?.toBoolean() ?: false (line 32)
+      PLUGINS_BLOCK : plugins (line 33)
+        BLOCK : register("detektPlugin") (line 34)
+          ASSIGNMENT : name: id, operator: =, value: "io.gitlab.arturbosch.detekt" (line 35)
+          ASSIGNMENT : name: implementationClass, operator: =, value: "io.gitlab.arturbosch.detekt.DetektPlugin" (line 36)
+    TASK_CONFIGURATION : taskName=validatePlugins, style=tasks.validatePlugins (line 41)
+      METHOD_CALL : enableStricterValidation.set(true) (line 42)
+    BLOCK : pluginBundle (line 45)
+      ASSIGNMENT : name: website, operator: =, value: "https://detekt.github.io/detekt" (line 46)
+      ASSIGNMENT : name: vcsUrl, operator: =, value: "https://github.com/detekt/detekt" (line 47)
+      ASSIGNMENT : name: description, operator: =, value: "Static code analysis for Kotlin" (line 48)
+      ASSIGNMENT : name: tags, operator: =, value: listOf("kotlin", "detekt", "code-analysis", "linter", "codesmells", "android") (line 49)
+      BLOCK : (plugins) (line 51)
+        BLOCK : detektPlugin (line 52)
+          ASSIGNMENT : name: id, operator: =, value: "io.gitlab.arturbosch.detekt" (line 53)
+          ASSIGNMENT : name: displayName, operator: =, value: "Static code analysis for Kotlin" (line 54)
+    TASK_DECLARATION : taskName=generateDefaultDetektVersionFile, bindingName=generateDefaultDetektVersionFile, style=tasks.registering (line 59)
+      DECLARATION : name: name, value: "PluginVersion.kt" (line 60)
+      DECLARATION : name: defaultDetektVersionFile, value: File("$buildDir/generated/src/io/gitlab/arturbosch/detekt", name) (line 61)
+      METHOD_CALL : inputs.property(name, project.version) (line 63)
+      METHOD_CALL : outputs.file(defaultDetektVersionFile) (line 64)
+      TASK_ACTION : action=doFirst, owner=generateDefaultDetektVersionFile (line 66)
+        METHOD_CALL : defaultDetektVersionFile.parentFile.mkdirs (line 67)
+        METHOD_CALL : defaultDetektVersionFile.writeText("\n            package io.gitlab.arturbosch.detekt\n\n            internal const val DEFAULT_DETEKT_VERSION = \"$version\"\n\n            ".trimIndent()) (line 68)
+    METHOD_CALL : sourceSets.main.get().java.srcDir("$buildDir/generated/src") (line 78)
+    TASK_CONFIGURATION : taskName=compileKotlin, style=tasks.compileKotlin (line 80)
+      TASK_RELATION : relation=dependsOn, owner=compileKotlin, targets=generateDefaultDetektVersionFile (line 81)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+(none)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+(none)
+
+=== ALL LEAF MATCHES ===
+ASSIGNMENT:description = Static code analysis for Kotlin (line 45, parent=BLOCK:pluginBundle) -> ASSIGNMENT:description = Static code analysis for Kotlin (line 48, parent=BLOCK:pluginBundle)
+ASSIGNMENT:displayName = Static code analysis for Kotlin (line 51, parent=BLOCK:detektPlugin) -> ASSIGNMENT:displayName = Static code analysis for Kotlin (line 54, parent=BLOCK:detektPlugin)
+ASSIGNMENT:id = io.gitlab.arturbosch.detekt (line 32, parent=BLOCK:register) -> ASSIGNMENT:id = io.gitlab.arturbosch.detekt (line 35, parent=BLOCK:register)
+ASSIGNMENT:id = io.gitlab.arturbosch.detekt (line 50, parent=BLOCK:detektPlugin) -> ASSIGNMENT:id = io.gitlab.arturbosch.detekt (line 53, parent=BLOCK:detektPlugin)
+ASSIGNMENT:implementationClass = io.gitlab.arturbosch.detekt.DetektPlugin (line 33, parent=BLOCK:register) -> ASSIGNMENT:implementationClass = io.gitlab.arturbosch.detekt.DetektPlugin (line 36, parent=BLOCK:register)
+ASSIGNMENT:isAutomatedPublishing = System.getProperty(automatePublishing)?.toBoolean() ?: false (line 29, parent=BLOCK:gradlePlugin) -> ASSIGNMENT:isAutomatedPublishing = System.getProperty(automatePublishing)?.toBoolean() ?: false (line 32, parent=BLOCK:gradlePlugin)
+ASSIGNMENT:tags = listOf(kotlin, detekt, code-analysis, linter, codesmells, android) (line 46, parent=BLOCK:pluginBundle) -> ASSIGNMENT:tags = listOf(kotlin, detekt, code-analysis, linter, codesmells, android) (line 49, parent=BLOCK:pluginBundle)
+ASSIGNMENT:vcsUrl = https://github.com/detekt/detekt (line 44, parent=BLOCK:pluginBundle) -> ASSIGNMENT:vcsUrl = https://github.com/detekt/detekt (line 47, parent=BLOCK:pluginBundle)
+ASSIGNMENT:website = https://detekt.github.io/detekt (line 43, parent=BLOCK:pluginBundle) -> ASSIGNMENT:website = https://detekt.github.io/detekt (line 46, parent=BLOCK:pluginBundle)
+DECLARATION:androidGradlePlugin = com.android.tools.build:gradle:4.1.1 (line 11, parent=DEPENDENCIES_BLOCK:dependencies) -> DECLARATION:androidGradlePlugin = com.android.tools.build:gradle:4.1.1 (line 11, parent=DEPENDENCIES_BLOCK:dependencies)
+DECLARATION:defaultDetektVersionFile = File($buildDir/generated/src/io/gitlab/arturbosch/detekt, name) (line 58, parent=TASK_DECLARATION:generateDefaultDetektVersionFile) -> DECLARATION:defaultDetektVersionFile = File($buildDir/generated/src/io/gitlab/arturbosch/detekt, name) (line 61, parent=TASK_DECLARATION:generateDefaultDetektVersionFile)
+DECLARATION:name = PluginVersion.kt (line 57, parent=TASK_DECLARATION:generateDefaultDetektVersionFile) -> DECLARATION:name = PluginVersion.kt (line 60, parent=TASK_DECLARATION:generateDefaultDetektVersionFile)
+DEPENDENCY_DECL:compileOnly (line 13, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compileOnly (line 13, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:implementation (line 12, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 12, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testImplementation (line 15, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testImplementation (line 15, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testImplementation (line 16, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testImplementation (line 16, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testImplementation (line 17, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testImplementation (line 17, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:because (line 21, parent=BLOCK:implementation) -> METHOD_CALL:because (line 21, parent=BLOCK:implementation)
+METHOD_CALL:file (line 61, parent=TASK_DECLARATION:generateDefaultDetektVersionFile) -> METHOD_CALL:file (line 64, parent=TASK_DECLARATION:generateDefaultDetektVersionFile)
+METHOD_CALL:mkdirs (line 64, parent=TASK_ACTION:doFirst) -> METHOD_CALL:mkdirs (line 67, parent=TASK_ACTION:doFirst)
+METHOD_CALL:property (line 60, parent=TASK_DECLARATION:generateDefaultDetektVersionFile) -> METHOD_CALL:property (line 63, parent=TASK_DECLARATION:generateDefaultDetektVersionFile)
+METHOD_CALL:set (line 39, parent=TASK_CONFIGURATION:validatePlugins) -> METHOD_CALL:set (line 42, parent=TASK_CONFIGURATION:validatePlugins)
+METHOD_CALL:srcDir (line 75, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts) -> METHOD_CALL:srcDir (line 78, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts)
+METHOD_CALL:writeText (line 65, parent=TASK_ACTION:doFirst) -> METHOD_CALL:writeText (line 68, parent=TASK_ACTION:doFirst)
+PLUGIN_DECL:id (line 3, parent=PLUGINS_BLOCK:plugins) -> PLUGIN_DECL:id (line 3, parent=PLUGINS_BLOCK:plugins)
+PLUGIN_DECL:java-gradle-plugin (line 2, parent=PLUGINS_BLOCK:plugins) -> PLUGIN_DECL:java-gradle-plugin (line 2, parent=PLUGINS_BLOCK:plugins)
+REPOSITORIES_DECL:google (line 7, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:google (line 7, parent=REPOSITORIES_BLOCK:repositories)
+TASK_RELATION:dependsOn (line 78, parent=TASK_CONFIGURATION:compileKotlin) -> TASK_RELATION:dependsOn (line 81, parent=TASK_CONFIGURATION:compileKotlin)
+
+=== LEAF ROUND 1 MATCHES ===
+ASSIGNMENT:description = Static code analysis for Kotlin (line 45, parent=BLOCK:pluginBundle) -> ASSIGNMENT:description = Static code analysis for Kotlin (line 48, parent=BLOCK:pluginBundle)
+ASSIGNMENT:displayName = Static code analysis for Kotlin (line 51, parent=BLOCK:detektPlugin) -> ASSIGNMENT:displayName = Static code analysis for Kotlin (line 54, parent=BLOCK:detektPlugin)
+ASSIGNMENT:id = io.gitlab.arturbosch.detekt (line 32, parent=BLOCK:register) -> ASSIGNMENT:id = io.gitlab.arturbosch.detekt (line 35, parent=BLOCK:register)
+ASSIGNMENT:id = io.gitlab.arturbosch.detekt (line 50, parent=BLOCK:detektPlugin) -> ASSIGNMENT:id = io.gitlab.arturbosch.detekt (line 53, parent=BLOCK:detektPlugin)
+ASSIGNMENT:implementationClass = io.gitlab.arturbosch.detekt.DetektPlugin (line 33, parent=BLOCK:register) -> ASSIGNMENT:implementationClass = io.gitlab.arturbosch.detekt.DetektPlugin (line 36, parent=BLOCK:register)
+ASSIGNMENT:isAutomatedPublishing = System.getProperty(automatePublishing)?.toBoolean() ?: false (line 29, parent=BLOCK:gradlePlugin) -> ASSIGNMENT:isAutomatedPublishing = System.getProperty(automatePublishing)?.toBoolean() ?: false (line 32, parent=BLOCK:gradlePlugin)
+ASSIGNMENT:tags = listOf(kotlin, detekt, code-analysis, linter, codesmells, android) (line 46, parent=BLOCK:pluginBundle) -> ASSIGNMENT:tags = listOf(kotlin, detekt, code-analysis, linter, codesmells, android) (line 49, parent=BLOCK:pluginBundle)
+ASSIGNMENT:vcsUrl = https://github.com/detekt/detekt (line 44, parent=BLOCK:pluginBundle) -> ASSIGNMENT:vcsUrl = https://github.com/detekt/detekt (line 47, parent=BLOCK:pluginBundle)
+ASSIGNMENT:website = https://detekt.github.io/detekt (line 43, parent=BLOCK:pluginBundle) -> ASSIGNMENT:website = https://detekt.github.io/detekt (line 46, parent=BLOCK:pluginBundle)
+DECLARATION:androidGradlePlugin = com.android.tools.build:gradle:4.1.1 (line 11, parent=DEPENDENCIES_BLOCK:dependencies) -> DECLARATION:androidGradlePlugin = com.android.tools.build:gradle:4.1.1 (line 11, parent=DEPENDENCIES_BLOCK:dependencies)
+DECLARATION:defaultDetektVersionFile = File($buildDir/generated/src/io/gitlab/arturbosch/detekt, name) (line 58, parent=TASK_DECLARATION:generateDefaultDetektVersionFile) -> DECLARATION:defaultDetektVersionFile = File($buildDir/generated/src/io/gitlab/arturbosch/detekt, name) (line 61, parent=TASK_DECLARATION:generateDefaultDetektVersionFile)
+DECLARATION:name = PluginVersion.kt (line 57, parent=TASK_DECLARATION:generateDefaultDetektVersionFile) -> DECLARATION:name = PluginVersion.kt (line 60, parent=TASK_DECLARATION:generateDefaultDetektVersionFile)
+DEPENDENCY_DECL:compileOnly (line 13, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compileOnly (line 13, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:implementation (line 12, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 12, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testImplementation (line 15, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testImplementation (line 15, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testImplementation (line 16, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testImplementation (line 16, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testImplementation (line 17, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testImplementation (line 17, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:file (line 61, parent=TASK_DECLARATION:generateDefaultDetektVersionFile) -> METHOD_CALL:file (line 64, parent=TASK_DECLARATION:generateDefaultDetektVersionFile)
+METHOD_CALL:mkdirs (line 64, parent=TASK_ACTION:doFirst) -> METHOD_CALL:mkdirs (line 67, parent=TASK_ACTION:doFirst)
+METHOD_CALL:property (line 60, parent=TASK_DECLARATION:generateDefaultDetektVersionFile) -> METHOD_CALL:property (line 63, parent=TASK_DECLARATION:generateDefaultDetektVersionFile)
+METHOD_CALL:set (line 39, parent=TASK_CONFIGURATION:validatePlugins) -> METHOD_CALL:set (line 42, parent=TASK_CONFIGURATION:validatePlugins)
+METHOD_CALL:srcDir (line 75, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts) -> METHOD_CALL:srcDir (line 78, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts)
+METHOD_CALL:writeText (line 65, parent=TASK_ACTION:doFirst) -> METHOD_CALL:writeText (line 68, parent=TASK_ACTION:doFirst)
+PLUGIN_DECL:id (line 3, parent=PLUGINS_BLOCK:plugins) -> PLUGIN_DECL:id (line 3, parent=PLUGINS_BLOCK:plugins)
+PLUGIN_DECL:java-gradle-plugin (line 2, parent=PLUGINS_BLOCK:plugins) -> PLUGIN_DECL:java-gradle-plugin (line 2, parent=PLUGINS_BLOCK:plugins)
+REPOSITORIES_DECL:google (line 7, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:google (line 7, parent=REPOSITORIES_BLOCK:repositories)
+TASK_RELATION:dependsOn (line 78, parent=TASK_CONFIGURATION:compileKotlin) -> TASK_RELATION:dependsOn (line 81, parent=TASK_CONFIGURATION:compileKotlin)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+METHOD_CALL:because (line 21, parent=BLOCK:implementation) -> METHOD_CALL:because (line 21, parent=BLOCK:implementation)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:(plugins) (line 48, parent=BLOCK:pluginBundle) -> BLOCK:(plugins) (line 51, parent=BLOCK:pluginBundle)
+BLOCK:constraints (line 19, parent=DEPENDENCIES_BLOCK:dependencies) -> BLOCK:constraints (line 19, parent=DEPENDENCIES_BLOCK:dependencies)
+BLOCK:detektPlugin (line 49, parent=BLOCK:(plugins)) -> BLOCK:detektPlugin (line 52, parent=BLOCK:(plugins))
+BLOCK:gradlePlugin (line 26, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts) -> BLOCK:gradlePlugin (line 29, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts)
+BLOCK:implementation (line 20, parent=BLOCK:constraints) -> BLOCK:implementation (line 20, parent=BLOCK:constraints)
+BLOCK:pluginBundle (line 42, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts) -> BLOCK:pluginBundle (line 45, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts)
+BLOCK:register (line 31, parent=PLUGINS_BLOCK:plugins) -> BLOCK:register (line 34, parent=PLUGINS_BLOCK:plugins)
+DEPENDENCIES_BLOCK:dependencies (line 10, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts) -> DEPENDENCIES_BLOCK:dependencies (line 10, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts)
+PLUGINS_BLOCK:plugins (line 1, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts) -> PLUGINS_BLOCK:plugins (line 1, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts)
+PLUGINS_BLOCK:plugins (line 30, parent=BLOCK:gradlePlugin) -> PLUGINS_BLOCK:plugins (line 33, parent=BLOCK:gradlePlugin)
+REPOSITORIES_BLOCK:repositories (line 6, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts) -> REPOSITORIES_BLOCK:repositories (line 6, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts)
+TASK_ACTION:doFirst (line 63, parent=TASK_DECLARATION:generateDefaultDetektVersionFile) -> TASK_ACTION:doFirst (line 66, parent=TASK_DECLARATION:generateDefaultDetektVersionFile)
+TASK_CONFIGURATION:compileKotlin (line 77, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts) -> TASK_CONFIGURATION:compileKotlin (line 80, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts)
+TASK_CONFIGURATION:validatePlugins (line 38, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts) -> TASK_CONFIGURATION:validatePlugins (line 41, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts)
+TASK_DECLARATION:generateDefaultDetektVersionFile (line 56, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts) -> TASK_DECLARATION:generateDefaultDetektVersionFile (line 59, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:(plugins) (line 48, parent=BLOCK:pluginBundle) -> BLOCK:(plugins) (line 51, parent=BLOCK:pluginBundle)
+BLOCK:detektPlugin (line 49, parent=BLOCK:(plugins)) -> BLOCK:detektPlugin (line 52, parent=BLOCK:(plugins))
+BLOCK:gradlePlugin (line 26, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts) -> BLOCK:gradlePlugin (line 29, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts)
+BLOCK:pluginBundle (line 42, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts) -> BLOCK:pluginBundle (line 45, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts)
+BLOCK:register (line 31, parent=PLUGINS_BLOCK:plugins) -> BLOCK:register (line 34, parent=PLUGINS_BLOCK:plugins)
+PLUGINS_BLOCK:plugins (line 1, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts) -> PLUGINS_BLOCK:plugins (line 1, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts)
+PLUGINS_BLOCK:plugins (line 30, parent=BLOCK:gradlePlugin) -> PLUGINS_BLOCK:plugins (line 33, parent=BLOCK:gradlePlugin)
+REPOSITORIES_BLOCK:repositories (line 6, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts) -> REPOSITORIES_BLOCK:repositories (line 6, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts)
+TASK_ACTION:doFirst (line 63, parent=TASK_DECLARATION:generateDefaultDetektVersionFile) -> TASK_ACTION:doFirst (line 66, parent=TASK_DECLARATION:generateDefaultDetektVersionFile)
+TASK_CONFIGURATION:compileKotlin (line 77, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts) -> TASK_CONFIGURATION:compileKotlin (line 80, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts)
+TASK_CONFIGURATION:validatePlugins (line 38, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts) -> TASK_CONFIGURATION:validatePlugins (line 41, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts)
+TASK_DECLARATION:generateDefaultDetektVersionFile (line 56, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts) -> TASK_DECLARATION:generateDefaultDetektVersionFile (line 59, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+BLOCK:constraints (line 19, parent=DEPENDENCIES_BLOCK:dependencies) -> BLOCK:constraints (line 19, parent=DEPENDENCIES_BLOCK:dependencies)
+BLOCK:implementation (line 20, parent=BLOCK:constraints) -> BLOCK:implementation (line 20, parent=BLOCK:constraints)
+DEPENDENCIES_BLOCK:dependencies (line 10, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts) -> DEPENDENCIES_BLOCK:dependencies (line 10, parent=BUILD_GRADLE:detekt-gradle-plugin/build.gradle.kts)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+(none)
+
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 28; 28, 0, 0
+Matched composites: 15; 15, 0, 0
+Deleted leaves: 0; 0, 0, 0
+Deleted composites: 0; 0, 0, 0
+Added leaves: 0; 0, 0, 0
+Added composites: 0; 0, 0, 0
+Total expected events: 43
+Total predicted events: 43
+
+TP=43 FP=0 FN=0
+TP=43, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT121 MISSED ===
+FP: (none)
+FN: (none)

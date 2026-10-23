@@ -1,0 +1,252 @@
+
+=== COMMIT ===
+http://github.com/syng-io/syng-client/commit/67e511a9c55b1a0d2b31077c9ee42fc03036ff16
+
+=== CHANGED GRADLE FILES ===
+app/build.gradle -> app/build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : app/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: com.android.application (line 1)
+    BLOCK : android (line 3)
+      METHOD_CALL : compileSdkVersion(22) (line 4)
+      METHOD_CALL : buildToolsVersion("22.0.1") (line 5)
+      BLOCK : defaultConfig (line 7)
+        METHOD_CALL : applicationId("io.syng") (line 8)
+        METHOD_CALL : minSdkVersion(15) (line 9)
+        METHOD_CALL : targetSdkVersion(22) (line 10)
+        METHOD_CALL : versionCode(1) (line 11)
+        METHOD_CALL : versionName("1.0") (line 12)
+        METHOD_CALL : multiDexEnabled(true) (line 13)
+      BLOCK : packagingOptions (line 15)
+        METHOD_CALL : exclude("META-INF/INDEX.LIST") (line 16)
+        METHOD_CALL : exclude("META-INF/LICENSE.txt") (line 17)
+        METHOD_CALL : exclude("META-INF/NOTICE.txt") (line 18)
+        METHOD_CALL : exclude("LICENSE") (line 19)
+        METHOD_CALL : exclude("NOTICE") (line 20)
+        METHOD_CALL : exclude("META-INF/ASL2.0") (line 21)
+        METHOD_CALL : exclude("META-INF/LICENSE") (line 22)
+        METHOD_CALL : exclude("META-INF/NOTICE") (line 23)
+        METHOD_CALL : exclude("META-INF/services/javax.annotation.processing.Processor") (line 24)
+      BLOCK : dexOptions (line 26)
+        METHOD_CALL : javaMaxHeapSize("4g") (line 27)
+      BLOCK : lintOptions (line 29)
+        METHOD_CALL : abortOnError(false) (line 30)
+      BLOCK : buildTypes (line 32)
+        BLOCK : release (line 33)
+          METHOD_CALL : minifyEnabled(false) (line 34)
+          METHOD_CALL : proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro") (line 35)
+    DEPENDENCIES_BLOCK : dependencies (line 40)
+      DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 41)
+      DEPENDENCY_DECL : configuration='compile', projectPath=':ethereumj-core-android' (line 42)
+        METHOD_CALL : exclude([group: "org.hibernate", module: "hibernate-core"]) (line 43)
+        METHOD_CALL : exclude([group: "com.h2database", module: "h2"]) (line 44)
+        METHOD_CALL : exclude([group: "org.codehaus.jackson", module: "jackson-mapper-asl"]) (line 45)
+        METHOD_CALL : exclude([group: "org.mapdb", module: "mapdb"]) (line 46)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='multidex', version='1.0.1' (line 48)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='appcompat-v7', version='22.2.1' (line 49)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='recyclerview-v7', version='22.2.1' (line 50)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='design', version='22.2.1' (line 52)
+      DEPENDENCY_DECL : configuration='compile', group='co.dift.ui.swipetoaction', name='library', version='1.1' (line 53)
+      DEPENDENCY_DECL : configuration='compile', group='com.getbase', name='floatingactionbutton', version='1.9.0' (line 55)
+      DEPENDENCY_DECL : configuration='compile', group='com.afollestad', name='material-dialogs', version='0.7.7.0' (line 57)
+      DEPENDENCY_DECL : configuration='compile', group='com.github.bumptech.glide', name='glide', version='3.6.1' (line 58)
+      DEPENDENCY_DECL : configuration='compile', projectPath=':cordova-android' (line 59)
+      DEPENDENCY_DECL : configuration='debugCompile', group='com.squareup.leakcanary', name='leakcanary-android', version='1.3.1' (line 64)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='cardview-v7', version='22.2.1' (line 65)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : app/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: com.android.application (line 1)
+    BLOCK : android (line 3)
+      METHOD_CALL : compileSdkVersion(22) (line 4)
+      METHOD_CALL : buildToolsVersion("22.0.1") (line 5)
+      BLOCK : defaultConfig (line 7)
+        METHOD_CALL : applicationId("io.syng") (line 8)
+        METHOD_CALL : minSdkVersion(15) (line 9)
+        METHOD_CALL : targetSdkVersion(22) (line 10)
+        METHOD_CALL : versionCode(1) (line 11)
+        METHOD_CALL : versionName("1.0") (line 12)
+        METHOD_CALL : multiDexEnabled(true) (line 13)
+      BLOCK : packagingOptions (line 15)
+        METHOD_CALL : exclude("META-INF/INDEX.LIST") (line 16)
+        METHOD_CALL : exclude("META-INF/LICENSE.txt") (line 17)
+        METHOD_CALL : exclude("META-INF/NOTICE.txt") (line 18)
+        METHOD_CALL : exclude("LICENSE") (line 19)
+        METHOD_CALL : exclude("NOTICE") (line 20)
+        METHOD_CALL : exclude("META-INF/ASL2.0") (line 21)
+        METHOD_CALL : exclude("META-INF/LICENSE") (line 22)
+        METHOD_CALL : exclude("META-INF/NOTICE") (line 23)
+        METHOD_CALL : exclude("META-INF/services/javax.annotation.processing.Processor") (line 24)
+      BLOCK : dexOptions (line 26)
+        METHOD_CALL : javaMaxHeapSize("4g") (line 27)
+      BLOCK : lintOptions (line 29)
+        METHOD_CALL : abortOnError(false) (line 30)
+      BLOCK : buildTypes (line 32)
+        BLOCK : release (line 33)
+          METHOD_CALL : minifyEnabled(false) (line 34)
+          METHOD_CALL : proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro") (line 35)
+    DEPENDENCIES_BLOCK : dependencies (line 40)
+      DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 41)
+      DEPENDENCY_DECL : configuration='compile', projectPath=':ethereumj-core-android' (line 42)
+        METHOD_CALL : exclude([group: "org.hibernate", module: "hibernate-core"]) (line 43)
+        METHOD_CALL : exclude([group: "com.h2database", module: "h2"]) (line 44)
+        METHOD_CALL : exclude([group: "org.codehaus.jackson", module: "jackson-mapper-asl"]) (line 45)
+        METHOD_CALL : exclude([group: "org.mapdb", module: "mapdb"]) (line 46)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='multidex', version='1.0.1' (line 48)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='appcompat-v7', version='22.2.1' (line 49)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='recyclerview-v7', version='22.2.1' (line 50)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='design', version='22.2.1' (line 51)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='cardview-v7', version='22.2.1' (line 52)
+      DEPENDENCY_DECL : configuration='compile', group='com.getbase', name='floatingactionbutton', version='1.9.0' (line 53)
+      DEPENDENCY_DECL : configuration='compile', group='com.afollestad', name='material-dialogs', version='0.7.7.0' (line 54)
+      DEPENDENCY_DECL : configuration='compile', group='com.github.bumptech.glide', name='glide', version='3.6.1' (line 55)
+      DEPENDENCY_DECL : configuration='compile', projectPath=':cordova-android' (line 56)
+      DEPENDENCY_DECL : configuration='debugCompile', group='com.squareup.leakcanary', name='leakcanary-android', version='1.3.1' (line 59)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+DEPENDENCY_DECL:compile (line 53, parent=DEPENDENCIES_BLOCK:dependencies)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+(none)
+
+=== ALL LEAF MATCHES ===
+DEPENDENCY_DECL:compile (line 41, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 41, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 48, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 48, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 49, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 49, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 50, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 50, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 52, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 51, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 55, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 53, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 57, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 54, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 58, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 55, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 59, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 56, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 65, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 52, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:debugCompile (line 64, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:debugCompile (line 59, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:abortOnError (line 30, parent=BLOCK:lintOptions) -> METHOD_CALL:abortOnError (line 30, parent=BLOCK:lintOptions)
+METHOD_CALL:applicationId (line 8, parent=BLOCK:defaultConfig) -> METHOD_CALL:applicationId (line 8, parent=BLOCK:defaultConfig)
+METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android)
+METHOD_CALL:exclude (line 16, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 16, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 17, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 17, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 18, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 18, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 19, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 19, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 20, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 20, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 21, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 21, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 22, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 22, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 23, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 23, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 24, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 24, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 43, parent=DEPENDENCY_DECL:compile) -> METHOD_CALL:exclude (line 43, parent=DEPENDENCY_DECL:compile)
+METHOD_CALL:exclude (line 44, parent=DEPENDENCY_DECL:compile) -> METHOD_CALL:exclude (line 44, parent=DEPENDENCY_DECL:compile)
+METHOD_CALL:exclude (line 45, parent=DEPENDENCY_DECL:compile) -> METHOD_CALL:exclude (line 45, parent=DEPENDENCY_DECL:compile)
+METHOD_CALL:exclude (line 46, parent=DEPENDENCY_DECL:compile) -> METHOD_CALL:exclude (line 46, parent=DEPENDENCY_DECL:compile)
+METHOD_CALL:javaMaxHeapSize (line 27, parent=BLOCK:dexOptions) -> METHOD_CALL:javaMaxHeapSize (line 27, parent=BLOCK:dexOptions)
+METHOD_CALL:minSdkVersion (line 9, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 9, parent=BLOCK:defaultConfig)
+METHOD_CALL:minifyEnabled (line 34, parent=BLOCK:release) -> METHOD_CALL:minifyEnabled (line 34, parent=BLOCK:release)
+METHOD_CALL:multiDexEnabled (line 13, parent=BLOCK:defaultConfig) -> METHOD_CALL:multiDexEnabled (line 13, parent=BLOCK:defaultConfig)
+METHOD_CALL:proguardFiles (line 35, parent=BLOCK:release) -> METHOD_CALL:proguardFiles (line 35, parent=BLOCK:release)
+METHOD_CALL:targetSdkVersion (line 10, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 10, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 11, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 11, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 12, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 12, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:app/build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:app/build.gradle)
+
+=== LEAF ROUND 1 MATCHES ===
+DEPENDENCY_DECL:compile (line 41, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 41, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 48, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 48, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 49, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 49, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 50, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 50, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 52, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 51, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 55, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 53, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 57, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 54, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 58, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 55, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 59, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 56, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 65, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 52, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:debugCompile (line 64, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:debugCompile (line 59, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:abortOnError (line 30, parent=BLOCK:lintOptions) -> METHOD_CALL:abortOnError (line 30, parent=BLOCK:lintOptions)
+METHOD_CALL:applicationId (line 8, parent=BLOCK:defaultConfig) -> METHOD_CALL:applicationId (line 8, parent=BLOCK:defaultConfig)
+METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android)
+METHOD_CALL:exclude (line 16, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 16, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 17, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 17, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 18, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 18, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 19, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 19, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 20, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 20, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 21, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 21, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 22, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 22, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 23, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 23, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 24, parent=BLOCK:packagingOptions) -> METHOD_CALL:exclude (line 24, parent=BLOCK:packagingOptions)
+METHOD_CALL:exclude (line 43, parent=DEPENDENCY_DECL:compile) -> METHOD_CALL:exclude (line 43, parent=DEPENDENCY_DECL:compile)
+METHOD_CALL:exclude (line 44, parent=DEPENDENCY_DECL:compile) -> METHOD_CALL:exclude (line 44, parent=DEPENDENCY_DECL:compile)
+METHOD_CALL:exclude (line 45, parent=DEPENDENCY_DECL:compile) -> METHOD_CALL:exclude (line 45, parent=DEPENDENCY_DECL:compile)
+METHOD_CALL:exclude (line 46, parent=DEPENDENCY_DECL:compile) -> METHOD_CALL:exclude (line 46, parent=DEPENDENCY_DECL:compile)
+METHOD_CALL:javaMaxHeapSize (line 27, parent=BLOCK:dexOptions) -> METHOD_CALL:javaMaxHeapSize (line 27, parent=BLOCK:dexOptions)
+METHOD_CALL:minSdkVersion (line 9, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 9, parent=BLOCK:defaultConfig)
+METHOD_CALL:minifyEnabled (line 34, parent=BLOCK:release) -> METHOD_CALL:minifyEnabled (line 34, parent=BLOCK:release)
+METHOD_CALL:multiDexEnabled (line 13, parent=BLOCK:defaultConfig) -> METHOD_CALL:multiDexEnabled (line 13, parent=BLOCK:defaultConfig)
+METHOD_CALL:proguardFiles (line 35, parent=BLOCK:release) -> METHOD_CALL:proguardFiles (line 35, parent=BLOCK:release)
+METHOD_CALL:targetSdkVersion (line 10, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 10, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 11, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 11, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 12, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 12, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:app/build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:app/build.gradle)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+(none)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:android (line 3, parent=BUILD_GRADLE:app/build.gradle) -> BLOCK:android (line 3, parent=BUILD_GRADLE:app/build.gradle)
+BLOCK:buildTypes (line 32, parent=BLOCK:android) -> BLOCK:buildTypes (line 32, parent=BLOCK:android)
+BLOCK:defaultConfig (line 7, parent=BLOCK:android) -> BLOCK:defaultConfig (line 7, parent=BLOCK:android)
+BLOCK:dexOptions (line 26, parent=BLOCK:android) -> BLOCK:dexOptions (line 26, parent=BLOCK:android)
+BLOCK:lintOptions (line 29, parent=BLOCK:android) -> BLOCK:lintOptions (line 29, parent=BLOCK:android)
+BLOCK:packagingOptions (line 15, parent=BLOCK:android) -> BLOCK:packagingOptions (line 15, parent=BLOCK:android)
+BLOCK:release (line 33, parent=BLOCK:buildTypes) -> BLOCK:release (line 33, parent=BLOCK:buildTypes)
+DEPENDENCIES_BLOCK:dependencies (line 40, parent=BUILD_GRADLE:app/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 40, parent=BUILD_GRADLE:app/build.gradle)
+DEPENDENCY_DECL:compile (line 42, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 42, parent=DEPENDENCIES_BLOCK:dependencies)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:android (line 3, parent=BUILD_GRADLE:app/build.gradle) -> BLOCK:android (line 3, parent=BUILD_GRADLE:app/build.gradle)
+BLOCK:buildTypes (line 32, parent=BLOCK:android) -> BLOCK:buildTypes (line 32, parent=BLOCK:android)
+BLOCK:defaultConfig (line 7, parent=BLOCK:android) -> BLOCK:defaultConfig (line 7, parent=BLOCK:android)
+BLOCK:dexOptions (line 26, parent=BLOCK:android) -> BLOCK:dexOptions (line 26, parent=BLOCK:android)
+BLOCK:lintOptions (line 29, parent=BLOCK:android) -> BLOCK:lintOptions (line 29, parent=BLOCK:android)
+BLOCK:packagingOptions (line 15, parent=BLOCK:android) -> BLOCK:packagingOptions (line 15, parent=BLOCK:android)
+BLOCK:release (line 33, parent=BLOCK:buildTypes) -> BLOCK:release (line 33, parent=BLOCK:buildTypes)
+DEPENDENCY_DECL:compile (line 42, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 42, parent=DEPENDENCIES_BLOCK:dependencies)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+DEPENDENCIES_BLOCK:dependencies (line 40, parent=BUILD_GRADLE:app/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 40, parent=BUILD_GRADLE:app/build.gradle)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+REFORMAT_CODE: Reformat code (no semantic change)
+
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 37; 37, 0, 0
+Matched composites: 9; 9, 0, 0
+Deleted leaves: 1; 1, 0, 0
+Deleted composites: 0; 0, 0, 0
+Added leaves: 0; 0, 0, 0
+Added composites: 0; 0, 0, 0
+Total expected events: 47
+Total predicted events: 47
+
+TP=47 FP=0 FN=0
+TP=47, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT112 MISSED ===
+FP: (none)
+FN: (none)

@@ -1,0 +1,264 @@
+
+=== COMMIT ===
+http://github.com/encodeering/conflate/commit/7d07f428ebe6ae4fce823bf3073fbfba7990523e
+
+=== CHANGED GRADLE FILES ===
+build.gradle -> build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 1)
+      ASSIGNMENT : name: ext.kotlinversion, operator: =, value: "1.1.0-beta-37" (line 2)
+      ASSIGNMENT : name: ext.junitversion, operator: =, value: "1.0.0-M2" (line 3)
+      REPOSITORIES_BLOCK : repositories (line 5)
+        REPOSITORIES_DECL : maven (line 6)
+          REPOSITORIES_DECL : url("https://dl.bintray.com/kotlin/kotlin-dev") (line 7)
+        REPOSITORIES_DECL : mavenCentral (line 9)
+      DEPENDENCIES_BLOCK : dependencies (line 12)
+        DEPENDENCY_DECL : configuration='classpath', group='org.jetbrains.kotlin', name='kotlin-gradle-plugin', version='$kotlinversion' (line 13)
+        DEPENDENCY_DECL : configuration='classpath', group='org.junit.platform', name='junit-platform-gradle-plugin', version='$junitversion' (line 14)
+    PLUGIN_DECL : apply plugin: idea (line 18)
+    PLUGIN_DECL : apply plugin: maven (line 19)
+    PLUGIN_DECL : apply plugin: maven-publish (line 20)
+    SUBPROJECTS : subprojects (line 22)
+      PLUGIN_DECL : apply plugin: java (line 23)
+      PLUGIN_DECL : apply plugin: kotlin (line 24)
+      PLUGIN_DECL : apply plugin: org.junit.platform.gradle.plugin (line 25)
+      METHOD_CALL : group("com.encodeering") (line 27)
+      METHOD_CALL : version("0.0.1-SNAPSHOT") (line 28)
+      ASSIGNMENT : name: sourceCompatibility, operator: =, value: 1.6 (line 30)
+      ASSIGNMENT : name: targetCompatibility, operator: =, value: 1.6 (line 31)
+      REPOSITORIES_BLOCK : repositories (line 33)
+        REPOSITORIES_DECL : maven (line 34)
+          REPOSITORIES_DECL : url("https://dl.bintray.com/kotlin/kotlin-dev") (line 35)
+        REPOSITORIES_DECL : mavenCentral (line 37)
+        REPOSITORIES_DECL : mavenLocal (line 38)
+      DEPENDENCIES_BLOCK : dependencies (line 41)
+        DEPENDENCY_DECL : configuration='compile', group='org.slf4j', name='slf4j-api', version='1.7.22' (line 42)
+        DEPENDENCY_DECL : configuration='compile', group='org.jetbrains.kotlin', name='kotlin-reflect', version='$kotlinversion' (line 43)
+        DEPENDENCY_DECL : configuration='testCompile', group='org.junit.platform', name='junit-platform-runner', version='$junitversion' (line 44)
+        DEPENDENCY_DECL : configuration='testCompile', group='com.winterbe', name='expekt', version='0.5.0' (line 45)
+        DEPENDENCY_DECL : configuration='testCompile', group='org.jetbrains.spek', name='spek-api', version='1.0.89' (line 46)
+        DEPENDENCY_DECL : configuration='testRuntime', group='org.jetbrains.spek', name='spek-junit-platform-engine', version='1.0.89' (line 47)
+        DEPENDENCY_DECL : configuration='testCompile', group='org.mockito', name='mockito-core', version='2.7.5' (line 48)
+      BLOCK : sourceSets (line 51)
+        ASSIGNMENT : name: main.kotlin.srcDirs, operator: +=, value: "src/main/kotlin" (line 52)
+        ASSIGNMENT : name: test.kotlin.srcDirs, operator: +=, value: "src/test/kotlin" (line 53)
+      BLOCK : idea (line 56)
+        BLOCK : module (line 57)
+          ASSIGNMENT : name: downloadJavadoc, operator: =, value: true (line 58)
+          ASSIGNMENT : name: downloadSources, operator: =, value: true (line 59)
+        BLOCK : project (line 61)
+          ASSIGNMENT : name: languageLevel, operator: =, value: sourceCompatibility (line 62)
+      BLOCK : junitPlatform (line 66)
+        METHOD_CALL : platformVersion("$junitversion") (line 67)
+        BLOCK : engines (line 68)
+          METHOD_CALL : include("spek") (line 69)
+    TASK_DECLARATION : taskName=wrapper, type=Wrapper, style=task (line 74)
+      ASSIGNMENT : name: gradleVersion, operator: =, value: "3.1" (line 75)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: idea (line 1)
+    PLUGIN_DECL : apply plugin: maven (line 2)
+    PLUGIN_DECL : apply plugin: maven-publish (line 3)
+    BUILDSCRIPT : buildscript (line 5)
+      ASSIGNMENT : name: ext.kotlinversion, operator: =, value: "1.1.0-beta-37" (line 6)
+      ASSIGNMENT : name: ext.junitversion, operator: =, value: "1.0.0-M2" (line 7)
+      REPOSITORIES_BLOCK : repositories (line 9)
+        REPOSITORIES_DECL : maven (line 10)
+          REPOSITORIES_DECL : url("https://dl.bintray.com/kotlin/kotlin-dev") (line 11)
+        REPOSITORIES_DECL : mavenCentral (line 13)
+      DEPENDENCIES_BLOCK : dependencies (line 16)
+        DEPENDENCY_DECL : configuration='classpath', group='org.jetbrains.kotlin', name='kotlin-gradle-plugin', version='$kotlinversion' (line 17)
+        DEPENDENCY_DECL : configuration='classpath', group='org.junit.platform', name='junit-platform-gradle-plugin', version='$junitversion' (line 18)
+    SUBPROJECTS : subprojects (line 22)
+      PLUGIN_DECL : apply plugin: java (line 23)
+      PLUGIN_DECL : apply plugin: kotlin (line 24)
+      PLUGIN_DECL : apply plugin: org.junit.platform.gradle.plugin (line 25)
+      METHOD_CALL : group("com.encodeering") (line 27)
+      METHOD_CALL : version("0.0.1-SNAPSHOT") (line 28)
+      ASSIGNMENT : name: sourceCompatibility, operator: =, value: 1.6 (line 30)
+      ASSIGNMENT : name: targetCompatibility, operator: =, value: 1.6 (line 31)
+      REPOSITORIES_BLOCK : repositories (line 33)
+        REPOSITORIES_DECL : maven (line 34)
+          REPOSITORIES_DECL : url("https://dl.bintray.com/kotlin/kotlin-dev") (line 35)
+        REPOSITORIES_DECL : mavenCentral (line 37)
+        REPOSITORIES_DECL : mavenLocal (line 38)
+      DEPENDENCIES_BLOCK : dependencies (line 41)
+        DEPENDENCY_DECL : configuration='compile', group='org.slf4j', name='slf4j-api', version='1.7.22' (line 42)
+        DEPENDENCY_DECL : configuration='compile', group='org.jetbrains.kotlin', name='kotlin-reflect', version='$kotlinversion' (line 43)
+        DEPENDENCY_DECL : configuration='testCompile', group='org.junit.platform', name='junit-platform-runner', version='$junitversion' (line 44)
+        DEPENDENCY_DECL : configuration='testCompile', group='com.winterbe', name='expekt', version='0.5.0' (line 45)
+        DEPENDENCY_DECL : configuration='testCompile', group='org.jetbrains.spek', name='spek-api', version='1.0.89' (line 46)
+        DEPENDENCY_DECL : configuration='testRuntime', group='org.jetbrains.spek', name='spek-junit-platform-engine', version='1.0.89' (line 47)
+        DEPENDENCY_DECL : configuration='testCompile', group='org.mockito', name='mockito-core', version='2.7.5' (line 48)
+      BLOCK : sourceSets (line 51)
+        ASSIGNMENT : name: main.kotlin.srcDirs, operator: +=, value: "src/main/kotlin" (line 52)
+        ASSIGNMENT : name: test.kotlin.srcDirs, operator: +=, value: "src/test/kotlin" (line 53)
+      BLOCK : idea (line 56)
+        BLOCK : module (line 57)
+          ASSIGNMENT : name: downloadJavadoc, operator: =, value: true (line 58)
+          ASSIGNMENT : name: downloadSources, operator: =, value: true (line 59)
+        BLOCK : project (line 61)
+          ASSIGNMENT : name: languageLevel, operator: =, value: sourceCompatibility (line 62)
+      BLOCK : junitPlatform (line 66)
+        METHOD_CALL : platformVersion("$junitversion") (line 67)
+        BLOCK : engines (line 68)
+          METHOD_CALL : include("spek") (line 69)
+    TASK_DECLARATION : taskName=wrapper, type=Wrapper, style=task (line 74)
+      ASSIGNMENT : name: gradleVersion, operator: =, value: "3.1" (line 75)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+(none)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+(none)
+
+=== ALL LEAF MATCHES ===
+ASSIGNMENT:downloadJavadoc = true (line 58, parent=BLOCK:module) -> ASSIGNMENT:downloadJavadoc = true (line 58, parent=BLOCK:module)
+ASSIGNMENT:downloadSources = true (line 59, parent=BLOCK:module) -> ASSIGNMENT:downloadSources = true (line 59, parent=BLOCK:module)
+ASSIGNMENT:ext.junitversion = 1.0.0-M2 (line 3, parent=BUILDSCRIPT:buildscript) -> ASSIGNMENT:ext.junitversion = 1.0.0-M2 (line 7, parent=BUILDSCRIPT:buildscript)
+ASSIGNMENT:ext.kotlinversion = 1.1.0-beta-37 (line 2, parent=BUILDSCRIPT:buildscript) -> ASSIGNMENT:ext.kotlinversion = 1.1.0-beta-37 (line 6, parent=BUILDSCRIPT:buildscript)
+ASSIGNMENT:gradleVersion = 3.1 (line 75, parent=TASK_DECLARATION:wrapper) -> ASSIGNMENT:gradleVersion = 3.1 (line 75, parent=TASK_DECLARATION:wrapper)
+ASSIGNMENT:languageLevel = sourceCompatibility (line 62, parent=BLOCK:project) -> ASSIGNMENT:languageLevel = sourceCompatibility (line 62, parent=BLOCK:project)
+ASSIGNMENT:main.kotlin.srcDirs = src/main/kotlin (line 52, parent=BLOCK:sourceSets) -> ASSIGNMENT:main.kotlin.srcDirs = src/main/kotlin (line 52, parent=BLOCK:sourceSets)
+ASSIGNMENT:sourceCompatibility = 1.6 (line 30, parent=SUBPROJECTS:subprojects) -> ASSIGNMENT:sourceCompatibility = 1.6 (line 30, parent=SUBPROJECTS:subprojects)
+ASSIGNMENT:targetCompatibility = 1.6 (line 31, parent=SUBPROJECTS:subprojects) -> ASSIGNMENT:targetCompatibility = 1.6 (line 31, parent=SUBPROJECTS:subprojects)
+ASSIGNMENT:test.kotlin.srcDirs = src/test/kotlin (line 53, parent=BLOCK:sourceSets) -> ASSIGNMENT:test.kotlin.srcDirs = src/test/kotlin (line 53, parent=BLOCK:sourceSets)
+DEPENDENCY_DECL:classpath (line 13, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 17, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:classpath (line 14, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 18, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 42, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 42, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 43, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 43, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 44, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 44, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 45, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 45, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 46, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 46, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 48, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 48, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testRuntime (line 47, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testRuntime (line 47, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:group (line 27, parent=SUBPROJECTS:subprojects) -> METHOD_CALL:group (line 27, parent=SUBPROJECTS:subprojects)
+METHOD_CALL:include (line 69, parent=BLOCK:engines) -> METHOD_CALL:include (line 69, parent=BLOCK:engines)
+METHOD_CALL:platformVersion (line 67, parent=BLOCK:junitPlatform) -> METHOD_CALL:platformVersion (line 67, parent=BLOCK:junitPlatform)
+METHOD_CALL:version (line 28, parent=SUBPROJECTS:subprojects) -> METHOD_CALL:version (line 28, parent=SUBPROJECTS:subprojects)
+PLUGIN_DECL:apply (line 18, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 19, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 20, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 3, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 23, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 23, parent=SUBPROJECTS:subprojects)
+PLUGIN_DECL:apply (line 24, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 24, parent=SUBPROJECTS:subprojects)
+PLUGIN_DECL:apply (line 25, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 25, parent=SUBPROJECTS:subprojects)
+REPOSITORIES_DECL:mavenCentral (line 37, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 37, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 9, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 13, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenLocal (line 38, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenLocal (line 38, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:url (line 35, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 35, parent=REPOSITORIES_DECL:maven)
+REPOSITORIES_DECL:url (line 7, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 11, parent=REPOSITORIES_DECL:maven)
+
+=== LEAF ROUND 1 MATCHES ===
+ASSIGNMENT:downloadJavadoc = true (line 58, parent=BLOCK:module) -> ASSIGNMENT:downloadJavadoc = true (line 58, parent=BLOCK:module)
+ASSIGNMENT:downloadSources = true (line 59, parent=BLOCK:module) -> ASSIGNMENT:downloadSources = true (line 59, parent=BLOCK:module)
+ASSIGNMENT:ext.junitversion = 1.0.0-M2 (line 3, parent=BUILDSCRIPT:buildscript) -> ASSIGNMENT:ext.junitversion = 1.0.0-M2 (line 7, parent=BUILDSCRIPT:buildscript)
+ASSIGNMENT:ext.kotlinversion = 1.1.0-beta-37 (line 2, parent=BUILDSCRIPT:buildscript) -> ASSIGNMENT:ext.kotlinversion = 1.1.0-beta-37 (line 6, parent=BUILDSCRIPT:buildscript)
+ASSIGNMENT:gradleVersion = 3.1 (line 75, parent=TASK_DECLARATION:wrapper) -> ASSIGNMENT:gradleVersion = 3.1 (line 75, parent=TASK_DECLARATION:wrapper)
+ASSIGNMENT:languageLevel = sourceCompatibility (line 62, parent=BLOCK:project) -> ASSIGNMENT:languageLevel = sourceCompatibility (line 62, parent=BLOCK:project)
+ASSIGNMENT:main.kotlin.srcDirs = src/main/kotlin (line 52, parent=BLOCK:sourceSets) -> ASSIGNMENT:main.kotlin.srcDirs = src/main/kotlin (line 52, parent=BLOCK:sourceSets)
+ASSIGNMENT:sourceCompatibility = 1.6 (line 30, parent=SUBPROJECTS:subprojects) -> ASSIGNMENT:sourceCompatibility = 1.6 (line 30, parent=SUBPROJECTS:subprojects)
+ASSIGNMENT:targetCompatibility = 1.6 (line 31, parent=SUBPROJECTS:subprojects) -> ASSIGNMENT:targetCompatibility = 1.6 (line 31, parent=SUBPROJECTS:subprojects)
+ASSIGNMENT:test.kotlin.srcDirs = src/test/kotlin (line 53, parent=BLOCK:sourceSets) -> ASSIGNMENT:test.kotlin.srcDirs = src/test/kotlin (line 53, parent=BLOCK:sourceSets)
+DEPENDENCY_DECL:classpath (line 13, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 17, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:classpath (line 14, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 18, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 42, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 42, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 43, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 43, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 44, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 44, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 45, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 45, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 46, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 46, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 48, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 48, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testRuntime (line 47, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testRuntime (line 47, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:group (line 27, parent=SUBPROJECTS:subprojects) -> METHOD_CALL:group (line 27, parent=SUBPROJECTS:subprojects)
+METHOD_CALL:include (line 69, parent=BLOCK:engines) -> METHOD_CALL:include (line 69, parent=BLOCK:engines)
+METHOD_CALL:platformVersion (line 67, parent=BLOCK:junitPlatform) -> METHOD_CALL:platformVersion (line 67, parent=BLOCK:junitPlatform)
+METHOD_CALL:version (line 28, parent=SUBPROJECTS:subprojects) -> METHOD_CALL:version (line 28, parent=SUBPROJECTS:subprojects)
+PLUGIN_DECL:apply (line 18, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 19, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 20, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 3, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 23, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 23, parent=SUBPROJECTS:subprojects)
+PLUGIN_DECL:apply (line 24, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 24, parent=SUBPROJECTS:subprojects)
+PLUGIN_DECL:apply (line 25, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 25, parent=SUBPROJECTS:subprojects)
+REPOSITORIES_DECL:mavenCentral (line 37, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 37, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 9, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 13, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenLocal (line 38, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenLocal (line 38, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:url (line 35, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 35, parent=REPOSITORIES_DECL:maven)
+REPOSITORIES_DECL:url (line 7, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 11, parent=REPOSITORIES_DECL:maven)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+(none)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:engines (line 68, parent=BLOCK:junitPlatform) -> BLOCK:engines (line 68, parent=BLOCK:junitPlatform)
+BLOCK:idea (line 56, parent=SUBPROJECTS:subprojects) -> BLOCK:idea (line 56, parent=SUBPROJECTS:subprojects)
+BLOCK:junitPlatform (line 66, parent=SUBPROJECTS:subprojects) -> BLOCK:junitPlatform (line 66, parent=SUBPROJECTS:subprojects)
+BLOCK:module (line 57, parent=BLOCK:idea) -> BLOCK:module (line 57, parent=BLOCK:idea)
+BLOCK:project (line 61, parent=BLOCK:idea) -> BLOCK:project (line 61, parent=BLOCK:idea)
+BLOCK:sourceSets (line 51, parent=SUBPROJECTS:subprojects) -> BLOCK:sourceSets (line 51, parent=SUBPROJECTS:subprojects)
+BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 5, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 12, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 16, parent=BUILDSCRIPT:buildscript)
+DEPENDENCIES_BLOCK:dependencies (line 41, parent=SUBPROJECTS:subprojects) -> DEPENDENCIES_BLOCK:dependencies (line 41, parent=SUBPROJECTS:subprojects)
+REPOSITORIES_BLOCK:repositories (line 33, parent=SUBPROJECTS:subprojects) -> REPOSITORIES_BLOCK:repositories (line 33, parent=SUBPROJECTS:subprojects)
+REPOSITORIES_BLOCK:repositories (line 5, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 9, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_DECL:maven (line 34, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 34, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:maven (line 6, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 10, parent=REPOSITORIES_BLOCK:repositories)
+SUBPROJECTS:subprojects (line 22, parent=BUILD_GRADLE:build.gradle) -> SUBPROJECTS:subprojects (line 22, parent=BUILD_GRADLE:build.gradle)
+TASK_DECLARATION:wrapper (line 74, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:wrapper (line 74, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:engines (line 68, parent=BLOCK:junitPlatform) -> BLOCK:engines (line 68, parent=BLOCK:junitPlatform)
+BLOCK:idea (line 56, parent=SUBPROJECTS:subprojects) -> BLOCK:idea (line 56, parent=SUBPROJECTS:subprojects)
+BLOCK:junitPlatform (line 66, parent=SUBPROJECTS:subprojects) -> BLOCK:junitPlatform (line 66, parent=SUBPROJECTS:subprojects)
+BLOCK:module (line 57, parent=BLOCK:idea) -> BLOCK:module (line 57, parent=BLOCK:idea)
+BLOCK:project (line 61, parent=BLOCK:idea) -> BLOCK:project (line 61, parent=BLOCK:idea)
+BLOCK:sourceSets (line 51, parent=SUBPROJECTS:subprojects) -> BLOCK:sourceSets (line 51, parent=SUBPROJECTS:subprojects)
+BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 5, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 12, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 16, parent=BUILDSCRIPT:buildscript)
+DEPENDENCIES_BLOCK:dependencies (line 41, parent=SUBPROJECTS:subprojects) -> DEPENDENCIES_BLOCK:dependencies (line 41, parent=SUBPROJECTS:subprojects)
+REPOSITORIES_BLOCK:repositories (line 33, parent=SUBPROJECTS:subprojects) -> REPOSITORIES_BLOCK:repositories (line 33, parent=SUBPROJECTS:subprojects)
+REPOSITORIES_BLOCK:repositories (line 5, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 9, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_DECL:maven (line 34, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 34, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:maven (line 6, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 10, parent=REPOSITORIES_BLOCK:repositories)
+SUBPROJECTS:subprojects (line 22, parent=BUILD_GRADLE:build.gradle) -> SUBPROJECTS:subprojects (line 22, parent=BUILD_GRADLE:build.gradle)
+TASK_DECLARATION:wrapper (line 74, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:wrapper (line 74, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+(none)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+REFORMAT_CODE: Reformat code (no semantic change)
+
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 34; 34, 0, 0
+Matched composites: 15; 15, 0, 0
+Deleted leaves: 0; 0, 0, 0
+Deleted composites: 0; 0, 0, 0
+Added leaves: 0; 0, 0, 0
+Added composites: 0; 0, 0, 0
+Total expected events: 49
+Total predicted events: 49
+
+TP=49 FP=0 FN=0
+TP=49, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT79 MISSED ===
+FP: (none)
+FN: (none)

@@ -1,0 +1,124 @@
+
+=== COMMIT ===
+http://github.com/SofiaRosetti/S3-16-d-rescue/commit/979289b5a8717102d7e547f744335b64685e4682
+
+=== CHANGED GRADLE FILES ===
+civilprotection/build.gradle -> civilprotection/build.gradle
+gradle.properties -> gradle.properties
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : civilprotection/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: java (line 1)
+    DEPENDENCIES_BLOCK : dependencies (line 3)
+      DEPENDENCY_DECL : configuration='compile', group='com.rabbitmq', name='amqp-client', version='4.0.2' (line 6)
+      DEPENDENCY_DECL : configuration='compile', group='org.slf4j', name='slf4j-api', version='1.7.21' (line 10)
+      DEPENDENCY_DECL : configuration='compile', group='com.google.code.gson', name='gson', version='2.8.0' (line 13)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.12' (line 15)
+      DEPENDENCY_DECL : configuration='compile', projectPath='' (line 16)
+      DEPENDENCY_DECL : configuration='compile', group='org.scalafx', name='scalafx_2.12', version='8.0.102-R11' (line 19)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : civilprotection/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: java (line 1)
+    DEPENDENCIES_BLOCK : dependencies (line 3)
+      DEPENDENCY_DECL : configuration='compile', group='com.rabbitmq', name='amqp-client', version='$rabbitMqVersion' (line 6)
+      DEPENDENCY_DECL : configuration='compile', group='org.slf4j', name='slf4j-api', version='$slf4jVersion' (line 8)
+      DEPENDENCY_DECL : configuration='compile', group='com.google.code.gson', name='gson', version='$gsonVersion' (line 10)
+      DEPENDENCY_DECL : configuration='compile', group='org.scalafx', name='scalafx_2.12', version='$scalaFxVersion' (line 12)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='$junitVersion' (line 14)
+      DEPENDENCY_DECL : configuration='compile', projectPath='' (line 16)
+  PROPERTIES_FILE : gradle.properties (line 0)
+    ASSIGNMENT : name: group, value: "it.unibo.S3.drescue" (line 1)
+    ASSIGNMENT : name: artifactId, value: "drescue" (line 2)
+    ASSIGNMENT : name: version, value: "0.1" (line 3)
+    ASSIGNMENT : name: longName, value: "DRescue" (line 4)
+    ASSIGNMENT : name: projectDescription, value: "DRescue: a distributed system for manage natural distasters" (line 5)
+    ASSIGNMENT : name: gsonVersion, value: "2.8.0" (line 6)
+    ASSIGNMENT : name: junitVersion, value: "4.12" (line 7)
+    ASSIGNMENT : name: rabbitMqVersion, value: "4.0.2" (line 8)
+    ASSIGNMENT : name: scalaFxVersion, value: "8.0.102-R11" (line 9)
+    ASSIGNMENT : name: slf4jVersion, value: "1.7.21" (line 10)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+(none)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+ASSIGNMENT:artifactId = drescue (line 2, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:group = it.unibo.S3.drescue (line 1, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:gsonVersion = 2.8.0 (line 6, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:junitVersion = 4.12 (line 7, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:longName = DRescue (line 4, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:projectDescription = DRescue: a distributed system for manage natural distasters (line 5, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:rabbitMqVersion = 4.0.2 (line 8, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:scalaFxVersion = 8.0.102-R11 (line 9, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:slf4jVersion = 1.7.21 (line 10, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:version = 0.1 (line 3, parent=PROPERTIES_FILE:gradle.properties)
+
+=== ALL LEAF MATCHES ===
+DEPENDENCY_DECL:compile (line 10, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 8, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 13, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 10, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 16, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 16, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 19, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 12, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 6, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 6, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 15, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 14, parent=DEPENDENCIES_BLOCK:dependencies)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:civilprotection/build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:civilprotection/build.gradle)
+
+=== LEAF ROUND 1 MATCHES ===
+DEPENDENCY_DECL:compile (line 16, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 16, parent=DEPENDENCIES_BLOCK:dependencies)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:civilprotection/build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:civilprotection/build.gradle)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+DEPENDENCY_DECL:compile (line 10, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 8, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 13, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 10, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 19, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 12, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 6, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 6, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 15, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 14, parent=DEPENDENCIES_BLOCK:dependencies)
+
+=== ALL COMPOSITE MATCHES ===
+DEPENDENCIES_BLOCK:dependencies (line 3, parent=BUILD_GRADLE:civilprotection/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 3, parent=BUILD_GRADLE:civilprotection/build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+(none)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+DEPENDENCIES_BLOCK:dependencies (line 3, parent=BUILD_GRADLE:civilprotection/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 3, parent=BUILD_GRADLE:civilprotection/build.gradle)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+EXTERNALIZE_PROPERTIES: Externalize property 'gsonVersion'
+EXTERNALIZE_PROPERTIES: Externalize property 'scalaFxVersion'
+EXTERNALIZE_PROPERTIES: Externalize property 'rabbitMqVersion'
+EXTERNALIZE_PROPERTIES: Externalize property 'junitVersion'
+EXTERNALIZE_PROPERTIES: Externalize property 'slf4jVersion'
+
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 7; 7, 0, 0
+Matched composites: 1; 1, 0, 0
+Deleted leaves: 0; 0, 0, 0
+Deleted composites: 0; 0, 0, 0
+Added leaves: 10; 10, 0, 0
+Added composites: 0; 0, 0, 0
+Total expected events: 18
+Total predicted events: 18
+
+TP=18 FP=0 FN=0
+TP=18, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT103 MISSED ===
+FP: (none)
+FN: (none)

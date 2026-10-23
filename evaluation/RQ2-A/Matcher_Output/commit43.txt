@@ -1,0 +1,156 @@
+
+=== COMMIT ===
+http://github.com/francisrod01/udacity-android-sunshine-app/commit/ee79d7541174e015ce017ec2726a4ce83184577d
+
+=== CHANGED GRADLE FILES ===
+app/build.gradle -> app/build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : app/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: com.android.application (line 1)
+    BLOCK : android (line 3)
+      METHOD_CALL : compileSdkVersion(25) (line 4)
+      METHOD_CALL : buildToolsVersion("25.0.2") (line 5)
+      BLOCK : defaultConfig (line 6)
+        METHOD_CALL : applicationId("com.example.android.sunshine.app") (line 7)
+        METHOD_CALL : minSdkVersion(10) (line 8)
+        METHOD_CALL : targetSdkVersion(25) (line 9)
+        METHOD_CALL : versionCode(1) (line 10)
+        METHOD_CALL : versionName("1.0") (line 11)
+        METHOD_CALL : testInstrumentationRunner("android.support.test.runner.AndroidJUnitRunner") (line 12)
+      BLOCK : buildTypes (line 14)
+        BLOCK : release (line 15)
+          METHOD_CALL : minifyEnabled(false) (line 16)
+          METHOD_CALL : proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro") (line 17)
+      BLOCK : buildTypes.each (line 20)
+        METHOD_CALL : it.buildConfigField("String", "OPEN_WEATHER_MAP_API_KEY", "\"<my OpenWeatherMap api key here>\"") (line 21)
+    DEPENDENCIES_BLOCK : dependencies (line 25)
+      DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 26)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='appcompat-v7', version='25.1.0' (line 27)
+      DEPENDENCY_DECL : configuration='androidTestCompile', group='com.android.support.test.espresso', name='espresso-core', version='2.2.2' (line 28)
+        METHOD_CALL : exclude([group: "com.android.support", module: "support-annotations"]) (line 29)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.12' (line 31)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : app/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: com.android.application (line 1)
+    BLOCK : android (line 3)
+      METHOD_CALL : compileSdkVersion(25) (line 4)
+      METHOD_CALL : buildToolsVersion("25.0.2") (line 5)
+      BLOCK : defaultConfig (line 6)
+        METHOD_CALL : applicationId("com.example.android.sunshine.app") (line 7)
+        METHOD_CALL : minSdkVersion(10) (line 8)
+        METHOD_CALL : targetSdkVersion(25) (line 9)
+        METHOD_CALL : versionCode(1) (line 10)
+        METHOD_CALL : versionName("1.0") (line 11)
+        METHOD_CALL : testInstrumentationRunner("android.support.test.runner.AndroidJUnitRunner") (line 12)
+      BLOCK : buildTypes (line 14)
+        BLOCK : release (line 15)
+          METHOD_CALL : minifyEnabled(false) (line 16)
+          METHOD_CALL : proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro") (line 17)
+      BLOCK : buildTypes.each (line 20)
+        METHOD_CALL : it.buildConfigField("String", "OPEN_WEATHER_MAP_API_KEY", MyOpenWeatherMapApiKey) (line 21)
+    DEPENDENCIES_BLOCK : dependencies (line 25)
+      DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 26)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='appcompat-v7', version='25.1.0' (line 27)
+      DEPENDENCY_DECL : configuration='androidTestCompile', group='com.android.support.test.espresso', name='espresso-core', version='2.2.2' (line 28)
+        METHOD_CALL : exclude([group: "com.android.support", module: "support-annotations"]) (line 29)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.12' (line 31)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+(none)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+(none)
+
+=== ALL LEAF MATCHES ===
+DEPENDENCY_DECL:compile (line 26, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 26, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 27, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 27, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 31, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 31, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:applicationId (line 7, parent=BLOCK:defaultConfig) -> METHOD_CALL:applicationId (line 7, parent=BLOCK:defaultConfig)
+METHOD_CALL:buildConfigField (line 21, parent=BLOCK:each) -> METHOD_CALL:buildConfigField (line 21, parent=BLOCK:each)
+METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android)
+METHOD_CALL:exclude (line 29, parent=DEPENDENCY_DECL:androidTestCompile) -> METHOD_CALL:exclude (line 29, parent=DEPENDENCY_DECL:androidTestCompile)
+METHOD_CALL:minSdkVersion (line 8, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 8, parent=BLOCK:defaultConfig)
+METHOD_CALL:minifyEnabled (line 16, parent=BLOCK:release) -> METHOD_CALL:minifyEnabled (line 16, parent=BLOCK:release)
+METHOD_CALL:proguardFiles (line 17, parent=BLOCK:release) -> METHOD_CALL:proguardFiles (line 17, parent=BLOCK:release)
+METHOD_CALL:targetSdkVersion (line 9, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 9, parent=BLOCK:defaultConfig)
+METHOD_CALL:testInstrumentationRunner (line 12, parent=BLOCK:defaultConfig) -> METHOD_CALL:testInstrumentationRunner (line 12, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 10, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 10, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 11, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 11, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:app/build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:app/build.gradle)
+
+=== LEAF ROUND 1 MATCHES ===
+DEPENDENCY_DECL:compile (line 26, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 26, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 27, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 27, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 31, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 31, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:applicationId (line 7, parent=BLOCK:defaultConfig) -> METHOD_CALL:applicationId (line 7, parent=BLOCK:defaultConfig)
+METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android)
+METHOD_CALL:exclude (line 29, parent=DEPENDENCY_DECL:androidTestCompile) -> METHOD_CALL:exclude (line 29, parent=DEPENDENCY_DECL:androidTestCompile)
+METHOD_CALL:minSdkVersion (line 8, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 8, parent=BLOCK:defaultConfig)
+METHOD_CALL:minifyEnabled (line 16, parent=BLOCK:release) -> METHOD_CALL:minifyEnabled (line 16, parent=BLOCK:release)
+METHOD_CALL:proguardFiles (line 17, parent=BLOCK:release) -> METHOD_CALL:proguardFiles (line 17, parent=BLOCK:release)
+METHOD_CALL:targetSdkVersion (line 9, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 9, parent=BLOCK:defaultConfig)
+METHOD_CALL:testInstrumentationRunner (line 12, parent=BLOCK:defaultConfig) -> METHOD_CALL:testInstrumentationRunner (line 12, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 10, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 10, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 11, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 11, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:app/build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:app/build.gradle)
+
+=== LEAF ROUND 2 MATCHES ===
+METHOD_CALL:buildConfigField (line 21, parent=BLOCK:each) -> METHOD_CALL:buildConfigField (line 21, parent=BLOCK:each)
+
+=== LEAF ROUND 3 MATCHES ===
+(none)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:android (line 3, parent=BUILD_GRADLE:app/build.gradle) -> BLOCK:android (line 3, parent=BUILD_GRADLE:app/build.gradle)
+BLOCK:buildTypes (line 14, parent=BLOCK:android) -> BLOCK:buildTypes (line 14, parent=BLOCK:android)
+BLOCK:defaultConfig (line 6, parent=BLOCK:android) -> BLOCK:defaultConfig (line 6, parent=BLOCK:android)
+BLOCK:each (line 20, parent=BLOCK:android) -> BLOCK:each (line 20, parent=BLOCK:android)
+BLOCK:release (line 15, parent=BLOCK:buildTypes) -> BLOCK:release (line 15, parent=BLOCK:buildTypes)
+DEPENDENCIES_BLOCK:dependencies (line 25, parent=BUILD_GRADLE:app/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 25, parent=BUILD_GRADLE:app/build.gradle)
+DEPENDENCY_DECL:androidTestCompile (line 28, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:androidTestCompile (line 28, parent=DEPENDENCIES_BLOCK:dependencies)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:buildTypes (line 14, parent=BLOCK:android) -> BLOCK:buildTypes (line 14, parent=BLOCK:android)
+BLOCK:defaultConfig (line 6, parent=BLOCK:android) -> BLOCK:defaultConfig (line 6, parent=BLOCK:android)
+BLOCK:release (line 15, parent=BLOCK:buildTypes) -> BLOCK:release (line 15, parent=BLOCK:buildTypes)
+DEPENDENCIES_BLOCK:dependencies (line 25, parent=BUILD_GRADLE:app/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 25, parent=BUILD_GRADLE:app/build.gradle)
+DEPENDENCY_DECL:androidTestCompile (line 28, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:androidTestCompile (line 28, parent=DEPENDENCIES_BLOCK:dependencies)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+BLOCK:android (line 3, parent=BUILD_GRADLE:app/build.gradle) -> BLOCK:android (line 3, parent=BUILD_GRADLE:app/build.gradle)
+BLOCK:each (line 20, parent=BLOCK:android) -> BLOCK:each (line 20, parent=BLOCK:android)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+EXTERNALIZE_PROPERTIES: Externalize property 'MyOpenWeatherMapApiKey'
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 16; 16, 0, 0
+Matched composites: 7; 7, 0, 0
+Deleted leaves: 0; 0, 0, 0
+Deleted composites: 0; 0, 0, 0
+Added leaves: 0; 0, 0, 0
+Added composites: 0; 0, 0, 0
+Total expected events: 23
+Total predicted events: 23
+
+TP=23 FP=0 FN=0
+TP=23, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT48 MISSED ===
+ (none)

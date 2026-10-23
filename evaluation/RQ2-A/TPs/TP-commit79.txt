@@ -1,0 +1,160 @@
+=== COMMIT ===
+http://github.com/Mariem-07/frisbee/commit/48b580380a13354c5e3db36876445e9c51943453
+
+=== CHANGED GRADLE FILES ===
+build.gradle -> build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 3)
+      REPOSITORIES_BLOCK : repositories (line 4)
+        REPOSITORIES_DECL : mavenCentral (line 5)
+        REPOSITORIES_DECL : jcenter (line 6)
+        REPOSITORIES_DECL : maven (line 7)
+          REPOSITORIES_DECL : url("http://m2-gdgx.cloud.gdgx.io/m2/") (line 8)
+        REPOSITORIES_DECL : maven (line 10)
+          REPOSITORIES_DECL : url("https://maven.fabric.io/public") (line 10)
+      DEPENDENCIES_BLOCK : dependencies (line 12)
+        DEPENDENCY_DECL : configuration='classpath', group='com.android.tools.build', name='gradle', version='1.1.3' (line 13)
+        DEPENDENCY_DECL : configuration='classpath', group='io.fabric.tools', name='gradle', version='1.18.0' (line 14)
+        DEPENDENCY_DECL : configuration='classpath', group='com.github.triplet.gradle', name='play-publisher', version='1.0.2' (line 15)
+        DEPENDENCY_DECL : configuration='classpath', group='com.github.ben-manes', name='gradle-versions-plugin', version='0.8' (line 16)
+    PLUGIN_DECL : apply plugin: com.github.ben-manes.versions (line 20)
+    ALLPROJECTS : allprojects (line 22)
+      REPOSITORIES_BLOCK : repositories (line 23)
+        REPOSITORIES_DECL : maven (line 24)
+          REPOSITORIES_DECL : url("http://dl.bintray.com/populov/maven") (line 25)
+        REPOSITORIES_DECL : mavenCentral (line 27)
+        REPOSITORIES_DECL : maven (line 28)
+          REPOSITORIES_DECL : url("http://m2-gdgx.cloud.gdgx.io/m2/") (line 29)
+        REPOSITORIES_DECL : maven (line 31)
+          REPOSITORIES_DECL : url("https://maven.fabric.io/public") (line 31)
+      TASK_DECLARATION : taskName=checkstyle, type=Checkstyle, style=task (line 34)
+        ASSIGNMENT : name: showViolations, operator: =, value: true (line 35)
+        METHOD_CALL : configFile(file("../settings/checkstyle.xml")) (line 36)
+        METHOD_CALL : source("src/main/java") (line 38)
+        METHOD_CALL : include("**/*.java") (line 39)
+        METHOD_CALL : exclude("**/gen/**") (line 40)
+        ASSIGNMENT : name: classpath, operator: =, value: files() (line 41)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 3)
+      REPOSITORIES_BLOCK : repositories (line 4)
+        REPOSITORIES_DECL : mavenCentral (line 5)
+        REPOSITORIES_DECL : jcenter (line 6)
+        REPOSITORIES_DECL : maven (line 7)
+          REPOSITORIES_DECL : url("http://m2-gdgx.cloud.gdgx.io/m2/") (line 7)
+        REPOSITORIES_DECL : maven (line 8)
+          REPOSITORIES_DECL : url("https://maven.fabric.io/public") (line 8)
+      DEPENDENCIES_BLOCK : dependencies (line 10)
+        DEPENDENCY_DECL : configuration='classpath', group='com.android.tools.build', name='gradle', version='1.1.3' (line 11)
+        DEPENDENCY_DECL : configuration='classpath', group='io.fabric.tools', name='gradle', version='1.18.0' (line 12)
+        DEPENDENCY_DECL : configuration='classpath', group='com.github.triplet.gradle', name='play-publisher', version='1.0.4' (line 13)
+        DEPENDENCY_DECL : configuration='classpath', group='com.github.ben-manes', name='gradle-versions-plugin', version='0.8' (line 14)
+    PLUGIN_DECL : apply plugin: com.github.ben-manes.versions (line 18)
+    ALLPROJECTS : allprojects (line 20)
+      REPOSITORIES_BLOCK : repositories (line 21)
+        REPOSITORIES_DECL : mavenCentral (line 22)
+        REPOSITORIES_DECL : maven (line 23)
+          REPOSITORIES_DECL : url("http://m2-gdgx.cloud.gdgx.io/m2/") (line 23)
+        REPOSITORIES_DECL : maven (line 24)
+          REPOSITORIES_DECL : url("https://maven.fabric.io/public") (line 24)
+      TASK_DECLARATION : taskName=checkstyle, type=Checkstyle, style=task (line 27)
+        ASSIGNMENT : name: showViolations, operator: =, value: true (line 28)
+        METHOD_CALL : configFile(file("../settings/checkstyle.xml")) (line 29)
+        METHOD_CALL : source("src/main/java") (line 31)
+        METHOD_CALL : include("**/*.java") (line 32)
+        METHOD_CALL : exclude("**/gen/**") (line 33)
+        ASSIGNMENT : name: classpath, operator: =, value: files() (line 34)
+
+=== DELETED COMPOSITE NODES ===
+REPOSITORIES_DECL:maven (line 24, parent=REPOSITORIES_BLOCK:repositories)
+
+=== DELETED LEAF NODES ===
+REPOSITORIES_DECL:url (line 25, parent=REPOSITORIES_DECL:maven)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+(none)
+
+=== ALL LEAF MATCHES ===
+ASSIGNMENT:classpath = files() (line 41, parent=TASK_DECLARATION:checkstyle) -> ASSIGNMENT:classpath = files() (line 34, parent=TASK_DECLARATION:checkstyle)
+ASSIGNMENT:showViolations = true (line 35, parent=TASK_DECLARATION:checkstyle) -> ASSIGNMENT:showViolations = true (line 28, parent=TASK_DECLARATION:checkstyle)
+DEPENDENCY_DECL:classpath (line 13, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 11, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:classpath (line 14, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 12, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:classpath (line 15, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 13, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:classpath (line 16, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 14, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:configFile (line 36, parent=TASK_DECLARATION:checkstyle) -> METHOD_CALL:configFile (line 29, parent=TASK_DECLARATION:checkstyle)
+METHOD_CALL:exclude (line 40, parent=TASK_DECLARATION:checkstyle) -> METHOD_CALL:exclude (line 33, parent=TASK_DECLARATION:checkstyle)
+METHOD_CALL:include (line 39, parent=TASK_DECLARATION:checkstyle) -> METHOD_CALL:include (line 32, parent=TASK_DECLARATION:checkstyle)
+METHOD_CALL:source (line 38, parent=TASK_DECLARATION:checkstyle) -> METHOD_CALL:source (line 31, parent=TASK_DECLARATION:checkstyle)
+PLUGIN_DECL:apply (line 20, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 18, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_DECL:jcenter (line 6, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 6, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 27, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 22, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 5, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 5, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:url (line 10, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 8, parent=REPOSITORIES_DECL:maven)
+REPOSITORIES_DECL:url (line 29, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 23, parent=REPOSITORIES_DECL:maven)
+REPOSITORIES_DECL:url (line 31, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 24, parent=REPOSITORIES_DECL:maven)
+REPOSITORIES_DECL:url (line 8, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 7, parent=REPOSITORIES_DECL:maven)
+
+=== LEAF ROUND 1 MATCHES ===
+ASSIGNMENT:classpath = files() (line 41, parent=TASK_DECLARATION:checkstyle) -> ASSIGNMENT:classpath = files() (line 34, parent=TASK_DECLARATION:checkstyle)
+ASSIGNMENT:showViolations = true (line 35, parent=TASK_DECLARATION:checkstyle) -> ASSIGNMENT:showViolations = true (line 28, parent=TASK_DECLARATION:checkstyle)
+DEPENDENCY_DECL:classpath (line 13, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 11, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:classpath (line 14, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 12, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:classpath (line 16, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 14, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:configFile (line 36, parent=TASK_DECLARATION:checkstyle) -> METHOD_CALL:configFile (line 29, parent=TASK_DECLARATION:checkstyle)
+METHOD_CALL:exclude (line 40, parent=TASK_DECLARATION:checkstyle) -> METHOD_CALL:exclude (line 33, parent=TASK_DECLARATION:checkstyle)
+METHOD_CALL:include (line 39, parent=TASK_DECLARATION:checkstyle) -> METHOD_CALL:include (line 32, parent=TASK_DECLARATION:checkstyle)
+METHOD_CALL:source (line 38, parent=TASK_DECLARATION:checkstyle) -> METHOD_CALL:source (line 31, parent=TASK_DECLARATION:checkstyle)
+PLUGIN_DECL:apply (line 20, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 18, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_DECL:jcenter (line 6, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 6, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 27, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 22, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 5, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 5, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:url (line 10, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 8, parent=REPOSITORIES_DECL:maven)
+REPOSITORIES_DECL:url (line 29, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 23, parent=REPOSITORIES_DECL:maven)
+REPOSITORIES_DECL:url (line 31, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 24, parent=REPOSITORIES_DECL:maven)
+REPOSITORIES_DECL:url (line 8, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 7, parent=REPOSITORIES_DECL:maven)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+DEPENDENCY_DECL:classpath (line 15, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 13, parent=DEPENDENCIES_BLOCK:dependencies)
+
+=== ALL COMPOSITE MATCHES ===
+ALLPROJECTS:allprojects (line 22, parent=BUILD_GRADLE:build.gradle) -> ALLPROJECTS:allprojects (line 20, parent=BUILD_GRADLE:build.gradle)
+BUILDSCRIPT:buildscript (line 3, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 3, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 12, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 10, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 23, parent=ALLPROJECTS:allprojects) -> REPOSITORIES_BLOCK:repositories (line 21, parent=ALLPROJECTS:allprojects)
+REPOSITORIES_BLOCK:repositories (line 4, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 4, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_DECL:maven (line 10, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 8, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:maven (line 28, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 23, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:maven (line 31, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 24, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:maven (line 7, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 7, parent=REPOSITORIES_BLOCK:repositories)
+TASK_DECLARATION:checkstyle (line 34, parent=ALLPROJECTS:allprojects) -> TASK_DECLARATION:checkstyle (line 27, parent=ALLPROJECTS:allprojects)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+REPOSITORIES_BLOCK:repositories (line 4, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 4, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_DECL:maven (line 10, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 8, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:maven (line 28, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 23, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:maven (line 31, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 24, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:maven (line 7, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 7, parent=REPOSITORIES_BLOCK:repositories)
+TASK_DECLARATION:checkstyle (line 34, parent=ALLPROJECTS:allprojects) -> TASK_DECLARATION:checkstyle (line 27, parent=ALLPROJECTS:allprojects)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+ALLPROJECTS:allprojects (line 22, parent=BUILD_GRADLE:build.gradle) -> ALLPROJECTS:allprojects (line 20, parent=BUILD_GRADLE:build.gradle)
+BUILDSCRIPT:buildscript (line 3, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 3, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 12, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 10, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 23, parent=ALLPROJECTS:allprojects) -> REPOSITORIES_BLOCK:repositories (line 21, parent=ALLPROJECTS:allprojects)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+(not scored in this matching-phase reference)

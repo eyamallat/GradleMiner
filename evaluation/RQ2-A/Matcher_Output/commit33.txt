@@ -1,0 +1,176 @@
+
+=== COMMIT ===
+http://github.com/SwarmAutomation/WebDriverExtendedJVM/commit/6b088046cb34f3728b20bf698fe4e8e6eb0d4fa3
+
+=== CHANGED GRADLE FILES ===
+build.gradle -> build.gradle
+gradle/wrapper/gradle-wrapper.properties -> gradle/wrapper/gradle-wrapper.properties
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    IMPORT : import(org.ajoberstar.grgit.*) (line 11)
+    BUILDSCRIPT : buildscript (line 1)
+      REPOSITORIES_BLOCK : repositories (line 3)
+        REPOSITORIES_DECL : mavenCentral (line 4)
+      DEPENDENCIES_BLOCK : dependencies (line 7)
+        DEPENDENCY_DECL : configuration='classpath', group='org.ajoberstar', name='gradle-git', version='1.2.0' (line 8)
+    METHOD_CALL : version("1.1") (line 13)
+    PLUGIN_DECL : apply plugin: java (line 15)
+    PLUGIN_DECL : apply plugin: org.ajoberstar.grgit (line 16)
+    REPOSITORIES_BLOCK : repositories (line 18)
+      REPOSITORIES_DECL : mavenCentral (line 19)
+    DEPENDENCIES_BLOCK : dependencies (line 22)
+      DEPENDENCY_DECL : configuration='compile', group='org.seleniumhq.selenium', name='selenium-java', version='2.46.0' (line 23)
+      DEPENDENCY_DECL : configuration='compile', group='io.selendroid', name='selendroid-standalone', version='0.15.0' (line 24)
+      DEPENDENCY_DECL : configuration='compile', group='io.selendroid', name='selendroid-client', version='0.15.0' (line 25)
+    BLOCK : sourceSets (line 28)
+      BLOCK : main (line 29)
+        BLOCK : java (line 30)
+          METHOD_CALL : srcDir("src") (line 31)
+        BLOCK : resources (line 33)
+          METHOD_CALL : srcDir("src/resources") (line 34)
+    TASK_DECLARATION : taskName=hello, style=task (line 39)
+      TASK_ACTION : action=doLast (line 40)
+        METHOD_CALL : println("Hello world!") (line 41)
+    TASK_DECLARATION : , type=clone << { Grgit.clone() }, style=task (line 45)
+      METHOD_CALL : Grgit.clone([dir: file("/"), uri: "https://github.com/F1tZ81/WebDriverExtended.git"]) (line 46)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    IMPORT : import(org.ajoberstar.grgit.*) (line 6)
+    PLUGIN_DECL : apply plugin: jacoco (line 1)
+    PLUGIN_DECL : apply plugin: java (line 2)
+    PLUGIN_DECL : apply plugin: org.ajoberstar.grgit (line 3)
+    PLUGIN_DECL : apply plugin: maven (line 4)
+    METHOD_CALL : version("0.1") (line 8)
+    ASSIGNMENT : name: group, operator: =, value: "com.github.SwarmAutomation" (line 9)
+    REPOSITORIES_BLOCK : repositories (line 11)
+      REPOSITORIES_DECL : mavenCentral (line 12)
+    BUILDSCRIPT : buildscript (line 15)
+      REPOSITORIES_BLOCK : repositories (line 17)
+        REPOSITORIES_DECL : mavenCentral (line 18)
+      DEPENDENCIES_BLOCK : dependencies (line 21)
+        DEPENDENCY_DECL : configuration='classpath', group='org.ajoberstar', name='gradle-git', version='1.2.0' (line 22)
+    DEPENDENCIES_BLOCK : dependencies (line 26)
+      DEPENDENCY_DECL : configuration='compile', group='org.seleniumhq.selenium', name='selenium-java', version='2.46.0' (line 27)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.11' (line 29)
+      DEPENDENCY_DECL : configuration='testCompile', group='org.mockito', name='mockito-core', version='1.9.5' (line 30)
+    BLOCK : jacocoTestReport (line 33)
+      BLOCK : reports (line 34)
+        METHOD_CALL : xml.enabled(true) (line 35)
+        METHOD_CALL : html.enabled(false) (line 36)
+    TASK_DECLARATION : , type=clone << { Grgit.clone() }, style=task (line 40)
+      METHOD_CALL : Grgit.clone([dir: file("/"), uri: "https://github.com/SwarmAutomation/WebDriverExtendedJVM.git"]) (line 41)
+  PROPERTIES_FILE : gradle/wrapper/gradle-wrapper.properties (line 0)
+    ASSIGNMENT : name: distributionBase, value: "GRADLE_USER_HOME" (line 2)
+    ASSIGNMENT : name: distributionPath, value: "wrapper/dists" (line 3)
+    ASSIGNMENT : name: zipStoreBase, value: "GRADLE_USER_HOME" (line 4)
+    ASSIGNMENT : name: zipStorePath, value: "wrapper/dists" (line 5)
+    ASSIGNMENT : name: distributionUrl, value: "https\\://services.gradle.org/distributions/gradle-2.11-bin.zip" (line 6)
+
+=== DELETED COMPOSITE NODES ===
+BLOCK:java (line 30, parent=BLOCK:main)
+BLOCK:main (line 29, parent=BLOCK:sourceSets)
+BLOCK:resources (line 33, parent=BLOCK:main)
+BLOCK:sourceSets (line 28, parent=BUILD_GRADLE:build.gradle)
+TASK_ACTION:doLast (line 40, parent=TASK_DECLARATION:hello)
+TASK_DECLARATION:hello (line 39, parent=BUILD_GRADLE:build.gradle)
+
+=== DELETED LEAF NODES ===
+DEPENDENCY_DECL:compile (line 24, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 25, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:println (line 41, parent=TASK_ACTION:doLast)
+METHOD_CALL:srcDir (line 31, parent=BLOCK:java)
+METHOD_CALL:srcDir (line 34, parent=BLOCK:resources)
+
+=== ADDED COMPOSITE NODES ===
+BLOCK:jacocoTestReport (line 33, parent=BUILD_GRADLE:build.gradle)
+BLOCK:reports (line 34, parent=BLOCK:jacocoTestReport)
+
+=== ADDED LEAF NODES ===
+ASSIGNMENT:distributionBase = GRADLE_USER_HOME (line 2, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties)
+ASSIGNMENT:distributionPath = wrapper/dists (line 3, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties)
+ASSIGNMENT:distributionUrl = https\://services.gradle.org/distributions/gradle-2.11-bin.zip (line 6, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties)
+ASSIGNMENT:group = com.github.SwarmAutomation (line 9, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:zipStoreBase = GRADLE_USER_HOME (line 4, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties)
+ASSIGNMENT:zipStorePath = wrapper/dists (line 5, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties)
+DEPENDENCY_DECL:testCompile (line 29, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 30, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:enabled (line 35, parent=BLOCK:reports)
+METHOD_CALL:enabled (line 36, parent=BLOCK:reports)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 4, parent=BUILD_GRADLE:build.gradle)
+
+=== ALL LEAF MATCHES ===
+DEPENDENCY_DECL:classpath (line 8, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 22, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 23, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 27, parent=DEPENDENCIES_BLOCK:dependencies)
+IMPORT:import (line 11, parent=BUILD_GRADLE:build.gradle) -> IMPORT:import (line 6, parent=BUILD_GRADLE:build.gradle)
+METHOD_CALL:clone (line 46, parent=TASK_DECLARATION:task) -> METHOD_CALL:clone (line 41, parent=TASK_DECLARATION:task)
+METHOD_CALL:version (line 13, parent=BUILD_GRADLE:build.gradle) -> METHOD_CALL:version (line 8, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 15, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 16, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 3, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_DECL:mavenCentral (line 19, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 12, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 4, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 18, parent=REPOSITORIES_BLOCK:repositories)
+
+=== LEAF ROUND 1 MATCHES ===
+DEPENDENCY_DECL:classpath (line 8, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 22, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 23, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 27, parent=DEPENDENCIES_BLOCK:dependencies)
+IMPORT:import (line 11, parent=BUILD_GRADLE:build.gradle) -> IMPORT:import (line 6, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 15, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 16, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 3, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_DECL:mavenCentral (line 19, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 12, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 4, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 18, parent=REPOSITORIES_BLOCK:repositories)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+METHOD_CALL:clone (line 46, parent=TASK_DECLARATION:task) -> METHOD_CALL:clone (line 41, parent=TASK_DECLARATION:task)
+METHOD_CALL:version (line 13, parent=BUILD_GRADLE:build.gradle) -> METHOD_CALL:version (line 8, parent=BUILD_GRADLE:build.gradle)
+
+=== ALL COMPOSITE MATCHES ===
+BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 15, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 22, parent=BUILD_GRADLE:build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 26, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 7, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 21, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 18, parent=BUILD_GRADLE:build.gradle) -> REPOSITORIES_BLOCK:repositories (line 11, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_BLOCK:repositories (line 3, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 17, parent=BUILDSCRIPT:buildscript)
+TASK_DECLARATION:task (line 45, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:task (line 40, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 15, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 7, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 21, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 18, parent=BUILD_GRADLE:build.gradle) -> REPOSITORIES_BLOCK:repositories (line 11, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_BLOCK:repositories (line 3, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 17, parent=BUILDSCRIPT:buildscript)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+DEPENDENCIES_BLOCK:dependencies (line 22, parent=BUILD_GRADLE:build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 26, parent=BUILD_GRADLE:build.gradle)
+TASK_DECLARATION:task (line 45, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:task (line 40, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+REFORMAT_CODE: Reformat code (no semantic change)
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:sourceSets (28)'
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:hello (39)'
+
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 9; 9, 0, 0
+Matched composites: 6; 6, 0, 0
+Deleted leaves: 5; 5, 0, 0
+Deleted composites: 6; 6, 0, 0
+Added leaves: 12; 12, 0, 0
+Added composites: 2; 2, 0, 0
+Total expected events: 40
+Total predicted events: 40
+
+TP=40 FP=0 FN=0
+TP=40, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT36 MISSED ===
+(none)
+

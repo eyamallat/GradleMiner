@@ -1,0 +1,148 @@
+
+=== COMMIT ===
+https://github.com/HTiSolutions/poolref/commit/d6d935a451539944e84fea38b0205012a2be2413
+
+=== CHANGED GRADLE FILES ===
+build.gradle -> build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 1)
+      BLOCK : ext (line 2)
+        ASSIGNMENT : name: springBootVersion, operator: =, value: "1.4.1.RELEASE" (line 3)
+      REPOSITORIES_BLOCK : repositories (line 5)
+        REPOSITORIES_DECL : mavenCentral (line 6)
+      DEPENDENCIES_BLOCK : dependencies (line 8)
+        DEPENDENCY_DECL : configuration='classpath', group='org.springframework.boot', name='spring-boot-gradle-plugin', version='$springBootVersion' (line 9)
+    PLUGIN_DECL : apply plugin: java (line 13)
+    PLUGIN_DECL : apply plugin: eclipse (line 14)
+    PLUGIN_DECL : apply plugin: spring-boot (line 15)
+    BLOCK : jar (line 17)
+      ASSIGNMENT : name: baseName, operator: =, value: "pool-ref" (line 18)
+      ASSIGNMENT : name: version, operator: =, value: "0.0.1-SNAPSHOT" (line 19)
+    ASSIGNMENT : name: sourceCompatibility, operator: =, value: 1.8 (line 21)
+    ASSIGNMENT : name: targetCompatibility, operator: =, value: 1.8 (line 22)
+    REPOSITORIES_BLOCK : repositories (line 24)
+      REPOSITORIES_DECL : mavenCentral (line 25)
+    DEPENDENCIES_BLOCK : dependencies (line 29)
+      DEPENDENCY_DECL : configuration='compile', group='org.springframework.boot', name='spring-boot-starter-web', version='' (line 30)
+      DEPENDENCY_DECL : configuration='testCompile', group='org.springframework.boot', name='spring-boot-starter-test', version='' (line 31)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 1)
+      BLOCK : ext (line 2)
+        ASSIGNMENT : name: springBootVersion, operator: =, value: "1.4.1.RELEASE" (line 3)
+      REPOSITORIES_BLOCK : repositories (line 5)
+        REPOSITORIES_DECL : mavenCentral (line 6)
+      DEPENDENCIES_BLOCK : dependencies (line 8)
+        DEPENDENCY_DECL : configuration='classpath', group='org.springframework.boot', name='spring-boot-gradle-plugin', version='$springBootVersion' (line 9)
+    PLUGIN_DECL : apply plugin: java (line 13)
+    PLUGIN_DECL : apply plugin: eclipse (line 14)
+    PLUGIN_DECL : apply plugin: idea (line 15)
+    PLUGIN_DECL : apply plugin: spring-boot (line 16)
+    BLOCK : jar (line 18)
+      ASSIGNMENT : name: baseName, operator: =, value: "pool-ref" (line 19)
+      ASSIGNMENT : name: version, operator: =, value: "0.0.1-SNAPSHOT" (line 20)
+    REPOSITORIES_BLOCK : repositories (line 23)
+      REPOSITORIES_DECL : mavenCentral (line 24)
+    DEPENDENCIES_BLOCK : dependencies (line 28)
+      DEPENDENCY_DECL : configuration='compile', group='org.springframework.boot', name='spring-boot-devtools', version='' (line 29)
+      DEPENDENCY_DECL : configuration='compile', group='org.springframework.boot', name='spring-boot-starter-thymeleaf', version='' (line 30)
+      DEPENDENCY_DECL : configuration='compile', group='org.springframework.boot', name='spring-boot-starter-web', version='' (line 31)
+      DEPENDENCY_DECL : configuration='testCompile', group='org.springframework.boot', name='spring-boot-starter-test', version='' (line 32)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+ASSIGNMENT:sourceCompatibility = 1.8 (line 21, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:targetCompatibility = 1.8 (line 22, parent=BUILD_GRADLE:build.gradle)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+DEPENDENCY_DECL:compile (line 29, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 30, parent=DEPENDENCIES_BLOCK:dependencies)
+PLUGIN_DECL:apply (line 15, parent=BUILD_GRADLE:build.gradle)
+
+=== ALL LEAF MATCHES ===
+ASSIGNMENT:baseName = pool-ref (line 18, parent=BLOCK:jar) -> ASSIGNMENT:baseName = pool-ref (line 19, parent=BLOCK:jar)
+ASSIGNMENT:springBootVersion = 1.4.1.RELEASE (line 3, parent=BLOCK:ext) -> ASSIGNMENT:springBootVersion = 1.4.1.RELEASE (line 3, parent=BLOCK:ext)
+ASSIGNMENT:version = 0.0.1-SNAPSHOT (line 19, parent=BLOCK:jar) -> ASSIGNMENT:version = 0.0.1-SNAPSHOT (line 20, parent=BLOCK:jar)
+DEPENDENCY_DECL:classpath (line 9, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 9, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 30, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 31, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 31, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 32, parent=DEPENDENCIES_BLOCK:dependencies)
+PLUGIN_DECL:apply (line 13, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 13, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 14, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 14, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 15, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 16, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_DECL:mavenCentral (line 25, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 24, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 6, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 6, parent=REPOSITORIES_BLOCK:repositories)
+
+=== LEAF ROUND 1 MATCHES ===
+ASSIGNMENT:baseName = pool-ref (line 18, parent=BLOCK:jar) -> ASSIGNMENT:baseName = pool-ref (line 19, parent=BLOCK:jar)
+ASSIGNMENT:springBootVersion = 1.4.1.RELEASE (line 3, parent=BLOCK:ext) -> ASSIGNMENT:springBootVersion = 1.4.1.RELEASE (line 3, parent=BLOCK:ext)
+ASSIGNMENT:version = 0.0.1-SNAPSHOT (line 19, parent=BLOCK:jar) -> ASSIGNMENT:version = 0.0.1-SNAPSHOT (line 20, parent=BLOCK:jar)
+DEPENDENCY_DECL:classpath (line 9, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 9, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 30, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 31, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 31, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 32, parent=DEPENDENCIES_BLOCK:dependencies)
+PLUGIN_DECL:apply (line 13, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 13, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 14, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 14, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 15, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 16, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_DECL:mavenCentral (line 25, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 24, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 6, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 6, parent=REPOSITORIES_BLOCK:repositories)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+(none)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:ext (line 2, parent=BUILDSCRIPT:buildscript) -> BLOCK:ext (line 2, parent=BUILDSCRIPT:buildscript)
+BLOCK:jar (line 17, parent=BUILD_GRADLE:build.gradle) -> BLOCK:jar (line 18, parent=BUILD_GRADLE:build.gradle)
+BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 29, parent=BUILD_GRADLE:build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 28, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 8, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 8, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 24, parent=BUILD_GRADLE:build.gradle) -> REPOSITORIES_BLOCK:repositories (line 23, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_BLOCK:repositories (line 5, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 5, parent=BUILDSCRIPT:buildscript)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:ext (line 2, parent=BUILDSCRIPT:buildscript) -> BLOCK:ext (line 2, parent=BUILDSCRIPT:buildscript)
+BLOCK:jar (line 17, parent=BUILD_GRADLE:build.gradle) -> BLOCK:jar (line 18, parent=BUILD_GRADLE:build.gradle)
+BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 8, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 8, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 24, parent=BUILD_GRADLE:build.gradle) -> REPOSITORIES_BLOCK:repositories (line 23, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_BLOCK:repositories (line 5, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 5, parent=BUILDSCRIPT:buildscript)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+DEPENDENCIES_BLOCK:dependencies (line 29, parent=BUILD_GRADLE:build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 28, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:targetCompatibility (22)'
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:sourceCompatibility (21)'
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 11; 11, 0, 0
+Matched composites: 7; 7, 0, 0
+Deleted leaves: 2; 2, 0, 0
+Deleted composites: 0; 0, 0, 0
+Added leaves: 3; 3, 0, 0
+Added composites: 0; 0, 0, 0
+Total expected events: 23
+Total predicted events: 23
+
+TP=23 FP=0 FN=0
+TP=23, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT11 MISSED ===
+(none in the matching-phase output)
+
+

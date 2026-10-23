@@ -1,0 +1,179 @@
+
+=== COMMIT ===
+http://github.com/jwren/intellij-community/commit/c0ac1f01a765d60bee578e1998103c56e7419a16
+
+=== CHANGED GRADLE FILES ===
+plugins/stream-debugger/build.gradle -> plugins/stream-debugger/build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : plugins/stream-debugger/build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 1)
+      REPOSITORIES_BLOCK : repositories (line 2)
+        REPOSITORIES_DECL : maven (line 3)
+          REPOSITORIES_DECL : url("http://dl.bintray.com/jetbrains/intellij-plugin-service") (line 3)
+        REPOSITORIES_DECL : mavenCentral (line 4)
+      DEPENDENCIES_BLOCK : dependencies (line 7)
+        DEPENDENCY_DECL : configuration='classpath', group='org.jetbrains.kotlin', name='kotlin-gradle-plugin', version='1.1.1' (line 8)
+    PLUGINS_BLOCK : plugins (line 12)
+      PLUGIN_DECL : id 'org.jetbrains.intellij' version '0.2.5' (line 13)
+      PLUGIN_DECL : id 'org.jetbrains.kotlin.jvm' version '1.1.1' (line 14)
+    REPOSITORIES_BLOCK : repositories (line 17)
+      REPOSITORIES_DECL : jcenter (line 18)
+    BLOCK : sourceSets (line 21)
+      ASSIGNMENT : name: main.kotlin.srcDirs, operator: +=, value: "src/main/java" (line 22)
+    PLUGIN_DECL : apply plugin: idea (line 25)
+    PLUGIN_DECL : apply plugin: org.jetbrains.intellij (line 26)
+    PLUGIN_DECL : apply plugin: java (line 27)
+    PLUGIN_DECL : apply plugin: kotlin (line 28)
+    METHOD_CALL : group("com.intellij.debugger.stream") (line 30)
+    METHOD_CALL : version("0.0.9") (line 31)
+    BLOCK : intellij (line 33)
+      ASSIGNMENT : name: type, operator: =, value: "IC" (line 34)
+      ASSIGNMENT : name: version, operator: =, value: "LATEST-EAP-SNAPSHOT" (line 35)
+      ASSIGNMENT : name: pluginName, operator: =, value: "stream-debugger" (line 37)
+      ASSIGNMENT : name: updateSinceUntilBuild, operator: =, value: false (line 38)
+      ASSIGNMENT : name: sandboxDirectory, operator: =, value: project."rootDir"."canonicalPath" + "/.sandbox" (line 40)
+    DEPENDENCIES_BLOCK : dependencies (line 43)
+      DEPENDENCY_DECL : configuration='compile', notation='files(${System.properties[java.home]}/../lib/tools.jar)' (line 44)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : plugins/stream-debugger/build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 1)
+      ASSIGNMENT : name: ext.kotlin_version, operator: =, value: "1.1.1" (line 2)
+      REPOSITORIES_BLOCK : repositories (line 3)
+        REPOSITORIES_DECL : maven (line 4)
+          REPOSITORIES_DECL : url("http://dl.bintray.com/jetbrains/intellij-plugin-service") (line 4)
+        REPOSITORIES_DECL : mavenCentral (line 5)
+      DEPENDENCIES_BLOCK : dependencies (line 8)
+        DEPENDENCY_DECL : configuration='classpath', group='org.jetbrains.kotlin', name='kotlin-gradle-plugin', version='$kotlin_version' (line 9)
+    PLUGINS_BLOCK : plugins (line 13)
+      PLUGIN_DECL : id 'org.jetbrains.intellij' version '0.2.5' (line 14)
+      PLUGIN_DECL : id 'org.jetbrains.kotlin.jvm' version '1.1.1' (line 15)
+    REPOSITORIES_BLOCK : repositories (line 18)
+      REPOSITORIES_DECL : jcenter (line 19)
+    BLOCK : sourceSets (line 22)
+      ASSIGNMENT : name: main.kotlin.srcDirs, operator: +=, value: "src/main/java" (line 23)
+    PLUGIN_DECL : apply plugin: idea (line 26)
+    PLUGIN_DECL : apply plugin: org.jetbrains.intellij (line 27)
+    PLUGIN_DECL : apply plugin: java (line 28)
+    PLUGIN_DECL : apply plugin: kotlin (line 29)
+    METHOD_CALL : group("com.intellij.debugger.stream") (line 31)
+    METHOD_CALL : version("0.0.9") (line 32)
+    BLOCK : intellij (line 34)
+      ASSIGNMENT : name: type, operator: =, value: "IC" (line 35)
+      ASSIGNMENT : name: version, operator: =, value: "LATEST-EAP-SNAPSHOT" (line 36)
+      ASSIGNMENT : name: pluginName, operator: =, value: "stream-debugger" (line 38)
+      ASSIGNMENT : name: updateSinceUntilBuild, operator: =, value: false (line 39)
+      ASSIGNMENT : name: sandboxDirectory, operator: =, value: project."rootDir"."canonicalPath" + "/.sandbox" (line 41)
+    DEPENDENCIES_BLOCK : dependencies (line 44)
+      DEPENDENCY_DECL : configuration='compile', notation='files(${System.properties[java.home]}/../lib/tools.jar)' (line 45)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+(none)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+ASSIGNMENT:ext.kotlin_version = 1.1.1 (line 2, parent=BUILDSCRIPT:buildscript)
+
+=== ALL LEAF MATCHES ===
+ASSIGNMENT:main.kotlin.srcDirs = src/main/java (line 22, parent=BLOCK:sourceSets) -> ASSIGNMENT:main.kotlin.srcDirs = src/main/java (line 23, parent=BLOCK:sourceSets)
+ASSIGNMENT:pluginName = stream-debugger (line 37, parent=BLOCK:intellij) -> ASSIGNMENT:pluginName = stream-debugger (line 38, parent=BLOCK:intellij)
+ASSIGNMENT:sandboxDirectory = project.rootDir.canonicalPath + /.sandbox (line 40, parent=BLOCK:intellij) -> ASSIGNMENT:sandboxDirectory = project.rootDir.canonicalPath + /.sandbox (line 41, parent=BLOCK:intellij)
+ASSIGNMENT:type = IC (line 34, parent=BLOCK:intellij) -> ASSIGNMENT:type = IC (line 35, parent=BLOCK:intellij)
+ASSIGNMENT:updateSinceUntilBuild = false (line 38, parent=BLOCK:intellij) -> ASSIGNMENT:updateSinceUntilBuild = false (line 39, parent=BLOCK:intellij)
+ASSIGNMENT:version = LATEST-EAP-SNAPSHOT (line 35, parent=BLOCK:intellij) -> ASSIGNMENT:version = LATEST-EAP-SNAPSHOT (line 36, parent=BLOCK:intellij)
+DEPENDENCY_DECL:classpath (line 8, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 9, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 44, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 45, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:group (line 30, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> METHOD_CALL:group (line 31, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+METHOD_CALL:version (line 31, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> METHOD_CALL:version (line 32, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+PLUGIN_DECL:apply (line 25, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> PLUGIN_DECL:apply (line 26, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+PLUGIN_DECL:apply (line 26, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> PLUGIN_DECL:apply (line 27, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+PLUGIN_DECL:apply (line 27, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> PLUGIN_DECL:apply (line 28, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+PLUGIN_DECL:apply (line 28, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> PLUGIN_DECL:apply (line 29, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+PLUGIN_DECL:version (line 13, parent=PLUGINS_BLOCK:plugins) -> PLUGIN_DECL:version (line 14, parent=PLUGINS_BLOCK:plugins)
+PLUGIN_DECL:version (line 14, parent=PLUGINS_BLOCK:plugins) -> PLUGIN_DECL:version (line 15, parent=PLUGINS_BLOCK:plugins)
+REPOSITORIES_DECL:jcenter (line 18, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 19, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 4, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 5, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:url (line 3, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 4, parent=REPOSITORIES_DECL:maven)
+
+=== LEAF ROUND 1 MATCHES ===
+ASSIGNMENT:main.kotlin.srcDirs = src/main/java (line 22, parent=BLOCK:sourceSets) -> ASSIGNMENT:main.kotlin.srcDirs = src/main/java (line 23, parent=BLOCK:sourceSets)
+ASSIGNMENT:pluginName = stream-debugger (line 37, parent=BLOCK:intellij) -> ASSIGNMENT:pluginName = stream-debugger (line 38, parent=BLOCK:intellij)
+ASSIGNMENT:sandboxDirectory = project.rootDir.canonicalPath + /.sandbox (line 40, parent=BLOCK:intellij) -> ASSIGNMENT:sandboxDirectory = project.rootDir.canonicalPath + /.sandbox (line 41, parent=BLOCK:intellij)
+ASSIGNMENT:type = IC (line 34, parent=BLOCK:intellij) -> ASSIGNMENT:type = IC (line 35, parent=BLOCK:intellij)
+ASSIGNMENT:updateSinceUntilBuild = false (line 38, parent=BLOCK:intellij) -> ASSIGNMENT:updateSinceUntilBuild = false (line 39, parent=BLOCK:intellij)
+ASSIGNMENT:version = LATEST-EAP-SNAPSHOT (line 35, parent=BLOCK:intellij) -> ASSIGNMENT:version = LATEST-EAP-SNAPSHOT (line 36, parent=BLOCK:intellij)
+DEPENDENCY_DECL:compile (line 44, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 45, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:group (line 30, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> METHOD_CALL:group (line 31, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+METHOD_CALL:version (line 31, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> METHOD_CALL:version (line 32, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+PLUGIN_DECL:apply (line 25, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> PLUGIN_DECL:apply (line 26, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+PLUGIN_DECL:apply (line 26, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> PLUGIN_DECL:apply (line 27, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+PLUGIN_DECL:apply (line 27, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> PLUGIN_DECL:apply (line 28, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+PLUGIN_DECL:apply (line 28, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> PLUGIN_DECL:apply (line 29, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+PLUGIN_DECL:version (line 13, parent=PLUGINS_BLOCK:plugins) -> PLUGIN_DECL:version (line 14, parent=PLUGINS_BLOCK:plugins)
+PLUGIN_DECL:version (line 14, parent=PLUGINS_BLOCK:plugins) -> PLUGIN_DECL:version (line 15, parent=PLUGINS_BLOCK:plugins)
+REPOSITORIES_DECL:jcenter (line 18, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 19, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 4, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 5, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:url (line 3, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 4, parent=REPOSITORIES_DECL:maven)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+DEPENDENCY_DECL:classpath (line 8, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 9, parent=DEPENDENCIES_BLOCK:dependencies)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:intellij (line 33, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> BLOCK:intellij (line 34, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+BLOCK:sourceSets (line 21, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> BLOCK:sourceSets (line 22, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 43, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 44, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 7, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 8, parent=BUILDSCRIPT:buildscript)
+PLUGINS_BLOCK:plugins (line 12, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> PLUGINS_BLOCK:plugins (line 13, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+REPOSITORIES_BLOCK:repositories (line 17, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> REPOSITORIES_BLOCK:repositories (line 18, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+REPOSITORIES_BLOCK:repositories (line 2, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 3, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_DECL:maven (line 3, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 4, parent=REPOSITORIES_BLOCK:repositories)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:intellij (line 33, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> BLOCK:intellij (line 34, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+BLOCK:sourceSets (line 21, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> BLOCK:sourceSets (line 22, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 43, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 44, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+PLUGINS_BLOCK:plugins (line 12, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> PLUGINS_BLOCK:plugins (line 13, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+REPOSITORIES_BLOCK:repositories (line 17, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> REPOSITORIES_BLOCK:repositories (line 18, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+REPOSITORIES_BLOCK:repositories (line 2, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 3, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_DECL:maven (line 3, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 4, parent=REPOSITORIES_BLOCK:repositories)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle) -> BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:plugins/stream-debugger/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 7, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 8, parent=BUILDSCRIPT:buildscript)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+EXTRACT_VARIABLE: Extract variable 'plugins/stream-debugger/build.gradle:ext.kotlin_version (2)'
+
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 19; 19, 0, 0
+Matched composites: 9; 9, 0, 0
+Deleted leaves: 0; 0, 0, 0
+Deleted composites: 0; 0, 0, 0
+Added leaves: 1; 1, 0, 0
+Added composites: 0; 0, 0, 0
+Total expected events: 29
+Total predicted events: 29
+
+TP=29 FP=0 FN=0
+TP=29, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT90 MISSED ===
+FP: (none)
+FN: (none)

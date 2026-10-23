@@ -1,0 +1,239 @@
+
+=== COMMIT ===
+http://github.com/aim42/htmlSanityCheckConsumer/commit/95bd6df624b07b79477a96dd4a1b4a02ea2f181f
+
+=== CHANGED GRADLE FILES ===
+build.gradle -> build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 1)
+      REPOSITORIES_BLOCK : repositories (line 2)
+        REPOSITORIES_DECL : maven (line 3)
+          REPOSITORIES_DECL : url(uri("../repo")) (line 4)
+        REPOSITORIES_DECL : jcenter (line 6)
+        REPOSITORIES_DECL : maven (line 7)
+          REPOSITORIES_DECL : name("Bintray Asciidoctor repo") (line 8)
+          REPOSITORIES_DECL : url("http://dl.bintray.com/content/aalmiray/asciidoctor") (line 9)
+        REPOSITORIES_DECL : mavenCentral (line 11)
+      DEPENDENCIES_BLOCK : dependencies (line 14)
+        DEPENDENCY_DECL : configuration='classpath', group='org.aim42', name='htmlSanityCheck', version='0.2-SNAPSHOT' (line 15)
+        DEPENDENCY_DECL : configuration='classpath', group='org.asciidoctor', name='asciidoctor-gradle-plugin', version='1.5.0' (line 19)
+    PLUGIN_DECL : apply plugin: org.asciidoctor.gradle.asciidoctor (line 28)
+    BLOCK : asciidoctor (line 31)
+      ASSIGNMENT : name: outputDir, operator: =, value: File("$buildDir/docs") (line 32)
+      ASSIGNMENT : name: baseDir, operator: =, value: project.file("src/asciidoc") (line 33)
+      ASSIGNMENT : name: sourceDocumentNames, operator: =, value: files(File("./src/asciidoc/tryme.adoc")) (line 34)
+    TASK_DECLARATION : taskName=copyImages, type=Copy, style=task (line 40)
+      METHOD_CALL : from("src/images") (line 44)
+      METHOD_CALL : into("./build/docs/images") (line 45)
+    TASK_RELATION : relation=mustRunAfter, owner=copyImages, targets=asciidoctor (line 48)
+    PLUGIN_DECL : apply plugin: htmlSanityCheck (line 51)
+    BLOCK : htmlSanityCheck (line 53)
+      TASK_RELATION : relation=dependsOn, targets=asciidoctor, copyImages (line 56)
+      ASSIGNMENT : name: sourceDir, operator: =, value: project.file("$outputDir") (line 60)
+      ASSIGNMENT : name: imageDir, operator: =, value: File("$outputDir/images") (line 63)
+      ASSIGNMENT : name: outputDir, operator: =, value: File("$buildDir/docs") (line 66)
+      ASSIGNMENT : name: sourceDocumentName, operator: =, value: project.file("$sourceDir/tryme.html") (line 67)
+      ASSIGNMENT : name: checkExternalLinks, operator: =, value: false (line 69)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 1)
+      REPOSITORIES_BLOCK : repositories (line 2)
+        REPOSITORIES_DECL : maven (line 3)
+          REPOSITORIES_DECL : url(uri("../repo")) (line 4)
+        REPOSITORIES_DECL : jcenter (line 6)
+        REPOSITORIES_DECL : maven (line 7)
+          REPOSITORIES_DECL : name("Bintray Asciidoctor repo") (line 8)
+          REPOSITORIES_DECL : url("http://dl.bintray.com/content/aalmiray/asciidoctor") (line 9)
+        REPOSITORIES_DECL : mavenCentral (line 11)
+      DEPENDENCIES_BLOCK : dependencies (line 14)
+        DEPENDENCY_DECL : configuration='classpath', group='org.aim42', name='htmlSanityCheck', version='0.2-SNAPSHOT' (line 15)
+        DEPENDENCY_DECL : configuration='classpath', group='org.asciidoctor', name='asciidoctor-gradle-plugin', version='1.5.0' (line 19)
+    DECLARATION : name: asciidocSrcPath, value: "$projectDir/src/asciidoc" (line 29)
+    DECLARATION : name: srcImagesPath, value: "$asciidocSrcPath/images" (line 32)
+    DECLARATION : name: htmlOutputPath, value: "$buildDir/docs" (line 35)
+    DECLARATION : name: targetImagesPath, value: htmlOutputPath + "/images" (line 38)
+    DECLARATION : name: checkingResultsPath, value: "$buildDir/report/" (line 41)
+    DECLARATION : name: inputFileName, value: "tryme" (line 45)
+    DECLARATION : name: inputFilePath, value: asciidocSrcPath + "/" + inputFileName + ".adoc" (line 47)
+    PLUGIN_DECL : apply plugin: org.asciidoctor.gradle.asciidoctor (line 53)
+    BLOCK : asciidoctor (line 55)
+      ASSIGNMENT : name: outputDir, operator: =, value: File(htmlOutputPath) (line 56)
+      ASSIGNMENT : name: sourceDocumentNames, operator: =, value: files(File(inputFilePath)) (line 58)
+      ASSIGNMENT : name: options, operator: =, value: [attributes: [imagesdir: "images"]] (line 59)
+        ASSIGNMENT : name: attributes, value: [imagesdir: "images"] (line 60)
+          ASSIGNMENT : name: imagesdir, value: "images" (line 61)
+    TASK_DECLARATION : taskName=copyImages, type=Copy, style=task (line 69)
+      METHOD_CALL : from(srcImagesPath) (line 73)
+      METHOD_CALL : into(targetImagesPath) (line 74)
+      METHOD_CALL : include("**/*.jpg", "**/*.png", "**/*.svg") (line 75)
+    TASK_RELATION : relation=mustRunAfter, owner=copyImages, targets=asciidoctor (line 79)
+    PLUGIN_DECL : apply plugin: htmlSanityCheck (line 82)
+    BLOCK : htmlSanityCheck (line 84)
+      TASK_RELATION : relation=dependsOn, targets=asciidoctor, copyImages (line 87)
+      ASSIGNMENT : name: sourceDir, operator: =, value: project.file(htmlOutputPath) (line 91)
+      ASSIGNMENT : name: imageDir, operator: =, value: File(targetImagesPath) (line 94)
+      ASSIGNMENT : name: outputDir, operator: =, value: File(checkingResultsPath) (line 97)
+      ASSIGNMENT : name: sourceDocumentName, operator: =, value: project.file(htmlOutputPath + "/" + inputFileName + ".html") (line 98)
+      ASSIGNMENT : name: checkExternalLinks, operator: =, value: false (line 100)
+    TASK_DECLARATION : taskName=info, style=task (line 105)
+      METHOD_CALL : println("project.name         : " + project."name") (line 109)
+      METHOD_CALL : println("projectDir           : " + projectDir) (line 110)
+      METHOD_CALL : println("buildDir             : " + buildDir) (line 111)
+      METHOD_CALL : println("=" * 100) (line 112)
+      METHOD_CALL : println("asciidoc src files   : " + asciidocSrcPath) (line 113)
+      METHOD_CALL : println("source images        : " + srcImagesPath) (line 114)
+      METHOD_CALL : println("asciidoc html output : " + htmlOutputPath) (line 115)
+      METHOD_CALL : println("target images path   : " + targetImagesPath) (line 116)
+      METHOD_CALL : println("checkingResultsPath  : " + checkingResultsPath) (line 117)
+      METHOD_CALL : println("project.name         : " + project."name") (line 109)
+      METHOD_CALL : println("projectDir           : " + projectDir) (line 110)
+      METHOD_CALL : println("buildDir             : " + buildDir) (line 111)
+      METHOD_CALL : println("=" * 100) (line 112)
+      METHOD_CALL : println("asciidoc src files   : " + asciidocSrcPath) (line 113)
+      METHOD_CALL : println("source images        : " + srcImagesPath) (line 114)
+      METHOD_CALL : println("asciidoc html output : " + htmlOutputPath) (line 115)
+      METHOD_CALL : println("target images path   : " + targetImagesPath) (line 116)
+      METHOD_CALL : println("checkingResultsPath  : " + checkingResultsPath) (line 117)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+ASSIGNMENT:baseDir = project.file(src/asciidoc) (line 33, parent=BLOCK:asciidoctor)
+
+=== ADDED COMPOSITE NODES ===
+ASSIGNMENT:attributes = [imagesdir: images] (line 60, parent=ASSIGNMENT:options)
+ASSIGNMENT:options = [attributes: [imagesdir: images]] (line 59, parent=BLOCK:asciidoctor)
+TASK_DECLARATION:info (line 105, parent=BUILD_GRADLE:build.gradle)
+
+=== ADDED LEAF NODES ===
+ASSIGNMENT:imagesdir = images (line 61, parent=ASSIGNMENT:attributes)
+DECLARATION:asciidocSrcPath = $projectDir/src/asciidoc (line 29, parent=BUILD_GRADLE:build.gradle)
+DECLARATION:checkingResultsPath = $buildDir/report/ (line 41, parent=BUILD_GRADLE:build.gradle)
+DECLARATION:htmlOutputPath = $buildDir/docs (line 35, parent=BUILD_GRADLE:build.gradle)
+DECLARATION:inputFileName = tryme (line 45, parent=BUILD_GRADLE:build.gradle)
+DECLARATION:inputFilePath = asciidocSrcPath + / + inputFileName + .adoc (line 47, parent=BUILD_GRADLE:build.gradle)
+DECLARATION:srcImagesPath = $asciidocSrcPath/images (line 32, parent=BUILD_GRADLE:build.gradle)
+DECLARATION:targetImagesPath = htmlOutputPath + /images (line 38, parent=BUILD_GRADLE:build.gradle)
+METHOD_CALL:include (line 75, parent=TASK_DECLARATION:copyImages)
+METHOD_CALL:println (line 109, parent=TASK_DECLARATION:info)
+METHOD_CALL:println (line 109, parent=TASK_DECLARATION:info)
+METHOD_CALL:println (line 110, parent=TASK_DECLARATION:info)
+METHOD_CALL:println (line 110, parent=TASK_DECLARATION:info)
+METHOD_CALL:println (line 111, parent=TASK_DECLARATION:info)
+METHOD_CALL:println (line 111, parent=TASK_DECLARATION:info)
+METHOD_CALL:println (line 112, parent=TASK_DECLARATION:info)
+METHOD_CALL:println (line 112, parent=TASK_DECLARATION:info)
+METHOD_CALL:println (line 113, parent=TASK_DECLARATION:info)
+METHOD_CALL:println (line 113, parent=TASK_DECLARATION:info)
+METHOD_CALL:println (line 114, parent=TASK_DECLARATION:info)
+METHOD_CALL:println (line 114, parent=TASK_DECLARATION:info)
+METHOD_CALL:println (line 115, parent=TASK_DECLARATION:info)
+METHOD_CALL:println (line 115, parent=TASK_DECLARATION:info)
+METHOD_CALL:println (line 116, parent=TASK_DECLARATION:info)
+METHOD_CALL:println (line 116, parent=TASK_DECLARATION:info)
+METHOD_CALL:println (line 117, parent=TASK_DECLARATION:info)
+METHOD_CALL:println (line 117, parent=TASK_DECLARATION:info)
+
+=== ALL LEAF MATCHES ===
+ASSIGNMENT:checkExternalLinks = false (line 69, parent=BLOCK:htmlSanityCheck) -> ASSIGNMENT:checkExternalLinks = false (line 100, parent=BLOCK:htmlSanityCheck)
+ASSIGNMENT:imageDir = new File($outputDir/images) (line 63, parent=BLOCK:htmlSanityCheck) -> ASSIGNMENT:imageDir = new File(targetImagesPath) (line 94, parent=BLOCK:htmlSanityCheck)
+ASSIGNMENT:outputDir = new File($buildDir/docs) (line 32, parent=BLOCK:asciidoctor) -> ASSIGNMENT:outputDir = new File(htmlOutputPath) (line 56, parent=BLOCK:asciidoctor)
+ASSIGNMENT:outputDir = new File($buildDir/docs) (line 66, parent=BLOCK:htmlSanityCheck) -> ASSIGNMENT:outputDir = new File(checkingResultsPath) (line 97, parent=BLOCK:htmlSanityCheck)
+ASSIGNMENT:sourceDir = project.file($outputDir) (line 60, parent=BLOCK:htmlSanityCheck) -> ASSIGNMENT:sourceDir = project.file(htmlOutputPath) (line 91, parent=BLOCK:htmlSanityCheck)
+ASSIGNMENT:sourceDocumentName = project.file($sourceDir/tryme.html) (line 67, parent=BLOCK:htmlSanityCheck) -> ASSIGNMENT:sourceDocumentName = project.file(htmlOutputPath + / + inputFileName + .html) (line 98, parent=BLOCK:htmlSanityCheck)
+ASSIGNMENT:sourceDocumentNames = files(new File(./src/asciidoc/tryme.adoc)) (line 34, parent=BLOCK:asciidoctor) -> ASSIGNMENT:sourceDocumentNames = files(new File(inputFilePath)) (line 58, parent=BLOCK:asciidoctor)
+DEPENDENCY_DECL:classpath (line 15, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 15, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:classpath (line 19, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 19, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:from (line 44, parent=TASK_DECLARATION:copyImages) -> METHOD_CALL:from (line 73, parent=TASK_DECLARATION:copyImages)
+METHOD_CALL:into (line 45, parent=TASK_DECLARATION:copyImages) -> METHOD_CALL:into (line 74, parent=TASK_DECLARATION:copyImages)
+PLUGIN_DECL:apply (line 28, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 53, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 51, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 82, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_DECL:jcenter (line 6, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 6, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 11, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 11, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:name (line 8, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:name (line 8, parent=REPOSITORIES_DECL:maven)
+REPOSITORIES_DECL:url (line 4, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 4, parent=REPOSITORIES_DECL:maven)
+REPOSITORIES_DECL:url (line 9, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 9, parent=REPOSITORIES_DECL:maven)
+TASK_RELATION:dependsOn (line 56, parent=BLOCK:htmlSanityCheck) -> TASK_RELATION:dependsOn (line 87, parent=BLOCK:htmlSanityCheck)
+TASK_RELATION:mustRunAfter (line 48, parent=BUILD_GRADLE:build.gradle) -> TASK_RELATION:mustRunAfter (line 79, parent=BUILD_GRADLE:build.gradle)
+
+=== LEAF ROUND 1 MATCHES ===
+ASSIGNMENT:checkExternalLinks = false (line 69, parent=BLOCK:htmlSanityCheck) -> ASSIGNMENT:checkExternalLinks = false (line 100, parent=BLOCK:htmlSanityCheck)
+DEPENDENCY_DECL:classpath (line 15, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 15, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:classpath (line 19, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 19, parent=DEPENDENCIES_BLOCK:dependencies)
+PLUGIN_DECL:apply (line 28, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 53, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 51, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 82, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_DECL:jcenter (line 6, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 6, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 11, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 11, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:name (line 8, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:name (line 8, parent=REPOSITORIES_DECL:maven)
+REPOSITORIES_DECL:url (line 4, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 4, parent=REPOSITORIES_DECL:maven)
+REPOSITORIES_DECL:url (line 9, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 9, parent=REPOSITORIES_DECL:maven)
+TASK_RELATION:dependsOn (line 56, parent=BLOCK:htmlSanityCheck) -> TASK_RELATION:dependsOn (line 87, parent=BLOCK:htmlSanityCheck)
+TASK_RELATION:mustRunAfter (line 48, parent=BUILD_GRADLE:build.gradle) -> TASK_RELATION:mustRunAfter (line 79, parent=BUILD_GRADLE:build.gradle)
+
+=== LEAF ROUND 2 MATCHES ===
+ASSIGNMENT:imageDir = new File($outputDir/images) (line 63, parent=BLOCK:htmlSanityCheck) -> ASSIGNMENT:imageDir = new File(targetImagesPath) (line 94, parent=BLOCK:htmlSanityCheck)
+ASSIGNMENT:outputDir = new File($buildDir/docs) (line 32, parent=BLOCK:asciidoctor) -> ASSIGNMENT:outputDir = new File(htmlOutputPath) (line 56, parent=BLOCK:asciidoctor)
+ASSIGNMENT:outputDir = new File($buildDir/docs) (line 66, parent=BLOCK:htmlSanityCheck) -> ASSIGNMENT:outputDir = new File(checkingResultsPath) (line 97, parent=BLOCK:htmlSanityCheck)
+ASSIGNMENT:sourceDir = project.file($outputDir) (line 60, parent=BLOCK:htmlSanityCheck) -> ASSIGNMENT:sourceDir = project.file(htmlOutputPath) (line 91, parent=BLOCK:htmlSanityCheck)
+ASSIGNMENT:sourceDocumentName = project.file($sourceDir/tryme.html) (line 67, parent=BLOCK:htmlSanityCheck) -> ASSIGNMENT:sourceDocumentName = project.file(htmlOutputPath + / + inputFileName + .html) (line 98, parent=BLOCK:htmlSanityCheck)
+ASSIGNMENT:sourceDocumentNames = files(new File(./src/asciidoc/tryme.adoc)) (line 34, parent=BLOCK:asciidoctor) -> ASSIGNMENT:sourceDocumentNames = files(new File(inputFilePath)) (line 58, parent=BLOCK:asciidoctor)
+
+=== LEAF ROUND 3 MATCHES ===
+METHOD_CALL:from (line 44, parent=TASK_DECLARATION:copyImages) -> METHOD_CALL:from (line 73, parent=TASK_DECLARATION:copyImages)
+METHOD_CALL:into (line 45, parent=TASK_DECLARATION:copyImages) -> METHOD_CALL:into (line 74, parent=TASK_DECLARATION:copyImages)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:asciidoctor (line 31, parent=BUILD_GRADLE:build.gradle) -> BLOCK:asciidoctor (line 55, parent=BUILD_GRADLE:build.gradle)
+BLOCK:htmlSanityCheck (line 53, parent=BUILD_GRADLE:build.gradle) -> BLOCK:htmlSanityCheck (line 84, parent=BUILD_GRADLE:build.gradle)
+BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 14, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 14, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 2, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 2, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_DECL:maven (line 3, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 3, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:maven (line 7, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 7, parent=REPOSITORIES_BLOCK:repositories)
+TASK_DECLARATION:copyImages (line 40, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:copyImages (line 69, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 14, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 14, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 2, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 2, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_DECL:maven (line 3, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 3, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:maven (line 7, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 7, parent=REPOSITORIES_BLOCK:repositories)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+BLOCK:asciidoctor (line 31, parent=BUILD_GRADLE:build.gradle) -> BLOCK:asciidoctor (line 55, parent=BUILD_GRADLE:build.gradle)
+BLOCK:htmlSanityCheck (line 53, parent=BUILD_GRADLE:build.gradle) -> BLOCK:htmlSanityCheck (line 84, parent=BUILD_GRADLE:build.gradle)
+TASK_DECLARATION:copyImages (line 40, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:copyImages (line 69, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+EXTRACT_VARIABLE: Extract variable 'build.gradle:targetImagesPath (38)'
+EXTRACT_VARIABLE: Extract variable 'build.gradle:htmlOutputPath (35)'
+EXTRACT_VARIABLE: Extract variable 'build.gradle:inputFileName (45)'
+EXTRACT_VARIABLE: Extract variable 'build.gradle:inputFilePath (47)'
+EXTRACT_VARIABLE: Extract variable 'build.gradle:srcImagesPath (32)'
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:baseDir (33)'
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 20; 20, 0, 0
+Matched composites: 8; 8, 0, 0
+Deleted leaves: 1; 1, 0, 0
+Deleted composites: 0; 0, 0, 0
+Added leaves: 27; 27, 0, 0
+Added composites: 3; 3, 0, 0
+Total expected events: 59
+Total predicted events: 59
+
+TP=59 FP=0 FN=0
+TP=59, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT60 MISSED ===
+(none)

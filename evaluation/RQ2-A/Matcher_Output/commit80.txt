@@ -1,0 +1,328 @@
+
+=== COMMIT ===
+http://github.com/SofiaRosetti/S3-16-d-rescue/commit/8c55483293187e7582ffb1ed5abcdd43b91fb370
+
+=== CHANGED GRADLE FILES ===
+gradle.properties -> gradle.properties
+mobileuser/build.gradle -> mobileuser/build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  PROPERTIES_FILE : gradle.properties (line 0)
+    ASSIGNMENT : name: group, value: "it.unibo.S3.drescue" (line 1)
+    ASSIGNMENT : name: artifactId, value: "drescue" (line 2)
+    ASSIGNMENT : name: version, value: "0.1" (line 3)
+    ASSIGNMENT : name: longName, value: "DRescue" (line 4)
+    ASSIGNMENT : name: projectDescription, value: "DRescue: a distributed system for manage natural distasters" (line 5)
+    ASSIGNMENT : name: googleMapsServicesVersion, value: "0.2.2" (line 6)
+    ASSIGNMENT : name: gsonVersion, value: "2.8.0" (line 7)
+    ASSIGNMENT : name: junitVersion, value: "4.12" (line 8)
+    ASSIGNMENT : name: mySqlVersion, value: "5.1.42" (line 9)
+    ASSIGNMENT : name: rabbitMqVersion, value: "4.0.2" (line 10)
+    ASSIGNMENT : name: scalaFxVersion, value: "8.0.102-R11" (line 11)
+    ASSIGNMENT : name: slf4jVersion, value: "1.7.21" (line 12)
+  BUILD_GRADLE : mobileuser/build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 1)
+      REPOSITORIES_BLOCK : repositories (line 3)
+        REPOSITORIES_DECL : jcenter (line 4)
+      DEPENDENCIES_BLOCK : dependencies (line 7)
+        DEPENDENCY_DECL : configuration='classpath', group='com.android.tools.build', name='gradle', version='2.3.3' (line 8)
+    PLUGIN_DECL : apply plugin: com.android.application (line 13)
+    DEPENDENCIES_BLOCK : dependencies (line 15)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support.constraint', name='constraint-layout', version='1.0.2' (line 16)
+    BLOCK : android (line 18)
+      METHOD_CALL : compileSdkVersion(26) (line 19)
+      METHOD_CALL : buildToolsVersion("26.0.1") (line 20)
+      BLOCK : defaultConfig (line 22)
+        METHOD_CALL : applicationId("it.unibo.mobileuser") (line 23)
+        METHOD_CALL : minSdkVersion(19) (line 24)
+        METHOD_CALL : targetSdkVersion(26) (line 25)
+        METHOD_CALL : versionCode(1) (line 26)
+        METHOD_CALL : versionName("1.0") (line 27)
+        BLOCK : jackOptions (line 29)
+          METHOD_CALL : enabled(true) (line 30)
+        METHOD_CALL : testInstrumentationRunner("android.support.test.runner.AndroidJUnitRunner") (line 33)
+      BLOCK : buildTypes (line 35)
+        BLOCK : release (line 36)
+          METHOD_CALL : minifyEnabled(false) (line 37)
+          METHOD_CALL : proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro") (line 38)
+      BLOCK : lintOptions (line 42)
+        METHOD_CALL : abortOnError(false) (line 43)
+      BLOCK : compileOptions (line 46)
+        METHOD_CALL : sourceCompatibility(JavaVersion."VERSION_1_8") (line 47)
+        METHOD_CALL : targetCompatibility(JavaVersion."VERSION_1_8") (line 48)
+      DEPENDENCIES_BLOCK : dependencies (line 51)
+        DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 52)
+        DEPENDENCY_DECL : configuration='androidTestCompile', group='com.android.support.test.espresso', name='espresso-core', version='2.2.2' (line 53)
+          METHOD_CALL : exclude([group: "com.android.support", module: "support-annotations"]) (line 54)
+        DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='appcompat-v7', version='26.+' (line 56)
+        DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='cardview-v7', version='26.+' (line 57)
+        DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='recyclerview-v7', version='26.+' (line 58)
+        DEPENDENCY_DECL : configuration='compile', group='com.android.support.constraint', name='constraint-layout', version='1.0.2' (line 59)
+        DEPENDENCY_DECL : configuration='compile', group='junit', name='junit', version='4.12' (line 60)
+        DEPENDENCY_DECL : configuration='compile', group='com.rengwuxian.materialedittext', name='library', version='2.1.4' (line 62)
+        DEPENDENCY_DECL : configuration='compile', group='com.google.code.gson', name='gson', version='2.8.0' (line 63)
+        DEPENDENCY_DECL : configuration='compile', projectPath=':utils-java' (line 65)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  PROPERTIES_FILE : gradle.properties (line 0)
+    ASSIGNMENT : name: group, value: "it.unibo.S3.drescue" (line 1)
+    ASSIGNMENT : name: artifactId, value: "drescue" (line 2)
+    ASSIGNMENT : name: version, value: "0.1" (line 3)
+    ASSIGNMENT : name: longName, value: "DRescue" (line 4)
+    ASSIGNMENT : name: projectDescription, value: "DRescue: a distributed system for manage natural distasters" (line 5)
+    ASSIGNMENT : name: androidArtifactId, value: "it.unibo.mobileuser" (line 6)
+    ASSIGNMENT : name: androidBuildToolsVersion, value: "26.0.1" (line 7)
+    ASSIGNMENT : name: androidCompileSdkVersion, value: "26" (line 8)
+    ASSIGNMENT : name: androidMinSdkVersion, value: "19" (line 9)
+    ASSIGNMENT : name: androidTargetSdkVerision, value: "26" (line 10)
+    ASSIGNMENT : name: androidVersionCode, value: "1" (line 11)
+    ASSIGNMENT : name: androidVersionName, value: "1.0" (line 12)
+    ASSIGNMENT : name: appCompatV7Version, value: "26.1.0" (line 13)
+    ASSIGNMENT : name: cardviewV7Version, value: "26.1.0" (line 14)
+    ASSIGNMENT : name: constraintLayoutVersion, value: "1.0.2" (line 15)
+    ASSIGNMENT : name: espressoVersion, value: "2.2.2" (line 16)
+    ASSIGNMENT : name: googleMapsServicesVersion, value: "0.2.2" (line 17)
+    ASSIGNMENT : name: gradleVersion, value: "2.3.3" (line 18)
+    ASSIGNMENT : name: gsonVersion, value: "2.8.0" (line 19)
+    ASSIGNMENT : name: junitVersion, value: "4.12" (line 20)
+    ASSIGNMENT : name: materialedittextVersion, value: "2.1.4" (line 21)
+    ASSIGNMENT : name: mySqlVersion, value: "5.1.42" (line 22)
+    ASSIGNMENT : name: rabbitMqVersion, value: "4.0.2" (line 23)
+    ASSIGNMENT : name: recyclerviewV7Version, value: "26.1.0" (line 24)
+    ASSIGNMENT : name: scalaFxVersion, value: "8.0.102-R11" (line 25)
+    ASSIGNMENT : name: slf4jVersion, value: "1.7.21" (line 26)
+  BUILD_GRADLE : mobileuser/build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 1)
+      REPOSITORIES_BLOCK : repositories (line 3)
+        REPOSITORIES_DECL : jcenter (line 4)
+      DEPENDENCIES_BLOCK : dependencies (line 7)
+        DEPENDENCY_DECL : configuration='classpath', group='com.android.tools.build', name='gradle', version='$gradleVersion' (line 8)
+    PLUGIN_DECL : apply plugin: com.android.application (line 13)
+    DEPENDENCIES_BLOCK : dependencies (line 15)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support.constraint', name='constraint-layout', version='$constraintLayoutVersion' (line 16)
+    BLOCK : android (line 19)
+      METHOD_CALL : compileSdkVersion(androidCompileSdkVersion.toInteger()) (line 20)
+      METHOD_CALL : buildToolsVersion("$androidBuildToolsVersion") (line 21)
+      BLOCK : defaultConfig (line 23)
+        METHOD_CALL : applicationId("$androidArtifactId") (line 24)
+        METHOD_CALL : minSdkVersion(androidMinSdkVersion.toInteger()) (line 25)
+        METHOD_CALL : targetSdkVersion(androidTargetSdkVerision.toInteger()) (line 26)
+        METHOD_CALL : versionCode(androidVersionCode.toInteger()) (line 27)
+        METHOD_CALL : versionName("$androidVersionName") (line 28)
+        BLOCK : jackOptions (line 30)
+          METHOD_CALL : enabled(true) (line 31)
+        METHOD_CALL : testInstrumentationRunner("android.support.test.runner.AndroidJUnitRunner") (line 34)
+      BLOCK : buildTypes (line 36)
+        BLOCK : release (line 37)
+          METHOD_CALL : minifyEnabled(false) (line 38)
+          METHOD_CALL : proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro") (line 39)
+      BLOCK : lintOptions (line 43)
+        METHOD_CALL : abortOnError(false) (line 44)
+      BLOCK : compileOptions (line 47)
+        METHOD_CALL : sourceCompatibility(JavaVersion."VERSION_1_8") (line 48)
+        METHOD_CALL : targetCompatibility(JavaVersion."VERSION_1_8") (line 49)
+      REPOSITORIES_BLOCK : repositories (line 52)
+        REPOSITORIES_DECL : maven (line 53)
+          REPOSITORIES_DECL : url("https://maven.google.com") (line 54)
+      DEPENDENCIES_BLOCK : dependencies (line 58)
+        DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 59)
+        DEPENDENCY_DECL : configuration='androidTestCompile', group='com.android.support.test.espresso', name='espresso-core', version='$espressoVersion' (line 60)
+          METHOD_CALL : exclude([group: "com.android.support", module: "support-annotations"]) (line 61)
+        DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='appcompat-v7', version='$appCompatV7Version' (line 63)
+        DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='cardview-v7', version='$cardviewV7Version' (line 64)
+        DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='recyclerview-v7', version='$recyclerviewV7Version' (line 65)
+        DEPENDENCY_DECL : configuration='compile', group='com.android.support.constraint', name='constraint-layout', version='$constraintLayoutVersion' (line 66)
+        DEPENDENCY_DECL : configuration='compile', group='junit', name='junit', version='$junitVersion' (line 67)
+        DEPENDENCY_DECL : configuration='compile', group='com.rengwuxian.materialedittext', name='library', version='$materialedittextVersion' (line 69)
+        DEPENDENCY_DECL : configuration='compile', group='com.google.code.gson', name='gson', version='$gsonVersion' (line 70)
+        DEPENDENCY_DECL : configuration='compile', projectPath=':utils-java' (line 72)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+(none)
+
+=== ADDED COMPOSITE NODES ===
+REPOSITORIES_BLOCK:repositories (line 52, parent=BLOCK:android)
+REPOSITORIES_DECL:maven (line 53, parent=REPOSITORIES_BLOCK:repositories)
+
+=== ADDED LEAF NODES ===
+ASSIGNMENT:androidArtifactId = it.unibo.mobileuser (line 6, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:androidBuildToolsVersion = 26.0.1 (line 7, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:androidCompileSdkVersion = 26 (line 8, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:androidMinSdkVersion = 19 (line 9, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:androidTargetSdkVerision = 26 (line 10, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:androidVersionCode = 1 (line 11, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:androidVersionName = 1.0 (line 12, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:appCompatV7Version = 26.1.0 (line 13, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:cardviewV7Version = 26.1.0 (line 14, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:constraintLayoutVersion = 1.0.2 (line 15, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:espressoVersion = 2.2.2 (line 16, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:gradleVersion = 2.3.3 (line 18, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:materialedittextVersion = 2.1.4 (line 21, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:recyclerviewV7Version = 26.1.0 (line 24, parent=PROPERTIES_FILE:gradle.properties)
+REPOSITORIES_DECL:url (line 54, parent=REPOSITORIES_DECL:maven)
+
+=== ALL LEAF MATCHES ===
+ASSIGNMENT:artifactId = drescue (line 2, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:artifactId = drescue (line 2, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:googleMapsServicesVersion = 0.2.2 (line 6, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:googleMapsServicesVersion = 0.2.2 (line 17, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:group = it.unibo.S3.drescue (line 1, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:group = it.unibo.S3.drescue (line 1, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:gsonVersion = 2.8.0 (line 7, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:gsonVersion = 2.8.0 (line 19, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:junitVersion = 4.12 (line 8, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:junitVersion = 4.12 (line 20, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:longName = DRescue (line 4, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:longName = DRescue (line 4, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:mySqlVersion = 5.1.42 (line 9, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:mySqlVersion = 5.1.42 (line 22, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:projectDescription = DRescue: a distributed system for manage natural distasters (line 5, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:projectDescription = DRescue: a distributed system for manage natural distasters (line 5, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:rabbitMqVersion = 4.0.2 (line 10, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:rabbitMqVersion = 4.0.2 (line 23, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:scalaFxVersion = 8.0.102-R11 (line 11, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:scalaFxVersion = 8.0.102-R11 (line 25, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:slf4jVersion = 1.7.21 (line 12, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:slf4jVersion = 1.7.21 (line 26, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:version = 0.1 (line 3, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:version = 0.1 (line 3, parent=PROPERTIES_FILE:gradle.properties)
+DEPENDENCY_DECL:classpath (line 8, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 8, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 16, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 16, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 52, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 59, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 56, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 63, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 57, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 64, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 58, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 65, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 59, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 66, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 60, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 67, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 62, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 69, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 63, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 70, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 65, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 72, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:abortOnError (line 43, parent=BLOCK:lintOptions) -> METHOD_CALL:abortOnError (line 44, parent=BLOCK:lintOptions)
+METHOD_CALL:applicationId (line 23, parent=BLOCK:defaultConfig) -> METHOD_CALL:applicationId (line 24, parent=BLOCK:defaultConfig)
+METHOD_CALL:buildToolsVersion (line 20, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 21, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 19, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 20, parent=BLOCK:android)
+METHOD_CALL:enabled (line 30, parent=BLOCK:jackOptions) -> METHOD_CALL:enabled (line 31, parent=BLOCK:jackOptions)
+METHOD_CALL:exclude (line 54, parent=DEPENDENCY_DECL:androidTestCompile) -> METHOD_CALL:exclude (line 61, parent=DEPENDENCY_DECL:androidTestCompile)
+METHOD_CALL:minSdkVersion (line 24, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 25, parent=BLOCK:defaultConfig)
+METHOD_CALL:minifyEnabled (line 37, parent=BLOCK:release) -> METHOD_CALL:minifyEnabled (line 38, parent=BLOCK:release)
+METHOD_CALL:proguardFiles (line 38, parent=BLOCK:release) -> METHOD_CALL:proguardFiles (line 39, parent=BLOCK:release)
+METHOD_CALL:sourceCompatibility (line 47, parent=BLOCK:compileOptions) -> METHOD_CALL:sourceCompatibility (line 48, parent=BLOCK:compileOptions)
+METHOD_CALL:targetCompatibility (line 48, parent=BLOCK:compileOptions) -> METHOD_CALL:targetCompatibility (line 49, parent=BLOCK:compileOptions)
+METHOD_CALL:targetSdkVersion (line 25, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 26, parent=BLOCK:defaultConfig)
+METHOD_CALL:testInstrumentationRunner (line 33, parent=BLOCK:defaultConfig) -> METHOD_CALL:testInstrumentationRunner (line 34, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 26, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 27, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 27, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 28, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 13, parent=BUILD_GRADLE:mobileuser/build.gradle) -> PLUGIN_DECL:apply (line 13, parent=BUILD_GRADLE:mobileuser/build.gradle)
+REPOSITORIES_DECL:jcenter (line 4, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 4, parent=REPOSITORIES_BLOCK:repositories)
+
+=== LEAF ROUND 1 MATCHES ===
+ASSIGNMENT:artifactId = drescue (line 2, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:artifactId = drescue (line 2, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:googleMapsServicesVersion = 0.2.2 (line 6, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:googleMapsServicesVersion = 0.2.2 (line 17, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:group = it.unibo.S3.drescue (line 1, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:group = it.unibo.S3.drescue (line 1, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:gsonVersion = 2.8.0 (line 7, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:gsonVersion = 2.8.0 (line 19, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:junitVersion = 4.12 (line 8, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:junitVersion = 4.12 (line 20, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:longName = DRescue (line 4, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:longName = DRescue (line 4, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:mySqlVersion = 5.1.42 (line 9, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:mySqlVersion = 5.1.42 (line 22, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:projectDescription = DRescue: a distributed system for manage natural distasters (line 5, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:projectDescription = DRescue: a distributed system for manage natural distasters (line 5, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:rabbitMqVersion = 4.0.2 (line 10, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:rabbitMqVersion = 4.0.2 (line 23, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:scalaFxVersion = 8.0.102-R11 (line 11, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:scalaFxVersion = 8.0.102-R11 (line 25, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:slf4jVersion = 1.7.21 (line 12, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:slf4jVersion = 1.7.21 (line 26, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:version = 0.1 (line 3, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:version = 0.1 (line 3, parent=PROPERTIES_FILE:gradle.properties)
+DEPENDENCY_DECL:compile (line 52, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 59, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 65, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 72, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:abortOnError (line 43, parent=BLOCK:lintOptions) -> METHOD_CALL:abortOnError (line 44, parent=BLOCK:lintOptions)
+METHOD_CALL:enabled (line 30, parent=BLOCK:jackOptions) -> METHOD_CALL:enabled (line 31, parent=BLOCK:jackOptions)
+METHOD_CALL:exclude (line 54, parent=DEPENDENCY_DECL:androidTestCompile) -> METHOD_CALL:exclude (line 61, parent=DEPENDENCY_DECL:androidTestCompile)
+METHOD_CALL:minifyEnabled (line 37, parent=BLOCK:release) -> METHOD_CALL:minifyEnabled (line 38, parent=BLOCK:release)
+METHOD_CALL:proguardFiles (line 38, parent=BLOCK:release) -> METHOD_CALL:proguardFiles (line 39, parent=BLOCK:release)
+METHOD_CALL:sourceCompatibility (line 47, parent=BLOCK:compileOptions) -> METHOD_CALL:sourceCompatibility (line 48, parent=BLOCK:compileOptions)
+METHOD_CALL:targetCompatibility (line 48, parent=BLOCK:compileOptions) -> METHOD_CALL:targetCompatibility (line 49, parent=BLOCK:compileOptions)
+METHOD_CALL:testInstrumentationRunner (line 33, parent=BLOCK:defaultConfig) -> METHOD_CALL:testInstrumentationRunner (line 34, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 13, parent=BUILD_GRADLE:mobileuser/build.gradle) -> PLUGIN_DECL:apply (line 13, parent=BUILD_GRADLE:mobileuser/build.gradle)
+REPOSITORIES_DECL:jcenter (line 4, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 4, parent=REPOSITORIES_BLOCK:repositories)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+DEPENDENCY_DECL:classpath (line 8, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 8, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 16, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 16, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 56, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 63, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 57, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 64, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 58, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 65, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 59, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 66, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 60, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 67, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 62, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 69, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 63, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 70, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:applicationId (line 23, parent=BLOCK:defaultConfig) -> METHOD_CALL:applicationId (line 24, parent=BLOCK:defaultConfig)
+METHOD_CALL:buildToolsVersion (line 20, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 21, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 19, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 20, parent=BLOCK:android)
+METHOD_CALL:minSdkVersion (line 24, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 25, parent=BLOCK:defaultConfig)
+METHOD_CALL:targetSdkVersion (line 25, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 26, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 26, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 27, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 27, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 28, parent=BLOCK:defaultConfig)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:android (line 18, parent=BUILD_GRADLE:mobileuser/build.gradle) -> BLOCK:android (line 19, parent=BUILD_GRADLE:mobileuser/build.gradle)
+BLOCK:buildTypes (line 35, parent=BLOCK:android) -> BLOCK:buildTypes (line 36, parent=BLOCK:android)
+BLOCK:compileOptions (line 46, parent=BLOCK:android) -> BLOCK:compileOptions (line 47, parent=BLOCK:android)
+BLOCK:defaultConfig (line 22, parent=BLOCK:android) -> BLOCK:defaultConfig (line 23, parent=BLOCK:android)
+BLOCK:jackOptions (line 29, parent=BLOCK:defaultConfig) -> BLOCK:jackOptions (line 30, parent=BLOCK:defaultConfig)
+BLOCK:lintOptions (line 42, parent=BLOCK:android) -> BLOCK:lintOptions (line 43, parent=BLOCK:android)
+BLOCK:release (line 36, parent=BLOCK:buildTypes) -> BLOCK:release (line 37, parent=BLOCK:buildTypes)
+BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:mobileuser/build.gradle) -> BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:mobileuser/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 15, parent=BUILD_GRADLE:mobileuser/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 15, parent=BUILD_GRADLE:mobileuser/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 51, parent=BLOCK:android) -> DEPENDENCIES_BLOCK:dependencies (line 58, parent=BLOCK:android)
+DEPENDENCIES_BLOCK:dependencies (line 7, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 7, parent=BUILDSCRIPT:buildscript)
+DEPENDENCY_DECL:androidTestCompile (line 53, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:androidTestCompile (line 60, parent=DEPENDENCIES_BLOCK:dependencies)
+REPOSITORIES_BLOCK:repositories (line 3, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 3, parent=BUILDSCRIPT:buildscript)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:buildTypes (line 35, parent=BLOCK:android) -> BLOCK:buildTypes (line 36, parent=BLOCK:android)
+BLOCK:compileOptions (line 46, parent=BLOCK:android) -> BLOCK:compileOptions (line 47, parent=BLOCK:android)
+BLOCK:jackOptions (line 29, parent=BLOCK:defaultConfig) -> BLOCK:jackOptions (line 30, parent=BLOCK:defaultConfig)
+BLOCK:lintOptions (line 42, parent=BLOCK:android) -> BLOCK:lintOptions (line 43, parent=BLOCK:android)
+BLOCK:release (line 36, parent=BLOCK:buildTypes) -> BLOCK:release (line 37, parent=BLOCK:buildTypes)
+REPOSITORIES_BLOCK:repositories (line 3, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 3, parent=BUILDSCRIPT:buildscript)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+BLOCK:android (line 18, parent=BUILD_GRADLE:mobileuser/build.gradle) -> BLOCK:android (line 19, parent=BUILD_GRADLE:mobileuser/build.gradle)
+BLOCK:defaultConfig (line 22, parent=BLOCK:android) -> BLOCK:defaultConfig (line 23, parent=BLOCK:android)
+BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:mobileuser/build.gradle) -> BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:mobileuser/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 15, parent=BUILD_GRADLE:mobileuser/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 15, parent=BUILD_GRADLE:mobileuser/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 51, parent=BLOCK:android) -> DEPENDENCIES_BLOCK:dependencies (line 58, parent=BLOCK:android)
+DEPENDENCIES_BLOCK:dependencies (line 7, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 7, parent=BUILDSCRIPT:buildscript)
+DEPENDENCY_DECL:androidTestCompile (line 53, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:androidTestCompile (line 60, parent=DEPENDENCIES_BLOCK:dependencies)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+EXTERNALIZE_PROPERTIES: Externalize property 'cardviewV7Version'
+EXTERNALIZE_PROPERTIES: Externalize property 'appCompatV7Version'
+EXTERNALIZE_PROPERTIES: Externalize property 'androidVersionName'
+EXTERNALIZE_PROPERTIES: Externalize property 'espressoVersion'
+EXTERNALIZE_PROPERTIES: Externalize property 'gradleVersion'
+EXTERNALIZE_PROPERTIES: Externalize property 'materialedittextVersion'
+EXTERNALIZE_PROPERTIES: Externalize property 'constraintLayoutVersion'
+EXTERNALIZE_PROPERTIES: Externalize property 'androidBuildToolsVersion'
+EXTERNALIZE_PROPERTIES: Externalize property 'androidArtifactId'
+EXTERNALIZE_PROPERTIES: Externalize property 'recyclerviewV7Version'
+EXTERNALIZE_PROPERTIES: Externalize property 'androidVersionCode'
+EXTERNALIZE_PROPERTIES: Externalize property 'gsonVersion'
+EXTERNALIZE_PROPERTIES: Externalize property 'androidTargetSdkVerision'
+EXTERNALIZE_PROPERTIES: Externalize property 'junitVersion'
+EXTERNALIZE_PROPERTIES: Externalize property 'androidCompileSdkVersion'
+EXTERNALIZE_PROPERTIES: Externalize property 'androidMinSdkVersion'
+
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 40; 40, 0, 0
+Matched composites: 13; 13, 0, 0
+Deleted leaves: 0; 0, 0, 0
+Deleted composites: 0; 0, 0, 0
+Added leaves: 15; 15, 0, 0
+Added composites: 2; 2, 0, 0
+Total expected events: 70
+Total predicted events: 70
+
+TP=70 FP=0 FN=0
+TP=70, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT86 MISSED ===
+FP: (none)
+FN: (none)

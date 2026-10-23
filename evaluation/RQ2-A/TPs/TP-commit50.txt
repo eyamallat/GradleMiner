@@ -1,0 +1,96 @@
+=== COMMIT ===
+http://github.com/mattak/KotlinMoment/commit/74933498c05ee06e1a7ba10110fd88c73be8fae9
+
+=== CHANGED GRADLE FILES ===
+build.gradle -> build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 1)
+      ASSIGNMENT : name: ext.kotlinVersion, operator: =, value: "0.13.1513" (line 2)
+      REPOSITORIES_BLOCK : repositories (line 4)
+        REPOSITORIES_DECL : mavenCentral (line 5)
+      DEPENDENCIES_BLOCK : dependencies (line 8)
+        DEPENDENCY_DECL : configuration='classpath', group='org.jetbrains.kotlin', name='kotlin-gradle-plugin', version='$kotlinVersion' (line 9)
+    PLUGIN_DECL : apply plugin: kotlin (line 13)
+    REPOSITORIES_BLOCK : repositories (line 15)
+      REPOSITORIES_DECL : mavenCentral (line 16)
+    DEPENDENCIES_BLOCK : dependencies (line 19)
+      DEPENDENCY_DECL : configuration='compile', group='org.jetbrains.kotlin', name='kotlin-stdlib', version='$kotlinVersion' (line 20)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.12' (line 21)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 1)
+      ASSIGNMENT : name: ext.kotlin_version, operator: =, value: "0.13.1513" (line 2)
+      REPOSITORIES_BLOCK : repositories (line 4)
+        REPOSITORIES_DECL : mavenCentral (line 5)
+      DEPENDENCIES_BLOCK : dependencies (line 8)
+        DEPENDENCY_DECL : configuration='classpath', group='org.jetbrains.kotlin', name='kotlin-gradle-plugin', version='$kotlin_version' (line 9)
+    PLUGIN_DECL : apply plugin: kotlin (line 13)
+    REPOSITORIES_BLOCK : repositories (line 15)
+      REPOSITORIES_DECL : mavenCentral (line 16)
+    DEPENDENCIES_BLOCK : dependencies (line 19)
+      DEPENDENCY_DECL : configuration='compile', group='org.jetbrains.kotlin', name='kotlin-stdlib', version='$kotlin_version' (line 20)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.12' (line 21)
+    BLOCK : sourceSets (line 24)
+      ASSIGNMENT : name: main.java.srcDirs, operator: +=, value: "src/main/kotlin" (line 25)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+(none)
+
+=== ADDED COMPOSITE NODES ===
+BLOCK:sourceSets (line 24, parent=BUILD_GRADLE:build.gradle)
+
+=== ADDED LEAF NODES ===
+ASSIGNMENT:main.java.srcDirs = src/main/kotlin (line 25, parent=BLOCK:sourceSets)
+
+=== ALL LEAF MATCHES ===
+ASSIGNMENT:ext.kotlinVersion = 0.13.1513 (line 2, parent=BUILDSCRIPT:buildscript) -> ASSIGNMENT:ext.kotlin_version = 0.13.1513 (line 2, parent=BUILDSCRIPT:buildscript)
+DEPENDENCY_DECL:classpath (line 9, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 9, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 20, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 20, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 21, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 21, parent=DEPENDENCIES_BLOCK:dependencies)
+PLUGIN_DECL:apply (line 13, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 13, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_DECL:mavenCentral (line 16, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 16, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 5, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 5, parent=REPOSITORIES_BLOCK:repositories)
+
+=== LEAF ROUND 1 MATCHES ===
+DEPENDENCY_DECL:testCompile (line 21, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 21, parent=DEPENDENCIES_BLOCK:dependencies)
+PLUGIN_DECL:apply (line 13, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 13, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_DECL:mavenCentral (line 16, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 16, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 5, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 5, parent=REPOSITORIES_BLOCK:repositories)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+ASSIGNMENT:ext.kotlinVersion = 0.13.1513 (line 2, parent=BUILDSCRIPT:buildscript) -> ASSIGNMENT:ext.kotlin_version = 0.13.1513 (line 2, parent=BUILDSCRIPT:buildscript)
+DEPENDENCY_DECL:classpath (line 9, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 9, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 20, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 20, parent=DEPENDENCIES_BLOCK:dependencies)
+
+=== ALL COMPOSITE MATCHES ===
+BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 19, parent=BUILD_GRADLE:build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 19, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 8, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 8, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 15, parent=BUILD_GRADLE:build.gradle) -> REPOSITORIES_BLOCK:repositories (line 15, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_BLOCK:repositories (line 4, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 4, parent=BUILDSCRIPT:buildscript)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+REPOSITORIES_BLOCK:repositories (line 15, parent=BUILD_GRADLE:build.gradle) -> REPOSITORIES_BLOCK:repositories (line 15, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_BLOCK:repositories (line 4, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 4, parent=BUILDSCRIPT:buildscript)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 19, parent=BUILD_GRADLE:build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 19, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 8, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 8, parent=BUILDSCRIPT:buildscript)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+(not scored in this matching-phase reference)

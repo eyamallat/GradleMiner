@@ -1,0 +1,182 @@
+
+=== COMMIT ===
+https://github.com/HGyllensvard/geofence-manager/commit/8d3474463950192da3dafcab98e4021a68803933
+
+=== CHANGED GRADLE FILES ===
+lib/build.gradle -> lib/build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : lib/build.gradle (line 0)
+    BLOCK : ext (line 1)
+      ASSIGNMENT : name: projectVersion, operator: =, value: "0.0.0.6" (line 2)
+      ASSIGNMENT : name: libraryName, operator: =, value: "geofence-manager" (line 3)
+    PLUGIN_DECL : apply plugin: com.android.library (line 6)
+    PLUGIN_DECL : apply plugin: com.github.dcendents.android-maven (line 7)
+    APPLY_SCRIPT : apply from: new File(project.rootDir, bintray.gradle) (line 9)
+    BLOCK : android (line 11)
+      METHOD_CALL : compileSdkVersion(25) (line 12)
+      METHOD_CALL : buildToolsVersion("24.0.3") (line 13)
+      BLOCK : defaultConfig (line 14)
+        METHOD_CALL : minSdkVersion(21) (line 15)
+        METHOD_CALL : targetSdkVersion(25) (line 16)
+        METHOD_CALL : versionCode(1) (line 17)
+        METHOD_CALL : versionName(projectVersion) (line 18)
+        METHOD_CALL : testInstrumentationRunner("android.support.test.runner.AndroidJUnitRunner") (line 19)
+      BLOCK : buildTypes (line 22)
+        BLOCK : release (line 23)
+          METHOD_CALL : minifyEnabled(false) (line 24)
+          METHOD_CALL : proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro") (line 25)
+    ASSIGNMENT : name: group, operator: =, value: "com.hgyllensvard" (line 31)
+    ASSIGNMENT : name: version, operator: =, value: projectVersion (line 32)
+    ASSIGNMENT : name: project.archivesBaseName, operator: =, value: libraryName (line 33)
+    DEPENDENCIES_BLOCK : dependencies (line 35)
+      DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 36)
+      DEPENDENCY_DECL : configuration='androidTestCompile', group='com.android.support.test.espresso', name='espresso-core', version='2.2.2' (line 38)
+        METHOD_CALL : exclude([group: "com.android.support", module: "support-annotations"]) (line 39)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='appcompat-v7', version='25.0.0' (line 42)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.12' (line 44)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : lib/build.gradle (line 0)
+    BLOCK : ext (line 1)
+      ASSIGNMENT : name: projectVersion, operator: =, value: "0.0.0.6" (line 2)
+      ASSIGNMENT : name: libraryName, operator: =, value: "geofence-manager" (line 3)
+    PLUGIN_DECL : apply plugin: com.android.library (line 6)
+    PLUGIN_DECL : apply plugin: com.github.dcendents.android-maven (line 7)
+    APPLY_SCRIPT : apply from: new File(project.rootDir, bintray.gradle) (line 9)
+    BLOCK : android (line 11)
+      METHOD_CALL : compileSdkVersion(25) (line 12)
+      METHOD_CALL : buildToolsVersion("24.0.3") (line 13)
+      BLOCK : defaultConfig (line 14)
+        METHOD_CALL : minSdkVersion(21) (line 15)
+        METHOD_CALL : targetSdkVersion(25) (line 16)
+        METHOD_CALL : versionCode(1) (line 17)
+        METHOD_CALL : versionName(projectVersion) (line 18)
+        METHOD_CALL : testInstrumentationRunner("android.support.test.runner.AndroidJUnitRunner") (line 19)
+      BLOCK : buildTypes (line 22)
+        BLOCK : release (line 23)
+          METHOD_CALL : minifyEnabled(false) (line 24)
+          METHOD_CALL : proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro") (line 25)
+    ASSIGNMENT : name: group, operator: =, value: "com.hgyllensvard" (line 31)
+    ASSIGNMENT : name: version, operator: =, value: projectVersion (line 32)
+    ASSIGNMENT : name: project.archivesBaseName, operator: =, value: libraryName (line 33)
+    DEPENDENCIES_BLOCK : dependencies (line 35)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='appcompat-v7', version='25.0.1' (line 37)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.12' (line 39)
+      DEPENDENCY_DECL : configuration='androidTestCompile', group='com.android.support.test.espresso', name='espresso-core', version='2.2.2' (line 41)
+        METHOD_CALL : exclude([group: "com.android.support", module: "support-annotations"]) (line 42)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+DEPENDENCY_DECL:compile (line 42, parent=DEPENDENCIES_BLOCK:dependencies)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+(none)
+
+=== ALL LEAF MATCHES ===
+APPLY_SCRIPT:apply (line 9, parent=BUILD_GRADLE:lib/build.gradle) -> APPLY_SCRIPT:apply (line 9, parent=BUILD_GRADLE:lib/build.gradle)
+ASSIGNMENT:group = com.hgyllensvard (line 31, parent=BUILD_GRADLE:lib/build.gradle) -> ASSIGNMENT:group = com.hgyllensvard (line 31, parent=BUILD_GRADLE:lib/build.gradle)
+ASSIGNMENT:libraryName = geofence-manager (line 3, parent=BLOCK:ext) -> ASSIGNMENT:libraryName = geofence-manager (line 3, parent=BLOCK:ext)
+ASSIGNMENT:project.archivesBaseName = libraryName (line 33, parent=BUILD_GRADLE:lib/build.gradle) -> ASSIGNMENT:project.archivesBaseName = libraryName (line 33, parent=BUILD_GRADLE:lib/build.gradle)
+ASSIGNMENT:projectVersion = 0.0.0.6 (line 2, parent=BLOCK:ext) -> ASSIGNMENT:projectVersion = 0.0.0.6 (line 2, parent=BLOCK:ext)
+ASSIGNMENT:version = projectVersion (line 32, parent=BUILD_GRADLE:lib/build.gradle) -> ASSIGNMENT:version = projectVersion (line 32, parent=BUILD_GRADLE:lib/build.gradle)
+DEPENDENCY_DECL:compile (line 36, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 37, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 44, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 39, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:buildToolsVersion (line 13, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 13, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 12, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 12, parent=BLOCK:android)
+METHOD_CALL:exclude (line 39, parent=DEPENDENCY_DECL:androidTestCompile) -> METHOD_CALL:exclude (line 42, parent=DEPENDENCY_DECL:androidTestCompile)
+METHOD_CALL:minSdkVersion (line 15, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 15, parent=BLOCK:defaultConfig)
+METHOD_CALL:minifyEnabled (line 24, parent=BLOCK:release) -> METHOD_CALL:minifyEnabled (line 24, parent=BLOCK:release)
+METHOD_CALL:proguardFiles (line 25, parent=BLOCK:release) -> METHOD_CALL:proguardFiles (line 25, parent=BLOCK:release)
+METHOD_CALL:targetSdkVersion (line 16, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 16, parent=BLOCK:defaultConfig)
+METHOD_CALL:testInstrumentationRunner (line 19, parent=BLOCK:defaultConfig) -> METHOD_CALL:testInstrumentationRunner (line 19, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 17, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 17, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 18, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 18, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 6, parent=BUILD_GRADLE:lib/build.gradle) -> PLUGIN_DECL:apply (line 6, parent=BUILD_GRADLE:lib/build.gradle)
+PLUGIN_DECL:apply (line 7, parent=BUILD_GRADLE:lib/build.gradle) -> PLUGIN_DECL:apply (line 7, parent=BUILD_GRADLE:lib/build.gradle)
+
+=== LEAF ROUND 1 MATCHES ===
+APPLY_SCRIPT:apply (line 9, parent=BUILD_GRADLE:lib/build.gradle) -> APPLY_SCRIPT:apply (line 9, parent=BUILD_GRADLE:lib/build.gradle)
+ASSIGNMENT:group = com.hgyllensvard (line 31, parent=BUILD_GRADLE:lib/build.gradle) -> ASSIGNMENT:group = com.hgyllensvard (line 31, parent=BUILD_GRADLE:lib/build.gradle)
+ASSIGNMENT:libraryName = geofence-manager (line 3, parent=BLOCK:ext) -> ASSIGNMENT:libraryName = geofence-manager (line 3, parent=BLOCK:ext)
+ASSIGNMENT:project.archivesBaseName = libraryName (line 33, parent=BUILD_GRADLE:lib/build.gradle) -> ASSIGNMENT:project.archivesBaseName = libraryName (line 33, parent=BUILD_GRADLE:lib/build.gradle)
+ASSIGNMENT:projectVersion = 0.0.0.6 (line 2, parent=BLOCK:ext) -> ASSIGNMENT:projectVersion = 0.0.0.6 (line 2, parent=BLOCK:ext)
+ASSIGNMENT:version = projectVersion (line 32, parent=BUILD_GRADLE:lib/build.gradle) -> ASSIGNMENT:version = projectVersion (line 32, parent=BUILD_GRADLE:lib/build.gradle)
+DEPENDENCY_DECL:testCompile (line 44, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 39, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:buildToolsVersion (line 13, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 13, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 12, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 12, parent=BLOCK:android)
+METHOD_CALL:exclude (line 39, parent=DEPENDENCY_DECL:androidTestCompile) -> METHOD_CALL:exclude (line 42, parent=DEPENDENCY_DECL:androidTestCompile)
+METHOD_CALL:minSdkVersion (line 15, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 15, parent=BLOCK:defaultConfig)
+METHOD_CALL:minifyEnabled (line 24, parent=BLOCK:release) -> METHOD_CALL:minifyEnabled (line 24, parent=BLOCK:release)
+METHOD_CALL:proguardFiles (line 25, parent=BLOCK:release) -> METHOD_CALL:proguardFiles (line 25, parent=BLOCK:release)
+METHOD_CALL:targetSdkVersion (line 16, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 16, parent=BLOCK:defaultConfig)
+METHOD_CALL:testInstrumentationRunner (line 19, parent=BLOCK:defaultConfig) -> METHOD_CALL:testInstrumentationRunner (line 19, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 17, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 17, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 18, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 18, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 6, parent=BUILD_GRADLE:lib/build.gradle) -> PLUGIN_DECL:apply (line 6, parent=BUILD_GRADLE:lib/build.gradle)
+PLUGIN_DECL:apply (line 7, parent=BUILD_GRADLE:lib/build.gradle) -> PLUGIN_DECL:apply (line 7, parent=BUILD_GRADLE:lib/build.gradle)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+DEPENDENCY_DECL:compile (line 36, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 37, parent=DEPENDENCIES_BLOCK:dependencies)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:android (line 11, parent=BUILD_GRADLE:lib/build.gradle) -> BLOCK:android (line 11, parent=BUILD_GRADLE:lib/build.gradle)
+BLOCK:buildTypes (line 22, parent=BLOCK:android) -> BLOCK:buildTypes (line 22, parent=BLOCK:android)
+BLOCK:defaultConfig (line 14, parent=BLOCK:android) -> BLOCK:defaultConfig (line 14, parent=BLOCK:android)
+BLOCK:ext (line 1, parent=BUILD_GRADLE:lib/build.gradle) -> BLOCK:ext (line 1, parent=BUILD_GRADLE:lib/build.gradle)
+BLOCK:release (line 23, parent=BLOCK:buildTypes) -> BLOCK:release (line 23, parent=BLOCK:buildTypes)
+DEPENDENCIES_BLOCK:dependencies (line 35, parent=BUILD_GRADLE:lib/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 35, parent=BUILD_GRADLE:lib/build.gradle)
+DEPENDENCY_DECL:androidTestCompile (line 38, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:androidTestCompile (line 41, parent=DEPENDENCIES_BLOCK:dependencies)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:android (line 11, parent=BUILD_GRADLE:lib/build.gradle) -> BLOCK:android (line 11, parent=BUILD_GRADLE:lib/build.gradle)
+BLOCK:buildTypes (line 22, parent=BLOCK:android) -> BLOCK:buildTypes (line 22, parent=BLOCK:android)
+BLOCK:defaultConfig (line 14, parent=BLOCK:android) -> BLOCK:defaultConfig (line 14, parent=BLOCK:android)
+BLOCK:ext (line 1, parent=BUILD_GRADLE:lib/build.gradle) -> BLOCK:ext (line 1, parent=BUILD_GRADLE:lib/build.gradle)
+BLOCK:release (line 23, parent=BLOCK:buildTypes) -> BLOCK:release (line 23, parent=BLOCK:buildTypes)
+DEPENDENCY_DECL:androidTestCompile (line 38, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:androidTestCompile (line 41, parent=DEPENDENCIES_BLOCK:dependencies)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+DEPENDENCIES_BLOCK:dependencies (line 35, parent=BUILD_GRADLE:lib/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 35, parent=BUILD_GRADLE:lib/build.gradle)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+REFORMAT_CODE: Reformat code (no semantic change)
+REMOVE_UNUSED_CODE: Remove unused element 'lib/build.gradle:compile (42)'
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 20; 19, 1, 1
+Matched composites: 7; 7, 0, 0
+Deleted leaves: 1; 0, 1, 1
+Deleted composites: 0; 0, 0, 0
+Added leaves: 0; 0, 0, 0
+Added composites: 0; 0, 0, 0
+Total expected events: 28
+Total predicted events: 28
+
+TP=26 FP=2 FN=2
+TP=26, precision=92.86%, recall=92.86%, F1=92.86%
+
+=== WHERE COMMIT17 MISSED ===
+1. Wrong dependency match and deletion.
+   FN: Missing AppCompat match before line 42 -> after line 37.
+       Missing deletion of fileTree() at before line 36.
+   FP: Incorrect fileTree() line 36 -> AppCompat line 37 match (report line 90).
+       Incorrect deletion of AppCompat at before line 42 (report line 75).
+   Count: FN=2, FP=2.
+
+
+

@@ -1,0 +1,86 @@
+=== COMMIT ===
+https://github.com/zagum/SpeechRecognitionView/commit/1c21bde52c98c96f56d6508b3e00305fd656ce06
+
+=== CHANGED GRADLE FILES ===
+speechrecognitionview/build.gradle -> speechrecognitionview/build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : speechrecognitionview/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: com.android.library (line 1)
+    PLUGIN_DECL : apply plugin: maven (line 2)
+    ASSIGNMENT : name: group, operator: =, value: "com.github.jitpack" (line 4)
+    BLOCK : android (line 6)
+      METHOD_CALL : compileSdkVersion(rootProject."ext"."compileSdkVersion") (line 7)
+      METHOD_CALL : buildToolsVersion(rootProject."ext"."buildToolsVersion") (line 8)
+      BLOCK : defaultConfig (line 10)
+        METHOD_CALL : minSdkVersion(rootProject."ext"."minSdkVersion") (line 11)
+    DEPENDENCIES_BLOCK : dependencies (line 15)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='rootProject.ext.supportAppCompat' (line 16)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : speechrecognitionview/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: com.android.library (line 1)
+    BLOCK : android (line 3)
+      METHOD_CALL : compileSdkVersion(rootProject."ext"."compileSdkVersion") (line 4)
+      METHOD_CALL : buildToolsVersion(rootProject."ext"."buildToolsVersion") (line 5)
+      BLOCK : defaultConfig (line 7)
+        METHOD_CALL : minSdkVersion(rootProject."ext"."minSdkVersion") (line 8)
+    DEPENDENCIES_BLOCK : dependencies (line 12)
+      DEPENDENCY_DECL : configuration='compile', catalogAlias='rootProject.ext.supportAppCompat' (line 13)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+ASSIGNMENT:group = com.github.jitpack (line 4, parent=BUILD_GRADLE:speechrecognitionview/build.gradle)
+PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:speechrecognitionview/build.gradle)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+(none)
+
+=== ALL LEAF MATCHES ===
+DEPENDENCY_DECL:compile (line 16, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 13, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:buildToolsVersion (line 8, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 7, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android)
+METHOD_CALL:minSdkVersion (line 11, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 8, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:speechrecognitionview/build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:speechrecognitionview/build.gradle)
+
+=== LEAF ROUND 1 MATCHES ===
+DEPENDENCY_DECL:compile (line 16, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 13, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:buildToolsVersion (line 8, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 7, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android)
+METHOD_CALL:minSdkVersion (line 11, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 8, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:speechrecognitionview/build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:speechrecognitionview/build.gradle)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+(none)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:android (line 6, parent=BUILD_GRADLE:speechrecognitionview/build.gradle) -> BLOCK:android (line 3, parent=BUILD_GRADLE:speechrecognitionview/build.gradle)
+BLOCK:defaultConfig (line 10, parent=BLOCK:android) -> BLOCK:defaultConfig (line 7, parent=BLOCK:android)
+DEPENDENCIES_BLOCK:dependencies (line 15, parent=BUILD_GRADLE:speechrecognitionview/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 12, parent=BUILD_GRADLE:speechrecognitionview/build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:android (line 6, parent=BUILD_GRADLE:speechrecognitionview/build.gradle) -> BLOCK:android (line 3, parent=BUILD_GRADLE:speechrecognitionview/build.gradle)
+BLOCK:defaultConfig (line 10, parent=BLOCK:android) -> BLOCK:defaultConfig (line 7, parent=BLOCK:android)
+DEPENDENCIES_BLOCK:dependencies (line 15, parent=BUILD_GRADLE:speechrecognitionview/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 12, parent=BUILD_GRADLE:speechrecognitionview/build.gradle)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+(none)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+REMOVE_UNUSED_CODE: Remove unused element 'speechrecognitionview/build.gradle:group (4)'
+REMOVE_UNUSED_CODE: Remove unused element 'speechrecognitionview/build.gradle:apply (2)'
+
+

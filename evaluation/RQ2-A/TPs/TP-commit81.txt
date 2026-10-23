@@ -1,0 +1,117 @@
+=== COMMIT ===
+http://github.com/googlearchive/leanback-homescreen-channels/commit/d70ae62e23406857b2007d51e068ab0fdbbed8e4
+
+=== CHANGED GRADLE FILES ===
+app/build.gradle -> app/build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : app/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: com.android.application (line 1)
+    BLOCK : android (line 3)
+      BLOCK : defaultConfig (line 4)
+        METHOD_CALL : applicationId("com.google.android.tvhomescreenchannels") (line 5)
+        METHOD_CALL : minSdkVersion(26) (line 6)
+        METHOD_CALL : targetSdkVersion(26) (line 7)
+        METHOD_CALL : versionCode(1) (line 8)
+        METHOD_CALL : versionName("1.0") (line 9)
+      BLOCK : buildTypes (line 12)
+        BLOCK : release (line 13)
+          METHOD_CALL : minifyEnabled(false) (line 14)
+    DEPENDENCIES_BLOCK : dependencies (line 19)
+      DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 20)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='leanback-v17', version='26.0.2' (line 21)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='appcompat-v7', version='26.0.2' (line 22)
+      DEPENDENCY_DECL : configuration='compile', group='com.github.bumptech.glide', name='glide', version='4.1.1' (line 23)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='support-tv-provider', version='26.0.2' (line 24)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : app/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: com.android.application (line 1)
+    BLOCK : android (line 3)
+      METHOD_CALL : compileSdkVersion(26) (line 4)
+      METHOD_CALL : buildToolsVersion("26.0.1") (line 5)
+      BLOCK : defaultConfig (line 6)
+        METHOD_CALL : applicationId("com.google.android.tvhomescreenchannels") (line 7)
+        METHOD_CALL : minSdkVersion(26) (line 8)
+        METHOD_CALL : targetSdkVersion(26) (line 9)
+        METHOD_CALL : versionCode(1) (line 10)
+        METHOD_CALL : versionName("1.0") (line 11)
+      BLOCK : buildTypes (line 14)
+        BLOCK : release (line 15)
+          METHOD_CALL : minifyEnabled(false) (line 16)
+    DEPENDENCIES_BLOCK : dependencies (line 21)
+      DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 22)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='appcompat-v7', version='26.1.0' (line 23)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='leanback-v17', version='26.1.0' (line 24)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='support-tv-provider', version='26.1.0' (line 25)
+      DEPENDENCY_DECL : configuration='compile', group='com.github.bumptech.glide', name='glide', version='4.1.1' (line 26)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+(none)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android)
+
+=== ALL LEAF MATCHES ===
+DEPENDENCY_DECL:compile (line 20, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 22, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 21, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 24, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 22, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 23, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 23, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 26, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 24, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 25, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:applicationId (line 5, parent=BLOCK:defaultConfig) -> METHOD_CALL:applicationId (line 7, parent=BLOCK:defaultConfig)
+METHOD_CALL:minSdkVersion (line 6, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 8, parent=BLOCK:defaultConfig)
+METHOD_CALL:minifyEnabled (line 14, parent=BLOCK:release) -> METHOD_CALL:minifyEnabled (line 16, parent=BLOCK:release)
+METHOD_CALL:targetSdkVersion (line 7, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 9, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 8, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 10, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 9, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 11, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:app/build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:app/build.gradle)
+
+=== LEAF ROUND 1 MATCHES ===
+DEPENDENCY_DECL:compile (line 20, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 22, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 23, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 26, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:applicationId (line 5, parent=BLOCK:defaultConfig) -> METHOD_CALL:applicationId (line 7, parent=BLOCK:defaultConfig)
+METHOD_CALL:minSdkVersion (line 6, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 8, parent=BLOCK:defaultConfig)
+METHOD_CALL:minifyEnabled (line 14, parent=BLOCK:release) -> METHOD_CALL:minifyEnabled (line 16, parent=BLOCK:release)
+METHOD_CALL:targetSdkVersion (line 7, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 9, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 8, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 10, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 9, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 11, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:app/build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:app/build.gradle)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+DEPENDENCY_DECL:compile (line 21, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 24, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 22, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 23, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 24, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 25, parent=DEPENDENCIES_BLOCK:dependencies)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:android (line 3, parent=BUILD_GRADLE:app/build.gradle) -> BLOCK:android (line 3, parent=BUILD_GRADLE:app/build.gradle)
+BLOCK:buildTypes (line 12, parent=BLOCK:android) -> BLOCK:buildTypes (line 14, parent=BLOCK:android)
+BLOCK:defaultConfig (line 4, parent=BLOCK:android) -> BLOCK:defaultConfig (line 6, parent=BLOCK:android)
+BLOCK:release (line 13, parent=BLOCK:buildTypes) -> BLOCK:release (line 15, parent=BLOCK:buildTypes)
+DEPENDENCIES_BLOCK:dependencies (line 19, parent=BUILD_GRADLE:app/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 21, parent=BUILD_GRADLE:app/build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:buildTypes (line 12, parent=BLOCK:android) -> BLOCK:buildTypes (line 14, parent=BLOCK:android)
+BLOCK:defaultConfig (line 4, parent=BLOCK:android) -> BLOCK:defaultConfig (line 6, parent=BLOCK:android)
+BLOCK:release (line 13, parent=BLOCK:buildTypes) -> BLOCK:release (line 15, parent=BLOCK:buildTypes)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+BLOCK:android (line 3, parent=BUILD_GRADLE:app/build.gradle) -> BLOCK:android (line 3, parent=BUILD_GRADLE:app/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 19, parent=BUILD_GRADLE:app/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 21, parent=BUILD_GRADLE:app/build.gradle)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+(not scored in this matching-phase reference)

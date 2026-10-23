@@ -1,0 +1,125 @@
+=== COMMIT ===
+http://github.com/sandeep-singh-79/SingletonPatternDemo/commit/f5a59bedab37494b88701f0f53f3a8d258cf2ca1
+
+=== CHANGED GRADLE FILES ===
+build.gradle -> build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: groovy (line 3)
+    PLUGIN_DECL : apply plugin: eclipse (line 4)
+    REPOSITORIES_BLOCK : repositories (line 6)
+      REPOSITORIES_DECL : mavenCentral (line 7)
+    DEPENDENCIES_BLOCK : dependencies (line 10)
+      DEPENDENCY_DECL : configuration='compile', group='org.codehaus.groovy', name='groovy-all', version='2.4.5' (line 11)
+      DEPENDENCY_DECL : configuration='compile', group='org.seleniumhq.selenium', name='selenium-java', version='2.50.0' (line 12)
+      DEPENDENCY_DECL : configuration='compile', group='io.appium', name='java-client', version='2.2.0' (line 13)
+      DEPENDENCY_DECL : configuration='compile', group='com.google.inject', name='guice', version='3.0' (line 14)
+      DEPENDENCY_DECL : configuration='compile', group='org.testng', name='testng', version='6.8.1' (line 17)
+    TASK_CONFIGURATION : , type=Test, style=tasks.withType (line 24)
+      METHOD_CALL : useTestNG (line 25)
+      ASSIGNMENT : name: systemProperties, operator: =, value: [URL: System.getProperty("URL", "http://www.stackoverflow.com"), BROWSER: System.getProperty("BROWSER", "firefox"), SELENIUM_HOST: System.getProperty("SELENIUM_HOST", "localhost"), SELENIUM_PORT: System.getProperty("SELENIUM_PORT", "4444"), DRIVERTYPE: System.getProperty("DRIVERTYPE", "local")] (line 26)
+        ASSIGNMENT : name: URL, value: System.getProperty("URL", "http://www.stackoverflow.com") (line 27)
+        ASSIGNMENT : name: BROWSER, value: System.getProperty("BROWSER", "firefox") (line 28)
+        ASSIGNMENT : name: SELENIUM_HOST, value: System.getProperty("SELENIUM_HOST", "localhost") (line 29)
+        ASSIGNMENT : name: SELENIUM_PORT, value: System.getProperty("SELENIUM_PORT", "4444") (line 30)
+        ASSIGNMENT : name: DRIVERTYPE, value: System.getProperty("DRIVERTYPE", "local") (line 31)
+      ASSIGNMENT : name: maxParallelForks, operator: =, value: 2 (line 34)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: groovy (line 3)
+    PLUGIN_DECL : apply plugin: eclipse (line 4)
+    REPOSITORIES_BLOCK : repositories (line 6)
+      REPOSITORIES_DECL : mavenCentral (line 7)
+    DEPENDENCIES_BLOCK : dependencies (line 10)
+      DEPENDENCY_DECL : configuration='compile', group='org.codehaus.groovy', name='groovy-all', version='2.4.5' (line 11)
+      DEPENDENCY_DECL : configuration='compile', group='org.seleniumhq.selenium', name='selenium-java', version='2.50.0' (line 12)
+      DEPENDENCY_DECL : configuration='compile', group='io.appium', name='java-client', version='2.2.0' (line 13)
+      DEPENDENCY_DECL : configuration='compile', group='com.google.inject', name='guice', version='3.0' (line 14)
+      DEPENDENCY_DECL : configuration='compile', group='org.testng', name='testng', version='6.8.1' (line 17)
+    TASK_CONFIGURATION : , type=Test, style=tasks.withType (line 24)
+      BLOCK : useTestNG (line 25)
+        ASSIGNMENT : name: parallel, operator: =, value: "tests" (line 27)
+        ASSIGNMENT : name: threadCount, operator: =, value: 5 (line 28)
+      ASSIGNMENT : name: systemProperties, operator: =, value: [URL: System.getProperty("URL", "http://www.stackoverflow.com"), BROWSER: System.getProperty("BROWSER", "firefox"), SELENIUM_HOST: System.getProperty("SELENIUM_HOST", "localhost"), SELENIUM_PORT: System.getProperty("SELENIUM_PORT", "4444"), DRIVERTYPE: System.getProperty("DRIVERTYPE", "local")] (line 30)
+        ASSIGNMENT : name: URL, value: System.getProperty("URL", "http://www.stackoverflow.com") (line 31)
+        ASSIGNMENT : name: BROWSER, value: System.getProperty("BROWSER", "firefox") (line 32)
+        ASSIGNMENT : name: SELENIUM_HOST, value: System.getProperty("SELENIUM_HOST", "localhost") (line 33)
+        ASSIGNMENT : name: SELENIUM_PORT, value: System.getProperty("SELENIUM_PORT", "4444") (line 34)
+        ASSIGNMENT : name: DRIVERTYPE, value: System.getProperty("DRIVERTYPE", "local") (line 35)
+      ASSIGNMENT : name: maxParallelForks, operator: =, value: 2 (line 38)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+(none)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+ASSIGNMENT:parallel = tests (line 27, parent=BLOCK:useTestNG)
+ASSIGNMENT:threadCount = 5 (line 28, parent=BLOCK:useTestNG)
+
+=== ALL LEAF MATCHES ===
+ASSIGNMENT:BROWSER = System.getProperty(BROWSER, firefox) (line 28, parent=ASSIGNMENT:systemProperties) -> ASSIGNMENT:BROWSER = System.getProperty(BROWSER, firefox) (line 32, parent=ASSIGNMENT:systemProperties)
+ASSIGNMENT:DRIVERTYPE = System.getProperty(DRIVERTYPE, local) (line 31, parent=ASSIGNMENT:systemProperties) -> ASSIGNMENT:DRIVERTYPE = System.getProperty(DRIVERTYPE, local) (line 35, parent=ASSIGNMENT:systemProperties)
+ASSIGNMENT:SELENIUM_HOST = System.getProperty(SELENIUM_HOST, localhost) (line 29, parent=ASSIGNMENT:systemProperties) -> ASSIGNMENT:SELENIUM_HOST = System.getProperty(SELENIUM_HOST, localhost) (line 33, parent=ASSIGNMENT:systemProperties)
+ASSIGNMENT:SELENIUM_PORT = System.getProperty(SELENIUM_PORT, 4444) (line 30, parent=ASSIGNMENT:systemProperties) -> ASSIGNMENT:SELENIUM_PORT = System.getProperty(SELENIUM_PORT, 4444) (line 34, parent=ASSIGNMENT:systemProperties)
+ASSIGNMENT:URL = System.getProperty(URL, http://www.stackoverflow.com) (line 27, parent=ASSIGNMENT:systemProperties) -> ASSIGNMENT:URL = System.getProperty(URL, http://www.stackoverflow.com) (line 31, parent=ASSIGNMENT:systemProperties)
+ASSIGNMENT:maxParallelForks = 2 (line 34, parent=TASK_CONFIGURATION:withType) -> ASSIGNMENT:maxParallelForks = 2 (line 38, parent=TASK_CONFIGURATION:withType)
+DEPENDENCY_DECL:compile (line 11, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 11, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 12, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 12, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 13, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 13, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 14, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 14, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 17, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 17, parent=DEPENDENCIES_BLOCK:dependencies)
+PLUGIN_DECL:apply (line 3, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 3, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 4, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 4, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_DECL:mavenCentral (line 7, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 7, parent=REPOSITORIES_BLOCK:repositories)
+METHOD_CALL:useTestNG (line 25, parent=TASK_CONFIGURATION:withType) -> BLOCK:useTestNG (line 25, parent=TASK_CONFIGURATION:withType)
+
+=== LEAF ROUND 1 MATCHES ===
+ASSIGNMENT:BROWSER = System.getProperty(BROWSER, firefox) (line 28, parent=ASSIGNMENT:systemProperties) -> ASSIGNMENT:BROWSER = System.getProperty(BROWSER, firefox) (line 32, parent=ASSIGNMENT:systemProperties)
+ASSIGNMENT:DRIVERTYPE = System.getProperty(DRIVERTYPE, local) (line 31, parent=ASSIGNMENT:systemProperties) -> ASSIGNMENT:DRIVERTYPE = System.getProperty(DRIVERTYPE, local) (line 35, parent=ASSIGNMENT:systemProperties)
+ASSIGNMENT:SELENIUM_HOST = System.getProperty(SELENIUM_HOST, localhost) (line 29, parent=ASSIGNMENT:systemProperties) -> ASSIGNMENT:SELENIUM_HOST = System.getProperty(SELENIUM_HOST, localhost) (line 33, parent=ASSIGNMENT:systemProperties)
+ASSIGNMENT:SELENIUM_PORT = System.getProperty(SELENIUM_PORT, 4444) (line 30, parent=ASSIGNMENT:systemProperties) -> ASSIGNMENT:SELENIUM_PORT = System.getProperty(SELENIUM_PORT, 4444) (line 34, parent=ASSIGNMENT:systemProperties)
+ASSIGNMENT:URL = System.getProperty(URL, http://www.stackoverflow.com) (line 27, parent=ASSIGNMENT:systemProperties) -> ASSIGNMENT:URL = System.getProperty(URL, http://www.stackoverflow.com) (line 31, parent=ASSIGNMENT:systemProperties)
+ASSIGNMENT:maxParallelForks = 2 (line 34, parent=TASK_CONFIGURATION:withType) -> ASSIGNMENT:maxParallelForks = 2 (line 38, parent=TASK_CONFIGURATION:withType)
+DEPENDENCY_DECL:compile (line 11, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 11, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 12, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 12, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 13, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 13, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 14, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 14, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 17, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 17, parent=DEPENDENCIES_BLOCK:dependencies)
+PLUGIN_DECL:apply (line 3, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 3, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 4, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 4, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_DECL:mavenCentral (line 7, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 7, parent=REPOSITORIES_BLOCK:repositories)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+METHOD_CALL:useTestNG (line 25, parent=TASK_CONFIGURATION:withType) -> BLOCK:useTestNG (line 25, parent=TASK_CONFIGURATION:withType)
+
+=== ALL COMPOSITE MATCHES ===
+ASSIGNMENT:systemProperties = [URL: System.getProperty(URL, http://www.stackoverflow.com), BROWSER: System.getProperty(BROWSER, firefox), SELENIUM_HOST: System.getProperty(SELENIUM_HOST, localhost), SELENIUM_PORT: System.getProperty(SELENIUM_PORT, 4444), DRIVERTYPE: System.getProperty(DRIVERTYPE, local)] (line 26, parent=TASK_CONFIGURATION:withType) -> ASSIGNMENT:systemProperties = [URL: System.getProperty(URL, http://www.stackoverflow.com), BROWSER: System.getProperty(BROWSER, firefox), SELENIUM_HOST: System.getProperty(SELENIUM_HOST, localhost), SELENIUM_PORT: System.getProperty(SELENIUM_PORT, 4444), DRIVERTYPE: System.getProperty(DRIVERTYPE, local)] (line 30, parent=TASK_CONFIGURATION:withType)
+DEPENDENCIES_BLOCK:dependencies (line 10, parent=BUILD_GRADLE:build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 10, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_BLOCK:repositories (line 6, parent=BUILD_GRADLE:build.gradle) -> REPOSITORIES_BLOCK:repositories (line 6, parent=BUILD_GRADLE:build.gradle)
+TASK_CONFIGURATION:withType (line 24, parent=BUILD_GRADLE:build.gradle) -> TASK_CONFIGURATION:withType (line 24, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+ASSIGNMENT:systemProperties = [URL: System.getProperty(URL, http://www.stackoverflow.com), BROWSER: System.getProperty(BROWSER, firefox), SELENIUM_HOST: System.getProperty(SELENIUM_HOST, localhost), SELENIUM_PORT: System.getProperty(SELENIUM_PORT, 4444), DRIVERTYPE: System.getProperty(DRIVERTYPE, local)] (line 26, parent=TASK_CONFIGURATION:withType) -> ASSIGNMENT:systemProperties = [URL: System.getProperty(URL, http://www.stackoverflow.com), BROWSER: System.getProperty(BROWSER, firefox), SELENIUM_HOST: System.getProperty(SELENIUM_HOST, localhost), SELENIUM_PORT: System.getProperty(SELENIUM_PORT, 4444), DRIVERTYPE: System.getProperty(DRIVERTYPE, local)] (line 30, parent=TASK_CONFIGURATION:withType)
+DEPENDENCIES_BLOCK:dependencies (line 10, parent=BUILD_GRADLE:build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 10, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_BLOCK:repositories (line 6, parent=BUILD_GRADLE:build.gradle) -> REPOSITORIES_BLOCK:repositories (line 6, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+TASK_CONFIGURATION:withType (line 24, parent=BUILD_GRADLE:build.gradle) -> TASK_CONFIGURATION:withType (line 24, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+(not scored in this matching-phase reference)

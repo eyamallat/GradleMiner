@@ -1,0 +1,266 @@
+
+=== COMMIT ===
+https://github.com/rockwillj/license-tools-plugin/commit/00ebfd2a3ab6c5f88f702edc110e56d50305b043
+
+=== CHANGED GRADLE FILES ===
+metadata.gradle -> metadata.gradle
+plugin/build.gradle -> plugin/build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_LOGIC_GRADLE : metadata.gradle (line 0)
+    BLOCK : ext (line 1)
+      ASSIGNMENT : name: metadata, operator: =, value: [organization: "attosoft", groupId: "info.attosoft.licensetools", website: "https://github.com/rockwillj/license-tools-plugin", repository: "git@github.com:rockwillj/license-tools-plugin.git", licences: ["Apache-2.0"], bintrayUser: "BINTRAY_USERNAME", bintrayKey: "BINTRAY_KEY"] (line 2)
+        ASSIGNMENT : name: organization, value: "attosoft" (line 3)
+        ASSIGNMENT : name: groupId, value: "info.attosoft.licensetools" (line 4)
+        ASSIGNMENT : name: website, value: "https://github.com/rockwillj/license-tools-plugin" (line 5)
+        ASSIGNMENT : name: repository, value: "git@github.com:rockwillj/license-tools-plugin.git" (line 6)
+        ASSIGNMENT : name: licences, value: ["Apache-2.0"] (line 7)
+        ASSIGNMENT : name: bintrayUser, value: "BINTRAY_USERNAME" (line 8)
+        ASSIGNMENT : name: bintrayKey, value: "BINTRAY_KEY" (line 9)
+  BUILD_GRADLE : plugin/build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 2)
+      REPOSITORIES_BLOCK : repositories (line 3)
+        REPOSITORIES_DECL : jcenter (line 4)
+      DEPENDENCIES_BLOCK : dependencies (line 6)
+        DEPENDENCY_DECL : configuration='classpath', group='com.novoda', name='bintray-release', version='0.3.4' (line 7)
+    REPOSITORIES_BLOCK : repositories (line 10)
+      REPOSITORIES_DECL : jcenter (line 11)
+    APPLY_SCRIPT : apply from: file(../metadata.gradle) (line 14)
+    BLOCK : ext (line 16)
+      ASSIGNMENT : name: versionFile, operator: =, value: file("../VERSION") (line 17)
+      ASSIGNMENT : name: versionName, operator: =, value: versionFile.readLines() [ 0.trim() (line 18)
+      ASSIGNMENT : name: metadata.version, operator: =, value: versionName (line 19)
+    PLUGIN_DECL : apply plugin: groovy (line 22)
+    PLUGIN_DECL : apply plugin: maven (line 23)
+    PLUGIN_DECL : apply plugin: com.novoda.bintray-release (line 24)
+    ASSIGNMENT : name: targetCompatibility, operator: =, value: JavaVersion."VERSION_1_8" (line 26)
+    ASSIGNMENT : name: sourceCompatibility, operator: =, value: JavaVersion."VERSION_1_8" (line 27)
+    DECLARATION : name: metadata, value: ext."metadata" (line 29)
+    DECLARATION : name: ARTIFACT_ID, value: "license-tools-plugin" (line 30)
+    ASSIGNMENT : name: group, operator: =, value: metadata."groupId" (line 33)
+    ASSIGNMENT : name: jar.baseName, operator: =, value: ARTIFACT_ID (line 34)
+    ASSIGNMENT : name: version, operator: =, value: metadata."version" (line 35)
+    DEPENDENCIES_BLOCK : dependencies (line 37)
+      DEPENDENCY_DECL : configuration='compile', notation='gradleApi()' (line 38)
+      DEPENDENCY_DECL : configuration='compile', notation='localGroovy()' (line 39)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.tools.build', name='gradle', version='2.1.2' (line 41)
+      DEPENDENCY_DECL : configuration='compile', group='org.yaml', name='snakeyaml', version='1.17' (line 42)
+      DEPENDENCY_DECL : configuration='compile', group='org.apache.commons', name='commons-lang3', version='3.4' (line 43)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.12' (line 44)
+    BLOCK : publish (line 48)
+      ASSIGNMENT : name: artifactId, operator: =, value: ARTIFACT_ID (line 49)
+      ASSIGNMENT : name: desc, operator: =, value: "A Gradle plugin to handle android application license notations" (line 50)
+      ASSIGNMENT : name: userOrg, operator: =, value: metadata."organization" (line 52)
+      ASSIGNMENT : name: groupId, operator: =, value: metadata."groupId" (line 53)
+      ASSIGNMENT : name: publishVersion, operator: =, value: metadata."version" (line 54)
+      ASSIGNMENT : name: website, operator: =, value: metadata."website" (line 55)
+      ASSIGNMENT : name: repository, operator: =, value: metadata."repository" (line 56)
+      ASSIGNMENT : name: licences, operator: =, value: metadata."licences" (line 57)
+      ASSIGNMENT : name: bintrayUser, operator: =, value: metadata."bintrayUser" (line 59)
+      ASSIGNMENT : name: bintrayKey, operator: =, value: metadata."bintrayKey" (line 60)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_LOGIC_GRADLE : metadata.gradle (line 0)
+    BLOCK : ext (line 1)
+      ASSIGNMENT : name: metadata, operator: =, value: [artifactId: "license-tools-plugin", description: "A Gradle plugin to handle android application license notations", organization: "attosoft", groupId: "info.attosoft.licensetools", website: "https://github.com/rockwillj/license-tools-plugin", repository: "git@github.com:rockwillj/license-tools-plugin.git", licences: ["Apache-2.0"], bintrayUser: "BINTRAY_USERNAME", bintrayKey: "BINTRAY_KEY"] (line 2)
+        ASSIGNMENT : name: artifactId, value: "license-tools-plugin" (line 3)
+        ASSIGNMENT : name: description, value: "A Gradle plugin to handle android application license notations" (line 4)
+        ASSIGNMENT : name: organization, value: "attosoft" (line 5)
+        ASSIGNMENT : name: groupId, value: "info.attosoft.licensetools" (line 6)
+        ASSIGNMENT : name: website, value: "https://github.com/rockwillj/license-tools-plugin" (line 7)
+        ASSIGNMENT : name: repository, value: "git@github.com:rockwillj/license-tools-plugin.git" (line 8)
+        ASSIGNMENT : name: licences, value: ["Apache-2.0"] (line 9)
+        ASSIGNMENT : name: bintrayUser, value: "BINTRAY_USERNAME" (line 10)
+        ASSIGNMENT : name: bintrayKey, value: "BINTRAY_KEY" (line 11)
+  BUILD_GRADLE : plugin/build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 2)
+      REPOSITORIES_BLOCK : repositories (line 3)
+        REPOSITORIES_DECL : jcenter (line 4)
+      DEPENDENCIES_BLOCK : dependencies (line 6)
+        DEPENDENCY_DECL : configuration='classpath', group='com.novoda', name='bintray-release', version='0.3.4' (line 7)
+    REPOSITORIES_BLOCK : repositories (line 10)
+      REPOSITORIES_DECL : jcenter (line 11)
+    APPLY_SCRIPT : apply from: file(../metadata.gradle) (line 14)
+    BLOCK : ext (line 16)
+      ASSIGNMENT : name: versionFile, operator: =, value: file("../VERSION") (line 17)
+      ASSIGNMENT : name: versionName, operator: =, value: versionFile.readLines() [ 0.trim() (line 18)
+      ASSIGNMENT : name: metadata.version, operator: =, value: versionName (line 19)
+    PLUGIN_DECL : apply plugin: groovy (line 22)
+    PLUGIN_DECL : apply plugin: maven (line 23)
+    PLUGIN_DECL : apply plugin: com.novoda.bintray-release (line 24)
+    ASSIGNMENT : name: targetCompatibility, operator: =, value: JavaVersion."VERSION_1_8" (line 26)
+    ASSIGNMENT : name: sourceCompatibility, operator: =, value: JavaVersion."VERSION_1_8" (line 27)
+    DECLARATION : name: metadata, value: ext."metadata" (line 29)
+    ASSIGNMENT : name: group, operator: =, value: metadata."groupId" (line 32)
+    ASSIGNMENT : name: jar.baseName, operator: =, value: metadata."artifactId" (line 33)
+    ASSIGNMENT : name: version, operator: =, value: metadata."version" (line 34)
+    DEPENDENCIES_BLOCK : dependencies (line 36)
+      DEPENDENCY_DECL : configuration='compile', notation='gradleApi()' (line 37)
+      DEPENDENCY_DECL : configuration='compile', notation='localGroovy()' (line 38)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.tools.build', name='gradle', version='2.1.2' (line 40)
+      DEPENDENCY_DECL : configuration='compile', group='org.yaml', name='snakeyaml', version='1.17' (line 41)
+      DEPENDENCY_DECL : configuration='compile', group='org.apache.commons', name='commons-lang3', version='3.4' (line 42)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.12' (line 43)
+    BLOCK : publish (line 46)
+      ASSIGNMENT : name: artifactId, operator: =, value: metadata."artifactId" (line 47)
+      ASSIGNMENT : name: desc, operator: =, value: metadata."description" (line 48)
+      ASSIGNMENT : name: userOrg, operator: =, value: metadata."organization" (line 50)
+      ASSIGNMENT : name: groupId, operator: =, value: metadata."groupId" (line 51)
+      ASSIGNMENT : name: publishVersion, operator: =, value: metadata."version" (line 52)
+      ASSIGNMENT : name: website, operator: =, value: metadata."website" (line 53)
+      ASSIGNMENT : name: repository, operator: =, value: metadata."repository" (line 54)
+      ASSIGNMENT : name: licences, operator: =, value: metadata."licences" (line 55)
+      ASSIGNMENT : name: bintrayUser, operator: =, value: metadata."bintrayUser" (line 57)
+      ASSIGNMENT : name: bintrayKey, operator: =, value: metadata."bintrayKey" (line 58)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+DECLARATION:ARTIFACT_ID = license-tools-plugin (line 30, parent=BUILD_GRADLE:plugin/build.gradle)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+ASSIGNMENT:artifactId = license-tools-plugin (line 3, parent=ASSIGNMENT:metadata)
+ASSIGNMENT:description = A Gradle plugin to handle android application license notations (line 4, parent=ASSIGNMENT:metadata)
+
+=== ALL LEAF MATCHES ===
+APPLY_SCRIPT:apply (line 14, parent=BUILD_GRADLE:plugin/build.gradle) -> APPLY_SCRIPT:apply (line 14, parent=BUILD_GRADLE:plugin/build.gradle)
+ASSIGNMENT:artifactId = ARTIFACT_ID (line 49, parent=BLOCK:publish) -> ASSIGNMENT:artifactId = metadata.artifactId (line 47, parent=BLOCK:publish)
+ASSIGNMENT:bintrayKey = BINTRAY_KEY (line 9, parent=ASSIGNMENT:metadata) -> ASSIGNMENT:bintrayKey = BINTRAY_KEY (line 11, parent=ASSIGNMENT:metadata)
+ASSIGNMENT:bintrayKey = metadata.bintrayKey (line 60, parent=BLOCK:publish) -> ASSIGNMENT:bintrayKey = metadata.bintrayKey (line 58, parent=BLOCK:publish)
+ASSIGNMENT:bintrayUser = BINTRAY_USERNAME (line 8, parent=ASSIGNMENT:metadata) -> ASSIGNMENT:bintrayUser = BINTRAY_USERNAME (line 10, parent=ASSIGNMENT:metadata)
+ASSIGNMENT:bintrayUser = metadata.bintrayUser (line 59, parent=BLOCK:publish) -> ASSIGNMENT:bintrayUser = metadata.bintrayUser (line 57, parent=BLOCK:publish)
+ASSIGNMENT:desc = A Gradle plugin to handle android application license notations (line 50, parent=BLOCK:publish) -> ASSIGNMENT:desc = metadata.description (line 48, parent=BLOCK:publish)
+ASSIGNMENT:group = metadata.groupId (line 33, parent=BUILD_GRADLE:plugin/build.gradle) -> ASSIGNMENT:group = metadata.groupId (line 32, parent=BUILD_GRADLE:plugin/build.gradle)
+ASSIGNMENT:groupId = info.attosoft.licensetools (line 4, parent=ASSIGNMENT:metadata) -> ASSIGNMENT:groupId = info.attosoft.licensetools (line 6, parent=ASSIGNMENT:metadata)
+ASSIGNMENT:groupId = metadata.groupId (line 53, parent=BLOCK:publish) -> ASSIGNMENT:groupId = metadata.groupId (line 51, parent=BLOCK:publish)
+ASSIGNMENT:jar.baseName = ARTIFACT_ID (line 34, parent=BUILD_GRADLE:plugin/build.gradle) -> ASSIGNMENT:jar.baseName = metadata.artifactId (line 33, parent=BUILD_GRADLE:plugin/build.gradle)
+ASSIGNMENT:licences = [Apache-2.0] (line 7, parent=ASSIGNMENT:metadata) -> ASSIGNMENT:licences = [Apache-2.0] (line 9, parent=ASSIGNMENT:metadata)
+ASSIGNMENT:licences = metadata.licences (line 57, parent=BLOCK:publish) -> ASSIGNMENT:licences = metadata.licences (line 55, parent=BLOCK:publish)
+ASSIGNMENT:metadata.version = versionName (line 19, parent=BLOCK:ext) -> ASSIGNMENT:metadata.version = versionName (line 19, parent=BLOCK:ext)
+ASSIGNMENT:organization = attosoft (line 3, parent=ASSIGNMENT:metadata) -> ASSIGNMENT:organization = attosoft (line 5, parent=ASSIGNMENT:metadata)
+ASSIGNMENT:publishVersion = metadata.version (line 54, parent=BLOCK:publish) -> ASSIGNMENT:publishVersion = metadata.version (line 52, parent=BLOCK:publish)
+ASSIGNMENT:repository = git@github.com:rockwillj/license-tools-plugin.git (line 6, parent=ASSIGNMENT:metadata) -> ASSIGNMENT:repository = git@github.com:rockwillj/license-tools-plugin.git (line 8, parent=ASSIGNMENT:metadata)
+ASSIGNMENT:repository = metadata.repository (line 56, parent=BLOCK:publish) -> ASSIGNMENT:repository = metadata.repository (line 54, parent=BLOCK:publish)
+ASSIGNMENT:sourceCompatibility = JavaVersion.VERSION_1_8 (line 27, parent=BUILD_GRADLE:plugin/build.gradle) -> ASSIGNMENT:sourceCompatibility = JavaVersion.VERSION_1_8 (line 27, parent=BUILD_GRADLE:plugin/build.gradle)
+ASSIGNMENT:targetCompatibility = JavaVersion.VERSION_1_8 (line 26, parent=BUILD_GRADLE:plugin/build.gradle) -> ASSIGNMENT:targetCompatibility = JavaVersion.VERSION_1_8 (line 26, parent=BUILD_GRADLE:plugin/build.gradle)
+ASSIGNMENT:userOrg = metadata.organization (line 52, parent=BLOCK:publish) -> ASSIGNMENT:userOrg = metadata.organization (line 50, parent=BLOCK:publish)
+ASSIGNMENT:version = metadata.version (line 35, parent=BUILD_GRADLE:plugin/build.gradle) -> ASSIGNMENT:version = metadata.version (line 34, parent=BUILD_GRADLE:plugin/build.gradle)
+ASSIGNMENT:versionFile = file(../VERSION) (line 17, parent=BLOCK:ext) -> ASSIGNMENT:versionFile = file(../VERSION) (line 17, parent=BLOCK:ext)
+ASSIGNMENT:versionName = versionFile.readLines() [ 0.trim() (line 18, parent=BLOCK:ext) -> ASSIGNMENT:versionName = versionFile.readLines() [ 0.trim() (line 18, parent=BLOCK:ext)
+ASSIGNMENT:website = https://github.com/rockwillj/license-tools-plugin (line 5, parent=ASSIGNMENT:metadata) -> ASSIGNMENT:website = https://github.com/rockwillj/license-tools-plugin (line 7, parent=ASSIGNMENT:metadata)
+ASSIGNMENT:website = metadata.website (line 55, parent=BLOCK:publish) -> ASSIGNMENT:website = metadata.website (line 53, parent=BLOCK:publish)
+DECLARATION:metadata = ext.metadata (line 29, parent=BUILD_GRADLE:plugin/build.gradle) -> DECLARATION:metadata = ext.metadata (line 29, parent=BUILD_GRADLE:plugin/build.gradle)
+DEPENDENCY_DECL:classpath (line 7, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 7, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 38, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 37, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 39, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 38, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 41, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 40, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 42, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 41, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 43, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 42, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 44, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 43, parent=DEPENDENCIES_BLOCK:dependencies)
+PLUGIN_DECL:apply (line 22, parent=BUILD_GRADLE:plugin/build.gradle) -> PLUGIN_DECL:apply (line 22, parent=BUILD_GRADLE:plugin/build.gradle)
+PLUGIN_DECL:apply (line 23, parent=BUILD_GRADLE:plugin/build.gradle) -> PLUGIN_DECL:apply (line 23, parent=BUILD_GRADLE:plugin/build.gradle)
+PLUGIN_DECL:apply (line 24, parent=BUILD_GRADLE:plugin/build.gradle) -> PLUGIN_DECL:apply (line 24, parent=BUILD_GRADLE:plugin/build.gradle)
+REPOSITORIES_DECL:jcenter (line 11, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 11, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:jcenter (line 4, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 4, parent=REPOSITORIES_BLOCK:repositories)
+
+=== LEAF ROUND 1 MATCHES ===
+APPLY_SCRIPT:apply (line 14, parent=BUILD_GRADLE:plugin/build.gradle) -> APPLY_SCRIPT:apply (line 14, parent=BUILD_GRADLE:plugin/build.gradle)
+ASSIGNMENT:bintrayKey = BINTRAY_KEY (line 9, parent=ASSIGNMENT:metadata) -> ASSIGNMENT:bintrayKey = BINTRAY_KEY (line 11, parent=ASSIGNMENT:metadata)
+ASSIGNMENT:bintrayKey = metadata.bintrayKey (line 60, parent=BLOCK:publish) -> ASSIGNMENT:bintrayKey = metadata.bintrayKey (line 58, parent=BLOCK:publish)
+ASSIGNMENT:bintrayUser = BINTRAY_USERNAME (line 8, parent=ASSIGNMENT:metadata) -> ASSIGNMENT:bintrayUser = BINTRAY_USERNAME (line 10, parent=ASSIGNMENT:metadata)
+ASSIGNMENT:bintrayUser = metadata.bintrayUser (line 59, parent=BLOCK:publish) -> ASSIGNMENT:bintrayUser = metadata.bintrayUser (line 57, parent=BLOCK:publish)
+ASSIGNMENT:group = metadata.groupId (line 33, parent=BUILD_GRADLE:plugin/build.gradle) -> ASSIGNMENT:group = metadata.groupId (line 32, parent=BUILD_GRADLE:plugin/build.gradle)
+ASSIGNMENT:groupId = info.attosoft.licensetools (line 4, parent=ASSIGNMENT:metadata) -> ASSIGNMENT:groupId = info.attosoft.licensetools (line 6, parent=ASSIGNMENT:metadata)
+ASSIGNMENT:groupId = metadata.groupId (line 53, parent=BLOCK:publish) -> ASSIGNMENT:groupId = metadata.groupId (line 51, parent=BLOCK:publish)
+ASSIGNMENT:licences = [Apache-2.0] (line 7, parent=ASSIGNMENT:metadata) -> ASSIGNMENT:licences = [Apache-2.0] (line 9, parent=ASSIGNMENT:metadata)
+ASSIGNMENT:licences = metadata.licences (line 57, parent=BLOCK:publish) -> ASSIGNMENT:licences = metadata.licences (line 55, parent=BLOCK:publish)
+ASSIGNMENT:metadata.version = versionName (line 19, parent=BLOCK:ext) -> ASSIGNMENT:metadata.version = versionName (line 19, parent=BLOCK:ext)
+ASSIGNMENT:organization = attosoft (line 3, parent=ASSIGNMENT:metadata) -> ASSIGNMENT:organization = attosoft (line 5, parent=ASSIGNMENT:metadata)
+ASSIGNMENT:publishVersion = metadata.version (line 54, parent=BLOCK:publish) -> ASSIGNMENT:publishVersion = metadata.version (line 52, parent=BLOCK:publish)
+ASSIGNMENT:repository = git@github.com:rockwillj/license-tools-plugin.git (line 6, parent=ASSIGNMENT:metadata) -> ASSIGNMENT:repository = git@github.com:rockwillj/license-tools-plugin.git (line 8, parent=ASSIGNMENT:metadata)
+ASSIGNMENT:repository = metadata.repository (line 56, parent=BLOCK:publish) -> ASSIGNMENT:repository = metadata.repository (line 54, parent=BLOCK:publish)
+ASSIGNMENT:sourceCompatibility = JavaVersion.VERSION_1_8 (line 27, parent=BUILD_GRADLE:plugin/build.gradle) -> ASSIGNMENT:sourceCompatibility = JavaVersion.VERSION_1_8 (line 27, parent=BUILD_GRADLE:plugin/build.gradle)
+ASSIGNMENT:targetCompatibility = JavaVersion.VERSION_1_8 (line 26, parent=BUILD_GRADLE:plugin/build.gradle) -> ASSIGNMENT:targetCompatibility = JavaVersion.VERSION_1_8 (line 26, parent=BUILD_GRADLE:plugin/build.gradle)
+ASSIGNMENT:userOrg = metadata.organization (line 52, parent=BLOCK:publish) -> ASSIGNMENT:userOrg = metadata.organization (line 50, parent=BLOCK:publish)
+ASSIGNMENT:version = metadata.version (line 35, parent=BUILD_GRADLE:plugin/build.gradle) -> ASSIGNMENT:version = metadata.version (line 34, parent=BUILD_GRADLE:plugin/build.gradle)
+ASSIGNMENT:versionFile = file(../VERSION) (line 17, parent=BLOCK:ext) -> ASSIGNMENT:versionFile = file(../VERSION) (line 17, parent=BLOCK:ext)
+ASSIGNMENT:versionName = versionFile.readLines() [ 0.trim() (line 18, parent=BLOCK:ext) -> ASSIGNMENT:versionName = versionFile.readLines() [ 0.trim() (line 18, parent=BLOCK:ext)
+ASSIGNMENT:website = https://github.com/rockwillj/license-tools-plugin (line 5, parent=ASSIGNMENT:metadata) -> ASSIGNMENT:website = https://github.com/rockwillj/license-tools-plugin (line 7, parent=ASSIGNMENT:metadata)
+ASSIGNMENT:website = metadata.website (line 55, parent=BLOCK:publish) -> ASSIGNMENT:website = metadata.website (line 53, parent=BLOCK:publish)
+DECLARATION:metadata = ext.metadata (line 29, parent=BUILD_GRADLE:plugin/build.gradle) -> DECLARATION:metadata = ext.metadata (line 29, parent=BUILD_GRADLE:plugin/build.gradle)
+DEPENDENCY_DECL:classpath (line 7, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 7, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 38, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 37, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 39, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 38, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 41, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 40, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 42, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 41, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 43, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 42, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 44, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 43, parent=DEPENDENCIES_BLOCK:dependencies)
+PLUGIN_DECL:apply (line 22, parent=BUILD_GRADLE:plugin/build.gradle) -> PLUGIN_DECL:apply (line 22, parent=BUILD_GRADLE:plugin/build.gradle)
+PLUGIN_DECL:apply (line 23, parent=BUILD_GRADLE:plugin/build.gradle) -> PLUGIN_DECL:apply (line 23, parent=BUILD_GRADLE:plugin/build.gradle)
+PLUGIN_DECL:apply (line 24, parent=BUILD_GRADLE:plugin/build.gradle) -> PLUGIN_DECL:apply (line 24, parent=BUILD_GRADLE:plugin/build.gradle)
+REPOSITORIES_DECL:jcenter (line 11, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 11, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:jcenter (line 4, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 4, parent=REPOSITORIES_BLOCK:repositories)
+
+=== LEAF ROUND 2 MATCHES ===
+ASSIGNMENT:artifactId = ARTIFACT_ID (line 49, parent=BLOCK:publish) -> ASSIGNMENT:artifactId = metadata.artifactId (line 47, parent=BLOCK:publish)
+ASSIGNMENT:desc = A Gradle plugin to handle android application license notations (line 50, parent=BLOCK:publish) -> ASSIGNMENT:desc = metadata.description (line 48, parent=BLOCK:publish)
+ASSIGNMENT:jar.baseName = ARTIFACT_ID (line 34, parent=BUILD_GRADLE:plugin/build.gradle) -> ASSIGNMENT:jar.baseName = metadata.artifactId (line 33, parent=BUILD_GRADLE:plugin/build.gradle)
+
+=== LEAF ROUND 3 MATCHES ===
+(none)
+
+=== ALL COMPOSITE MATCHES ===
+ASSIGNMENT:metadata = [organization: attosoft, groupId: info.attosoft.licensetools, website: https://github.com/rockwillj/license-tools-plugin, repository: git@github.com:rockwillj/license-tools-plugin.git, licences: [Apache-2.0], bintrayUser: BINTRAY_USERNAME, bintrayKey: BINTRAY_KEY] (line 2, parent=BLOCK:ext) -> ASSIGNMENT:metadata = [artifactId: license-tools-plugin, description: A Gradle plugin to handle android application license notations, organization: attosoft, groupId: info.attosoft.licensetools, website: https://github.com/rockwillj/license-tools-plugin, repository: git@github.com:rockwillj/license-tools-plugin.git, licences: [Apache-2.0], bintrayUser: BINTRAY_USERNAME, bintrayKey: BINTRAY_KEY] (line 2, parent=BLOCK:ext)
+BLOCK:ext (line 1, parent=BUILD_LOGIC_GRADLE:metadata.gradle) -> BLOCK:ext (line 1, parent=BUILD_LOGIC_GRADLE:metadata.gradle)
+BLOCK:ext (line 16, parent=BUILD_GRADLE:plugin/build.gradle) -> BLOCK:ext (line 16, parent=BUILD_GRADLE:plugin/build.gradle)
+BLOCK:publish (line 48, parent=BUILD_GRADLE:plugin/build.gradle) -> BLOCK:publish (line 46, parent=BUILD_GRADLE:plugin/build.gradle)
+BUILDSCRIPT:buildscript (line 2, parent=BUILD_GRADLE:plugin/build.gradle) -> BUILDSCRIPT:buildscript (line 2, parent=BUILD_GRADLE:plugin/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 37, parent=BUILD_GRADLE:plugin/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 36, parent=BUILD_GRADLE:plugin/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 6, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 6, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 10, parent=BUILD_GRADLE:plugin/build.gradle) -> REPOSITORIES_BLOCK:repositories (line 10, parent=BUILD_GRADLE:plugin/build.gradle)
+REPOSITORIES_BLOCK:repositories (line 3, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 3, parent=BUILDSCRIPT:buildscript)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:ext (line 16, parent=BUILD_GRADLE:plugin/build.gradle) -> BLOCK:ext (line 16, parent=BUILD_GRADLE:plugin/build.gradle)
+BUILDSCRIPT:buildscript (line 2, parent=BUILD_GRADLE:plugin/build.gradle) -> BUILDSCRIPT:buildscript (line 2, parent=BUILD_GRADLE:plugin/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 37, parent=BUILD_GRADLE:plugin/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 36, parent=BUILD_GRADLE:plugin/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 6, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 6, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 10, parent=BUILD_GRADLE:plugin/build.gradle) -> REPOSITORIES_BLOCK:repositories (line 10, parent=BUILD_GRADLE:plugin/build.gradle)
+REPOSITORIES_BLOCK:repositories (line 3, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 3, parent=BUILDSCRIPT:buildscript)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+ASSIGNMENT:metadata = [organization: attosoft, groupId: info.attosoft.licensetools, website: https://github.com/rockwillj/license-tools-plugin, repository: git@github.com:rockwillj/license-tools-plugin.git, licences: [Apache-2.0], bintrayUser: BINTRAY_USERNAME, bintrayKey: BINTRAY_KEY] (line 2, parent=BLOCK:ext) -> ASSIGNMENT:metadata = [artifactId: license-tools-plugin, description: A Gradle plugin to handle android application license notations, organization: attosoft, groupId: info.attosoft.licensetools, website: https://github.com/rockwillj/license-tools-plugin, repository: git@github.com:rockwillj/license-tools-plugin.git, licences: [Apache-2.0], bintrayUser: BINTRAY_USERNAME, bintrayKey: BINTRAY_KEY] (line 2, parent=BLOCK:ext)
+BLOCK:ext (line 1, parent=BUILD_LOGIC_GRADLE:metadata.gradle) -> BLOCK:ext (line 1, parent=BUILD_LOGIC_GRADLE:metadata.gradle)
+BLOCK:publish (line 48, parent=BUILD_GRADLE:plugin/build.gradle) -> BLOCK:publish (line 46, parent=BUILD_GRADLE:plugin/build.gradle)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+EXTERNALIZE_PROPERTIES: Externalize property 'description'
+REMOVE_UNUSED_CODE: Remove unused element 'plugin/build.gradle:ARTIFACT_ID (30)'
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 39; 39, 0, 0
+Matched composites: 9; 9, 0, 0
+Deleted leaves: 1; 1, 0, 0
+Deleted composites: 0; 0, 0, 0
+Added leaves: 2; 2, 0, 0
+Added composites: 0; 0, 0, 0
+Total expected events: 51
+Total predicted events: 51
+
+TP=51 FP=0 FN=0
+TP=51, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT13 MISSED ===
+(none in the matching-phase output)
+
+

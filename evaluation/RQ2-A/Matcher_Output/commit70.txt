@@ -1,0 +1,182 @@
+
+=== COMMIT ===
+http://github.com/DChaushev/DISS-project/commit/e995fb70006b956ea2d69a2ee696689d61cca52b
+
+=== CHANGED GRADLE FILES ===
+servers/Controller/build.gradle -> servers/Controller/build.gradle
+servers/PicturesHolder/build.gradle -> servers/PicturesHolder/build.gradle
+servers/build.gradle -> servers/build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : servers/Controller/build.gradle (line 0)
+    CONDITION : if(this.hasProperty(mainClass)) (line 1)
+      ASSIGNMENT : name: ext.mainClass, operator: =, value: "com.controller.services.configuration.ApplicationConfig" (line 2)
+  BUILD_GRADLE : servers/PicturesHolder/build.gradle (line 0)
+    CONDITION : if(this.hasProperty(mainClass)) (line 1)
+      ASSIGNMENT : name: ext.mainClass, operator: =, value: "com.imagesHolder.services.configuration.ApplicationConfig" (line 2)
+  BUILD_GRADLE : servers/build.gradle (line 0)
+    SUBPROJECTS : subprojects (line 1)
+      PLUGIN_DECL : apply plugin: java (line 2)
+      PLUGIN_DECL : apply plugin: war (line 3)
+      ASSIGNMENT : name: sourceCompatibility, operator: =, value: "1.8" (line 5)
+      ASSIGNMENT : name: [compileJava, compileTestJava]*?.options*?.encoding, operator: =, value: "UTF-8" (line 6)
+      REPOSITORIES_BLOCK : repositories (line 8)
+        REPOSITORIES_DECL : mavenCentral (line 9)
+      DEPENDENCIES_BLOCK : dependencies (line 12)
+        DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.10' (line 13)
+        DEPENDENCY_DECL : configuration='compile', group='javax.ws.rs', name='jsr311-api', version='1.1.1' (line 16)
+        DEPENDENCY_DECL : configuration='compile', group='org.glassfish.jersey.containers', name='jersey-container-servlet', version='2.14' (line 19)
+        DEPENDENCY_DECL : configuration='compile', group='com.googlecode.json-simple', name='json-simple', version='1.1.1' (line 22)
+      BLOCK : build.doLast (line 26)
+        BLOCK : copy (line 27)
+          METHOD_CALL : from(war."archivePath") (line 28)
+          METHOD_CALL : into("C:/apache-tomcat-9.0.0.M1/webapps") (line 29)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : servers/Controller/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: java (line 1)
+    PLUGIN_DECL : apply plugin: war (line 2)
+    ASSIGNMENT : name: sourceCompatibility, operator: =, value: "1.8" (line 4)
+    ASSIGNMENT : name: [compileJava, compileTestJava]*?.options*?.encoding, operator: =, value: "UTF-8" (line 5)
+    CONDITION : if(this.hasProperty(mainClass)) (line 7)
+      ASSIGNMENT : name: ext.mainClass, operator: =, value: "com.controller.services.configuration.ApplicationConfig" (line 8)
+    REPOSITORIES_BLOCK : repositories (line 11)
+      REPOSITORIES_DECL : mavenCentral (line 12)
+    DEPENDENCIES_BLOCK : dependencies (line 15)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.10' (line 16)
+      DEPENDENCY_DECL : configuration='compile', group='javax.ws.rs', name='javax.ws.rs-api', version='2.0.1' (line 19)
+      DEPENDENCY_DECL : configuration='compile', group='org.glassfish.jersey.containers', name='jersey-container-servlet', version='2.14' (line 22)
+      DEPENDENCY_DECL : configuration='compile', group='com.googlecode.json-simple', name='json-simple', version='1.1.1' (line 25)
+    BLOCK : build.doLast (line 29)
+      BLOCK : copy (line 30)
+        METHOD_CALL : from(war."archivePath") (line 31)
+        METHOD_CALL : into("C:/apache-tomcat-9.0.0.M1/webapps") (line 32)
+  BUILD_GRADLE : servers/PicturesHolder/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: java (line 1)
+    PLUGIN_DECL : apply plugin: war (line 2)
+    ASSIGNMENT : name: sourceCompatibility, operator: =, value: "1.8" (line 4)
+    ASSIGNMENT : name: [compileJava, compileTestJava]*?.options*?.encoding, operator: =, value: "UTF-8" (line 5)
+    CONDITION : if(this.hasProperty(mainClass)) (line 7)
+      ASSIGNMENT : name: ext.mainClass, operator: =, value: "com.picturesHolder.services.configuration.ApplicationConfig" (line 8)
+    REPOSITORIES_BLOCK : repositories (line 11)
+      REPOSITORIES_DECL : mavenCentral (line 12)
+    DEPENDENCIES_BLOCK : dependencies (line 15)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.10' (line 16)
+      DEPENDENCY_DECL : configuration='compile', group='javax.ws.rs', name='javax.ws.rs-api', version='2.0.1' (line 19)
+      DEPENDENCY_DECL : configuration='compile', group='org.glassfish.jersey.containers', name='jersey-container-servlet', version='2.14' (line 22)
+      DEPENDENCY_DECL : configuration='compile', group='com.googlecode.json-simple', name='json-simple', version='1.1.1' (line 25)
+    BLOCK : build.doLast (line 29)
+      BLOCK : copy (line 30)
+        METHOD_CALL : from(war."archivePath") (line 31)
+        METHOD_CALL : into("C:/apache-tomcat-9.0.0.M1/webapps") (line 32)
+  BUILD_GRADLE : servers/build.gradle (line 0)
+
+=== DELETED COMPOSITE NODES ===
+BLOCK:copy (line 27, parent=BLOCK:doLast)
+BLOCK:doLast (line 26, parent=SUBPROJECTS:subprojects)
+DEPENDENCIES_BLOCK:dependencies (line 12, parent=SUBPROJECTS:subprojects)
+REPOSITORIES_BLOCK:repositories (line 8, parent=SUBPROJECTS:subprojects)
+SUBPROJECTS:subprojects (line 1, parent=BUILD_GRADLE:servers/build.gradle)
+
+=== DELETED LEAF NODES ===
+ASSIGNMENT:[compileJava, compileTestJava]*?.options*?.encoding = UTF-8 (line 6, parent=SUBPROJECTS:subprojects)
+ASSIGNMENT:sourceCompatibility = 1.8 (line 5, parent=SUBPROJECTS:subprojects)
+DEPENDENCY_DECL:compile (line 16, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 19, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 22, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 13, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:from (line 28, parent=BLOCK:copy)
+METHOD_CALL:into (line 29, parent=BLOCK:copy)
+PLUGIN_DECL:apply (line 2, parent=SUBPROJECTS:subprojects)
+PLUGIN_DECL:apply (line 3, parent=SUBPROJECTS:subprojects)
+REPOSITORIES_DECL:mavenCentral (line 9, parent=REPOSITORIES_BLOCK:repositories)
+
+=== ADDED COMPOSITE NODES ===
+BLOCK:copy (line 30, parent=BLOCK:doLast)
+BLOCK:copy (line 30, parent=BLOCK:doLast)
+BLOCK:doLast (line 29, parent=BUILD_GRADLE:servers/Controller/build.gradle)
+BLOCK:doLast (line 29, parent=BUILD_GRADLE:servers/PicturesHolder/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 15, parent=BUILD_GRADLE:servers/Controller/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 15, parent=BUILD_GRADLE:servers/PicturesHolder/build.gradle)
+REPOSITORIES_BLOCK:repositories (line 11, parent=BUILD_GRADLE:servers/Controller/build.gradle)
+REPOSITORIES_BLOCK:repositories (line 11, parent=BUILD_GRADLE:servers/PicturesHolder/build.gradle)
+
+=== ADDED LEAF NODES ===
+ASSIGNMENT:[compileJava, compileTestJava]*?.options*?.encoding = UTF-8 (line 5, parent=BUILD_GRADLE:servers/Controller/build.gradle)
+ASSIGNMENT:[compileJava, compileTestJava]*?.options*?.encoding = UTF-8 (line 5, parent=BUILD_GRADLE:servers/PicturesHolder/build.gradle)
+ASSIGNMENT:sourceCompatibility = 1.8 (line 4, parent=BUILD_GRADLE:servers/Controller/build.gradle)
+ASSIGNMENT:sourceCompatibility = 1.8 (line 4, parent=BUILD_GRADLE:servers/PicturesHolder/build.gradle)
+DEPENDENCY_DECL:compile (line 19, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 19, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 22, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 22, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 25, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 25, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 16, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 16, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:from (line 31, parent=BLOCK:copy)
+METHOD_CALL:from (line 31, parent=BLOCK:copy)
+METHOD_CALL:into (line 32, parent=BLOCK:copy)
+METHOD_CALL:into (line 32, parent=BLOCK:copy)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:servers/Controller/build.gradle)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:servers/PicturesHolder/build.gradle)
+PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:servers/Controller/build.gradle)
+PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:servers/PicturesHolder/build.gradle)
+REPOSITORIES_DECL:mavenCentral (line 12, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 12, parent=REPOSITORIES_BLOCK:repositories)
+
+=== ALL LEAF MATCHES ===
+ASSIGNMENT:ext.mainClass = com.controller.services.configuration.ApplicationConfig (line 2, parent=CONDITION:if) -> ASSIGNMENT:ext.mainClass = com.controller.services.configuration.ApplicationConfig (line 8, parent=CONDITION:if)
+ASSIGNMENT:ext.mainClass = com.imagesHolder.services.configuration.ApplicationConfig (line 2, parent=CONDITION:if) -> ASSIGNMENT:ext.mainClass = com.picturesHolder.services.configuration.ApplicationConfig (line 8, parent=CONDITION:if)
+
+=== LEAF ROUND 1 MATCHES ===
+ASSIGNMENT:ext.mainClass = com.controller.services.configuration.ApplicationConfig (line 2, parent=CONDITION:if) -> ASSIGNMENT:ext.mainClass = com.controller.services.configuration.ApplicationConfig (line 8, parent=CONDITION:if)
+
+=== LEAF ROUND 2 MATCHES ===
+ASSIGNMENT:ext.mainClass = com.imagesHolder.services.configuration.ApplicationConfig (line 2, parent=CONDITION:if) -> ASSIGNMENT:ext.mainClass = com.picturesHolder.services.configuration.ApplicationConfig (line 8, parent=CONDITION:if)
+
+=== LEAF ROUND 3 MATCHES ===
+(none)
+
+=== ALL COMPOSITE MATCHES ===
+CONDITION:if (line 1, parent=BUILD_GRADLE:servers/Controller/build.gradle) -> CONDITION:if (line 7, parent=BUILD_GRADLE:servers/Controller/build.gradle)
+CONDITION:if (line 1, parent=BUILD_GRADLE:servers/PicturesHolder/build.gradle) -> CONDITION:if (line 7, parent=BUILD_GRADLE:servers/PicturesHolder/build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+CONDITION:if (line 1, parent=BUILD_GRADLE:servers/Controller/build.gradle) -> CONDITION:if (line 7, parent=BUILD_GRADLE:servers/Controller/build.gradle)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+CONDITION:if (line 1, parent=BUILD_GRADLE:servers/PicturesHolder/build.gradle) -> CONDITION:if (line 7, parent=BUILD_GRADLE:servers/PicturesHolder/build.gradle)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+PUSH_DOWN_DEPENDENCY: Push down dependency 'servers/build.gradle:compile (19)'
+PUSH_DOWN_DEPENDENCY: Push down dependency 'servers/build.gradle:compile (22)'
+PUSH_DOWN_DEPENDENCY: Push down dependency 'servers/build.gradle:testCompile (13)'
+PUSH_DOWN_VARIABLE: Push down variable 'servers/build.gradle:from (28)'
+PUSH_DOWN_VARIABLE: Push down variable 'servers/build.gradle:sourceCompatibility (5)'
+PUSH_DOWN_VARIABLE: Push down variable 'servers/build.gradle:into (29)'
+PUSH_DOWN_VARIABLE: Push down variable 'servers/build.gradle:[compileJava, compileTestJava]*?.options*?.encoding (6)'
+
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 2; 2, 0, 0
+Matched composites: 2; 2, 0, 0
+Deleted leaves: 11; 11, 0, 0
+Deleted composites: 5; 5, 0, 0
+Added leaves: 22; 22, 0, 0
+Added composites: 8; 8, 0, 0
+Total expected events: 50
+Total predicted events: 50
+
+TP=50 FP=0 FN=0
+TP=50, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT76 MISSED ===
+FP: (none)
+FN: (none)

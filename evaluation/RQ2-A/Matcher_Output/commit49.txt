@@ -1,0 +1,94 @@
+
+=== COMMIT ===
+http://github.com/IndoorAtlas/cordova-plugin/commit/5030ad13fa2d0156c7c763027450fb6832be0a4b
+
+=== CHANGED GRADLE FILES ===
+src/android/indooratlas.gradle -> src/android/build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_LOGIC_GRADLE : src/android/indooratlas.gradle (line 0)
+    REPOSITORIES_BLOCK : repositories (line 1)
+      REPOSITORIES_DECL : mavenCentral (line 2)
+      REPOSITORIES_DECL : maven (line 3)
+        REPOSITORIES_DECL : url("https://indooratlas-ltd.bintray.com/mvn-public/") (line 4)
+    DEPENDENCIES_BLOCK : dependencies (line 8)
+      DEPENDENCY_DECL : configuration='implementation', group='com.android.support', name='appcompat-v7', version='27.0.2' (line 9)
+      DEPENDENCY_DECL : configuration='implementation', group='com.indooratlas.android', name='indooratlas-android-sdk', version='3.4.2' (line 10)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : src/android/build.gradle (line 0)
+    REPOSITORIES_BLOCK : repositories (line 1)
+      REPOSITORIES_DECL : mavenCentral (line 2)
+      REPOSITORIES_DECL : maven (line 3)
+        REPOSITORIES_DECL : url("https://indooratlas-ltd.bintray.com/mvn-public/") (line 4)
+    DEPENDENCIES_BLOCK : dependencies (line 8)
+      DEPENDENCY_DECL : configuration='implementation', group='com.android.support', name='appcompat-v7', version='27.0.2' (line 9)
+      DEPENDENCY_DECL : configuration='implementation', group='com.indooratlas.android', name='indooratlas-android-sdk', version='3.4.2' (line 10)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+(none)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+(none)
+
+=== ALL LEAF MATCHES ===
+DEPENDENCY_DECL:implementation (line 10, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 10, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:implementation (line 9, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 9, parent=DEPENDENCIES_BLOCK:dependencies)
+REPOSITORIES_DECL:mavenCentral (line 2, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 2, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:url (line 4, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 4, parent=REPOSITORIES_DECL:maven)
+
+=== LEAF ROUND 1 MATCHES ===
+DEPENDENCY_DECL:implementation (line 10, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 10, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:implementation (line 9, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 9, parent=DEPENDENCIES_BLOCK:dependencies)
+REPOSITORIES_DECL:mavenCentral (line 2, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 2, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:url (line 4, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 4, parent=REPOSITORIES_DECL:maven)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+(none)
+
+=== ALL COMPOSITE MATCHES ===
+DEPENDENCIES_BLOCK:dependencies (line 8, parent=BUILD_LOGIC_GRADLE:src/android/indooratlas.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 8, parent=BUILD_GRADLE:src/android/build.gradle)
+REPOSITORIES_BLOCK:repositories (line 1, parent=BUILD_LOGIC_GRADLE:src/android/indooratlas.gradle) -> REPOSITORIES_BLOCK:repositories (line 1, parent=BUILD_GRADLE:src/android/build.gradle)
+REPOSITORIES_DECL:maven (line 3, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 3, parent=REPOSITORIES_BLOCK:repositories)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+DEPENDENCIES_BLOCK:dependencies (line 8, parent=BUILD_LOGIC_GRADLE:src/android/indooratlas.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 8, parent=BUILD_GRADLE:src/android/build.gradle)
+REPOSITORIES_BLOCK:repositories (line 1, parent=BUILD_LOGIC_GRADLE:src/android/indooratlas.gradle) -> REPOSITORIES_BLOCK:repositories (line 1, parent=BUILD_GRADLE:src/android/build.gradle)
+REPOSITORIES_DECL:maven (line 3, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 3, parent=REPOSITORIES_BLOCK:repositories)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+(none)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+RENAME_FIELD: Rename file 'src/android/indooratlas.gradle' to 'src/android/build.gradle'
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 4; 4, 0, 0
+Matched composites: 3; 3, 0, 0
+Deleted leaves: 0; 0, 0, 0
+Deleted composites: 0; 0, 0, 0
+Added leaves: 0; 0, 0, 0
+Added composites: 0; 0, 0, 0
+Total expected events: 7
+Total predicted events: 7
+
+TP=7 FP=0 FN=0
+TP=7, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT54 MISSED ===
+(none)

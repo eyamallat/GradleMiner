@@ -1,0 +1,143 @@
+=== COMMIT ===
+http://github.com/skydoves/ElasticViews/commit/354b5d5629dd28fad6943746051418bc716fe7f8
+
+=== CHANGED GRADLE FILES ===
+elasticviews/build.gradle -> elasticviews/build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : elasticviews/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: com.android.library (line 1)
+    PLUGIN_DECL : apply plugin: kotlin-android (line 2)
+    PLUGIN_DECL : apply plugin: kotlin-android-extensions (line 3)
+    PLUGIN_DECL : apply plugin: org.jetbrains.dokka-android (line 4)
+    APPLY_SCRIPT : apply from: ../publish.gradle (line 5)
+    APPLY_SCRIPT : apply from: ../dependencies.gradle (line 6)
+    BLOCK : android (line 8)
+      METHOD_CALL : compileSdkVersion(versions."compileSdk") (line 9)
+      BLOCK : defaultConfig (line 10)
+        METHOD_CALL : minSdkVersion(versions."minSdk") (line 11)
+        METHOD_CALL : targetSdkVersion(versions."compileSdk") (line 12)
+        METHOD_CALL : versionCode(versions."versionCode") (line 13)
+        METHOD_CALL : versionName(versions."versionName") (line 14)
+    DEPENDENCIES_BLOCK : dependencies (line 18)
+      DEPENDENCY_DECL : configuration='implementation', group='com.google.android.material', name='material', version='${versions.googleMaterial}' (line 19)
+      DEPENDENCY_DECL : configuration='implementation', group='org.jetbrains.kotlin', name='kotlin-stdlib-jdk7', version='${versions.kotlin}' (line 20)
+    BLOCK : dokka (line 23)
+      ASSIGNMENT : name: moduleName, operator: =, value: "needs" (line 24)
+      ASSIGNMENT : name: outputFormat, operator: =, value: "html" (line 25)
+      ASSIGNMENT : name: outputDirectory, operator: =, value: "$buildDir/javadoc" (line 27)
+    TASK_CONFIGURATION : , type=Javadoc, style=tasks.withType (line 31)
+      ASSIGNMENT : name: excludes, operator: =, value: ["**/*.kt"] (line 32)
+      METHOD_CALL : options.addBooleanOption("Xdoclint:none", true) (line 33)
+    APPLY_SCRIPT : apply from: ../spotless.gradle (line 36)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : elasticviews/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: com.android.library (line 1)
+    PLUGIN_DECL : apply plugin: kotlin-android (line 2)
+    PLUGIN_DECL : apply plugin: kotlin-android-extensions (line 3)
+    PLUGIN_DECL : apply plugin: org.jetbrains.dokka-android (line 4)
+    APPLY_SCRIPT : apply from: ../publish.gradle (line 5)
+    APPLY_SCRIPT : apply from: ../dependencies.gradle (line 6)
+    BLOCK : android (line 8)
+      METHOD_CALL : compileSdkVersion(versions."compileSdk") (line 9)
+      BLOCK : defaultConfig (line 10)
+        METHOD_CALL : minSdkVersion(versions."minSdk") (line 11)
+        METHOD_CALL : targetSdkVersion(versions."compileSdk") (line 12)
+        METHOD_CALL : versionCode(versions."versionCode") (line 13)
+        METHOD_CALL : versionName(versions."versionName") (line 14)
+    DEPENDENCIES_BLOCK : dependencies (line 18)
+      DEPENDENCY_DECL : configuration='implementation', group='org.jetbrains.kotlin', name='kotlin-stdlib-jdk7', version='${versions.kotlin}' (line 19)
+      DEPENDENCY_DECL : configuration='implementation', group='com.google.android.material', name='material', version='${versions.googleMaterial}' (line 20)
+    BLOCK : dokka (line 23)
+      ASSIGNMENT : name: moduleName, operator: =, value: "elasticviews" (line 24)
+      ASSIGNMENT : name: outputFormat, operator: =, value: "html" (line 25)
+      ASSIGNMENT : name: outputDirectory, operator: =, value: "$buildDir/javadoc" (line 27)
+    TASK_CONFIGURATION : , type=Javadoc, style=tasks.withType (line 31)
+      ASSIGNMENT : name: excludes, operator: =, value: ["**/*.kt"] (line 32)
+      METHOD_CALL : options.addBooleanOption("Xdoclint:none", true) (line 33)
+    APPLY_SCRIPT : apply from: ../spotless.gradle (line 36)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+(none)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+(none)
+
+=== ALL LEAF MATCHES ===
+APPLY_SCRIPT:apply (line 36, parent=BUILD_GRADLE:elasticviews/build.gradle) -> APPLY_SCRIPT:apply (line 36, parent=BUILD_GRADLE:elasticviews/build.gradle)
+APPLY_SCRIPT:apply (line 5, parent=BUILD_GRADLE:elasticviews/build.gradle) -> APPLY_SCRIPT:apply (line 5, parent=BUILD_GRADLE:elasticviews/build.gradle)
+APPLY_SCRIPT:apply (line 6, parent=BUILD_GRADLE:elasticviews/build.gradle) -> APPLY_SCRIPT:apply (line 6, parent=BUILD_GRADLE:elasticviews/build.gradle)
+ASSIGNMENT:excludes = [**/*.kt] (line 32, parent=TASK_CONFIGURATION:withType) -> ASSIGNMENT:excludes = [**/*.kt] (line 32, parent=TASK_CONFIGURATION:withType)
+ASSIGNMENT:moduleName = needs (line 24, parent=BLOCK:dokka) -> ASSIGNMENT:moduleName = elasticviews (line 24, parent=BLOCK:dokka)
+ASSIGNMENT:outputDirectory = $buildDir/javadoc (line 27, parent=BLOCK:dokka) -> ASSIGNMENT:outputDirectory = $buildDir/javadoc (line 27, parent=BLOCK:dokka)
+ASSIGNMENT:outputFormat = html (line 25, parent=BLOCK:dokka) -> ASSIGNMENT:outputFormat = html (line 25, parent=BLOCK:dokka)
+DEPENDENCY_DECL:implementation (line 19, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 20, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:implementation (line 20, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 19, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:addBooleanOption (line 33, parent=TASK_CONFIGURATION:withType) -> METHOD_CALL:addBooleanOption (line 33, parent=TASK_CONFIGURATION:withType)
+METHOD_CALL:compileSdkVersion (line 9, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 9, parent=BLOCK:android)
+METHOD_CALL:minSdkVersion (line 11, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 11, parent=BLOCK:defaultConfig)
+METHOD_CALL:targetSdkVersion (line 12, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 12, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 13, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 13, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 14, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 14, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:elasticviews/build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:elasticviews/build.gradle)
+PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:elasticviews/build.gradle) -> PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:elasticviews/build.gradle)
+PLUGIN_DECL:apply (line 3, parent=BUILD_GRADLE:elasticviews/build.gradle) -> PLUGIN_DECL:apply (line 3, parent=BUILD_GRADLE:elasticviews/build.gradle)
+PLUGIN_DECL:apply (line 4, parent=BUILD_GRADLE:elasticviews/build.gradle) -> PLUGIN_DECL:apply (line 4, parent=BUILD_GRADLE:elasticviews/build.gradle)
+
+=== LEAF ROUND 1 MATCHES ===
+APPLY_SCRIPT:apply (line 36, parent=BUILD_GRADLE:elasticviews/build.gradle) -> APPLY_SCRIPT:apply (line 36, parent=BUILD_GRADLE:elasticviews/build.gradle)
+APPLY_SCRIPT:apply (line 5, parent=BUILD_GRADLE:elasticviews/build.gradle) -> APPLY_SCRIPT:apply (line 5, parent=BUILD_GRADLE:elasticviews/build.gradle)
+APPLY_SCRIPT:apply (line 6, parent=BUILD_GRADLE:elasticviews/build.gradle) -> APPLY_SCRIPT:apply (line 6, parent=BUILD_GRADLE:elasticviews/build.gradle)
+ASSIGNMENT:excludes = [**/*.kt] (line 32, parent=TASK_CONFIGURATION:withType) -> ASSIGNMENT:excludes = [**/*.kt] (line 32, parent=TASK_CONFIGURATION:withType)
+ASSIGNMENT:outputDirectory = $buildDir/javadoc (line 27, parent=BLOCK:dokka) -> ASSIGNMENT:outputDirectory = $buildDir/javadoc (line 27, parent=BLOCK:dokka)
+ASSIGNMENT:outputFormat = html (line 25, parent=BLOCK:dokka) -> ASSIGNMENT:outputFormat = html (line 25, parent=BLOCK:dokka)
+DEPENDENCY_DECL:implementation (line 19, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 20, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:implementation (line 20, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 19, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:addBooleanOption (line 33, parent=TASK_CONFIGURATION:withType) -> METHOD_CALL:addBooleanOption (line 33, parent=TASK_CONFIGURATION:withType)
+METHOD_CALL:compileSdkVersion (line 9, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 9, parent=BLOCK:android)
+METHOD_CALL:minSdkVersion (line 11, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 11, parent=BLOCK:defaultConfig)
+METHOD_CALL:targetSdkVersion (line 12, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 12, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 13, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 13, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 14, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 14, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:elasticviews/build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:elasticviews/build.gradle)
+PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:elasticviews/build.gradle) -> PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:elasticviews/build.gradle)
+PLUGIN_DECL:apply (line 3, parent=BUILD_GRADLE:elasticviews/build.gradle) -> PLUGIN_DECL:apply (line 3, parent=BUILD_GRADLE:elasticviews/build.gradle)
+PLUGIN_DECL:apply (line 4, parent=BUILD_GRADLE:elasticviews/build.gradle) -> PLUGIN_DECL:apply (line 4, parent=BUILD_GRADLE:elasticviews/build.gradle)
+
+=== LEAF ROUND 2 MATCHES ===
+ASSIGNMENT:moduleName = needs (line 24, parent=BLOCK:dokka) -> ASSIGNMENT:moduleName = elasticviews (line 24, parent=BLOCK:dokka)
+
+=== LEAF ROUND 3 MATCHES ===
+(none)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:android (line 8, parent=BUILD_GRADLE:elasticviews/build.gradle) -> BLOCK:android (line 8, parent=BUILD_GRADLE:elasticviews/build.gradle)
+BLOCK:defaultConfig (line 10, parent=BLOCK:android) -> BLOCK:defaultConfig (line 10, parent=BLOCK:android)
+BLOCK:dokka (line 23, parent=BUILD_GRADLE:elasticviews/build.gradle) -> BLOCK:dokka (line 23, parent=BUILD_GRADLE:elasticviews/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 18, parent=BUILD_GRADLE:elasticviews/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 18, parent=BUILD_GRADLE:elasticviews/build.gradle)
+TASK_CONFIGURATION:withType (line 31, parent=BUILD_GRADLE:elasticviews/build.gradle) -> TASK_CONFIGURATION:withType (line 31, parent=BUILD_GRADLE:elasticviews/build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:android (line 8, parent=BUILD_GRADLE:elasticviews/build.gradle) -> BLOCK:android (line 8, parent=BUILD_GRADLE:elasticviews/build.gradle)
+BLOCK:defaultConfig (line 10, parent=BLOCK:android) -> BLOCK:defaultConfig (line 10, parent=BLOCK:android)
+TASK_CONFIGURATION:withType (line 31, parent=BUILD_GRADLE:elasticviews/build.gradle) -> TASK_CONFIGURATION:withType (line 31, parent=BUILD_GRADLE:elasticviews/build.gradle)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+BLOCK:dokka (line 23, parent=BUILD_GRADLE:elasticviews/build.gradle) -> BLOCK:dokka (line 23, parent=BUILD_GRADLE:elasticviews/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 18, parent=BUILD_GRADLE:elasticviews/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 18, parent=BUILD_GRADLE:elasticviews/build.gradle)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+
+
+

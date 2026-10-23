@@ -1,0 +1,182 @@
+
+=== COMMIT ===
+https://github.com/runrightfast-archived/runrightfast-core/commit/7ad165077f690b404c38cf2152f564a427f8de81
+
+=== CHANGED GRADLE FILES ===
+build.gradle -> build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 1)
+      REPOSITORIES_BLOCK : repositories (line 2)
+        REPOSITORIES_DECL : mavenCentral (line 2)
+      DEPENDENCIES_BLOCK : dependencies (line 3)
+        DEPENDENCY_DECL : configuration='classpath', group='net.saliman', name='gradle-cobertura-plugin', version='2.1.0' (line 3)
+    SUBPROJECTS : subprojects (line 6)
+      PLUGIN_DECL : apply plugin: groovy (line 7)
+      PLUGIN_DECL : apply plugin: eclipse (line 8)
+      PLUGIN_DECL : apply plugin: cobertura (line 9)
+      PLUGIN_DECL : apply plugin: findbugs (line 10)
+      PLUGIN_DECL : apply plugin: codenarc (line 11)
+      PLUGIN_DECL : apply plugin: maven (line 12)
+      REPOSITORIES_BLOCK : repositories (line 14)
+        REPOSITORIES_DECL : mavenCentral (line 14)
+      DEPENDENCIES_BLOCK : dependencies (line 16)
+        DEPENDENCY_DECL : configuration='compile', group='org.codehaus.groovy', name='groovy-all', version='2.2.1', classifier='indy' (line 17)
+        DEPENDENCY_DECL : configuration='compile', group='com.google.guava', name='guava', version='15.0' (line 18)
+        DEPENDENCY_DECL : configuration='compile', group='ch.qos.logback', name='logback-classic', version='1.0.13' (line 19)
+        DEPENDENCY_DECL : configuration='testCompile', group='org.spockframework', name='spock-core', version='0.7-groovy-2.0' (line 21)
+      ASSIGNMENT : name: version, operator: =, value: "0.0.1-SNAPSHOT" (line 24)
+      BLOCK : jar (line 26)
+        METHOD_CALL : manifest.attributes([provider: "RunRightFast"]) (line 26)
+      BLOCK : cobertura (line 28)
+        ASSIGNMENT : name: coverageSourceDirs, operator: <<, value: project."sourceSets"."main"."groovy"."srcDirs" (line 29)
+      TASK_RELATION : relation=dependsOn, owner=build, targets=javadoc, groovydoc (line 32)
+    TASK_DECLARATION : taskName=wrapper, type=Wrapper, style=task (line 35)
+      ASSIGNMENT : name: gradleVersion, operator: =, value: "1.9" (line 36)
+    METHOD_CALL : defaultTasks("clean", "build", "cobertura") (line 39)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 1)
+      REPOSITORIES_BLOCK : repositories (line 2)
+        REPOSITORIES_DECL : mavenCentral (line 2)
+      DEPENDENCIES_BLOCK : dependencies (line 3)
+        DEPENDENCY_DECL : configuration='classpath', group='net.saliman', name='gradle-cobertura-plugin', version='2.1.0' (line 3)
+    SUBPROJECTS : subprojects (line 6)
+      ASSIGNMENT : name: version, operator: =, value: "0.0.1-SNAPSHOT" (line 7)
+      PLUGIN_DECL : apply plugin: groovy (line 9)
+      PLUGIN_DECL : apply plugin: eclipse (line 10)
+      PLUGIN_DECL : apply plugin: cobertura (line 11)
+      PLUGIN_DECL : apply plugin: findbugs (line 12)
+      PLUGIN_DECL : apply plugin: codenarc (line 13)
+      PLUGIN_DECL : apply plugin: maven (line 14)
+      REPOSITORIES_BLOCK : repositories (line 16)
+        REPOSITORIES_DECL : mavenCentral (line 16)
+      DEPENDENCIES_BLOCK : dependencies (line 18)
+        DEPENDENCY_DECL : configuration='compile', group='org.codehaus.groovy', name='groovy-all', version='2.2.1', classifier='indy' (line 19)
+        DEPENDENCY_DECL : configuration='compile', group='com.google.guava', name='guava', version='15.0' (line 20)
+        DEPENDENCY_DECL : configuration='compile', group='ch.qos.logback', name='logback-classic', version='1.0.13' (line 21)
+        DEPENDENCY_DECL : configuration='testCompile', group='org.spockframework', name='spock-core', version='0.7-groovy-2.0' (line 23)
+      BLOCK : jar (line 26)
+        METHOD_CALL : manifest.attributes([provider: "RunRightFast"]) (line 26)
+      BLOCK : cobertura (line 28)
+        ASSIGNMENT : name: coverageSourceDirs, operator: <<, value: project."sourceSets"."main"."groovy"."srcDirs" (line 29)
+      ASSIGNMENT : name: sourceCompatibility, operator: =, value: 1.7 (line 32)
+      ASSIGNMENT : name: targetCompatibility, operator: =, value: 1.7 (line 33)
+      TASK_RELATION : relation=dependsOn, owner=build, targets=javadoc, groovydoc (line 35)
+    TASK_DECLARATION : taskName=wrapper, type=Wrapper, style=task (line 38)
+      ASSIGNMENT : name: gradleVersion, operator: =, value: "1.9" (line 38)
+    METHOD_CALL : defaultTasks("clean", "build", "cobertura") (line 40)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+(none)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+ASSIGNMENT:sourceCompatibility = 1.7 (line 32, parent=SUBPROJECTS:subprojects)
+ASSIGNMENT:targetCompatibility = 1.7 (line 33, parent=SUBPROJECTS:subprojects)
+
+=== ALL LEAF MATCHES ===
+ASSIGNMENT:coverageSourceDirs = project.sourceSets.main.groovy.srcDirs (line 29, parent=BLOCK:cobertura) -> ASSIGNMENT:coverageSourceDirs = project.sourceSets.main.groovy.srcDirs (line 29, parent=BLOCK:cobertura)
+ASSIGNMENT:gradleVersion = 1.9 (line 36, parent=TASK_DECLARATION:wrapper) -> ASSIGNMENT:gradleVersion = 1.9 (line 38, parent=TASK_DECLARATION:wrapper)
+ASSIGNMENT:version = 0.0.1-SNAPSHOT (line 24, parent=SUBPROJECTS:subprojects) -> ASSIGNMENT:version = 0.0.1-SNAPSHOT (line 7, parent=SUBPROJECTS:subprojects)
+DEPENDENCY_DECL:classpath (line 3, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 3, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 17, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 19, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 18, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 20, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 19, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 21, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 21, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 23, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:attributes (line 26, parent=BLOCK:jar) -> METHOD_CALL:attributes (line 26, parent=BLOCK:jar)
+METHOD_CALL:defaultTasks (line 39, parent=BUILD_GRADLE:build.gradle) -> METHOD_CALL:defaultTasks (line 40, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 10, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 12, parent=SUBPROJECTS:subprojects)
+PLUGIN_DECL:apply (line 11, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 13, parent=SUBPROJECTS:subprojects)
+PLUGIN_DECL:apply (line 12, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 14, parent=SUBPROJECTS:subprojects)
+PLUGIN_DECL:apply (line 7, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 9, parent=SUBPROJECTS:subprojects)
+PLUGIN_DECL:apply (line 8, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 10, parent=SUBPROJECTS:subprojects)
+PLUGIN_DECL:apply (line 9, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 11, parent=SUBPROJECTS:subprojects)
+REPOSITORIES_DECL:mavenCentral (line 14, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 16, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 2, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 2, parent=REPOSITORIES_BLOCK:repositories)
+TASK_RELATION:dependsOn (line 32, parent=SUBPROJECTS:subprojects) -> TASK_RELATION:dependsOn (line 35, parent=SUBPROJECTS:subprojects)
+
+=== LEAF ROUND 1 MATCHES ===
+ASSIGNMENT:coverageSourceDirs = project.sourceSets.main.groovy.srcDirs (line 29, parent=BLOCK:cobertura) -> ASSIGNMENT:coverageSourceDirs = project.sourceSets.main.groovy.srcDirs (line 29, parent=BLOCK:cobertura)
+ASSIGNMENT:gradleVersion = 1.9 (line 36, parent=TASK_DECLARATION:wrapper) -> ASSIGNMENT:gradleVersion = 1.9 (line 38, parent=TASK_DECLARATION:wrapper)
+ASSIGNMENT:version = 0.0.1-SNAPSHOT (line 24, parent=SUBPROJECTS:subprojects) -> ASSIGNMENT:version = 0.0.1-SNAPSHOT (line 7, parent=SUBPROJECTS:subprojects)
+DEPENDENCY_DECL:classpath (line 3, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 3, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 17, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 19, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 18, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 20, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 19, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 21, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 21, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 23, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:attributes (line 26, parent=BLOCK:jar) -> METHOD_CALL:attributes (line 26, parent=BLOCK:jar)
+METHOD_CALL:defaultTasks (line 39, parent=BUILD_GRADLE:build.gradle) -> METHOD_CALL:defaultTasks (line 40, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 10, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 12, parent=SUBPROJECTS:subprojects)
+PLUGIN_DECL:apply (line 11, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 13, parent=SUBPROJECTS:subprojects)
+PLUGIN_DECL:apply (line 12, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 14, parent=SUBPROJECTS:subprojects)
+PLUGIN_DECL:apply (line 7, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 9, parent=SUBPROJECTS:subprojects)
+PLUGIN_DECL:apply (line 8, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 10, parent=SUBPROJECTS:subprojects)
+PLUGIN_DECL:apply (line 9, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 11, parent=SUBPROJECTS:subprojects)
+REPOSITORIES_DECL:mavenCentral (line 14, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 16, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 2, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 2, parent=REPOSITORIES_BLOCK:repositories)
+TASK_RELATION:dependsOn (line 32, parent=SUBPROJECTS:subprojects) -> TASK_RELATION:dependsOn (line 35, parent=SUBPROJECTS:subprojects)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+(none)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:cobertura (line 28, parent=SUBPROJECTS:subprojects) -> BLOCK:cobertura (line 28, parent=SUBPROJECTS:subprojects)
+BLOCK:jar (line 26, parent=SUBPROJECTS:subprojects) -> BLOCK:jar (line 26, parent=SUBPROJECTS:subprojects)
+BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 16, parent=SUBPROJECTS:subprojects) -> DEPENDENCIES_BLOCK:dependencies (line 18, parent=SUBPROJECTS:subprojects)
+DEPENDENCIES_BLOCK:dependencies (line 3, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 3, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 14, parent=SUBPROJECTS:subprojects) -> REPOSITORIES_BLOCK:repositories (line 16, parent=SUBPROJECTS:subprojects)
+REPOSITORIES_BLOCK:repositories (line 2, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 2, parent=BUILDSCRIPT:buildscript)
+SUBPROJECTS:subprojects (line 6, parent=BUILD_GRADLE:build.gradle) -> SUBPROJECTS:subprojects (line 6, parent=BUILD_GRADLE:build.gradle)
+TASK_DECLARATION:wrapper (line 35, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:wrapper (line 38, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:cobertura (line 28, parent=SUBPROJECTS:subprojects) -> BLOCK:cobertura (line 28, parent=SUBPROJECTS:subprojects)
+BLOCK:jar (line 26, parent=SUBPROJECTS:subprojects) -> BLOCK:jar (line 26, parent=SUBPROJECTS:subprojects)
+BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 16, parent=SUBPROJECTS:subprojects) -> DEPENDENCIES_BLOCK:dependencies (line 18, parent=SUBPROJECTS:subprojects)
+DEPENDENCIES_BLOCK:dependencies (line 3, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 3, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 14, parent=SUBPROJECTS:subprojects) -> REPOSITORIES_BLOCK:repositories (line 16, parent=SUBPROJECTS:subprojects)
+REPOSITORIES_BLOCK:repositories (line 2, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 2, parent=BUILDSCRIPT:buildscript)
+TASK_DECLARATION:wrapper (line 35, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:wrapper (line 38, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+SUBPROJECTS:subprojects (line 6, parent=BUILD_GRADLE:build.gradle) -> SUBPROJECTS:subprojects (line 6, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+REFORMAT_CODE: Reformat code (no semantic change)
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 19; 19, 0, 0
+Matched composites: 9; 9, 0, 0
+Deleted leaves: 0; 0, 0, 0
+Deleted composites: 0; 0, 0, 0
+Added leaves: 2; 2, 0, 0
+Added composites: 0; 0, 0, 0
+Total expected events: 30
+Total predicted events: 30
+
+TP=30 FP=0 FN=0
+TP=30, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT14 MISSED ===
+(none in the matching-phase output)
+
+

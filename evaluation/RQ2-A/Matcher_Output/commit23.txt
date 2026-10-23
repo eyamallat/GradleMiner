@@ -1,0 +1,168 @@
+
+=== COMMIT ===
+https://github.com/asn007/nLogger/commit/28c356bb8515fd7a6ac677aba715bd644e824a2c
+
+=== CHANGED GRADLE FILES ===
+build.gradle -> build.gradle
+gradle/wrapper/gradle-wrapper.properties -> gradle/wrapper/gradle-wrapper.properties
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: java (line 1)
+    PLUGIN_DECL : apply plugin: idea (line 2)
+    PLUGIN_DECL : apply plugin: eclipse (line 3)
+    ASSIGNMENT : name: sourceCompatibility, operator: =, value: 1.8 (line 5)
+    ASSIGNMENT : name: version, operator: =, value: "0.1" (line 6)
+    ALLPROJECTS : allprojects (line 8)
+      REPOSITORIES_BLOCK : repositories (line 10)
+        REPOSITORIES_DECL : mavenCentral (line 11)
+      BLOCK : configurations (line 14)
+        BLOCK : includeInJar (line 15)
+          ASSIGNMENT : name: description, operator: =, value: "Package dependencies into jar file" (line 16)
+          ASSIGNMENT : name: transitive, operator: =, value: true (line 17)
+      TASK_DECLARATION : , type=create-dirs << { project.sourceSets.each({ it.allSource.srcDirs.each({ println($it - $projectDir${File.separator}) }) }) }, style=task (line 21)
+        BLOCK : project."sourceSets".each (line 22)
+          BLOCK : it."allSource"."srcDirs".each (line 23)
+            METHOD_CALL : println("$it" - "$projectDir${File.separator}") (line 24)
+            CONDITION : if(it.exists()) (line 25)
+              METHOD_CALL : it.mkdirs (line 26)
+      TASK_DECLARATION : , type=listDependencies << { configurations.each(cfg -> { println(*** CONFIGURATION  + cfg.name +  ( + cfg.description + ) + ***); cfg.each(file -> { println(file.name) }) }) }, style=task (line 31)
+        BLOCK : configurations.each (line 32)
+          CLOSURE : (cfg -> {  }) (line 32)
+            METHOD_CALL : println("*** CONFIGURATION " + cfg."name" + " (" + cfg."description" + ")" + "***") (line 33)
+            BLOCK : cfg.each (line 34)
+              CLOSURE : (file -> {  }) (line 34)
+                METHOD_CALL : println(file."name") (line 35)
+      TASK_DECLARATION : taskName=wrapper, type=Wrapper, style=task (line 40)
+        ASSIGNMENT : name: gradleVersion, operator: =, value: "1.12" (line 41)
+        ASSIGNMENT : name: distributionUrl, operator: =, value: "http://services.gradle.org/distributions/gradle-1.12-all.zip" (line 42)
+    DEPENDENCIES_BLOCK : dependencies (line 49)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.11' (line 50)
+    BLOCK : jar (line 58)
+      BLOCK : manifest (line 59)
+        METHOD_CALL : attributes([Manifest-Version: "1.0", Class-Path: "."]) (line 60)
+    BLOCK : jar.doFirst (line 65)
+      BLOCK : for (file in configurations."includeInJar") (line 66)
+        METHOD_CALL : from(file.isDirectory() ? file : zipTree(file)) (line 67)
+    ASSIGNMENT : name: sourceSets.main.compileClasspath, operator: +=, value: configurations."includeInJar" (line 71)
+    BLOCK : idea (line 73)
+      BLOCK : module (line 74)
+        ASSIGNMENT : name: scopes.PROVIDED.plus, operator: +=, value: configurations."includeInJar" (line 75)
+    BLOCK : eclipse (line 79)
+      BLOCK : classpath (line 80)
+        ASSIGNMENT : name: plusConfigurations, operator: +=, value: configurations."includeInJar" (line 81)
+  PROPERTIES_FILE : gradle/wrapper/gradle-wrapper.properties (line 0)
+    ASSIGNMENT : name: distributionBase, value: "GRADLE_USER_HOME" (line 2)
+    ASSIGNMENT : name: distributionPath, value: "wrapper/dists" (line 3)
+    ASSIGNMENT : name: zipStoreBase, value: "GRADLE_USER_HOME" (line 4)
+    ASSIGNMENT : name: zipStorePath, value: "wrapper/dists" (line 5)
+    ASSIGNMENT : name: distributionUrl, value: "http\\://services.gradle.org/distributions/gradle-1.12-all.zip" (line 6)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+
+=== DELETED COMPOSITE NODES ===
+ALLPROJECTS:allprojects (line 8, parent=BUILD_GRADLE:build.gradle)
+BLOCK:classpath (line 80, parent=BLOCK:eclipse)
+BLOCK:configurations (line 14, parent=ALLPROJECTS:allprojects)
+BLOCK:doFirst (line 65, parent=BUILD_GRADLE:build.gradle)
+BLOCK:each (line 22, parent=TASK_DECLARATION:task)
+BLOCK:each (line 23, parent=BLOCK:each)
+BLOCK:each (line 32, parent=TASK_DECLARATION:task)
+BLOCK:each (line 34, parent=CLOSURE:)
+BLOCK:eclipse (line 79, parent=BUILD_GRADLE:build.gradle)
+BLOCK:for = configurations.includeInJar (line 66, parent=BLOCK:doFirst)
+BLOCK:idea (line 73, parent=BUILD_GRADLE:build.gradle)
+BLOCK:includeInJar (line 15, parent=BLOCK:configurations)
+BLOCK:jar (line 58, parent=BUILD_GRADLE:build.gradle)
+BLOCK:manifest (line 59, parent=BLOCK:jar)
+BLOCK:module (line 74, parent=BLOCK:idea)
+CLOSURE: (line 32, parent=BLOCK:each)
+CLOSURE: (line 34, parent=BLOCK:each)
+CONDITION:if (line 25, parent=BLOCK:each)
+DEPENDENCIES_BLOCK:dependencies (line 49, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_BLOCK:repositories (line 10, parent=ALLPROJECTS:allprojects)
+TASK_DECLARATION:task (line 21, parent=ALLPROJECTS:allprojects)
+TASK_DECLARATION:task (line 31, parent=ALLPROJECTS:allprojects)
+TASK_DECLARATION:wrapper (line 40, parent=ALLPROJECTS:allprojects)
+
+=== DELETED LEAF NODES ===
+ASSIGNMENT:description = Package dependencies into jar file (line 16, parent=BLOCK:includeInJar)
+ASSIGNMENT:distributionBase = GRADLE_USER_HOME (line 2, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties)
+ASSIGNMENT:distributionPath = wrapper/dists (line 3, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties)
+ASSIGNMENT:distributionUrl = http://services.gradle.org/distributions/gradle-1.12-all.zip (line 42, parent=TASK_DECLARATION:wrapper)
+ASSIGNMENT:distributionUrl = http\://services.gradle.org/distributions/gradle-1.12-all.zip (line 6, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties)
+ASSIGNMENT:gradleVersion = 1.12 (line 41, parent=TASK_DECLARATION:wrapper)
+ASSIGNMENT:plusConfigurations = configurations.includeInJar (line 81, parent=BLOCK:classpath)
+ASSIGNMENT:scopes.PROVIDED.plus = configurations.includeInJar (line 75, parent=BLOCK:module)
+ASSIGNMENT:sourceCompatibility = 1.8 (line 5, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:sourceSets.main.compileClasspath = configurations.includeInJar (line 71, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:transitive = true (line 17, parent=BLOCK:includeInJar)
+ASSIGNMENT:version = 0.1 (line 6, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:zipStoreBase = GRADLE_USER_HOME (line 4, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties)
+ASSIGNMENT:zipStorePath = wrapper/dists (line 5, parent=PROPERTIES_FILE:gradle/wrapper/gradle-wrapper.properties)
+DEPENDENCY_DECL:testCompile (line 50, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:attributes (line 60, parent=BLOCK:manifest)
+METHOD_CALL:from (line 67, parent=BLOCK:for)
+METHOD_CALL:mkdirs (line 26, parent=CONDITION:if)
+METHOD_CALL:println (line 24, parent=BLOCK:each)
+METHOD_CALL:println (line 33, parent=CLOSURE:)
+METHOD_CALL:println (line 35, parent=CLOSURE:)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 3, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_DECL:mavenCentral (line 11, parent=REPOSITORIES_BLOCK:repositories)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+(none)
+
+=== ALL LEAF MATCHES ===
+(none)
+
+=== LEAF ROUND 1 MATCHES ===
+(none)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+(none)
+
+=== ALL COMPOSITE MATCHES ===
+(none)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+(none)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+(none)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+REMOVE_UNUSED_CODE: Remove unused file 'build.gradle'
+REMOVE_UNUSED_CODE: Remove unused file 'gradle/wrapper/gradle-wrapper.properties'
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 0; 0, 0, 0
+Matched composites: 0; 0, 0, 0
+Deleted leaves: 25; 25, 0, 0
+Deleted composites: 23; 23, 0, 0
+Added leaves: 0; 0, 0, 0
+Added composites: 0; 0, 0, 0
+Total expected events: 48
+Total predicted events: 48
+
+TP=48 FP=0 FN=0
+TP=48, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT25 MISSED ===
+(none)
+
+

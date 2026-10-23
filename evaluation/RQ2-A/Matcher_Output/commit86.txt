@@ -1,0 +1,253 @@
+
+=== COMMIT ===
+http://github.com/etomica/etomica/commit/6c233e4564fc12c2971bd78ac254de5ab10eae5a
+
+=== CHANGED GRADLE FILES ===
+build.gradle -> build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: eclipse (line 1)
+    SUBPROJECTS : subprojects (line 4)
+      PLUGIN_DECL : apply plugin: java (line 5)
+      PLUGIN_DECL : apply plugin: eclipse (line 6)
+      PLUGIN_DECL : apply plugin: findbugs (line 7)
+      REPOSITORIES_BLOCK : repositories (line 9)
+        REPOSITORIES_DECL : jcenter (line 11)
+      ASSIGNMENT : name: sourceCompatibility, operator: =, value: 1.8 (line 14)
+      DEPENDENCIES_BLOCK : dependencies (line 16)
+        DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.12' (line 17)
+      TASK_CONFIGURATION : , type=FindBugs, style=tasks.withType (line 21)
+        BLOCK : reports (line 22)
+          METHOD_CALL : xml.enabled(false) (line 23)
+          METHOD_CALL : html.enabled(true) (line 24)
+          METHOD_CALL : html.stylesheet(resources."text".fromFile("${rootProject.projectDir}/config/xsl/findbugs-custom.xsl")) (line 25)
+      BLOCK : findbugs (line 29)
+        ASSIGNMENT : name: sourceSets, operator: =, value: [] (line 35)
+        ASSIGNMENT : name: ignoreFailures, operator: =, value: true (line 36)
+    BLOCK : project(":etomica-core") (line 40)
+      DEPENDENCIES_BLOCK : dependencies (line 42)
+        DEPENDENCY_DECL : configuration='compile', group='gov.nist.math', name='jama', version='1.0.3' (line 43)
+        DEPENDENCY_DECL : configuration='compile', group='org.apache.commons', name='commons-math3', version='3.3' (line 44)
+        DEPENDENCY_DECL : configuration='compile', notation='files(${rootProject.projectDir}/libs/ptolemy.jar)' (line 45)
+        DEPENDENCY_DECL : configuration='compile', projectPath=':etomica-graphics3D' (line 47)
+    BLOCK : project(":etomica-apps") (line 51)
+      DEPENDENCIES_BLOCK : dependencies (line 53)
+        DEPENDENCY_DECL : configuration='compile', group='com.googlecode.json-simple', name='json-simple', version='1.1' (line 54)
+        DEPENDENCY_DECL : configuration='compile', projectPath=':etomica-core' (line 56)
+        DEPENDENCY_DECL : configuration='compile', projectPath=':etomica-graph' (line 57)
+    BLOCK : project(":etomica-modules") (line 61)
+      DEPENDENCIES_BLOCK : dependencies (line 63)
+        DEPENDENCY_DECL : configuration='compile', projectPath=':etomica-apps' (line 64)
+    BLOCK : project(":etomica-graph") (line 68)
+      BLOCK : test (line 71)
+        METHOD_CALL : exclude("etomica/graph/**") (line 72)
+      DEPENDENCIES_BLOCK : dependencies (line 75)
+        DEPENDENCY_DECL : configuration='compile', group='xml-apis', name='xml-apis-ext', version='1.3.04' (line 76)
+        DEPENDENCY_DECL : configuration='compile', group='org.apache.xmlgraphics', name='batik-swing', version='1.7' (line 77)
+        DEPENDENCY_DECL : configuration='compile', group='org.apache.xmlgraphics', name='fop', version='1.0' (line 78)
+    TASK_DECLARATION : taskName=findbugsAll, style=task (line 82)
+    SUBPROJECTS : subprojects (line 83)
+      CLOSURE : (project -> {  }) (line 83)
+        TASK_RELATION : relation=dependsOn, owner=findbugsAll, targets="${project.path}:findbugsMain" (line 83)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: eclipse (line 1)
+    SUBPROJECTS : subprojects (line 4)
+      PLUGIN_DECL : apply plugin: java (line 5)
+      PLUGIN_DECL : apply plugin: eclipse (line 6)
+      PLUGIN_DECL : apply plugin: findbugs (line 7)
+      REPOSITORIES_BLOCK : repositories (line 9)
+        REPOSITORIES_DECL : jcenter (line 11)
+      ASSIGNMENT : name: sourceCompatibility, operator: =, value: 1.8 (line 14)
+      DEPENDENCIES_BLOCK : dependencies (line 16)
+        DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.12' (line 17)
+      TASK_CONFIGURATION : , type=FindBugs, style=tasks.withType (line 21)
+        BLOCK : reports (line 22)
+          METHOD_CALL : xml.enabled(false) (line 23)
+          METHOD_CALL : html.enabled(true) (line 24)
+          METHOD_CALL : html.stylesheet(resources."text".fromFile("${rootProject.projectDir}/config/xsl/findbugs-custom.xsl")) (line 25)
+      BLOCK : findbugs (line 29)
+        ASSIGNMENT : name: sourceSets, operator: =, value: [] (line 35)
+        ASSIGNMENT : name: ignoreFailures, operator: =, value: true (line 36)
+    BLOCK : project(":etomica-core") (line 40)
+      DEPENDENCIES_BLOCK : dependencies (line 42)
+        DEPENDENCY_DECL : configuration='compile', group='com.fasterxml.jackson.core', name='jackson-databind', version='2.9.0.pr1' (line 43)
+        DEPENDENCY_DECL : configuration='compile', group='gov.nist.math', name='jama', version='1.0.3' (line 44)
+        DEPENDENCY_DECL : configuration='compile', group='org.apache.commons', name='commons-math3', version='3.3' (line 45)
+        DEPENDENCY_DECL : configuration='compile', notation='files(${rootProject.projectDir}/libs/ptolemy.jar)' (line 46)
+        DEPENDENCY_DECL : configuration='compile', projectPath=':etomica-graphics3D' (line 48)
+      TASK_RELATION : relation=dependsOn, owner=processResources, targets=":setupPython" (line 51)
+      TASK_RELATION : relation=dependsOn, owner=clean, targets=":cleanPython" (line 52)
+    BLOCK : project(":etomica-apps") (line 55)
+      DEPENDENCIES_BLOCK : dependencies (line 57)
+        DEPENDENCY_DECL : configuration='compile', group='com.googlecode.json-simple', name='json-simple', version='1.1' (line 58)
+        DEPENDENCY_DECL : configuration='compile', projectPath=':etomica-core' (line 60)
+        DEPENDENCY_DECL : configuration='compile', projectPath=':etomica-graph' (line 61)
+    BLOCK : project(":etomica-modules") (line 65)
+      DEPENDENCIES_BLOCK : dependencies (line 67)
+        DEPENDENCY_DECL : configuration='compile', projectPath=':etomica-apps' (line 68)
+    BLOCK : project(":etomica-graph") (line 72)
+      BLOCK : test (line 75)
+        METHOD_CALL : exclude("etomica/graph/**") (line 76)
+      DEPENDENCIES_BLOCK : dependencies (line 79)
+        DEPENDENCY_DECL : configuration='compile', group='xml-apis', name='xml-apis-ext', version='1.3.04' (line 80)
+        DEPENDENCY_DECL : configuration='compile', group='org.apache.xmlgraphics', name='batik-swing', version='1.7' (line 81)
+        DEPENDENCY_DECL : configuration='compile', group='org.apache.xmlgraphics', name='fop', version='1.0' (line 82)
+    TASK_DECLARATION : taskName=findbugsAll, style=task (line 86)
+    SUBPROJECTS : subprojects (line 87)
+      CLOSURE : (project -> {  }) (line 87)
+        TASK_RELATION : relation=dependsOn, owner=findbugsAll, targets="${project.path}:findbugsMain" (line 87)
+    TASK_DECLARATION : taskName=setupPython, type=Exec, style=task (line 89)
+      ASSIGNMENT : name: workingDir, operator: =, value: "${project.rootDir}" (line 90)
+      METHOD_CALL : commandLine("./setup_python.sh") (line 91)
+    TASK_DECLARATION : taskName=cleanPython, type=Delete, style=task (line 94)
+      METHOD_CALL : delete("${this.project(:etomica-core).projectDir}/src/main/resources/virtualenv") (line 95)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+(none)
+
+=== ADDED COMPOSITE NODES ===
+TASK_DECLARATION:cleanPython (line 94, parent=BUILD_GRADLE:build.gradle)
+TASK_DECLARATION:setupPython (line 89, parent=BUILD_GRADLE:build.gradle)
+
+=== ADDED LEAF NODES ===
+ASSIGNMENT:workingDir = ${project.rootDir} (line 90, parent=TASK_DECLARATION:setupPython)
+DEPENDENCY_DECL:compile (line 43, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:commandLine (line 91, parent=TASK_DECLARATION:setupPython)
+METHOD_CALL:delete (line 95, parent=TASK_DECLARATION:cleanPython)
+TASK_RELATION:dependsOn (line 51, parent=BLOCK:project)
+TASK_RELATION:dependsOn (line 52, parent=BLOCK:project)
+
+=== ALL LEAF MATCHES ===
+ASSIGNMENT:ignoreFailures = true (line 36, parent=BLOCK:findbugs) -> ASSIGNMENT:ignoreFailures = true (line 36, parent=BLOCK:findbugs)
+ASSIGNMENT:sourceCompatibility = 1.8 (line 14, parent=SUBPROJECTS:subprojects) -> ASSIGNMENT:sourceCompatibility = 1.8 (line 14, parent=SUBPROJECTS:subprojects)
+ASSIGNMENT:sourceSets = [] (line 35, parent=BLOCK:findbugs) -> ASSIGNMENT:sourceSets = [] (line 35, parent=BLOCK:findbugs)
+DEPENDENCY_DECL:compile (line 43, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 44, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 44, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 45, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 45, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 46, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 47, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 48, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 54, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 58, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 56, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 60, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 57, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 61, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 64, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 68, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 76, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 80, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 77, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 81, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 78, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 82, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 17, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 17, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:enabled (line 23, parent=BLOCK:reports) -> METHOD_CALL:enabled (line 23, parent=BLOCK:reports)
+METHOD_CALL:enabled (line 24, parent=BLOCK:reports) -> METHOD_CALL:enabled (line 24, parent=BLOCK:reports)
+METHOD_CALL:exclude (line 72, parent=BLOCK:test) -> METHOD_CALL:exclude (line 76, parent=BLOCK:test)
+METHOD_CALL:stylesheet (line 25, parent=BLOCK:reports) -> METHOD_CALL:stylesheet (line 25, parent=BLOCK:reports)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 5, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 5, parent=SUBPROJECTS:subprojects)
+PLUGIN_DECL:apply (line 6, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 6, parent=SUBPROJECTS:subprojects)
+PLUGIN_DECL:apply (line 7, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 7, parent=SUBPROJECTS:subprojects)
+REPOSITORIES_DECL:jcenter (line 11, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 11, parent=REPOSITORIES_BLOCK:repositories)
+TASK_DECLARATION:findbugsAll (line 82, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:findbugsAll (line 86, parent=BUILD_GRADLE:build.gradle)
+TASK_RELATION:dependsOn (line 83, parent=CLOSURE:) -> TASK_RELATION:dependsOn (line 87, parent=CLOSURE:)
+
+=== LEAF ROUND 1 MATCHES ===
+ASSIGNMENT:ignoreFailures = true (line 36, parent=BLOCK:findbugs) -> ASSIGNMENT:ignoreFailures = true (line 36, parent=BLOCK:findbugs)
+ASSIGNMENT:sourceCompatibility = 1.8 (line 14, parent=SUBPROJECTS:subprojects) -> ASSIGNMENT:sourceCompatibility = 1.8 (line 14, parent=SUBPROJECTS:subprojects)
+ASSIGNMENT:sourceSets = [] (line 35, parent=BLOCK:findbugs) -> ASSIGNMENT:sourceSets = [] (line 35, parent=BLOCK:findbugs)
+DEPENDENCY_DECL:compile (line 43, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 44, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 44, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 45, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 45, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 46, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 47, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 48, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 54, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 58, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 56, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 60, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 57, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 61, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 64, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 68, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 76, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 80, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 77, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 81, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 78, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 82, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 17, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 17, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:enabled (line 23, parent=BLOCK:reports) -> METHOD_CALL:enabled (line 23, parent=BLOCK:reports)
+METHOD_CALL:enabled (line 24, parent=BLOCK:reports) -> METHOD_CALL:enabled (line 24, parent=BLOCK:reports)
+METHOD_CALL:exclude (line 72, parent=BLOCK:test) -> METHOD_CALL:exclude (line 76, parent=BLOCK:test)
+METHOD_CALL:stylesheet (line 25, parent=BLOCK:reports) -> METHOD_CALL:stylesheet (line 25, parent=BLOCK:reports)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 5, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 5, parent=SUBPROJECTS:subprojects)
+PLUGIN_DECL:apply (line 6, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 6, parent=SUBPROJECTS:subprojects)
+PLUGIN_DECL:apply (line 7, parent=SUBPROJECTS:subprojects) -> PLUGIN_DECL:apply (line 7, parent=SUBPROJECTS:subprojects)
+REPOSITORIES_DECL:jcenter (line 11, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 11, parent=REPOSITORIES_BLOCK:repositories)
+TASK_DECLARATION:findbugsAll (line 82, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:findbugsAll (line 86, parent=BUILD_GRADLE:build.gradle)
+TASK_RELATION:dependsOn (line 83, parent=CLOSURE:) -> TASK_RELATION:dependsOn (line 87, parent=CLOSURE:)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+(none)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:findbugs (line 29, parent=SUBPROJECTS:subprojects) -> BLOCK:findbugs (line 29, parent=SUBPROJECTS:subprojects)
+BLOCK:project (line 40, parent=BUILD_GRADLE:build.gradle) -> BLOCK:project (line 40, parent=BUILD_GRADLE:build.gradle)
+BLOCK:project (line 51, parent=BUILD_GRADLE:build.gradle) -> BLOCK:project (line 55, parent=BUILD_GRADLE:build.gradle)
+BLOCK:project (line 61, parent=BUILD_GRADLE:build.gradle) -> BLOCK:project (line 65, parent=BUILD_GRADLE:build.gradle)
+BLOCK:project (line 68, parent=BUILD_GRADLE:build.gradle) -> BLOCK:project (line 72, parent=BUILD_GRADLE:build.gradle)
+BLOCK:reports (line 22, parent=TASK_CONFIGURATION:withType) -> BLOCK:reports (line 22, parent=TASK_CONFIGURATION:withType)
+BLOCK:test (line 71, parent=BLOCK:project) -> BLOCK:test (line 75, parent=BLOCK:project)
+CLOSURE: (line 83, parent=SUBPROJECTS:subprojects) -> CLOSURE: (line 87, parent=SUBPROJECTS:subprojects)
+DEPENDENCIES_BLOCK:dependencies (line 16, parent=SUBPROJECTS:subprojects) -> DEPENDENCIES_BLOCK:dependencies (line 16, parent=SUBPROJECTS:subprojects)
+DEPENDENCIES_BLOCK:dependencies (line 42, parent=BLOCK:project) -> DEPENDENCIES_BLOCK:dependencies (line 42, parent=BLOCK:project)
+DEPENDENCIES_BLOCK:dependencies (line 53, parent=BLOCK:project) -> DEPENDENCIES_BLOCK:dependencies (line 57, parent=BLOCK:project)
+DEPENDENCIES_BLOCK:dependencies (line 63, parent=BLOCK:project) -> DEPENDENCIES_BLOCK:dependencies (line 67, parent=BLOCK:project)
+DEPENDENCIES_BLOCK:dependencies (line 75, parent=BLOCK:project) -> DEPENDENCIES_BLOCK:dependencies (line 79, parent=BLOCK:project)
+REPOSITORIES_BLOCK:repositories (line 9, parent=SUBPROJECTS:subprojects) -> REPOSITORIES_BLOCK:repositories (line 9, parent=SUBPROJECTS:subprojects)
+SUBPROJECTS:subprojects (line 4, parent=BUILD_GRADLE:build.gradle) -> SUBPROJECTS:subprojects (line 4, parent=BUILD_GRADLE:build.gradle)
+SUBPROJECTS:subprojects (line 83, parent=BUILD_GRADLE:build.gradle) -> SUBPROJECTS:subprojects (line 87, parent=BUILD_GRADLE:build.gradle)
+TASK_CONFIGURATION:withType (line 21, parent=SUBPROJECTS:subprojects) -> TASK_CONFIGURATION:withType (line 21, parent=SUBPROJECTS:subprojects)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:findbugs (line 29, parent=SUBPROJECTS:subprojects) -> BLOCK:findbugs (line 29, parent=SUBPROJECTS:subprojects)
+BLOCK:project (line 51, parent=BUILD_GRADLE:build.gradle) -> BLOCK:project (line 55, parent=BUILD_GRADLE:build.gradle)
+BLOCK:project (line 61, parent=BUILD_GRADLE:build.gradle) -> BLOCK:project (line 65, parent=BUILD_GRADLE:build.gradle)
+BLOCK:project (line 68, parent=BUILD_GRADLE:build.gradle) -> BLOCK:project (line 72, parent=BUILD_GRADLE:build.gradle)
+BLOCK:reports (line 22, parent=TASK_CONFIGURATION:withType) -> BLOCK:reports (line 22, parent=TASK_CONFIGURATION:withType)
+BLOCK:test (line 71, parent=BLOCK:project) -> BLOCK:test (line 75, parent=BLOCK:project)
+CLOSURE: (line 83, parent=SUBPROJECTS:subprojects) -> CLOSURE: (line 87, parent=SUBPROJECTS:subprojects)
+DEPENDENCIES_BLOCK:dependencies (line 16, parent=SUBPROJECTS:subprojects) -> DEPENDENCIES_BLOCK:dependencies (line 16, parent=SUBPROJECTS:subprojects)
+DEPENDENCIES_BLOCK:dependencies (line 53, parent=BLOCK:project) -> DEPENDENCIES_BLOCK:dependencies (line 57, parent=BLOCK:project)
+DEPENDENCIES_BLOCK:dependencies (line 63, parent=BLOCK:project) -> DEPENDENCIES_BLOCK:dependencies (line 67, parent=BLOCK:project)
+DEPENDENCIES_BLOCK:dependencies (line 75, parent=BLOCK:project) -> DEPENDENCIES_BLOCK:dependencies (line 79, parent=BLOCK:project)
+REPOSITORIES_BLOCK:repositories (line 9, parent=SUBPROJECTS:subprojects) -> REPOSITORIES_BLOCK:repositories (line 9, parent=SUBPROJECTS:subprojects)
+SUBPROJECTS:subprojects (line 4, parent=BUILD_GRADLE:build.gradle) -> SUBPROJECTS:subprojects (line 4, parent=BUILD_GRADLE:build.gradle)
+SUBPROJECTS:subprojects (line 83, parent=BUILD_GRADLE:build.gradle) -> SUBPROJECTS:subprojects (line 87, parent=BUILD_GRADLE:build.gradle)
+TASK_CONFIGURATION:withType (line 21, parent=SUBPROJECTS:subprojects) -> TASK_CONFIGURATION:withType (line 21, parent=SUBPROJECTS:subprojects)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+BLOCK:project (line 40, parent=BUILD_GRADLE:build.gradle) -> BLOCK:project (line 40, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 42, parent=BLOCK:project) -> DEPENDENCIES_BLOCK:dependencies (line 42, parent=BLOCK:project)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+(none)
+
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 26; 26, 0, 0
+Matched composites: 17; 17, 0, 0
+Deleted leaves: 0; 0, 0, 0
+Deleted composites: 0; 0, 0, 0
+Added leaves: 6; 6, 0, 0
+Added composites: 2; 2, 0, 0
+Total expected events: 51
+Total predicted events: 51
+
+TP=51 FP=0 FN=0
+TP=51, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT92 MISSED ===
+FP: (none)
+FN: (none)

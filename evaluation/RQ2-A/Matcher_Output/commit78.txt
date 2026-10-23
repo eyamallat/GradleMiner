@@ -1,0 +1,228 @@
+
+=== COMMIT ===
+http://github.com/federicoiosue/analitica/commit/e37b29ac33fc5b1dfc438a411b85b24ef07b62a5
+
+=== CHANGED GRADLE FILES ===
+build.gradle -> build.gradle
+gradle.properties -> gradle.properties
+library/build.gradle -> library/build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 3)
+      REPOSITORIES_BLOCK : repositories (line 4)
+        REPOSITORIES_DECL : jcenter (line 5)
+      DEPENDENCIES_BLOCK : dependencies (line 7)
+        DEPENDENCY_DECL : configuration='classpath', group='com.android.tools.build', name='gradle', version='2.2.3' (line 8)
+    ALLPROJECTS : allprojects (line 15)
+      REPOSITORIES_BLOCK : repositories (line 16)
+        REPOSITORIES_DECL : jcenter (line 17)
+    TASK_DECLARATION : taskName=clean, type=Delete, style=task (line 21)
+      METHOD_CALL : delete(rootProject."buildDir") (line 22)
+  PROPERTIES_FILE : gradle.properties (line 0)
+    ASSIGNMENT : name: org.gradle.jvmargs, value: "-Xmx1536m" (line 12)
+  BUILD_GRADLE : library/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: com.android.library (line 1)
+    BLOCK : android (line 3)
+      METHOD_CALL : compileSdkVersion(25) (line 4)
+      METHOD_CALL : buildToolsVersion("25.0.1") (line 5)
+      BLOCK : defaultConfig (line 6)
+        METHOD_CALL : minSdkVersion(19) (line 8)
+        METHOD_CALL : targetSdkVersion(25) (line 9)
+        METHOD_CALL : versionCode(1) (line 10)
+        METHOD_CALL : versionName("1.0") (line 11)
+        METHOD_CALL : testInstrumentationRunner("android.support.test.runner.AndroidJUnitRunner") (line 12)
+      BLOCK : buildTypes (line 14)
+        BLOCK : release (line 15)
+          METHOD_CALL : minifyEnabled(false) (line 16)
+          METHOD_CALL : proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro") (line 17)
+      BLOCK : productFlavors (line 20)
+        BLOCK : googleAnalytics (line 21)
+        BLOCK : piwik (line 22)
+    DEPENDENCIES_BLOCK : dependencies (line 26)
+      DEPENDENCY_DECL : configuration='androidTestCompile', group='com.android.support.test.espresso', name='espresso-core', version='2.2.2' (line 27)
+        METHOD_CALL : exclude([group: "com.android.support", module: "support-annotations"]) (line 28)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.12' (line 30)
+      DEPENDENCY_DECL : configuration='googleAnalyticsCompile', group='com.google.android.gms', name='play-services-analytics', version='10.0.1' (line 32)
+      DEPENDENCY_DECL : configuration='piwikCompile', group='org.piwik.sdk', name='piwik-sdk', version='0.0.4' (line 33)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 3)
+      REPOSITORIES_BLOCK : repositories (line 4)
+        REPOSITORIES_DECL : jcenter (line 5)
+      DEPENDENCIES_BLOCK : dependencies (line 7)
+        DEPENDENCY_DECL : configuration='classpath', group='com.android.tools.build', name='gradle', version='2.2.3' (line 8)
+        DEPENDENCY_DECL : configuration='classpath', group='com.github.dcendents', name='android-maven-gradle-plugin', version='1.5' (line 9)
+    ALLPROJECTS : allprojects (line 16)
+      REPOSITORIES_BLOCK : repositories (line 17)
+        REPOSITORIES_DECL : jcenter (line 18)
+    TASK_DECLARATION : taskName=clean, type=Delete, style=task (line 22)
+      METHOD_CALL : delete(rootProject."buildDir") (line 23)
+  PROPERTIES_FILE : gradle.properties (line 0)
+    ASSIGNMENT : name: org.gradle.jvmargs, value: "-Xmx1536m" (line 12)
+    ASSIGNMENT : name: MIN_SDK, value: "10" (line 19)
+    ASSIGNMENT : name: TARGET_SDK, value: "25" (line 20)
+    ASSIGNMENT : name: VERSION_NAME, value: "0.0.1" (line 21)
+    ASSIGNMENT : name: VERSION_CODE, value: "1" (line 22)
+    ASSIGNMENT : name: PACKAGE, value: "it.feio.android.omninotes" (line 23)
+  BUILD_GRADLE : library/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: com.android.library (line 1)
+    PLUGIN_DECL : apply plugin: com.github.dcendents.android-maven (line 2)
+    ASSIGNMENT : name: group, operator: =, value: "com.github.federicoiosue" (line 4)
+    ASSIGNMENT : name: version, operator: =, value: project."VERSION_NAME" (line 5)
+    BLOCK : android (line 7)
+      METHOD_CALL : compileSdkVersion(25) (line 8)
+      METHOD_CALL : buildToolsVersion("25.0.1") (line 9)
+      BLOCK : defaultConfig (line 10)
+        METHOD_CALL : minSdkVersion(project."MIN_SDK") (line 11)
+        METHOD_CALL : targetSdkVersion(project."TARGET_SDK") (line 12)
+        METHOD_CALL : versionName(project."VERSION_NAME") (line 13)
+        METHOD_CALL : versionCode(Integer.parseInt(project."VERSION_CODE")) (line 14)
+        METHOD_CALL : testInstrumentationRunner("android.support.test.runner.AndroidJUnitRunner") (line 15)
+      BLOCK : buildTypes (line 17)
+        BLOCK : release (line 18)
+          METHOD_CALL : minifyEnabled(false) (line 19)
+          METHOD_CALL : proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro") (line 20)
+      BLOCK : productFlavors (line 23)
+        BLOCK : googleAnalytics (line 24)
+        BLOCK : piwik (line 25)
+    DEPENDENCIES_BLOCK : dependencies (line 29)
+      DEPENDENCY_DECL : configuration='androidTestCompile', group='com.android.support.test.espresso', name='espresso-core', version='2.2.2' (line 30)
+        METHOD_CALL : exclude([group: "com.android.support", module: "support-annotations"]) (line 31)
+      DEPENDENCY_DECL : configuration='testCompile', group='junit', name='junit', version='4.12' (line 33)
+      DEPENDENCY_DECL : configuration='googleAnalyticsCompile', group='com.google.android.gms', name='play-services-analytics', version='10.0.1' (line 35)
+      DEPENDENCY_DECL : configuration='piwikCompile', group='org.piwik.sdk', name='piwik-sdk', version='0.0.4' (line 36)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+(none)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+ASSIGNMENT:MIN_SDK = 10 (line 19, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:PACKAGE = it.feio.android.omninotes (line 23, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:TARGET_SDK = 25 (line 20, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:VERSION_CODE = 1 (line 22, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:VERSION_NAME = 0.0.1 (line 21, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:group = com.github.federicoiosue (line 4, parent=BUILD_GRADLE:library/build.gradle)
+ASSIGNMENT:version = project.VERSION_NAME (line 5, parent=BUILD_GRADLE:library/build.gradle)
+DEPENDENCY_DECL:classpath (line 9, parent=DEPENDENCIES_BLOCK:dependencies)
+PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:library/build.gradle)
+
+=== ALL LEAF MATCHES ===
+ASSIGNMENT:org.gradle.jvmargs = -Xmx1536m (line 12, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:org.gradle.jvmargs = -Xmx1536m (line 12, parent=PROPERTIES_FILE:gradle.properties)
+BLOCK:googleAnalytics (line 21, parent=BLOCK:productFlavors) -> BLOCK:googleAnalytics (line 24, parent=BLOCK:productFlavors)
+BLOCK:piwik (line 22, parent=BLOCK:productFlavors) -> BLOCK:piwik (line 25, parent=BLOCK:productFlavors)
+DEPENDENCY_DECL:classpath (line 8, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 8, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:googleAnalyticsCompile (line 32, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:googleAnalyticsCompile (line 35, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:piwikCompile (line 33, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:piwikCompile (line 36, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 30, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 33, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 9, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 8, parent=BLOCK:android)
+METHOD_CALL:delete (line 22, parent=TASK_DECLARATION:clean) -> METHOD_CALL:delete (line 23, parent=TASK_DECLARATION:clean)
+METHOD_CALL:exclude (line 28, parent=DEPENDENCY_DECL:androidTestCompile) -> METHOD_CALL:exclude (line 31, parent=DEPENDENCY_DECL:androidTestCompile)
+METHOD_CALL:minSdkVersion (line 8, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 11, parent=BLOCK:defaultConfig)
+METHOD_CALL:minifyEnabled (line 16, parent=BLOCK:release) -> METHOD_CALL:minifyEnabled (line 19, parent=BLOCK:release)
+METHOD_CALL:proguardFiles (line 17, parent=BLOCK:release) -> METHOD_CALL:proguardFiles (line 20, parent=BLOCK:release)
+METHOD_CALL:targetSdkVersion (line 9, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 12, parent=BLOCK:defaultConfig)
+METHOD_CALL:testInstrumentationRunner (line 12, parent=BLOCK:defaultConfig) -> METHOD_CALL:testInstrumentationRunner (line 15, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 10, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 14, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 11, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 13, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:library/build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:library/build.gradle)
+REPOSITORIES_DECL:jcenter (line 17, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 18, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:jcenter (line 5, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 5, parent=REPOSITORIES_BLOCK:repositories)
+
+=== LEAF ROUND 1 MATCHES ===
+ASSIGNMENT:org.gradle.jvmargs = -Xmx1536m (line 12, parent=PROPERTIES_FILE:gradle.properties) -> ASSIGNMENT:org.gradle.jvmargs = -Xmx1536m (line 12, parent=PROPERTIES_FILE:gradle.properties)
+BLOCK:googleAnalytics (line 21, parent=BLOCK:productFlavors) -> BLOCK:googleAnalytics (line 24, parent=BLOCK:productFlavors)
+BLOCK:piwik (line 22, parent=BLOCK:productFlavors) -> BLOCK:piwik (line 25, parent=BLOCK:productFlavors)
+DEPENDENCY_DECL:classpath (line 8, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 8, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:googleAnalyticsCompile (line 32, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:googleAnalyticsCompile (line 35, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:piwikCompile (line 33, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:piwikCompile (line 36, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 30, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 33, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:buildToolsVersion (line 5, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 9, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 4, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 8, parent=BLOCK:android)
+METHOD_CALL:delete (line 22, parent=TASK_DECLARATION:clean) -> METHOD_CALL:delete (line 23, parent=TASK_DECLARATION:clean)
+METHOD_CALL:exclude (line 28, parent=DEPENDENCY_DECL:androidTestCompile) -> METHOD_CALL:exclude (line 31, parent=DEPENDENCY_DECL:androidTestCompile)
+METHOD_CALL:minifyEnabled (line 16, parent=BLOCK:release) -> METHOD_CALL:minifyEnabled (line 19, parent=BLOCK:release)
+METHOD_CALL:proguardFiles (line 17, parent=BLOCK:release) -> METHOD_CALL:proguardFiles (line 20, parent=BLOCK:release)
+METHOD_CALL:testInstrumentationRunner (line 12, parent=BLOCK:defaultConfig) -> METHOD_CALL:testInstrumentationRunner (line 15, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:library/build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:library/build.gradle)
+REPOSITORIES_DECL:jcenter (line 17, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 18, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:jcenter (line 5, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:jcenter (line 5, parent=REPOSITORIES_BLOCK:repositories)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+METHOD_CALL:minSdkVersion (line 8, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 11, parent=BLOCK:defaultConfig)
+METHOD_CALL:targetSdkVersion (line 9, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 12, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 10, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 14, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 11, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 13, parent=BLOCK:defaultConfig)
+
+=== ALL COMPOSITE MATCHES ===
+ALLPROJECTS:allprojects (line 15, parent=BUILD_GRADLE:build.gradle) -> ALLPROJECTS:allprojects (line 16, parent=BUILD_GRADLE:build.gradle)
+BLOCK:android (line 3, parent=BUILD_GRADLE:library/build.gradle) -> BLOCK:android (line 7, parent=BUILD_GRADLE:library/build.gradle)
+BLOCK:buildTypes (line 14, parent=BLOCK:android) -> BLOCK:buildTypes (line 17, parent=BLOCK:android)
+BLOCK:defaultConfig (line 6, parent=BLOCK:android) -> BLOCK:defaultConfig (line 10, parent=BLOCK:android)
+BLOCK:productFlavors (line 20, parent=BLOCK:android) -> BLOCK:productFlavors (line 23, parent=BLOCK:android)
+BLOCK:release (line 15, parent=BLOCK:buildTypes) -> BLOCK:release (line 18, parent=BLOCK:buildTypes)
+BUILDSCRIPT:buildscript (line 3, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 3, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 26, parent=BUILD_GRADLE:library/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 29, parent=BUILD_GRADLE:library/build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 7, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 7, parent=BUILDSCRIPT:buildscript)
+DEPENDENCY_DECL:androidTestCompile (line 27, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:androidTestCompile (line 30, parent=DEPENDENCIES_BLOCK:dependencies)
+REPOSITORIES_BLOCK:repositories (line 16, parent=ALLPROJECTS:allprojects) -> REPOSITORIES_BLOCK:repositories (line 17, parent=ALLPROJECTS:allprojects)
+REPOSITORIES_BLOCK:repositories (line 4, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 4, parent=BUILDSCRIPT:buildscript)
+TASK_DECLARATION:clean (line 21, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:clean (line 22, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+ALLPROJECTS:allprojects (line 15, parent=BUILD_GRADLE:build.gradle) -> ALLPROJECTS:allprojects (line 16, parent=BUILD_GRADLE:build.gradle)
+BLOCK:buildTypes (line 14, parent=BLOCK:android) -> BLOCK:buildTypes (line 17, parent=BLOCK:android)
+BLOCK:productFlavors (line 20, parent=BLOCK:android) -> BLOCK:productFlavors (line 23, parent=BLOCK:android)
+BLOCK:release (line 15, parent=BLOCK:buildTypes) -> BLOCK:release (line 18, parent=BLOCK:buildTypes)
+DEPENDENCIES_BLOCK:dependencies (line 26, parent=BUILD_GRADLE:library/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 29, parent=BUILD_GRADLE:library/build.gradle)
+DEPENDENCY_DECL:androidTestCompile (line 27, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:androidTestCompile (line 30, parent=DEPENDENCIES_BLOCK:dependencies)
+REPOSITORIES_BLOCK:repositories (line 16, parent=ALLPROJECTS:allprojects) -> REPOSITORIES_BLOCK:repositories (line 17, parent=ALLPROJECTS:allprojects)
+REPOSITORIES_BLOCK:repositories (line 4, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 4, parent=BUILDSCRIPT:buildscript)
+TASK_DECLARATION:clean (line 21, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:clean (line 22, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+BLOCK:android (line 3, parent=BUILD_GRADLE:library/build.gradle) -> BLOCK:android (line 7, parent=BUILD_GRADLE:library/build.gradle)
+BLOCK:defaultConfig (line 6, parent=BLOCK:android) -> BLOCK:defaultConfig (line 10, parent=BLOCK:android)
+BUILDSCRIPT:buildscript (line 3, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 3, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 7, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 7, parent=BUILDSCRIPT:buildscript)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+EXTERNALIZE_PROPERTIES: Externalize property 'TARGET_SDK'
+EXTERNALIZE_PROPERTIES: Externalize property 'VERSION_CODE'
+EXTERNALIZE_PROPERTIES: Externalize property 'VERSION_NAME'
+EXTERNALIZE_PROPERTIES: Externalize property 'MIN_SDK'
+
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 21; 21, 0, 0
+Matched composites: 13; 13, 0, 0
+Deleted leaves: 0; 0, 0, 0
+Deleted composites: 0; 0, 0, 0
+Added leaves: 9; 9, 0, 0
+Added composites: 0; 0, 0, 0
+Total expected events: 43
+Total predicted events: 43
+
+TP=43 FP=0 FN=0
+TP=43, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT84 MISSED ===
+FP: (none)
+FN: (none)

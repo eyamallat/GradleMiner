@@ -1,0 +1,180 @@
+=== COMMIT ===
+https://github.com/XinyueZ/schautup/commit/a277d850f443021fea274a44cf7a28934d69e1cf
+
+=== CHANGED GRADLE FILES ===
+app/build.gradle -> app/build.gradle
+gradle.properties -> gradle.properties
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : app/build.gradle (line 0)
+    DECLARATION : name: buildNumber, value: "bld" + System.env.BUILD_NUMBER ? System.env.BUILD_NUMBER : SNAPSHOT (line 1)
+    PLUGIN_DECL : apply plugin: com.android.application (line 2)
+    BLOCK : android (line 4)
+      METHOD_CALL : compileSdkVersion(20) (line 5)
+      METHOD_CALL : buildToolsVersion("20.0.0") (line 6)
+      BLOCK : defaultConfig (line 8)
+        METHOD_CALL : applicationId("com.schautup") (line 9)
+        METHOD_CALL : minSdkVersion(9) (line 10)
+        METHOD_CALL : targetSdkVersion(20) (line 11)
+        METHOD_CALL : versionCode(1) (line 12)
+        METHOD_CALL : versionName("pre 0.4.5") (line 13)
+      BLOCK : buildTypes (line 15)
+        BLOCK : debug (line 16)
+          METHOD_CALL : zipAlign(true) (line 17)
+          METHOD_CALL : versionNameSuffix(buildNumber) (line 18)
+        BLOCK : release (line 20)
+          METHOD_CALL : runProguard(false) (line 21)
+          METHOD_CALL : proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro") (line 22)
+    DEPENDENCIES_BLOCK : dependencies (line 27)
+      DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 28)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='appcompat-v7', version='20.0.0' (line 29)
+      DEPENDENCY_DECL : configuration='compile', group='com.doomonafireball.betterpickers', name='library', version='1.5.2' (line 30)
+        METHOD_CALL : exclude([group: "com.android.support", module: "support-v4"]) (line 31)
+      DEPENDENCY_DECL : configuration='compile', group='joda-time', name='joda-time', version='2.3' (line 33)
+      DEPENDENCY_DECL : configuration='compile', group='com.nineoldandroids', name='library', version='2.4.0' (line 34)
+      DEPENDENCY_DECL : configuration='compile', group='de.greenrobot', name='eventbus', version='2.1.0' (line 35)
+    BLOCK : android."applicationVariants".all (line 39)
+      CLOSURE : (variant -> {  }) (line 39)
+        DECLARATION : name: apk, value: variant."outputFile" (line 40)
+        DECLARATION : name: newName, value: apk."name".replace("_Android", "").replace(".apk", "-${android.defaultConfig.versionName}$buildNumber.apk") (line 41)
+        ASSIGNMENT : name: variant.outputFile, operator: =, value: File(apk."parent", newName) (line 44)
+  PROPERTIES_FILE : gradle.properties (line 0)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : app/build.gradle (line 0)
+    DECLARATION : name: buildNumber, value: "bld" + System.env.BUILD_NUMBER ? System.env.BUILD_NUMBER : SNAPSHOT (line 1)
+    PLUGIN_DECL : apply plugin: com.android.application (line 2)
+    BLOCK : android (line 4)
+      METHOD_CALL : compileSdkVersion(Integer.parseInt(project."ANDROID_BUILD_SDK_VERSION")) (line 5)
+      METHOD_CALL : buildToolsVersion(project."ANDROID_BUILD_TOOLS_VERSION") (line 6)
+      BLOCK : defaultConfig (line 8)
+        METHOD_CALL : applicationId("com.schautup") (line 9)
+        METHOD_CALL : minSdkVersion(Integer.parseInt(project."ANDROID_BUILD_MIN_SDK_VERSION")) (line 10)
+        METHOD_CALL : targetSdkVersion(Integer.parseInt(project."ANDROID_BUILD_TARGET_SDK_VERSION")) (line 11)
+        METHOD_CALL : versionCode(1) (line 12)
+        METHOD_CALL : versionName("pre 0.4.5") (line 13)
+      BLOCK : buildTypes (line 15)
+        BLOCK : debug (line 16)
+          METHOD_CALL : zipAlign(true) (line 17)
+          METHOD_CALL : versionNameSuffix(buildNumber) (line 18)
+        BLOCK : release (line 20)
+          METHOD_CALL : runProguard(false) (line 21)
+          METHOD_CALL : proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro") (line 22)
+    DEPENDENCIES_BLOCK : dependencies (line 27)
+      DEPENDENCY_DECL : configuration='compile', notation='fileTree()' (line 28)
+      DEPENDENCY_DECL : configuration='compile', group='com.android.support', name='appcompat-v7', version='20.0.0' (line 29)
+      DEPENDENCY_DECL : configuration='compile', group='com.doomonafireball.betterpickers', name='library', version='1.5.2' (line 30)
+        METHOD_CALL : exclude([group: "com.android.support", module: "support-v4"]) (line 31)
+      DEPENDENCY_DECL : configuration='compile', group='joda-time', name='joda-time', version='2.3' (line 33)
+      DEPENDENCY_DECL : configuration='compile', group='com.nineoldandroids', name='library', version='2.4.0' (line 34)
+      DEPENDENCY_DECL : configuration='compile', group='de.greenrobot', name='eventbus', version='2.1.0' (line 35)
+    BLOCK : android."applicationVariants".all (line 39)
+      CLOSURE : (variant -> {  }) (line 39)
+        DECLARATION : name: apk, value: variant."outputFile" (line 40)
+        DECLARATION : name: newName, value: apk."name".replace("_Android", "").replace(".apk", "-${android.defaultConfig.versionName}$buildNumber.apk") (line 41)
+        ASSIGNMENT : name: variant.outputFile, operator: =, value: File(apk."parent", newName) (line 44)
+  PROPERTIES_FILE : gradle.properties (line 0)
+    ASSIGNMENT : name: ANDROID_BUILD_MIN_SDK_VERSION, value: "9" (line 19)
+    ASSIGNMENT : name: ANDROID_BUILD_TARGET_SDK_VERSION, value: "20" (line 20)
+    ASSIGNMENT : name: ANDROID_BUILD_SDK_VERSION, value: "20" (line 21)
+    ASSIGNMENT : name: ANDROID_BUILD_TOOLS_VERSION, value: "20.0.0" (line 22)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+(none)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+ASSIGNMENT:ANDROID_BUILD_MIN_SDK_VERSION = 9 (line 19, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:ANDROID_BUILD_TARGET_SDK_VERSION = 20 (line 20, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:ANDROID_BUILD_SDK_VERSION = 20 (line 21, parent=PROPERTIES_FILE:gradle.properties)
+ASSIGNMENT:ANDROID_BUILD_TOOLS_VERSION = 20.0.0 (line 22, parent=PROPERTIES_FILE:gradle.properties)
+
+=== ALL LEAF MATCHES ===
+DECLARATION:buildNumber = bld + System.env.BUILD_NUMBER ? System.env.BUILD_NUMBER : SNAPSHOT (line 1, parent=BUILD_GRADLE:app/build.gradle) -> DECLARATION:buildNumber = bld + System.env.BUILD_NUMBER ? System.env.BUILD_NUMBER : SNAPSHOT (line 1, parent=BUILD_GRADLE:app/build.gradle)
+PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:app/build.gradle) -> PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:app/build.gradle)
+METHOD_CALL:compileSdkVersion (line 5, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 5, parent=BLOCK:android)
+METHOD_CALL:buildToolsVersion (line 6, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 6, parent=BLOCK:android)
+METHOD_CALL:applicationId (line 9, parent=BLOCK:defaultConfig) -> METHOD_CALL:applicationId (line 9, parent=BLOCK:defaultConfig)
+METHOD_CALL:minSdkVersion (line 10, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 10, parent=BLOCK:defaultConfig)
+METHOD_CALL:targetSdkVersion (line 11, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 11, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 12, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 12, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 13, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 13, parent=BLOCK:defaultConfig)
+METHOD_CALL:zipAlign (line 17, parent=BLOCK:debug) -> METHOD_CALL:zipAlign (line 17, parent=BLOCK:debug)
+METHOD_CALL:versionNameSuffix (line 18, parent=BLOCK:debug) -> METHOD_CALL:versionNameSuffix (line 18, parent=BLOCK:debug)
+METHOD_CALL:runProguard (line 21, parent=BLOCK:release) -> METHOD_CALL:runProguard (line 21, parent=BLOCK:release)
+METHOD_CALL:proguardFiles (line 22, parent=BLOCK:release) -> METHOD_CALL:proguardFiles (line 22, parent=BLOCK:release)
+DEPENDENCY_DECL:compile (line 28, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 28, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 29, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 29, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:exclude (line 31, parent=DEPENDENCY_DECL:compile) -> METHOD_CALL:exclude (line 31, parent=DEPENDENCY_DECL:compile)
+DEPENDENCY_DECL:compile (line 33, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 33, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 34, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 34, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 35, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 35, parent=DEPENDENCIES_BLOCK:dependencies)
+DECLARATION:apk = variant.outputFile (line 40, parent=CLOSURE:) -> DECLARATION:apk = variant.outputFile (line 40, parent=CLOSURE:)
+DECLARATION:newName = apk.name.replace(_Android, ).replace(.apk, -${android.defaultConfig.versionName}$buildNumber.apk) (line 41, parent=CLOSURE:) -> DECLARATION:newName = apk.name.replace(_Android, ).replace(.apk, -${android.defaultConfig.versionName}$buildNumber.apk) (line 41, parent=CLOSURE:)
+ASSIGNMENT:variant.outputFile = new File(apk.parent, newName) (line 44, parent=CLOSURE:) -> ASSIGNMENT:variant.outputFile = new File(apk.parent, newName) (line 44, parent=CLOSURE:)
+
+=== LEAF ROUND 1 MATCHES ===
+ASSIGNMENT:variant.outputFile = new File(apk.parent, newName) (line 44, parent=CLOSURE:) -> ASSIGNMENT:variant.outputFile = new File(apk.parent, newName) (line 44, parent=CLOSURE:)
+DECLARATION:apk = variant.outputFile (line 40, parent=CLOSURE:) -> DECLARATION:apk = variant.outputFile (line 40, parent=CLOSURE:)
+DECLARATION:buildNumber = bld + System.env.BUILD_NUMBER ? System.env.BUILD_NUMBER : SNAPSHOT (line 1, parent=BUILD_GRADLE:app/build.gradle) -> DECLARATION:buildNumber = bld + System.env.BUILD_NUMBER ? System.env.BUILD_NUMBER : SNAPSHOT (line 1, parent=BUILD_GRADLE:app/build.gradle)
+DECLARATION:newName = apk.name.replace(_Android, ).replace(.apk, -${android.defaultConfig.versionName}$buildNumber.apk) (line 41, parent=CLOSURE:) -> DECLARATION:newName = apk.name.replace(_Android, ).replace(.apk, -${android.defaultConfig.versionName}$buildNumber.apk) (line 41, parent=CLOSURE:)
+DEPENDENCY_DECL:compile (line 28, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 28, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 29, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 29, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 33, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 33, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 34, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 34, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 35, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 35, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:applicationId (line 9, parent=BLOCK:defaultConfig) -> METHOD_CALL:applicationId (line 9, parent=BLOCK:defaultConfig)
+METHOD_CALL:exclude (line 31, parent=DEPENDENCY_DECL:compile) -> METHOD_CALL:exclude (line 31, parent=DEPENDENCY_DECL:compile)
+METHOD_CALL:proguardFiles (line 22, parent=BLOCK:release) -> METHOD_CALL:proguardFiles (line 22, parent=BLOCK:release)
+METHOD_CALL:runProguard (line 21, parent=BLOCK:release) -> METHOD_CALL:runProguard (line 21, parent=BLOCK:release)
+METHOD_CALL:versionCode (line 12, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 12, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 13, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 13, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionNameSuffix (line 18, parent=BLOCK:debug) -> METHOD_CALL:versionNameSuffix (line 18, parent=BLOCK:debug)
+METHOD_CALL:zipAlign (line 17, parent=BLOCK:debug) -> METHOD_CALL:zipAlign (line 17, parent=BLOCK:debug)
+PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:app/build.gradle) -> PLUGIN_DECL:apply (line 2, parent=BUILD_GRADLE:app/build.gradle)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+METHOD_CALL:buildToolsVersion (line 6, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 6, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 5, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 5, parent=BLOCK:android)
+METHOD_CALL:minSdkVersion (line 10, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 10, parent=BLOCK:defaultConfig)
+METHOD_CALL:targetSdkVersion (line 11, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 11, parent=BLOCK:defaultConfig)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:android (line 4, parent=BUILD_GRADLE:app/build.gradle) -> BLOCK:android (line 4, parent=BUILD_GRADLE:app/build.gradle)
+BLOCK:defaultConfig (line 8, parent=BLOCK:android) -> BLOCK:defaultConfig (line 8, parent=BLOCK:android)
+BLOCK:buildTypes (line 15, parent=BLOCK:android) -> BLOCK:buildTypes (line 15, parent=BLOCK:android)
+BLOCK:debug (line 16, parent=BLOCK:buildTypes) -> BLOCK:debug (line 16, parent=BLOCK:buildTypes)
+BLOCK:release (line 20, parent=BLOCK:buildTypes) -> BLOCK:release (line 20, parent=BLOCK:buildTypes)
+DEPENDENCIES_BLOCK:dependencies (line 27, parent=BUILD_GRADLE:app/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 27, parent=BUILD_GRADLE:app/build.gradle)
+DEPENDENCY_DECL:compile (line 30, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 30, parent=DEPENDENCIES_BLOCK:dependencies)
+BLOCK:all (line 39, parent=BUILD_GRADLE:app/build.gradle) -> BLOCK:all (line 39, parent=BUILD_GRADLE:app/build.gradle)
+CLOSURE: (line 39, parent=BLOCK:all) -> CLOSURE: (line 39, parent=BLOCK:all)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:all (line 39, parent=BUILD_GRADLE:app/build.gradle) -> BLOCK:all (line 39, parent=BUILD_GRADLE:app/build.gradle)
+BLOCK:buildTypes (line 15, parent=BLOCK:android) -> BLOCK:buildTypes (line 15, parent=BLOCK:android)
+BLOCK:debug (line 16, parent=BLOCK:buildTypes) -> BLOCK:debug (line 16, parent=BLOCK:buildTypes)
+BLOCK:release (line 20, parent=BLOCK:buildTypes) -> BLOCK:release (line 20, parent=BLOCK:buildTypes)
+CLOSURE: (line 39, parent=BLOCK:all) -> CLOSURE: (line 39, parent=BLOCK:all)
+DEPENDENCIES_BLOCK:dependencies (line 27, parent=BUILD_GRADLE:app/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 27, parent=BUILD_GRADLE:app/build.gradle)
+DEPENDENCY_DECL:compile (line 30, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 30, parent=DEPENDENCIES_BLOCK:dependencies)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+BLOCK:android (line 4, parent=BUILD_GRADLE:app/build.gradle) -> BLOCK:android (line 4, parent=BUILD_GRADLE:app/build.gradle)
+BLOCK:defaultConfig (line 8, parent=BLOCK:android) -> BLOCK:defaultConfig (line 8, parent=BLOCK:android)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+(not scored in this matching-phase reference)

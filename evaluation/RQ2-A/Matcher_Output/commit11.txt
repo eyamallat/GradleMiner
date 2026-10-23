@@ -1,0 +1,257 @@
+
+=== COMMIT ===
+https://github.com/AchieveMe/achieve-carminp-api/commit/a8ca281f60acc3f6f7748936ae470dbba4bcdb75
+
+=== CHANGED GRADLE FILES ===
+build.gradle -> build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 1)
+      BLOCK : ext (line 2)
+        ASSIGNMENT : name: springBootVersion, operator: =, value: "1.3.0.M2" (line 3)
+      REPOSITORIES_BLOCK : repositories (line 5)
+        REPOSITORIES_DECL : mavenCentral (line 6)
+        REPOSITORIES_DECL : maven (line 7)
+          REPOSITORIES_DECL : url("https://repo.spring.io/snapshot") (line 7)
+        REPOSITORIES_DECL : maven (line 8)
+          REPOSITORIES_DECL : url("https://repo.spring.io/milestone") (line 8)
+      DEPENDENCIES_BLOCK : dependencies (line 10)
+        DEPENDENCY_DECL : configuration='classpath', group='org.springframework.boot', name='spring-boot-gradle-plugin', version='$springBootVersion' (line 11)
+        DEPENDENCY_DECL : configuration='classpath', group='org.flywaydb', name='flyway-gradle-plugin', version='3.2.1' (line 12)
+    PLUGIN_DECL : apply plugin: java (line 16)
+    PLUGIN_DECL : apply plugin: eclipse (line 17)
+    PLUGIN_DECL : apply plugin: idea (line 18)
+    PLUGIN_DECL : apply plugin: spring-boot (line 19)
+    PLUGIN_DECL : apply plugin: org.flywaydb.flyway (line 20)
+    BLOCK : jar (line 22)
+      ASSIGNMENT : name: baseName, operator: =, value: "carminp-core" (line 23)
+      ASSIGNMENT : name: version, operator: =, value: "0.0.1-SNAPSHOT" (line 24)
+    BLOCK : flyway (line 27)
+      ASSIGNMENT : name: url, operator: =, value: "jdbc:postgresql://localhost:5432/carminp" (line 28)
+      ASSIGNMENT : name: schemas, operator: =, value: ["carminp"] (line 29)
+    BLOCK : test (line 32)
+      ASSIGNMENT : name: forkEvery, operator: =, value: 5 (line 33)
+      ASSIGNMENT : name: maxParallelForks, operator: =, value: Runtime."runtime".availableProcessors() / 2 (line 34)
+    ASSIGNMENT : name: sourceCompatibility, operator: =, value: 1.8 (line 37)
+    ASSIGNMENT : name: targetCompatibility, operator: =, value: 1.8 (line 38)
+    REPOSITORIES_BLOCK : repositories (line 40)
+      REPOSITORIES_DECL : mavenCentral (line 41)
+      REPOSITORIES_DECL : maven (line 42)
+        REPOSITORIES_DECL : url("https://repo.spring.io/snapshot") (line 42)
+      REPOSITORIES_DECL : maven (line 43)
+        REPOSITORIES_DECL : url("https://repo.spring.io/milestone") (line 43)
+    DEPENDENCIES_BLOCK : dependencies (line 47)
+      DEPENDENCY_DECL : configuration='compile', group='org.springframework.boot', name='spring-boot-starter-data-jpa', version='' (line 48)
+      DEPENDENCY_DECL : configuration='compile', group='org.springframework.boot', name='spring-boot-starter-data-rest', version='' (line 49)
+      DEPENDENCY_DECL : configuration='compile', group='org.springframework.boot', name='spring-boot-starter-hateoas', version='' (line 50)
+      DEPENDENCY_DECL : configuration='compile', group='org.springframework.boot', name='spring-boot-starter-jersey', version='' (line 51)
+      DEPENDENCY_DECL : configuration='compile', group='com.h2database', name='h2', version='' (line 52)
+      DEPENDENCY_DECL : configuration='compile', group='org.postgresql', name='postgresql', version='9.4-1201-jdbc41' (line 53)
+      DEPENDENCY_DECL : configuration='testCompile', group='org.springframework.boot', name='spring-boot-starter-test', version='' (line 54)
+    BLOCK : eclipse (line 58)
+      BLOCK : classpath (line 59)
+        METHOD_CALL : containers.remove("org.eclipse.jdt.launching.JRE_CONTAINER") (line 60)
+        METHOD_CALL : containers("org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8") (line 61)
+    TASK_DECLARATION : taskName=myJavadocs, type=Javadoc, style=task (line 65)
+      ASSIGNMENT : name: failOnError, operator: =, value: false (line 66)
+    TASK_DECLARATION : taskName=wrapper, type=Wrapper, style=task (line 69)
+      ASSIGNMENT : name: gradleVersion, operator: =, value: "2.3" (line 70)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    BUILDSCRIPT : buildscript (line 1)
+      BLOCK : ext (line 2)
+        ASSIGNMENT : name: springBootVersion, operator: =, value: "1.3.0.M2" (line 3)
+      REPOSITORIES_BLOCK : repositories (line 5)
+        REPOSITORIES_DECL : mavenCentral (line 6)
+      DEPENDENCIES_BLOCK : dependencies (line 8)
+        DEPENDENCY_DECL : configuration='classpath', group='org.springframework.boot', name='spring-boot-gradle-plugin', version='$springBootVersion' (line 9)
+    PLUGINS_BLOCK : plugins (line 13)
+      PLUGIN_DECL : id 'java' (line 14)
+      PLUGIN_DECL : id 'eclipse' (line 15)
+      PLUGIN_DECL : id 'idea' (line 16)
+      PLUGIN_DECL : id 'org.flywaydb.flyway' version '3.2.1' (line 17)
+    PLUGIN_DECL : apply plugin: spring-boot (line 20)
+    BLOCK : jar (line 22)
+      ASSIGNMENT : name: baseName, operator: =, value: "carminp-core" (line 23)
+      ASSIGNMENT : name: version, operator: =, value: "0.0.1-SNAPSHOT" (line 24)
+    BLOCK : flyway (line 27)
+      ASSIGNMENT : name: url, operator: =, value: "jdbc:postgresql://localhost:5432/carminp" (line 28)
+      ASSIGNMENT : name: schemas, operator: =, value: ["carminp"] (line 29)
+    BLOCK : test (line 32)
+      ASSIGNMENT : name: forkEvery, operator: =, value: 5 (line 33)
+      ASSIGNMENT : name: maxParallelForks, operator: =, value: Runtime."runtime".availableProcessors() / 2 (line 34)
+    ASSIGNMENT : name: sourceCompatibility, operator: =, value: 1.8 (line 37)
+    ASSIGNMENT : name: targetCompatibility, operator: =, value: 1.8 (line 38)
+    REPOSITORIES_BLOCK : repositories (line 40)
+      REPOSITORIES_DECL : mavenCentral (line 41)
+      REPOSITORIES_DECL : maven (line 42)
+        REPOSITORIES_DECL : url("https://repo.spring.io/snapshot") (line 42)
+      REPOSITORIES_DECL : maven (line 43)
+        REPOSITORIES_DECL : url("https://repo.spring.io/milestone") (line 43)
+    DEPENDENCIES_BLOCK : dependencies (line 47)
+      DEPENDENCY_DECL : configuration='compile', group='org.springframework.boot', name='spring-boot-starter-data-jpa', version='' (line 48)
+      DEPENDENCY_DECL : configuration='compile', group='org.springframework.boot', name='spring-boot-starter-data-rest', version='' (line 49)
+      DEPENDENCY_DECL : configuration='compile', group='org.springframework.boot', name='spring-boot-starter-hateoas', version='' (line 50)
+      DEPENDENCY_DECL : configuration='compile', group='org.springframework.boot', name='spring-boot-starter-jersey', version='' (line 51)
+      DEPENDENCY_DECL : configuration='compile', group='com.h2database', name='h2', version='' (line 52)
+      DEPENDENCY_DECL : configuration='compile', group='org.postgresql', name='postgresql', version='9.4-1201-jdbc41' (line 53)
+      DEPENDENCY_DECL : configuration='testCompile', group='org.springframework.boot', name='spring-boot-starter-test', version='' (line 54)
+    BLOCK : eclipse (line 58)
+      BLOCK : classpath (line 59)
+        METHOD_CALL : containers.remove("org.eclipse.jdt.launching.JRE_CONTAINER") (line 60)
+        METHOD_CALL : containers("org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8") (line 61)
+    TASK_DECLARATION : taskName=myJavadocs, type=Javadoc, style=task (line 65)
+      ASSIGNMENT : name: failOnError, operator: =, value: false (line 66)
+    TASK_DECLARATION : taskName=wrapper, type=Wrapper, style=task (line 69)
+      ASSIGNMENT : name: gradleVersion, operator: =, value: "2.3" (line 70)
+
+=== DELETED COMPOSITE NODES ===
+REPOSITORIES_DECL:maven (line 7, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:maven (line 8, parent=REPOSITORIES_BLOCK:repositories)
+
+=== DELETED LEAF NODES ===
+DEPENDENCY_DECL:classpath (line 12, parent=DEPENDENCIES_BLOCK:dependencies)
+REPOSITORIES_DECL:url (line 7, parent=REPOSITORIES_DECL:maven)
+REPOSITORIES_DECL:url (line 8, parent=REPOSITORIES_DECL:maven)
+
+=== ADDED COMPOSITE NODES ===
+PLUGINS_BLOCK:plugins (line 13, parent=BUILD_GRADLE:build.gradle)
+
+=== ADDED LEAF NODES ===
+(none)
+
+=== ALL LEAF MATCHES ===
+ASSIGNMENT:baseName = carminp-core (line 23, parent=BLOCK:jar) -> ASSIGNMENT:baseName = carminp-core (line 23, parent=BLOCK:jar)
+ASSIGNMENT:failOnError = false (line 66, parent=TASK_DECLARATION:myJavadocs) -> ASSIGNMENT:failOnError = false (line 66, parent=TASK_DECLARATION:myJavadocs)
+ASSIGNMENT:forkEvery = 5 (line 33, parent=BLOCK:test) -> ASSIGNMENT:forkEvery = 5 (line 33, parent=BLOCK:test)
+ASSIGNMENT:gradleVersion = 2.3 (line 70, parent=TASK_DECLARATION:wrapper) -> ASSIGNMENT:gradleVersion = 2.3 (line 70, parent=TASK_DECLARATION:wrapper)
+ASSIGNMENT:maxParallelForks = Runtime.runtime.availableProcessors() / 2 (line 34, parent=BLOCK:test) -> ASSIGNMENT:maxParallelForks = Runtime.runtime.availableProcessors() / 2 (line 34, parent=BLOCK:test)
+ASSIGNMENT:schemas = [carminp] (line 29, parent=BLOCK:flyway) -> ASSIGNMENT:schemas = [carminp] (line 29, parent=BLOCK:flyway)
+ASSIGNMENT:sourceCompatibility = 1.8 (line 37, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:sourceCompatibility = 1.8 (line 37, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:springBootVersion = 1.3.0.M2 (line 3, parent=BLOCK:ext) -> ASSIGNMENT:springBootVersion = 1.3.0.M2 (line 3, parent=BLOCK:ext)
+ASSIGNMENT:targetCompatibility = 1.8 (line 38, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:targetCompatibility = 1.8 (line 38, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:url = jdbc:postgresql://localhost:5432/carminp (line 28, parent=BLOCK:flyway) -> ASSIGNMENT:url = jdbc:postgresql://localhost:5432/carminp (line 28, parent=BLOCK:flyway)
+ASSIGNMENT:version = 0.0.1-SNAPSHOT (line 24, parent=BLOCK:jar) -> ASSIGNMENT:version = 0.0.1-SNAPSHOT (line 24, parent=BLOCK:jar)
+DEPENDENCY_DECL:classpath (line 11, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 9, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 48, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 48, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 49, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 49, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 50, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 50, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 51, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 51, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 52, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 52, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 53, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 53, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 54, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 54, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:containers (line 61, parent=BLOCK:classpath) -> METHOD_CALL:containers (line 61, parent=BLOCK:classpath)
+METHOD_CALL:remove (line 60, parent=BLOCK:classpath) -> METHOD_CALL:remove (line 60, parent=BLOCK:classpath)
+PLUGIN_DECL:apply (line 16, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:id (line 14, parent=PLUGINS_BLOCK:plugins)
+PLUGIN_DECL:apply (line 17, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:id (line 15, parent=PLUGINS_BLOCK:plugins)
+PLUGIN_DECL:apply (line 18, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:id (line 16, parent=PLUGINS_BLOCK:plugins)
+PLUGIN_DECL:apply (line 19, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 20, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:apply (line 20, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:version (line 17, parent=PLUGINS_BLOCK:plugins)
+REPOSITORIES_DECL:mavenCentral (line 41, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 41, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 6, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 6, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:url (line 42, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 42, parent=REPOSITORIES_DECL:maven)
+REPOSITORIES_DECL:url (line 43, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 43, parent=REPOSITORIES_DECL:maven)
+
+=== LEAF ROUND 1 MATCHES ===
+ASSIGNMENT:baseName = carminp-core (line 23, parent=BLOCK:jar) -> ASSIGNMENT:baseName = carminp-core (line 23, parent=BLOCK:jar)
+ASSIGNMENT:failOnError = false (line 66, parent=TASK_DECLARATION:myJavadocs) -> ASSIGNMENT:failOnError = false (line 66, parent=TASK_DECLARATION:myJavadocs)
+ASSIGNMENT:forkEvery = 5 (line 33, parent=BLOCK:test) -> ASSIGNMENT:forkEvery = 5 (line 33, parent=BLOCK:test)
+ASSIGNMENT:gradleVersion = 2.3 (line 70, parent=TASK_DECLARATION:wrapper) -> ASSIGNMENT:gradleVersion = 2.3 (line 70, parent=TASK_DECLARATION:wrapper)
+ASSIGNMENT:maxParallelForks = Runtime.runtime.availableProcessors() / 2 (line 34, parent=BLOCK:test) -> ASSIGNMENT:maxParallelForks = Runtime.runtime.availableProcessors() / 2 (line 34, parent=BLOCK:test)
+ASSIGNMENT:schemas = [carminp] (line 29, parent=BLOCK:flyway) -> ASSIGNMENT:schemas = [carminp] (line 29, parent=BLOCK:flyway)
+ASSIGNMENT:sourceCompatibility = 1.8 (line 37, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:sourceCompatibility = 1.8 (line 37, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:springBootVersion = 1.3.0.M2 (line 3, parent=BLOCK:ext) -> ASSIGNMENT:springBootVersion = 1.3.0.M2 (line 3, parent=BLOCK:ext)
+ASSIGNMENT:targetCompatibility = 1.8 (line 38, parent=BUILD_GRADLE:build.gradle) -> ASSIGNMENT:targetCompatibility = 1.8 (line 38, parent=BUILD_GRADLE:build.gradle)
+ASSIGNMENT:url = jdbc:postgresql://localhost:5432/carminp (line 28, parent=BLOCK:flyway) -> ASSIGNMENT:url = jdbc:postgresql://localhost:5432/carminp (line 28, parent=BLOCK:flyway)
+ASSIGNMENT:version = 0.0.1-SNAPSHOT (line 24, parent=BLOCK:jar) -> ASSIGNMENT:version = 0.0.1-SNAPSHOT (line 24, parent=BLOCK:jar)
+DEPENDENCY_DECL:classpath (line 11, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:classpath (line 9, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 48, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 48, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 49, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 49, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 50, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 50, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 51, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 51, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 52, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 52, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 53, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 53, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 54, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 54, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:containers (line 61, parent=BLOCK:classpath) -> METHOD_CALL:containers (line 61, parent=BLOCK:classpath)
+METHOD_CALL:remove (line 60, parent=BLOCK:classpath) -> METHOD_CALL:remove (line 60, parent=BLOCK:classpath)
+PLUGIN_DECL:apply (line 19, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:apply (line 20, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_DECL:mavenCentral (line 41, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 41, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:mavenCentral (line 6, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:mavenCentral (line 6, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:url (line 42, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 42, parent=REPOSITORIES_DECL:maven)
+REPOSITORIES_DECL:url (line 43, parent=REPOSITORIES_DECL:maven) -> REPOSITORIES_DECL:url (line 43, parent=REPOSITORIES_DECL:maven)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+PLUGIN_DECL:apply (line 16, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:id (line 14, parent=PLUGINS_BLOCK:plugins)
+PLUGIN_DECL:apply (line 17, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:id (line 15, parent=PLUGINS_BLOCK:plugins)
+PLUGIN_DECL:apply (line 18, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:id (line 16, parent=PLUGINS_BLOCK:plugins)
+PLUGIN_DECL:apply (line 20, parent=BUILD_GRADLE:build.gradle) -> PLUGIN_DECL:version (line 17, parent=PLUGINS_BLOCK:plugins)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:classpath (line 59, parent=BLOCK:eclipse) -> BLOCK:classpath (line 59, parent=BLOCK:eclipse)
+BLOCK:eclipse (line 58, parent=BUILD_GRADLE:build.gradle) -> BLOCK:eclipse (line 58, parent=BUILD_GRADLE:build.gradle)
+BLOCK:ext (line 2, parent=BUILDSCRIPT:buildscript) -> BLOCK:ext (line 2, parent=BUILDSCRIPT:buildscript)
+BLOCK:flyway (line 27, parent=BUILD_GRADLE:build.gradle) -> BLOCK:flyway (line 27, parent=BUILD_GRADLE:build.gradle)
+BLOCK:jar (line 22, parent=BUILD_GRADLE:build.gradle) -> BLOCK:jar (line 22, parent=BUILD_GRADLE:build.gradle)
+BLOCK:test (line 32, parent=BUILD_GRADLE:build.gradle) -> BLOCK:test (line 32, parent=BUILD_GRADLE:build.gradle)
+BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 10, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 8, parent=BUILDSCRIPT:buildscript)
+DEPENDENCIES_BLOCK:dependencies (line 47, parent=BUILD_GRADLE:build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 47, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_BLOCK:repositories (line 40, parent=BUILD_GRADLE:build.gradle) -> REPOSITORIES_BLOCK:repositories (line 40, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_BLOCK:repositories (line 5, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 5, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_DECL:maven (line 42, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 42, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:maven (line 43, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 43, parent=REPOSITORIES_BLOCK:repositories)
+TASK_DECLARATION:myJavadocs (line 65, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:myJavadocs (line 65, parent=BUILD_GRADLE:build.gradle)
+TASK_DECLARATION:wrapper (line 69, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:wrapper (line 69, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:classpath (line 59, parent=BLOCK:eclipse) -> BLOCK:classpath (line 59, parent=BLOCK:eclipse)
+BLOCK:eclipse (line 58, parent=BUILD_GRADLE:build.gradle) -> BLOCK:eclipse (line 58, parent=BUILD_GRADLE:build.gradle)
+BLOCK:ext (line 2, parent=BUILDSCRIPT:buildscript) -> BLOCK:ext (line 2, parent=BUILDSCRIPT:buildscript)
+BLOCK:flyway (line 27, parent=BUILD_GRADLE:build.gradle) -> BLOCK:flyway (line 27, parent=BUILD_GRADLE:build.gradle)
+BLOCK:jar (line 22, parent=BUILD_GRADLE:build.gradle) -> BLOCK:jar (line 22, parent=BUILD_GRADLE:build.gradle)
+BLOCK:test (line 32, parent=BUILD_GRADLE:build.gradle) -> BLOCK:test (line 32, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 47, parent=BUILD_GRADLE:build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 47, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_BLOCK:repositories (line 40, parent=BUILD_GRADLE:build.gradle) -> REPOSITORIES_BLOCK:repositories (line 40, parent=BUILD_GRADLE:build.gradle)
+REPOSITORIES_DECL:maven (line 42, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 42, parent=REPOSITORIES_BLOCK:repositories)
+REPOSITORIES_DECL:maven (line 43, parent=REPOSITORIES_BLOCK:repositories) -> REPOSITORIES_DECL:maven (line 43, parent=REPOSITORIES_BLOCK:repositories)
+TASK_DECLARATION:myJavadocs (line 65, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:myJavadocs (line 65, parent=BUILD_GRADLE:build.gradle)
+TASK_DECLARATION:wrapper (line 69, parent=BUILD_GRADLE:build.gradle) -> TASK_DECLARATION:wrapper (line 69, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle) -> BUILDSCRIPT:buildscript (line 1, parent=BUILD_GRADLE:build.gradle)
+DEPENDENCIES_BLOCK:dependencies (line 10, parent=BUILDSCRIPT:buildscript) -> DEPENDENCIES_BLOCK:dependencies (line 8, parent=BUILDSCRIPT:buildscript)
+REPOSITORIES_BLOCK:repositories (line 5, parent=BUILDSCRIPT:buildscript) -> REPOSITORIES_BLOCK:repositories (line 5, parent=BUILDSCRIPT:buildscript)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+REFORMAT_CODE: Reformat code (no semantic change)
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:maven (7)'
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:maven (8)'
+REMOVE_UNUSED_CODE: Remove unused element 'build.gradle:classpath (12)'
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 30; 30, 0, 0
+Matched composites: 15; 15, 0, 0
+Deleted leaves: 3; 3, 0, 0
+Deleted composites: 2; 2, 0, 0
+Added leaves: 0; 0, 0, 0
+Added composites: 1; 1, 0, 0
+Total expected events: 51
+Total predicted events: 51
+
+TP=51 FP=0 FN=0
+TP=51, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT12 MISSED ===
+(none in the matching-phase output)
+

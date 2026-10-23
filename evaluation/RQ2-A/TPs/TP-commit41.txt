@@ -1,0 +1,98 @@
+=== COMMIT ===
+http://github.com/android/nowinandroid/commit/2c35ee7344a60921cd0a33580b80e0c7228db0ba
+
+=== CHANGED GRADLE FILES ===
+core/domain/build.gradle.kts -> core/domain/build.gradle.kts
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : core/domain/build.gradle.kts (line 0)
+    PLUGINS_BLOCK : plugins (line 16)
+      PLUGIN_DECL : id 'nowinandroid.android.library' (line 17)
+      PLUGIN_DECL : id 'nowinandroid.android.library.jacoco' (line 18)
+      PLUGIN_DECL : id 'kotlin(kapt)' (line 19)
+    DEPENDENCIES_BLOCK : dependencies (line 22)
+      DEPENDENCY_DECL : configuration='implementation', projectPath=':core:data' (line 24)
+      DEPENDENCY_DECL : configuration='implementation', projectPath=':core:model' (line 25)
+      DEPENDENCY_DECL : configuration='testImplementation', projectPath=':core:testing' (line 27)
+      DEPENDENCY_DECL : configuration='implementation', catalogAlias='libs.kotlinx.coroutines.android' (line 29)
+      DEPENDENCY_DECL : configuration='implementation', catalogAlias='libs.kotlinx.datetime' (line 30)
+      DEPENDENCY_DECL : configuration='implementation', catalogAlias='libs.hilt.android' (line 32)
+      DEPENDENCY_DECL : configuration='kapt', catalogAlias='libs.hilt.compiler' (line 33)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : core/domain/build.gradle.kts (line 0)
+    PLUGINS_BLOCK : plugins (line 16)
+      PLUGIN_DECL : id 'nowinandroid.android.library' (line 17)
+      PLUGIN_DECL : id 'nowinandroid.android.library.jacoco' (line 18)
+      PLUGIN_DECL : id 'kotlin(kapt)' (line 19)
+    BLOCK : android (line 22)
+      ASSIGNMENT : name: namespace, operator: =, value: "com.google.samples.apps.nowinandroid.core.domain" (line 23)
+    DEPENDENCIES_BLOCK : dependencies (line 26)
+      DEPENDENCY_DECL : configuration='implementation', projectPath=':core:data' (line 28)
+      DEPENDENCY_DECL : configuration='implementation', projectPath=':core:model' (line 29)
+      DEPENDENCY_DECL : configuration='testImplementation', projectPath=':core:testing' (line 31)
+      DEPENDENCY_DECL : configuration='implementation', catalogAlias='libs.kotlinx.coroutines.android' (line 33)
+      DEPENDENCY_DECL : configuration='implementation', catalogAlias='libs.kotlinx.datetime' (line 34)
+      DEPENDENCY_DECL : configuration='implementation', catalogAlias='libs.hilt.android' (line 36)
+      DEPENDENCY_DECL : configuration='kapt', catalogAlias='libs.hilt.compiler' (line 37)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+(none)
+
+=== ADDED COMPOSITE NODES ===
+BLOCK:android (line 22, parent=BUILD_GRADLE:core/domain/build.gradle.kts)
+
+=== ADDED LEAF NODES ===
+ASSIGNMENT:namespace = com.google.samples.apps.nowinandroid.core.domain (line 23, parent=BLOCK:android)
+
+=== ALL LEAF MATCHES ===
+DEPENDENCY_DECL:implementation (line 24, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 28, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:implementation (line 25, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 29, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:implementation (line 29, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 33, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:implementation (line 30, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 34, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:implementation (line 32, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 36, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:kapt (line 33, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:kapt (line 37, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testImplementation (line 27, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testImplementation (line 31, parent=DEPENDENCIES_BLOCK:dependencies)
+PLUGIN_DECL:id (line 17, parent=PLUGINS_BLOCK:plugins) -> PLUGIN_DECL:id (line 17, parent=PLUGINS_BLOCK:plugins)
+PLUGIN_DECL:id (line 18, parent=PLUGINS_BLOCK:plugins) -> PLUGIN_DECL:id (line 18, parent=PLUGINS_BLOCK:plugins)
+PLUGIN_DECL:kotlin (line 19, parent=PLUGINS_BLOCK:plugins) -> PLUGIN_DECL:kotlin (line 19, parent=PLUGINS_BLOCK:plugins)
+
+=== LEAF ROUND 1 MATCHES ===
+DEPENDENCY_DECL:implementation (line 24, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 28, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:implementation (line 25, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 29, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:implementation (line 29, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 33, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:implementation (line 30, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 34, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:implementation (line 32, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:implementation (line 36, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:kapt (line 33, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:kapt (line 37, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testImplementation (line 27, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testImplementation (line 31, parent=DEPENDENCIES_BLOCK:dependencies)
+PLUGIN_DECL:id (line 17, parent=PLUGINS_BLOCK:plugins) -> PLUGIN_DECL:id (line 17, parent=PLUGINS_BLOCK:plugins)
+PLUGIN_DECL:id (line 18, parent=PLUGINS_BLOCK:plugins) -> PLUGIN_DECL:id (line 18, parent=PLUGINS_BLOCK:plugins)
+PLUGIN_DECL:kotlin (line 19, parent=PLUGINS_BLOCK:plugins) -> PLUGIN_DECL:kotlin (line 19, parent=PLUGINS_BLOCK:plugins)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+(none)
+
+=== ALL COMPOSITE MATCHES ===
+DEPENDENCIES_BLOCK:dependencies (line 22, parent=BUILD_GRADLE:core/domain/build.gradle.kts) -> DEPENDENCIES_BLOCK:dependencies (line 26, parent=BUILD_GRADLE:core/domain/build.gradle.kts)
+PLUGINS_BLOCK:plugins (line 16, parent=BUILD_GRADLE:core/domain/build.gradle.kts) -> PLUGINS_BLOCK:plugins (line 16, parent=BUILD_GRADLE:core/domain/build.gradle.kts)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+DEPENDENCIES_BLOCK:dependencies (line 22, parent=BUILD_GRADLE:core/domain/build.gradle.kts) -> DEPENDENCIES_BLOCK:dependencies (line 26, parent=BUILD_GRADLE:core/domain/build.gradle.kts)
+PLUGINS_BLOCK:plugins (line 16, parent=BUILD_GRADLE:core/domain/build.gradle.kts) -> PLUGINS_BLOCK:plugins (line 16, parent=BUILD_GRADLE:core/domain/build.gradle.kts)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+(none)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+(not scored in this matching-phase reference)

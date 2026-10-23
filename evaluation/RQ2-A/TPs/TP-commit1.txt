@@ -1,0 +1,92 @@
+=== COMMIT ===
+http://github.com/jatindhankhar/shorl/commit/0bd7cd766513926085c9eac3ed865bbe936f9ace
+
+=== ALL LEAF MATCHES ===
+ASSIGNMENT:java.srcDirs = [src/debug/java, src/debug/java/] (line 48, parent=BLOCK:debug) -> ASSIGNMENT:java.srcDirs = [src/debug/java, src/debug/java/] (line 48, parent=BLOCK:debug)
+ASSIGNMENT:java.srcDirs = [src/release/java, src/release/java/] (line 49, parent=BLOCK:release) -> ASSIGNMENT:java.srcDirs = [src/release/java, src/release/java/] (line 49, parent=BLOCK:release)
+BLOCK:productFlavors (line 45, parent=BLOCK:android) -> BLOCK:productFlavors (line 45, parent=BLOCK:android)
+DECLARATION:keystoreProperties = new Properties() (line 6, parent=BUILD_GRADLE:app/build.gradle) -> DECLARATION:keystoreProperties = new Properties() (line 6, parent=BUILD_GRADLE:app/build.gradle)
+DECLARATION:keystorePropertiesFile = rootProject.file(keystore.properties) (line 3, parent=BUILD_GRADLE:app/build.gradle) -> DECLARATION:keystorePropertiesFile = rootProject.file(keystore.properties) (line 3, parent=BUILD_GRADLE:app/build.gradle)
+DEPENDENCY_DECL:annotationProcessor (line 64, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:annotationProcessor (line 64, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:annotationProcessor (line 75, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:annotationProcessor (line 75, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 55, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 55, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 59, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 59, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 60, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 60, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 61, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 61, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 62, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 62, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 69, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 69, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 70, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 70, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 72, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 72, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 73, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 73, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 74, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 74, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 76, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 76, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 78, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 78, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 79, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 79, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 82, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 82, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 84, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 84, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 86, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 86, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:compile (line 88, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 88, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:debugCompile (line 67, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:debugCompile (line 67, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:debugCompile (line 68, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:debugCompile (line 68, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 63, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 63, parent=DEPENDENCIES_BLOCK:dependencies)
+METHOD_CALL:applicationId (line 25, parent=BLOCK:defaultConfig) -> METHOD_CALL:applicationId (line 25, parent=BLOCK:defaultConfig)
+METHOD_CALL:buildToolsVersion (line 23, parent=BLOCK:android) -> METHOD_CALL:buildToolsVersion (line 23, parent=BLOCK:android)
+METHOD_CALL:compileSdkVersion (line 22, parent=BLOCK:android) -> METHOD_CALL:compileSdkVersion (line 22, parent=BLOCK:android)
+METHOD_CALL:exclude (line 57, parent=DEPENDENCY_DECL:androidTestCompile) -> METHOD_CALL:exclude (line 57, parent=DEPENDENCY_DECL:androidTestCompile)
+METHOD_CALL:keyAlias (line 16, parent=BLOCK:release) -> METHOD_CALL:keyAlias (line 16, parent=BLOCK:release)
+METHOD_CALL:keyPassword (line 17, parent=BLOCK:release) -> METHOD_CALL:keyPassword (line 17, parent=BLOCK:release)
+METHOD_CALL:load (line 9, parent=BUILD_GRADLE:app/build.gradle) -> METHOD_CALL:load (line 9, parent=BUILD_GRADLE:app/build.gradle)
+METHOD_CALL:minSdkVersion (line 26, parent=BLOCK:defaultConfig) -> METHOD_CALL:minSdkVersion (line 26, parent=BLOCK:defaultConfig)
+METHOD_CALL:minifyEnabled (line 36, parent=BLOCK:release) -> METHOD_CALL:minifyEnabled (line 36, parent=BLOCK:release)
+METHOD_CALL:proguardFile (line 39, parent=BLOCK:release) -> METHOD_CALL:proguardFile (line 39, parent=BLOCK:release)
+METHOD_CALL:proguardFile (line 40, parent=BLOCK:release) -> METHOD_CALL:proguardFile (line 40, parent=BLOCK:release)
+METHOD_CALL:proguardFile (line 41, parent=BLOCK:release) -> METHOD_CALL:proguardFile (line 41, parent=BLOCK:release)
+METHOD_CALL:proguardFile (line 42, parent=BLOCK:release) -> METHOD_CALL:proguardFile (line 42, parent=BLOCK:release)
+METHOD_CALL:proguardFiles (line 38, parent=BLOCK:release) -> METHOD_CALL:proguardFiles (line 38, parent=BLOCK:release)
+METHOD_CALL:signingConfig (line 37, parent=BLOCK:release) -> METHOD_CALL:signingConfig (line 37, parent=BLOCK:release)
+METHOD_CALL:storeFile (line 18, parent=BLOCK:release) -> METHOD_CALL:storeFile (line 18, parent=BLOCK:release)
+METHOD_CALL:storePassword (line 19, parent=BLOCK:release) -> METHOD_CALL:storePassword (line 19, parent=BLOCK:release)
+METHOD_CALL:targetSdkVersion (line 27, parent=BLOCK:defaultConfig) -> METHOD_CALL:targetSdkVersion (line 27, parent=BLOCK:defaultConfig)
+METHOD_CALL:testInstrumentationRunner (line 30, parent=BLOCK:defaultConfig) -> METHOD_CALL:testInstrumentationRunner (line 30, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionCode (line 28, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionCode (line 28, parent=BLOCK:defaultConfig)
+METHOD_CALL:versionName (line 29, parent=BLOCK:defaultConfig) -> METHOD_CALL:versionName (line 29, parent=BLOCK:defaultConfig)
+PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:app/build.gradle) -> PLUGIN_DECL:apply (line 1, parent=BUILD_GRADLE:app/build.gradle)
+PLUGIN_DECL:apply (line 90, parent=BUILD_GRADLE:app/build.gradle) -> PLUGIN_DECL:apply (line 90, parent=BUILD_GRADLE:app/build.gradle)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:android (line 13, parent=BUILD_GRADLE:app/build.gradle) -> BLOCK:android (line 13, parent=BUILD_GRADLE:app/build.gradle)
+BLOCK:buildTypes (line 32, parent=BLOCK:android) -> BLOCK:buildTypes (line 32, parent=BLOCK:android)
+BLOCK:debug (line 48, parent=BLOCK:sourceSets) -> BLOCK:debug (line 48, parent=BLOCK:sourceSets)
+BLOCK:defaultConfig (line 24, parent=BLOCK:android) -> BLOCK:defaultConfig (line 24, parent=BLOCK:android)
+BLOCK:release (line 15, parent=BLOCK:signingConfigs) -> BLOCK:release (line 15, parent=BLOCK:signingConfigs)
+BLOCK:release (line 34, parent=BLOCK:buildTypes) -> BLOCK:release (line 34, parent=BLOCK:buildTypes)
+BLOCK:release (line 49, parent=BLOCK:sourceSets) -> BLOCK:release (line 49, parent=BLOCK:sourceSets)
+BLOCK:signingConfigs (line 14, parent=BLOCK:android) -> BLOCK:signingConfigs (line 14, parent=BLOCK:android)
+BLOCK:sourceSets (line 47, parent=BLOCK:android) -> BLOCK:sourceSets (line 47, parent=BLOCK:android)
+DEPENDENCIES_BLOCK:dependencies (line 54, parent=BUILD_GRADLE:app/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 54, parent=BUILD_GRADLE:app/build.gradle)
+DEPENDENCY_DECL:androidTestCompile (line 56, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:androidTestCompile (line 56, parent=DEPENDENCIES_BLOCK:dependencies)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+ASSIGNMENT:keyAlias = Dummy (line 1, parent=PROPERTIES_FILE:keystore.properties)
+ASSIGNMENT:keyPassword = password (line 2, parent=PROPERTIES_FILE:keystore.properties)
+ASSIGNMENT:storeFile = dummy_keystore.jks (line 3, parent=PROPERTIES_FILE:keystore.properties)
+ASSIGNMENT:storePassword = password (line 4, parent=PROPERTIES_FILE:keystore.properties)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+(none)
+
+=== EXPECTED COUNTS ===
+Leaf pairs: 50
+Composite pairs: 11
+Total pairs: 61
+Deleted leaves: 4
+Added leaves: 0
+Deleted composites: 0
+Added composites: 0
+

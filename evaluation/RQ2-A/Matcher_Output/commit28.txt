@@ -1,0 +1,120 @@
+
+=== COMMIT ===
+http://github.com/edvin/tornadofx-idea-plugin/commit/a4388eb69e6f734e070ddcdc9f84f3dde0d0684e
+
+=== CHANGED GRADLE FILES ===
+build.gradle -> build.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    PLUGINS_BLOCK : plugins (line 1)
+      PLUGIN_DECL : id 'java' (line 2)
+      PLUGIN_DECL : id 'org.jetbrains.kotlin.jvm' version '1.2.51' (line 3)
+      PLUGIN_DECL : id 'org.jetbrains.intellij' version '0.3.4' (line 4)
+    METHOD_CALL : group("no.tornado") (line 7)
+    METHOD_CALL : version("1.7.14.2-SNAPSHOT") (line 8)
+    BLOCK : intellij (line 11)
+      METHOD_CALL : version("2018.1.3") (line 12)
+      PLUGINS_BLOCK : plugins("Kotlin") (line 13)
+    BLOCK : publishPlugin (line 16)
+      METHOD_CALL : username(publishUsername) (line 17)
+      METHOD_CALL : password(publishPassword) (line 18)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : build.gradle (line 0)
+    PLUGINS_BLOCK : plugins (line 1)
+      PLUGIN_DECL : id 'java' (line 2)
+      PLUGIN_DECL : id 'org.jetbrains.kotlin.jvm' version '1.2.51' (line 3)
+      PLUGIN_DECL : id 'org.jetbrains.intellij' version '0.3.4' (line 4)
+    METHOD_CALL : group("no.tornado") (line 7)
+    METHOD_CALL : version("1.7.14.2-SNAPSHOT") (line 8)
+    BLOCK : intellij (line 11)
+      METHOD_CALL : version("2018.1.3") (line 12)
+      ASSIGNMENT : name: plugins, operator: =, value: ["Kotlin", "properties"] (line 13)
+    BLOCK : publishPlugin (line 16)
+      METHOD_CALL : username(publishUsername) (line 17)
+      METHOD_CALL : password(publishPassword) (line 18)
+
+=== DELETED COMPOSITE NODES ===
+(none)
+
+=== DELETED LEAF NODES ===
+PLUGINS_BLOCK:plugins (line 13, parent=BLOCK:intellij)
+
+=== ADDED COMPOSITE NODES ===
+(none)
+
+=== ADDED LEAF NODES ===
+ASSIGNMENT:plugins = [Kotlin, properties] (line 13, parent=BLOCK:intellij)
+
+=== ALL LEAF MATCHES ===
+METHOD_CALL:group (line 7, parent=BUILD_GRADLE:build.gradle) -> METHOD_CALL:group (line 7, parent=BUILD_GRADLE:build.gradle)
+METHOD_CALL:password (line 18, parent=BLOCK:publishPlugin) -> METHOD_CALL:password (line 18, parent=BLOCK:publishPlugin)
+METHOD_CALL:username (line 17, parent=BLOCK:publishPlugin) -> METHOD_CALL:username (line 17, parent=BLOCK:publishPlugin)
+METHOD_CALL:version (line 12, parent=BLOCK:intellij) -> METHOD_CALL:version (line 12, parent=BLOCK:intellij)
+METHOD_CALL:version (line 8, parent=BUILD_GRADLE:build.gradle) -> METHOD_CALL:version (line 8, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:id (line 2, parent=PLUGINS_BLOCK:plugins) -> PLUGIN_DECL:id (line 2, parent=PLUGINS_BLOCK:plugins)
+PLUGIN_DECL:version (line 3, parent=PLUGINS_BLOCK:plugins) -> PLUGIN_DECL:version (line 3, parent=PLUGINS_BLOCK:plugins)
+PLUGIN_DECL:version (line 4, parent=PLUGINS_BLOCK:plugins) -> PLUGIN_DECL:version (line 4, parent=PLUGINS_BLOCK:plugins)
+
+=== LEAF ROUND 1 MATCHES ===
+METHOD_CALL:group (line 7, parent=BUILD_GRADLE:build.gradle) -> METHOD_CALL:group (line 7, parent=BUILD_GRADLE:build.gradle)
+METHOD_CALL:password (line 18, parent=BLOCK:publishPlugin) -> METHOD_CALL:password (line 18, parent=BLOCK:publishPlugin)
+METHOD_CALL:username (line 17, parent=BLOCK:publishPlugin) -> METHOD_CALL:username (line 17, parent=BLOCK:publishPlugin)
+METHOD_CALL:version (line 12, parent=BLOCK:intellij) -> METHOD_CALL:version (line 12, parent=BLOCK:intellij)
+METHOD_CALL:version (line 8, parent=BUILD_GRADLE:build.gradle) -> METHOD_CALL:version (line 8, parent=BUILD_GRADLE:build.gradle)
+PLUGIN_DECL:id (line 2, parent=PLUGINS_BLOCK:plugins) -> PLUGIN_DECL:id (line 2, parent=PLUGINS_BLOCK:plugins)
+PLUGIN_DECL:version (line 3, parent=PLUGINS_BLOCK:plugins) -> PLUGIN_DECL:version (line 3, parent=PLUGINS_BLOCK:plugins)
+PLUGIN_DECL:version (line 4, parent=PLUGINS_BLOCK:plugins) -> PLUGIN_DECL:version (line 4, parent=PLUGINS_BLOCK:plugins)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+(none)
+
+=== ALL COMPOSITE MATCHES ===
+BLOCK:intellij (line 11, parent=BUILD_GRADLE:build.gradle) -> BLOCK:intellij (line 11, parent=BUILD_GRADLE:build.gradle)
+BLOCK:publishPlugin (line 16, parent=BUILD_GRADLE:build.gradle) -> BLOCK:publishPlugin (line 16, parent=BUILD_GRADLE:build.gradle)
+PLUGINS_BLOCK:plugins (line 1, parent=BUILD_GRADLE:build.gradle) -> PLUGINS_BLOCK:plugins (line 1, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+BLOCK:publishPlugin (line 16, parent=BUILD_GRADLE:build.gradle) -> BLOCK:publishPlugin (line 16, parent=BUILD_GRADLE:build.gradle)
+PLUGINS_BLOCK:plugins (line 1, parent=BUILD_GRADLE:build.gradle) -> PLUGINS_BLOCK:plugins (line 1, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+BLOCK:intellij (line 11, parent=BUILD_GRADLE:build.gradle) -> BLOCK:intellij (line 11, parent=BUILD_GRADLE:build.gradle)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+(none)
+
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 9; 8, 0, 1
+Matched composites: 3; 3, 0, 0
+Deleted leaves: 0; 0, 1, 0
+Deleted composites: 0; 0, 0, 0
+Added leaves: 0; 0, 1, 0
+Added composites: 0; 0, 0, 0
+Total expected events: 12
+Total predicted events: 13
+
+TP=11 FP=2 FN=1
+TP=11, precision=84.62%, recall=91.67%, F1=88%
+
+=== WHERE COMMIT31 MISSED ===
+1. Continuing intellij.plugins setting, before line 13 -> after line 13.
+
+FP:
+1. Deletion of PLUGINS_BLOCK:plugins("Kotlin") at before line 13,
+2. Addition of ASSIGNMENT:plugins = ["Kotlin", "properties"] at
+FN:
+1. Expected leaf match from plugins("Kotlin") to plugins = ["Kotlin", "properties"], 13 -> 13.
+Contribution: FP=2 FN=1.
+

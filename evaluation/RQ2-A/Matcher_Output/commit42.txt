@@ -1,0 +1,146 @@
+
+=== COMMIT ===
+http://github.com/nectec-wisru/android-ThaiWidget/commit/5dcfa93511757620bab57c8d1091d073f0e0ec0d
+
+=== CHANGED GRADLE FILES ===
+thai-widget-domain/build.gradle -> thai-widget-domain/build.gradle
+thai-widget-domain/quality.gradle -> thai-widget-domain/quality.gradle
+
+=== BEFORE VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : thai-widget-domain/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: java (line 19)
+    ASSIGNMENT : name: sourceCompatibility, operator: =, value: rootProject."ext"."javaSourceCompatibility" (line 22)
+    ASSIGNMENT : name: targetCompatibility, operator: =, value: rootProject."ext"."javaTargetCompatibility" (line 24)
+    DEPENDENCIES_BLOCK : dependencies (line 26)
+      DEPENDENCY_DECL : configuration='compile', notation='com.google.code.gson:gson: + rootProject.ext.gsonVersion' (line 27)
+      DEPENDENCY_DECL : configuration='testCompile', notation='junit:junit: + rootProject.ext.junitVersion' (line 29)
+    PLUGIN_DECL : apply plugin: checkstyle (line 32)
+    BLOCK : checkstyle (line 34)
+      METHOD_CALL : toolVersion("6.10.1") (line 35)
+      METHOD_CALL : configFile(rootProject.file("config/checkstyle.xml")) (line 36)
+    PLUGIN_DECL : apply plugin: pmd (line 39)
+    BLOCK : pmd (line 41)
+      METHOD_CALL : toolVersion("5.3.4") (line 42)
+      ASSIGNMENT : name: ruleSetFiles, operator: =, value: files("$rootDir/config/pmd.xml") (line 43)
+    PLUGIN_DECL : apply plugin: findbugs (line 46)
+    BLOCK : findbugs (line 48)
+      METHOD_CALL : toolVersion("3.0.1") (line 49)
+      METHOD_CALL : excludeFilter(rootProject.file("config/findbugs.xml")) (line 50)
+    APPLY_SCRIPT : apply from: maven.gradle (line 53)
+    APPLY_SCRIPT : apply from: ../gradle/bintray.gradle (line 54)
+
+=== AFTER VERSION DSL TREE ===
+ROOT_PROJECT : ROOT_PROJECT (line 0)
+  BUILD_GRADLE : thai-widget-domain/build.gradle (line 0)
+    PLUGIN_DECL : apply plugin: java (line 19)
+    ASSIGNMENT : name: sourceCompatibility, operator: =, value: rootProject."ext"."javaSourceCompatibility" (line 22)
+    ASSIGNMENT : name: targetCompatibility, operator: =, value: rootProject."ext"."javaTargetCompatibility" (line 24)
+    DEPENDENCIES_BLOCK : dependencies (line 26)
+      DEPENDENCY_DECL : configuration='compile', notation='com.google.code.gson:gson: + rootProject.ext.gsonVersion' (line 27)
+      DEPENDENCY_DECL : configuration='testCompile', notation='junit:junit: + rootProject.ext.junitVersion' (line 29)
+    APPLY_SCRIPT : apply from: quality.gradle (line 32)
+    APPLY_SCRIPT : apply from: maven.gradle (line 33)
+    APPLY_SCRIPT : apply from: ../gradle/bintray.gradle (line 34)
+  BUILD_LOGIC_GRADLE : thai-widget-domain/quality.gradle (line 0)
+    PLUGIN_DECL : apply plugin: checkstyle (line 19)
+    PLUGIN_DECL : apply plugin: pmd (line 20)
+    PLUGIN_DECL : apply plugin: findbugs (line 21)
+    BLOCK : checkstyle (line 23)
+      METHOD_CALL : toolVersion("6.10.1") (line 24)
+      METHOD_CALL : configFile(rootProject.file("config/checkstyle.xml")) (line 25)
+    BLOCK : pmd (line 28)
+      METHOD_CALL : toolVersion("5.3.4") (line 29)
+      ASSIGNMENT : name: ruleSetFiles, operator: =, value: files(rootProject.file("config/pmd.xml")) (line 30)
+    BLOCK : findbugs (line 33)
+      METHOD_CALL : toolVersion("3.0.1") (line 34)
+      METHOD_CALL : excludeFilter(rootProject.file("config/findbugs.xml")) (line 35)
+
+=== DELETED COMPOSITE NODES ===
+BLOCK:checkstyle (line 34, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+BLOCK:findbugs (line 48, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+BLOCK:pmd (line 41, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+
+=== DELETED LEAF NODES ===
+ASSIGNMENT:ruleSetFiles = files($rootDir/config/pmd.xml) (line 43, parent=BLOCK:pmd)
+METHOD_CALL:configFile (line 36, parent=BLOCK:checkstyle)
+METHOD_CALL:excludeFilter (line 50, parent=BLOCK:findbugs)
+METHOD_CALL:toolVersion (line 35, parent=BLOCK:checkstyle)
+METHOD_CALL:toolVersion (line 42, parent=BLOCK:pmd)
+METHOD_CALL:toolVersion (line 49, parent=BLOCK:findbugs)
+PLUGIN_DECL:apply (line 32, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+PLUGIN_DECL:apply (line 39, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+PLUGIN_DECL:apply (line 46, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+
+=== ADDED COMPOSITE NODES ===
+BLOCK:checkstyle (line 23, parent=BUILD_LOGIC_GRADLE:thai-widget-domain/quality.gradle)
+BLOCK:findbugs (line 33, parent=BUILD_LOGIC_GRADLE:thai-widget-domain/quality.gradle)
+BLOCK:pmd (line 28, parent=BUILD_LOGIC_GRADLE:thai-widget-domain/quality.gradle)
+
+=== ADDED LEAF NODES ===
+APPLY_SCRIPT:apply (line 32, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+ASSIGNMENT:ruleSetFiles = files(rootProject.file(config/pmd.xml)) (line 30, parent=BLOCK:pmd)
+METHOD_CALL:configFile (line 25, parent=BLOCK:checkstyle)
+METHOD_CALL:excludeFilter (line 35, parent=BLOCK:findbugs)
+METHOD_CALL:toolVersion (line 24, parent=BLOCK:checkstyle)
+METHOD_CALL:toolVersion (line 29, parent=BLOCK:pmd)
+METHOD_CALL:toolVersion (line 34, parent=BLOCK:findbugs)
+PLUGIN_DECL:apply (line 19, parent=BUILD_LOGIC_GRADLE:thai-widget-domain/quality.gradle)
+PLUGIN_DECL:apply (line 20, parent=BUILD_LOGIC_GRADLE:thai-widget-domain/quality.gradle)
+PLUGIN_DECL:apply (line 21, parent=BUILD_LOGIC_GRADLE:thai-widget-domain/quality.gradle)
+
+=== ALL LEAF MATCHES ===
+APPLY_SCRIPT:apply (line 53, parent=BUILD_GRADLE:thai-widget-domain/build.gradle) -> APPLY_SCRIPT:apply (line 33, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+APPLY_SCRIPT:apply (line 54, parent=BUILD_GRADLE:thai-widget-domain/build.gradle) -> APPLY_SCRIPT:apply (line 34, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+ASSIGNMENT:sourceCompatibility = rootProject.ext.javaSourceCompatibility (line 22, parent=BUILD_GRADLE:thai-widget-domain/build.gradle) -> ASSIGNMENT:sourceCompatibility = rootProject.ext.javaSourceCompatibility (line 22, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+ASSIGNMENT:targetCompatibility = rootProject.ext.javaTargetCompatibility (line 24, parent=BUILD_GRADLE:thai-widget-domain/build.gradle) -> ASSIGNMENT:targetCompatibility = rootProject.ext.javaTargetCompatibility (line 24, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+DEPENDENCY_DECL:compile (line 27, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 27, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 29, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 29, parent=DEPENDENCIES_BLOCK:dependencies)
+PLUGIN_DECL:apply (line 19, parent=BUILD_GRADLE:thai-widget-domain/build.gradle) -> PLUGIN_DECL:apply (line 19, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+
+=== LEAF ROUND 1 MATCHES ===
+APPLY_SCRIPT:apply (line 53, parent=BUILD_GRADLE:thai-widget-domain/build.gradle) -> APPLY_SCRIPT:apply (line 33, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+APPLY_SCRIPT:apply (line 54, parent=BUILD_GRADLE:thai-widget-domain/build.gradle) -> APPLY_SCRIPT:apply (line 34, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+ASSIGNMENT:sourceCompatibility = rootProject.ext.javaSourceCompatibility (line 22, parent=BUILD_GRADLE:thai-widget-domain/build.gradle) -> ASSIGNMENT:sourceCompatibility = rootProject.ext.javaSourceCompatibility (line 22, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+ASSIGNMENT:targetCompatibility = rootProject.ext.javaTargetCompatibility (line 24, parent=BUILD_GRADLE:thai-widget-domain/build.gradle) -> ASSIGNMENT:targetCompatibility = rootProject.ext.javaTargetCompatibility (line 24, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+DEPENDENCY_DECL:compile (line 27, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:compile (line 27, parent=DEPENDENCIES_BLOCK:dependencies)
+DEPENDENCY_DECL:testCompile (line 29, parent=DEPENDENCIES_BLOCK:dependencies) -> DEPENDENCY_DECL:testCompile (line 29, parent=DEPENDENCIES_BLOCK:dependencies)
+PLUGIN_DECL:apply (line 19, parent=BUILD_GRADLE:thai-widget-domain/build.gradle) -> PLUGIN_DECL:apply (line 19, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+
+=== LEAF ROUND 2 MATCHES ===
+(none)
+
+=== LEAF ROUND 3 MATCHES ===
+(none)
+
+=== ALL COMPOSITE MATCHES ===
+DEPENDENCIES_BLOCK:dependencies (line 26, parent=BUILD_GRADLE:thai-widget-domain/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 26, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+
+=== COMPOSITE ROUND 1 MATCHES ===
+DEPENDENCIES_BLOCK:dependencies (line 26, parent=BUILD_GRADLE:thai-widget-domain/build.gradle) -> DEPENDENCIES_BLOCK:dependencies (line 26, parent=BUILD_GRADLE:thai-widget-domain/build.gradle)
+
+=== COMPOSITE ROUND 2 MATCHES ===
+(none)
+
+=== COMPOSITE ROUND 3 MATCHES ===
+(none)
+
+=== DETECTED REFACTORINGS ===
+EXTRACT_MODULE: Extract module logic from 'thai-widget-domain/build.gradle' to 'thai-widget-domain/quality.gradle'
+
+=== COUNTS AND EVALUATION ===
+Category: expected events; TP, FP, FN
+Matched leaves: 7; 7, 0, 0
+Matched composites: 1; 1, 0, 0
+Deleted leaves: 9; 9, 0, 0
+Deleted composites: 3; 3, 0, 0
+Added leaves: 10; 10, 0, 0
+Added composites: 3; 3, 0, 0
+Total expected events: 33
+Total predicted events: 33
+
+TP=33 FP=0 FN=0
+TP=33, precision=100%, recall=100%, F1=100%
+
+=== WHERE COMMIT47 MISSED ===
+(none)
